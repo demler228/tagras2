@@ -10,7 +10,7 @@ class DataState(BaseModel, Generic[T]):
 
 
 class DataSuccess(DataState):
-    def __init__(self, data: T) -> None:
+    def __init__(self, data: T=None) -> None:
         super().__init__(data=data)
 
 
