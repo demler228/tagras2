@@ -2,7 +2,7 @@ __all__ = ("router",)
 
 from aiogram import Router
 
-from .handlers import router as handler_routers
+from application.tg_bot.office_maps.personal_actions.handlers import router as handler_routers
 
 router = Router()
 

@@ -2,8 +2,8 @@ __all__ = ("router",)
 
 from aiogram import Router
 
-from .handlers import router as training_routers
-from .education import router as education_routers
+from application.tg_bot.training.personal_actions.handlers import router as training_routers
+from application.tg_bot.training.personal_actions.education import router as education_routers
 
 router = Router()
 
