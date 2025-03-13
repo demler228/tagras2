@@ -1,9 +1,10 @@
 import asyncio
-import logging
+import sys
 from aiogram import Bot, Dispatcher
-
-from application import router
+from loguru import logger
 from utils.config import settings
+from application import router
+
 
 
 async def main():
@@ -17,5 +18,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="DEBUG")
+    logger.add("file.log")
+    logger.info('bot started work')
     asyncio.run(main())

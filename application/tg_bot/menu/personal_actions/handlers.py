@@ -1,9 +1,10 @@
-from aiogram import Router, types
+from aiogram import Router, types, F
 from aiogram.filters import CommandStart
 
-from .keyboards.menu_keyboard import get_main_menu_keyboard
+from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
 
 router = Router()
+router.message.filter(F.chat.type == "private")
 
 @router.message(CommandStart())
 async def start_handler(message: types.Message):
