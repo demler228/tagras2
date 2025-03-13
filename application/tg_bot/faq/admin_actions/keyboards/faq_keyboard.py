@@ -2,12 +2,12 @@ from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from application.tg_bot.faq.entities.faq import Faq
+from application.tg_bot.faq.entities import faq
 
 class FaqCallback(CallbackData, prefix="faq"):
     faq_id: int
 
-def get_faq_keyboard(faq_list: list[Faq]) -> InlineKeyboardMarkup:
+def get_faq_keyboard(faq_list: list[faq]) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     builder.button(text="Добавить вопрос-ответ", callback_data="faq_create_button")
