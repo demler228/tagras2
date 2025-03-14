@@ -59,7 +59,7 @@ class FaqDbDal(BaseModel):
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                faq_base = faq_data = session.query(FaqBase).get(faq.id)
+                faq_base = session.query(FaqBase).get(faq.id)
                 faq_base.question = faq.question
                 faq_base.answer = faq.answer
 
@@ -70,4 +70,22 @@ class FaqDbDal(BaseModel):
             else:
                 session.commit() # - используйте, если что-то меняете
 
-                return DataSuccess(faq_data)
+                return DataSuccess()
+
+    def faq_delete(self,faq: Faq) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                session.query(FaqBase).filter(FaqBase.id == faq.id).delete()
+
+            except Error as e:
+                session.rollback() # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+            else:
+                session.commit() # - используйте, если что-то меняете
+
+                return DataSuccess()

@@ -19,9 +19,10 @@ class FaqDbBl(BaseModel):
 
     def faq_update(self,faq: Faq) -> DataState:
         data_state = self.faqDbDal.faq_update(faq)
-        if isinstance(data_state, DataSuccess):
-            faq_data = data_state.data
-            #return DataSuccess(list(map(lambda data: Faq(id=data[0],question=data[1],answer=data[2]),faq_data))) № это с pyscope
-            return DataSuccess()
+
+        return data_state
+
+    def faq_delete(self,faq: Faq) -> DataState:
+        data_state = self.faqDbDal.faq_delete(faq)
 
         return data_state

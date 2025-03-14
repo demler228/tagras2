@@ -2,7 +2,8 @@ from aiogram import Router, types, F
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message
-from application.tg_bot.faq.admin_actions.keyboards.faq_list_keyboard import get_faq_list_keyboard, FaqCallback
+from application.tg_bot.faq.admin_actions.keyboards.faq_list_keyboard import get_faq_list_keyboard, FaqCallback, \
+    FaqListCallback
 from application.tg_bot.faq.admin_actions.keyboards.faq_menu_keyboard import get_faq_menu_keyboard
 from application.tg_bot.faq.entities.faq import Faq
 from utils.container import faq_db_bl
@@ -38,25 +39,49 @@ async def get_faq(state,callback_query=None, callback_data=None, message=None):
             await callback_query.message.answer(f'❌ {data_state.error_message}')
             return
     #стараемся минимизировать кол-во обращений к бд
-    await state.set_data({'faq': faq, 'message': message})
+    await state.update_data({'faq': faq, 'message': message})
 
 
-@router.callback_query(F.data == "faq_button_admin")
-async def handle_faq_list_button(callback_query: types.CallbackQuery, state: FSMContext):
+async def get_faq_list_button(callback_query: types.CallbackQuery, state: FSMContext, callback_data: FaqListCallback=None):
     await callback_query.message.delete()
 
     data_state = faq_db_bl.get_faq_list()
     if isinstance(data_state, DataSuccess):
-        await state.set_data({'faq_list': data_state.data})
-        await callback_query.message.answer("📖 Ответы на частые вопросы", reply_markup=get_faq_list_keyboard(data_state.data))
+        print(await state.get_data())
+        if 'page' in (await state.get_data()) and callback_data is None:
+            page = (await state.get_data())['page']
+        else:
+            page = callback_data.page if callback_data is not None else 1
+
+        await state.set_data({'faq_list': data_state.data,'page':page})
+
+        await callback_query.message.answer("📖 Ответы на частые вопросы", reply_markup=get_faq_list_keyboard(data_state.data,page))
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
 
+@router.callback_query(F.data == "faq_button_admin")
+async def handle_faq_list_button(callback_query: types.CallbackQuery, state: FSMContext):
+    await get_faq_list_button(callback_query,state)
+
+@router.callback_query(FaqListCallback.filter())
+async def handle_faq_list_button_by_callback(callback_query: types.CallbackQuery, state: FSMContext, callback_data: FaqListCallback):
+    await get_faq_list_button(callback_query,state,callback_data)
 
 @router.callback_query(FaqCallback.filter())
 async def handle_faq_button(callback_query: types.CallbackQuery, callback_data: FaqCallback, state: FSMContext):
     await get_faq(state, callback_query=callback_query,callback_data=callback_data)
 
+@router.callback_query(F.data == "faq_delete_button")
+async def handle_faq_delete_button(callback_query: types.CallbackQuery, state: FSMContext):
+    faq = (await state.get_data())['faq']
+    data_state = faq_db_bl.faq_delete(faq)
+
+    if isinstance(data_state, DataSuccess):
+        #await (await state.get_data())['message'].delete()
+        await get_faq_list_button(callback_query ,state)
+        await callback_query.message.answer(f'Вопрос-ответ удален!')
+    else:
+        await callback_query.message.answer(f'❌ {data_state.error_message}')
 
 @router.callback_query(F.data == "faq_change_question_button")
 async def handle_faq_change_question_button(callback_query: types.CallbackQuery, state: FSMContext):
