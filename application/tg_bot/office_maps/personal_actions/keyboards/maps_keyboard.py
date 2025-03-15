@@ -1,6 +1,7 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from .callback_factories import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory
+from .callback_factories import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory, BackToBuildingCallbackFactory
 from .data_stubs import buildings, floors, sections
+from application.tg_bot.faq.personal_actions.keyboards.callback_factories import BackToMenuCallbackFactory
 
 def get_buildings_keyboard():
     builder = InlineKeyboardBuilder()
@@ -11,7 +12,7 @@ def get_buildings_keyboard():
         )
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackCallbackFactory(action="to_menu")
+        callback_data=BackToMenuCallbackFactory()
     )
     builder.adjust(1)
     return builder.as_markup()
@@ -25,11 +26,11 @@ def get_floors_keyboard(building_id: int):
         )
     builder.button(
         text="🔙 Назад к зданиям",
-        callback_data=BackCallbackFactory(action="to_buildings")
+        callback_data=BackToBuildingCallbackFactory()
     )
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackCallbackFactory(action="to_menu")
+        callback_data=BackToMenuCallbackFactory()
     )
     builder.adjust(1)
     return builder.as_markup()
@@ -47,7 +48,7 @@ def get_sections_keyboard(building_id: int, floor_id: int):
     )
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackCallbackFactory(action="to_menu")
+        callback_data=BackToMenuCallbackFactory()
     )
     builder.adjust(1)
     return builder.as_markup()

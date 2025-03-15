@@ -1,7 +1,7 @@
 from aiogram import Router, types, F
 from aiogram.types import FSInputFile, InputMediaPhoto
 from .keyboards import get_buildings_keyboard, get_floors_keyboard, get_sections_keyboard
-from .keyboards import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory
+from .keyboards import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory, BackToBuildingCallbackFactory
 from .keyboards import buildings, floors, sections
 
 router = Router()
@@ -68,33 +68,31 @@ async def handle_section_selection(callback_query: types.CallbackQuery, callback
 # Обработчик кнопки "Назад"
 @router.callback_query(BackCallbackFactory.filter())
 async def handle_back_button(callback_query: types.CallbackQuery, callback_data: BackCallbackFactory):
-    if callback_data.action == "to_buildings":
-        # Возвращаемся к выбору зданий
-        if callback_query.message.photo:
-            await callback_query.message.delete()
-            await callback_query.message.answer(
-                "Выберите здание:",
-                reply_markup=get_buildings_keyboard()
-            )
-        else:
-            await callback_query.message.edit_text(
-                "Выберите здание:",
-                reply_markup=get_buildings_keyboard()
-            )
-    elif callback_data.action == "to_floors":
-        # Возвращаемся к выбору этажей
-        building_id = callback_data.building_id
-        building = next(b for b in buildings if b["id"] == building_id)
+    # Возвращаемся к выбору этажей
+    building_id = callback_data.building_id
+    building = next(b for b in buildings if b["id"] == building_id)
 
-        # Отправляем фото здания
-        media = InputMediaPhoto(
-            media=FSInputFile(building["image"]),
-            caption=f"Вы выбрали здание: {building['name']}"
-        )
-        await callback_query.message.edit_media(
-            media=media,
-            reply_markup=get_floors_keyboard(building_id=building_id)
-        )
-    elif callback_data.action == "to_menu":
-        # Удаляем текущее сообщение
+    # Отправляем фото здания
+    media = InputMediaPhoto(
+        media=FSInputFile(building["image"]),
+        caption=f"Вы выбрали здание: {building['name']}"
+    )
+    await callback_query.message.edit_media(
+        media=media,
+        reply_markup=get_floors_keyboard(building_id=building_id)
+    )
+
+@router.callback_query(BackToBuildingCallbackFactory.filter())
+async def handle_back_button(callback_query: types.CallbackQuery, callback_data: BackToBuildingCallbackFactory):
+    # Возвращаемся к выбору зданий
+    if callback_query.message.photo:
         await callback_query.message.delete()
+        await callback_query.message.answer(
+       "Выберите здание:",
+            reply_markup=get_buildings_keyboard()
+        )
+    else:
+        await callback_query.message.edit_text(
+            "Выберите здание:",
+            reply_markup=get_buildings_keyboard()
+        )
