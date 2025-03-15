@@ -4,7 +4,9 @@ from modules.file_processing import process_file
 from modules.web_processing import process_url
 from modules.gigachat_api import get_quiz_questions, get_token
 from modules.utils import add_incorrect_answers
+from modules.send_data_todb import send_to_db
 import json
+
 
 def process_material(material):
     if material.startswith("http://") or material.startswith("https://"):
@@ -22,8 +24,13 @@ def process_material(material):
             return None
     return text
 
+
 def main(materials):
     all_texts = []
+    theme = input("Введите тему для квиза (например, 'Информационная безопасность'): ").strip()
+    if not theme:
+        print("Ошибка: тема не может быть пустой.")
+        return
 
     for material in materials:
         text = process_material(material)
@@ -54,7 +61,8 @@ def main(materials):
             quiz_json = add_incorrect_answers(quiz_json)
             print("Квиз JSON:")
             print(json.dumps(quiz_json, indent=4, ensure_ascii=False))
-            break
+            send_to_db(quiz_json, theme)
+            return quiz_json
         except json.JSONDecodeError as e:
             print(f"Ошибка: не удалось преобразовать ответ в JSON: {e}")
             print("Ответ GigaChat:")
@@ -63,6 +71,7 @@ def main(materials):
             if retry != 'да':
                 print("Генерация квиза прекращена.")
                 break
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
