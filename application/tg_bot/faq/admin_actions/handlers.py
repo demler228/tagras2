@@ -49,7 +49,6 @@ async def get_faq_list_button(callback_query: types.CallbackQuery, state: FSMCon
 
     data_state = faq_db_bl.get_faq_list()
     if isinstance(data_state, DataSuccess):
-        print(await state.get_data())
         if 'page' in (await state.get_data()) and callback_data is None:
             page = (await state.get_data())['page']
         else:
