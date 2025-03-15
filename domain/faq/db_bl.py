@@ -22,6 +22,11 @@ class FaqDbBl(BaseModel):
 
         return data_state
 
+    def faq_create(self,faq: Faq) -> DataState:
+        data_state = self.faqDbDal.faq_create(faq)
+
+        return data_state
+
     def faq_delete(self,faq: Faq) -> DataState:
         data_state = self.faqDbDal.faq_delete(faq)
 
