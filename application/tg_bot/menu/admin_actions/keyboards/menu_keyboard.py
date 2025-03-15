@@ -11,6 +11,7 @@ def get_admin_main_menu_keyboard() -> InlineKeyboardMarkup:
     builder.button(text="Полезные контакты", callback_data="contacts_button")
     builder.button(text="Мой профиль", callback_data="profile_button")
     builder.button(text="Карты офиса", callback_data="office_maps_button")
+    builder.button(text="Тренинги", callback_data="training_button_admin")
     builder.button(text="ИИ - Помощник", callback_data="ai_assistant_button")
 
     builder.adjust(1)

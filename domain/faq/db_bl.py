@@ -6,10 +6,10 @@ from utils.table_convertor import to_entity
 
 
 class FaqDbBl(BaseModel):
-    faqDbDal: FaqDbDal
 
-    def get_faq_list(self) -> DataState:
-        data_state = self.faqDbDal.get_faq_list()
+    @staticmethod
+    def get_faq_list() -> DataState:
+        data_state = FaqDbDal.get_faq_list()
         if isinstance(data_state, DataSuccess):
             faq_data = data_state.data
             #return DataSuccess(list(map(lambda data: Faq(id=data[0],question=data[1],answer=data[2]),faq_data))) № это с pyscope
@@ -17,17 +17,20 @@ class FaqDbBl(BaseModel):
 
         return data_state
 
-    def faq_update(self,faq: Faq) -> DataState:
-        data_state = self.faqDbDal.faq_update(faq)
+    @staticmethod
+    def faq_update(faq: Faq) -> DataState:
+        data_state = FaqDbDal.faq_update(faq)
 
         return data_state
 
-    def faq_create(self,faq: Faq) -> DataState:
-        data_state = self.faqDbDal.faq_create(faq)
+    @staticmethod
+    def faq_create(faq: Faq) -> DataState:
+        data_state = FaqDbDal.faq_create(faq)
 
         return data_state
 
-    def faq_delete(self,faq: Faq) -> DataState:
-        data_state = self.faqDbDal.faq_delete(faq)
+    @staticmethod
+    def faq_delete(faq: Faq) -> DataState:
+        data_state = FaqDbDal.faq_delete(faq)
 
         return data_state
