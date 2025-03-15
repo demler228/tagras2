@@ -1,34 +1,53 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from .callback_factories import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory
+from .data_stubs import buildings, floors, sections
 
-def get_office_maps_keyboard():
-    """
-    Создает клавиатуру для выбора этажа.
-    """
+def get_buildings_keyboard():
     builder = InlineKeyboardBuilder()
-
-    # Кнопки для выбора этажа
-    builder.button(text="1 этаж", callback_data="office_map_1")
-    builder.button(text="2 этаж", callback_data="office_map_2")
-    builder.button(text="3 этаж", callback_data="office_map_3")
-
-    # Кнопка "Назад в меню"
-    builder.button(text="🔙 В меню", callback_data="back_to_menu")
-
-    # Настройка расположения кнопок
+    for building in buildings:
+        builder.button(
+            text=building["name"],
+            callback_data=BuildingCallbackFactory(building_id=building["id"])
+        )
+    builder.button(
+        text="🔙 Назад в меню",
+        callback_data=BackCallbackFactory(action="to_menu")
+    )
     builder.adjust(1)
     return builder.as_markup()
 
-
-def get_office_map_keyboard(floor: str):
-    """
-    Создает клавиатуру для возврата к выбору этажа.
-    """
+def get_floors_keyboard(building_id: int):
     builder = InlineKeyboardBuilder()
+    for floor in floors[building_id]:
+        builder.button(
+            text=floor["name"],
+            callback_data=FloorCallbackFactory(building_id=building_id, floor_id=floor["id"])
+        )
     builder.button(
-        text="🔙 К выбору этажа",
-        callback_data="back_to_floors"
+        text="🔙 Назад к зданиям",
+        callback_data=BackCallbackFactory(action="to_buildings")
     )
-    builder.button(text="🔙 В меню", callback_data="back_to_menu")
+    builder.button(
+        text="🔙 Назад в меню",
+        callback_data=BackCallbackFactory(action="to_menu")
+    )
+    builder.adjust(1)
+    return builder.as_markup()
+
+def get_sections_keyboard(building_id: int, floor_id: int):
+    builder = InlineKeyboardBuilder()
+    for section in sections[(building_id, floor_id)]:
+        builder.button(
+            text=section["name"],
+            callback_data=SectionCallbackFactory(building_id=building_id, floor_id=floor_id, section_id=section["id"])
+        )
+    builder.button(
+        text="🔙 Назад к этажам",
+        callback_data=BackCallbackFactory(action="to_floors", building_id=building_id)
+    )
+    builder.button(
+        text="🔙 Назад в меню",
+        callback_data=BackCallbackFactory(action="to_menu")
+    )
     builder.adjust(1)
     return builder.as_markup()
