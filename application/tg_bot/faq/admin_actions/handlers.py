@@ -6,7 +6,7 @@ from application.tg_bot.faq.admin_actions.keyboards.faq_list_keyboard import get
     FaqListCallback
 from application.tg_bot.faq.admin_actions.keyboards.faq_menu_keyboard import get_faq_menu_keyboard
 from application.tg_bot.faq.entities.faq import Faq
-from utils.container import faq_db_bl
+from domain.faq.db_bl import FaqDbBl
 from utils.data_state import DataSuccess
 
 router = Router()
@@ -27,7 +27,7 @@ async def get_faq(state,callback_query=None, callback_data=None, message=None):
 
     else:
         # если вдруг еще кто-то изменяет этот вопрос-ответ, чтобы были актуальные данные
-        data_state = faq_db_bl.get_faq_list()
+        data_state = FaqDbBl.get_faq_list()
 
         if isinstance(data_state, DataSuccess):
             faq_list = data_state.data
@@ -47,7 +47,7 @@ async def get_faq(state,callback_query=None, callback_data=None, message=None):
 async def get_faq_list_button(callback_query: types.CallbackQuery, state: FSMContext, callback_data: FaqListCallback=None):
     await callback_query.message.delete()
 
-    data_state = faq_db_bl.get_faq_list()
+    data_state = FaqDbBl.get_faq_list()
     if isinstance(data_state, DataSuccess):
         if 'page' in (await state.get_data()) and callback_data is None:
             page = (await state.get_data())['page']
@@ -75,7 +75,7 @@ async def handle_faq_button(callback_query: types.CallbackQuery, callback_data: 
 @router.callback_query(F.data == "faq_delete_button")
 async def handle_faq_delete_button(callback_query: types.CallbackQuery, state: FSMContext):
     faq = (await state.get_data())['faq']
-    data_state = faq_db_bl.faq_delete(faq)
+    data_state = FaqDbBl.faq_delete(faq)
 
     if isinstance(data_state, DataSuccess):
         #await (await state.get_data())['message'].delete()
@@ -98,7 +98,7 @@ async def faq_create_answer(message: Message, state: FSMContext):
 @router.message(F.text, AdminStates.create_faq_answer)
 async def faq_create(message: Message, state: FSMContext):
     faq = Faq(question=(await state.get_data())['faq_question'],answer=message.text)
-    data_state = faq_db_bl.faq_create(faq)
+    data_state = FaqDbBl.faq_create(faq)
     if isinstance(data_state, DataSuccess):
         faq.id = data_state.data
         await state.update_data({'faq': faq})
@@ -117,7 +117,7 @@ async def faq_change_question(callback_query: types.CallbackQuery, state: FSMCon
 async def faq_changed_question(message: Message, state: FSMContext):
     faq = (await state.get_data())['faq']
     faq.question = message.text
-    data_state = faq_db_bl.faq_update(faq)
+    data_state = FaqDbBl.faq_update(faq)
 
     if isinstance(data_state, DataSuccess):
         await (await state.get_data())['message'].delete()
@@ -137,7 +137,7 @@ async def faq_change_answer(callback_query: types.CallbackQuery, state: FSMConte
 async def faq_changed_answer(message: Message, state: FSMContext):
     faq = (await state.get_data())['faq']
     faq.answer = message.text
-    data_state = faq_db_bl.faq_update(faq)
+    data_state = FaqDbBl.faq_update(faq)
 
     if isinstance(data_state, DataSuccess):
         await (await state.get_data())['message'].delete()
