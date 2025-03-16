@@ -8,14 +8,12 @@ import whisper
 import json
 import uuid
 from modules.utils import remove_empty_lines
-from sqlalchemy import create_engine, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 from models.quiz import Theme, Question, Answer
-from models.base import Base
-
-DATABASE_URL = "postgresql+psycopg2://postgres:nejmard16@localhost:5432/test_qwiz"
-engine = create_engine(DATABASE_URL)
-Base.metadata.create_all(engine)
+from utils.connection_db import connection_db
+from utils.data_state import DataState, DataSuccess, DataFailedMessage
+from aiogram.client.session.middlewares.request_logging import logger
 
 class FileRepository:
     @staticmethod
@@ -144,63 +142,91 @@ class QuizRepository:
 
 class DBRepository:
     @staticmethod
-    def save_quiz(quiz_data: list, theme_name: str) -> bool:
-        with Session(engine) as session:
-            theme = Theme(theme_name=theme_name)
-            session.add(theme)
-            session.commit()
+    def save_quiz(quiz_data: list, theme_name: str) -> DataState:
+        Session = connection_db()
 
-            for question_data in quiz_data:
-                question = Question(
-                    question_text=question_data["question"],
-                    theme_id=theme.id
-                )
-                session.add(question)
+        if Session is None:
+            return DataFailedMessage("Ошибка в работе базы данных!")
+        
+        with Session() as session:
+            try:
+                theme = Theme(theme_name=theme_name)
+                session.add(theme)
                 session.commit()
 
-                correct_answer = Answer(
-                    answer_text=question_data["correct_answer"],
-                    is_correct=True,
-                    question_id=question.id
-                )
-                session.add(correct_answer)
+                for question_data in quiz_data:
+                    question = Question(
+                        question_text=question_data["question"],
+                        theme_id=theme.id
+                    )
+                    session.add(question)
+                    session.commit()
 
-                for incorrect_answer in question_data["incorrect_answers"]:
-                    answer = Answer(
-                        answer_text=incorrect_answer,
-                        is_correct=False,
+                    correct_answer = Answer(
+                        answer_text=question_data["correct_answer"],
+                        is_correct=True,
                         question_id=question.id
                     )
-                    session.add(answer)
+                    session.add(correct_answer)
 
-            session.commit()
-            return True
-    
+                    for incorrect_answer in question_data["incorrect_answers"]:
+                        answer = Answer(
+                            answer_text=incorrect_answer,
+                            is_correct=False,
+                            question_id=question.id
+                        )
+                        session.add(answer)
+
+                session.commit()
+                return DataSuccess()
+            except Exception as e:
+                session.rollback()
+                logger.error(e)
+                return DataFailedMessage("Ошибка в работе базы данных!")
+
     @staticmethod
-    def get_themes():
-        with Session(engine) as session:
-            themes = session.execute(select(Theme)).scalars().all()
-            return [{"id": theme.id, "theme_name": theme.theme_name} for theme in themes]
+    def get_themes() -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage("Ошибка в работе базы данных!")
+        
+        with Session() as session:
+            try:
+                themes = session.execute(select(Theme)).scalars().all()
+                return DataSuccess([{"id": theme.id, "theme_name": theme.theme_name} for theme in themes])
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage("Ошибка в работе базы данных!")
 
     @staticmethod
-    def get_questions_by_theme(theme_id: int):
-        with Session(engine) as session:
-            questions = session.execute(
-                select(Question).where(Question.theme_id == theme_id)
-            ).scalars().all()
+    def get_questions_by_theme(theme_id: int) -> DataState:
+        Session = connection_db()
 
-            result = []
-            for question in questions:
-                answers = session.execute(
-                    select(Answer).where(Answer.question_id == question.id)
+        if Session is None:
+            return DataFailedMessage("Ошибка в работе базы данных!")
+        
+        with Session() as session:
+            try:
+                questions = session.execute(
+                    select(Question).where(Question.theme_id == theme_id)
                 ).scalars().all()
 
-                result.append({
-                    "question_text": question.question_text,
-                    "answers": [answer.answer_text for answer in answers],
-                    "correct_answer": next(
-                        answer.answer_text for answer in answers if answer.is_correct
-                    ),
-                })
+                result = []
+                for question in questions:
+                    answers = session.execute(
+                        select(Answer).where(Answer.question_id == question.id)
+                    ).scalars().all()
 
-            return result
+                    result.append({
+                        "question_text": question.question_text,
+                        "answers": [answer.answer_text for answer in answers],
+                        "correct_answer": next(
+                            answer.answer_text for answer in answers if answer.is_correct
+                        ),
+                    })
+
+                return DataSuccess(result)
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage("Ошибка в работе базы данных!")
