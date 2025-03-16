@@ -4,10 +4,6 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from application.tg_bot.faq.entities.faq import Faq
 
-class FaqMenuCallback(CallbackData, prefix="faq_menu"):
-    faq_id: int
-    faq_list: list[Faq]
-
 def get_faq_menu_keyboard() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
