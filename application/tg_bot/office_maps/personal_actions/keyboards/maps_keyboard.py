@@ -1,10 +1,13 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from application.tg_bot.office_maps.personal_actions.keyboards.callback_factories import BackToSectionCallbackFactory
+
 from .callback_factories import (
     BuildingCallbackFactory,
     FloorCallbackFactory,
     SectionCallbackFactory,
-    BackCallbackFactory,
     BackToBuildingCallbackFactory,
+    BackToFloorCallbackFactory,
+    BackToSectionCallbackFactory,
 )
 from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallbackFactory
 from domain.office_maps.db_bl import BuildingDbBl, FloorDbBl, SectionDbBl
@@ -67,7 +70,8 @@ def get_sections_keyboard(building_id: int, floor_id: int):
     # Получаем список разделов для конкретного этажа
     data_state = SectionDbBl.get_sections_by_floor(floor_id)
     if isinstance(data_state, DataSuccess):
-        for section in data_state.data:
+        sections = data_state.data
+        for section in sections:
             builder.button(
                 text=section.name,
                 callback_data=SectionCallbackFactory(building_id=building_id, floor_id=floor_id, section_id=section.id)
@@ -76,13 +80,35 @@ def get_sections_keyboard(building_id: int, floor_id: int):
         # Если данные не получены, можно добавить кнопку с сообщением об ошибке
         builder.button(text="Ошибка загрузки разделов", callback_data="error")
 
+    # Кнопка "Назад к зданиям"
     builder.button(
         text="🔙 Назад к этажам",
-        callback_data=BackCallbackFactory(action="to_floors", building_id=building_id)
+        callback_data=BackToFloorCallbackFactory(building_id=building_id)
     )
+
+    # Кнопка "Назад в меню"
     builder.button(
         text="🔙 Назад в меню",
         callback_data=BackToMenuCallbackFactory()
     )
+
+    builder.adjust(1)
+    return builder.as_markup()
+
+def get_section_keyboard(building_id: int, floor_id: int):
+    builder = InlineKeyboardBuilder()
+
+    # Кнопка "Назад к этажам"
+    builder.button(
+        text="🔙 Назад к отделам",
+        callback_data=BackToSectionCallbackFactory(building_id=building_id, floor_id=floor_id)
+    )
+
+    # Кнопка "Назад в меню"
+    builder.button(
+        text="🔙 Назад в меню",
+        callback_data=BackToMenuCallbackFactory()
+    )
+
     builder.adjust(1)
     return builder.as_markup()

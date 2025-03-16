@@ -12,9 +12,12 @@ class SectionCallbackFactory(CallbackData, prefix="section"):
     floor_id: int
     section_id: int
 
-class BackCallbackFactory(CallbackData, prefix="back_to_floor"):
-    action: str
-    building_id: int = None  # Для возврата к этажам
+class BackToSectionCallbackFactory(CallbackData, prefix="back_to_sections"):
+    building_id: int
+    floor_id: int
+
+class BackToFloorCallbackFactory(CallbackData, prefix="back_to_floor"):
+    building_id: int
 
 class BackToBuildingCallbackFactory(CallbackData, prefix="back_to_buildings"):
     pass
