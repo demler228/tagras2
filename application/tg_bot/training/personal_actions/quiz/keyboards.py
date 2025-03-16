@@ -17,11 +17,11 @@ def get_themes_keyboard(themes: list[dict], page: int = 1) -> InlineKeyboardMark
     return builder.as_markup()
 
 
-def get_answers_keyboard(question_index: int, answers: list[str], page: int = 1) -> InlineKeyboardMarkup:
+def get_answers_keyboard(question_index: int, answers: list) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
-    for answer in answers:
+    for i, answer in enumerate(answers):
         builder.button(
-            text=answer,
+            text=f"🔹 {i+1} Ответ",
             callback_data=QuizCallbackFactory(
                 action="answer",
                 question_index=question_index,
@@ -30,7 +30,6 @@ def get_answers_keyboard(question_index: int, answers: list[str], page: int = 1)
         )
     builder.adjust(1)
     return builder.as_markup()
-
 
 def get_quiz_navigation_keyboard(question_index: int, total_questions: int, page: int = 1) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
