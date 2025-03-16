@@ -6,7 +6,6 @@ from application.tg_bot.training.entities.theme import Theme
 from domain.training.education.models.material import MaterialBase
 from domain.training.education.models.theme import ThemeBase
 from utils.connection_db import connection_db
-import psycopg2
 
 from utils.data_state import DataState, DataFailedMessage, DataSuccess
 
@@ -18,20 +17,16 @@ class EducationDAL(object):
 
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
+
         with Session() as session:
             try:
                 statement = select(ThemeBase).order_by(ThemeBase.id)
-                faq_data = session.scalars(statement).all()
-                #faq_data = session.query(FaqBase).all()
-
+                themes = session.scalars(statement).all()
             except Exception as e:
-                #session.rollback() # - используйте, если что-то меняете
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
-                #session.commit() # - используйте, если что-то меняете
-
-                return DataSuccess(faq_data)
+                return DataSuccess(themes)
 
     @staticmethod
     def get_materials(theme_id: int) -> DataState:
@@ -39,20 +34,16 @@ class EducationDAL(object):
 
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
+
         with Session() as session:
             try:
-                statement = select(MaterialBase).where(MaterialBase.theme_id == theme_id).order_by(MaterialBase.id)
-                faq_data = session.scalars(statement).all()
-                #faq_data = session.query(FaqBase).all()
-
+                statement = select(MaterialBase).where(MaterialBase.theme_id == theme_id)
+                materials = session.scalars(statement).all()
             except Exception as e:
-                #session.rollback() # - используйте, если что-то меняете
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
-                #session.commit() # - используйте, если что-то меняете
-
-                return DataSuccess(faq_data)
+                return DataSuccess(materials)
 
     @staticmethod
     def theme_update(theme: Theme) -> DataState:

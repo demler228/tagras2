@@ -17,6 +17,7 @@ def connection_db():
         # you can test if the connection is made or not
         Session = sessionmaker(engine)
         return Session
+
     except Exception as ex:
         logger.error(f'Sorry failed to connect: {ex}')
         return None
