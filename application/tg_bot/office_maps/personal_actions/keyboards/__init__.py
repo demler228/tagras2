@@ -1,3 +1,2 @@
 from .maps_keyboard import get_floors_keyboard, get_sections_keyboard, get_buildings_keyboard
 from .callback_factories import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory, BackToBuildingCallbackFactory
-from .data_stubs import buildings, floors, sections

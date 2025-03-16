@@ -1,8 +1,15 @@
 from aiogram import Router, types, F
 from aiogram.types import FSInputFile, InputMediaPhoto
 from .keyboards import get_buildings_keyboard, get_floors_keyboard, get_sections_keyboard
-from .keyboards import BuildingCallbackFactory, FloorCallbackFactory, SectionCallbackFactory, BackCallbackFactory, BackToBuildingCallbackFactory
-from .keyboards import buildings, floors, sections
+from .keyboards import (
+    BuildingCallbackFactory,
+    FloorCallbackFactory,
+    SectionCallbackFactory,
+    BackCallbackFactory,
+    BackToBuildingCallbackFactory,
+)
+from domain.office_maps.db_bl import BuildingDbBl, FloorDbBl, SectionDbBl
+from utils.data_state import DataSuccess
 
 router = Router()
 
@@ -14,81 +21,107 @@ async def handle_office_maps_button(callback_query: types.CallbackQuery):
         reply_markup=get_buildings_keyboard()
     )
 
-# Обработчик выбора здания
 @router.callback_query(BuildingCallbackFactory.filter())
 async def handle_building_selection(callback_query: types.CallbackQuery, callback_data: BuildingCallbackFactory):
     building_id = callback_data.building_id
-    building = next(b for b in buildings if b["id"] == building_id)
+    data_state = BuildingDbBl.get_buildings()  # Получаем список всех зданий
+    if isinstance(data_state, DataSuccess):
+        buildings = data_state.data
+        # Ищем здание по ID
+        building = next((b for b in buildings if b.id == building_id), None)
+        if building:
+            # Отправляем фото здания с его именем
+            media = InputMediaPhoto(
+                media=FSInputFile(building.photo_path),
+                caption=f"Вы выбрали здание: {building.name}"  # Используем имя здания
+            )
+            await callback_query.message.edit_media(
+                media=media,
+                reply_markup=get_floors_keyboard(building_id=building_id)
+            )
+        else:
+            await callback_query.message.answer("Здание не найдено.")
+    else:
+        await callback_query.message.answer(data_state.message)
 
-    # Отправляем фото здания
-    media = InputMediaPhoto(
-        media=FSInputFile(building["image"]),
-        caption=f"Вы выбрали здание: {building['name']}"
-    )
-    await callback_query.message.edit_media(
-        media=media,
-        reply_markup=get_floors_keyboard(building_id=building_id)
-    )
-
-# Обработчик выбора этажа
 @router.callback_query(FloorCallbackFactory.filter())
 async def handle_floor_selection(callback_query: types.CallbackQuery, callback_data: FloorCallbackFactory):
-    building_id = callback_data.building_id
     floor_id = callback_data.floor_id
-    floor = next(f for f in floors[building_id] if f["id"] == floor_id)
+    building_id = callback_data.building_id
+    data_state = FloorDbBl.get_floors_by_building(building_id)  # Получаем список этажей для здания
+    if isinstance(data_state, DataSuccess):
+        floors = data_state.data
+        # Ищем этаж по ID
+        floor = next((f for f in floors if f.id == floor_id), None)
+        if floor:
+            # Отправляем фото этажа с его именем
+            media = InputMediaPhoto(
+                media=FSInputFile(floor.photo_path),
+                caption=f"Вы выбрали этаж: {floor.name}"  # Используем имя этажа
+            )
+            await callback_query.message.edit_media(
+                media=media,
+                reply_markup=get_sections_keyboard(building_id=building_id, floor_id=floor_id)
+            )
+        else:
+            await callback_query.message.answer("Этаж не найден.")
+    else:
+        await callback_query.message.answer(data_state.message)
 
-    # Отправляем схему этажа
-    media = InputMediaPhoto(
-        media=FSInputFile(floor["image"]),
-        caption=f"Вы выбрали этаж: {floor['name']}"
-    )
-    await callback_query.message.edit_media(
-        media=media,
-        reply_markup=get_sections_keyboard(building_id=building_id, floor_id=floor_id)
-    )
-
-# Обработчик выбора раздела
 @router.callback_query(SectionCallbackFactory.filter())
 async def handle_section_selection(callback_query: types.CallbackQuery, callback_data: SectionCallbackFactory):
-    building_id = callback_data.building_id
-    floor_id = callback_data.floor_id
     section_id = callback_data.section_id
-    section = next(s for s in sections[(building_id, floor_id)] if s["id"] == section_id)
+    floor_id = callback_data.floor_id
+    building_id = callback_data.building_id
+    data_state = SectionDbBl.get_sections_by_floor(floor_id)  # Получаем список разделов для этажа
+    if isinstance(data_state, DataSuccess):
+        sections = data_state.data
+        # Ищем раздел по ID
+        section = next((s for s in sections if s.id == section_id), None)
+        if section:
+            # Отправляем фото раздела с его именем
+            media = InputMediaPhoto(
+                media=FSInputFile(section.photo_path),
+                caption=f"Вы выбрали раздел: {section.name}"  # Используем имя раздела
+            )
+            await callback_query.message.edit_media(
+                media=media,
+                reply_markup=get_sections_keyboard(building_id=building_id, floor_id=floor_id)
+            )
+        else:
+            await callback_query.message.answer("Раздел не найден.")
+    else:
+        await callback_query.message.answer(data_state.message)
 
-    # Отправляем схему этажа с выделенным разделом
-    media = InputMediaPhoto(
-        media=FSInputFile(floors[building_id][floor_id - 1]["image"]),  # Используем ту же схему этажа
-        caption=f"Вы выбрали раздел: {section['name']}"
-    )
-    await callback_query.message.edit_media(
-        media=media,
-        reply_markup=get_sections_keyboard(building_id=building_id, floor_id=floor_id)
-    )
-
-# Обработчик кнопки "Назад"
 @router.callback_query(BackCallbackFactory.filter())
 async def handle_back_button(callback_query: types.CallbackQuery, callback_data: BackCallbackFactory):
-    # Возвращаемся к выбору этажей
     building_id = callback_data.building_id
-    building = next(b for b in buildings if b["id"] == building_id)
-
-    # Отправляем фото здания
-    media = InputMediaPhoto(
-        media=FSInputFile(building["image"]),
-        caption=f"Вы выбрали здание: {building['name']}"
-    )
-    await callback_query.message.edit_media(
-        media=media,
-        reply_markup=get_floors_keyboard(building_id=building_id)
-    )
+    data_state = BuildingDbBl.get_buildings()  # Получаем список всех зданий
+    if isinstance(data_state, DataSuccess):
+        buildings = data_state.data
+        # Ищем здание по ID
+        building = next((b for b in buildings if b.id == building_id), None)
+        if building:
+            # Отправляем фото здания с его именем
+            media = InputMediaPhoto(
+                media=FSInputFile(building.photo_path),
+                caption=f"Вы выбрали здание: {building.name}"  # Используем имя здания
+            )
+            await callback_query.message.edit_media(
+                media=media,
+                reply_markup=get_floors_keyboard(building_id=building_id)
+            )
+        else:
+            await callback_query.message.answer("Здание не найдено.")
+    else:
+        await callback_query.message.answer(data_state.message)
 
 @router.callback_query(BackToBuildingCallbackFactory.filter())
 async def handle_back_button(callback_query: types.CallbackQuery, callback_data: BackToBuildingCallbackFactory):
-    # Возвращаемся к выбору зданий
     if callback_query.message.photo:
         await callback_query.message.delete()
         await callback_query.message.answer(
-       "Выберите здание:",
+            "Выберите здание:",
             reply_markup=get_buildings_keyboard()
         )
     else:
