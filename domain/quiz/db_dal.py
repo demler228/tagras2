@@ -7,10 +7,10 @@ import moviepy as mp
 import whisper
 import json
 import uuid
-from modules.utils import remove_empty_lines
+from domain.quiz.modules.utils import remove_empty_lines
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-from models.quiz import Theme, Question, Answer
+from domain.quiz.models.quiz import Theme, Question, Answer
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 from aiogram.client.session.middlewares.request_logging import logger

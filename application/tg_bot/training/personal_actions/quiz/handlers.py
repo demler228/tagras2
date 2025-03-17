@@ -6,6 +6,7 @@ from domain.quiz.db_bl import DBService
 from domain.quiz.db_dal import DBRepository
 from .keyboards import get_answers_keyboard, get_themes_keyboard
 from .callback_factories import QuizCallbackFactory
+from utils.data_state import DataSuccess
 
 router = Router()
 
@@ -13,8 +14,10 @@ user_data = {}
 
 @router.callback_query(F.data == "quiz_button")
 async def handle_quiz_button(callback_query: types.CallbackQuery):
-    themes = DBService.get_themes()
-    if not themes:
+    themes_result = DBService.get_themes()
+    if isinstance(themes_result, DataSuccess):
+        themes = themes_result.data  # Извлекаем список словарей
+    else:
         await callback_query.message.answer("🚫 Темы для викторины не найдены.")
         return
 
@@ -30,7 +33,13 @@ async def handle_theme_selection(callback_query: CallbackQuery, callback_data: Q
     theme_id = callback_data.theme_id
     user_id = callback_query.from_user.id
 
-    questions = DBService.get_questions_by_theme(theme_id)
+    questions_result = DBService.get_questions_by_theme(theme_id)
+    if isinstance(questions_result, DataSuccess):
+        questions = questions_result.data  # Извлекаем список вопросов
+    else:
+        await callback_query.message.answer("🚫 Вопросы по выбранной теме не найдены.")
+        return
+
     if not questions:
         await callback_query.message.answer("🚫 Вопросы по выбранной теме не найдены.")
         return
@@ -55,13 +64,19 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         await callback_query.answer("🚫 Викторина не активна.")
         return
 
-    selected_answer = callback_data.answer
+    selected_answer_index = callback_data.answer_index  # Получаем индекс выбранного ответа
     questions = user_state["questions"]
     current_question_index = user_state["current_question"]
     current_question = questions[current_question_index]
 
-    correct_answer = current_question["correct_answer"]
-    if selected_answer == correct_answer:
+    answers = current_question["answers"]  # Получаем список ответов
+    correct_answer = current_question["correct_answer"]  # Получаем текст правильного ответа
+
+    # Находим индекс правильного ответа в списке answers
+    correct_answer_index = answers.index(correct_answer)
+
+    # Сравниваем индекс выбранного ответа с индексом правильного ответа
+    if selected_answer_index == correct_answer_index:
         user_state["score"] += 1
 
     user_state["current_question"] += 1
@@ -72,13 +87,11 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         score = user_state["score"]
         total_questions = len(questions)
         
-        # Удаляем сообщение с вопросами
         await callback_query.message.bot.delete_message(
             chat_id=callback_query.message.chat.id,
             message_id=user_state["message_id"]
         )
 
-        # Отправляем сообщение с результатами
         await callback_query.message.answer(
             f"🎉 *Викторина завершена!*\n"
             f"✅ Вы ответили правильно на *{score}* из *{total_questions}* вопросов.",
@@ -91,6 +104,7 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
 async def send_question(message: Message, user_id: int):
     user_state = user_data[user_id]
     questions = user_state["questions"]
+    print(questions)
     current_question_index = user_state["current_question"]
     question_data = questions[current_question_index]
 

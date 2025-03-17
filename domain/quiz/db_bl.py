@@ -1,5 +1,5 @@
-from db_dal import FileRepository, WebRepository, QuizRepository, DBRepository
-from models.quiz import QuizData, ThemeCreate, QuizCreate
+from domain.quiz.db_dal import FileRepository, WebRepository, QuizRepository, DBRepository
+from domain.quiz.models.quiz import QuizData, ThemeCreate, QuizCreate
 from typing import Optional
 
 
