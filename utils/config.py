@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     DB_NAME : str
     OWNERS: list
     USER : str
+    IMAGES_PATH: str
     PASSWORD : str
     PORT_NAME: str
     HOST_NAME : str
