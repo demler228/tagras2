@@ -173,7 +173,7 @@ class MapsDbDal:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                section_base = FloorBase(name=section.name,photo_path=section.photo_path,building_id=section.floor_id)
+                section_base = SectionBase(name=section.name,photo_path=section.photo_path,floor_id=section.floor_id)
                 session.add(section_base)
 
             except Exception as e:
@@ -186,14 +186,14 @@ class MapsDbDal:
                 return DataSuccess(section_base.id)
 
     @staticmethod
-    def building_delete(building_id: int) -> DataState:
+    def building_delete(building: Building) -> DataState:
         Session = connection_db()
 
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                session.query(BuildingBase).filter(BuildingBase.id == building_id).delete()
+                session.query(BuildingBase).filter(BuildingBase.id == building.id).delete()
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
@@ -205,14 +205,14 @@ class MapsDbDal:
                 return DataSuccess()
 
     @staticmethod
-    def floor_delete(floor_id: int) -> DataState:
+    def floor_delete(floor: Floor) -> DataState:
         Session = connection_db()
 
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                session.query(FloorBase).filter(FloorBase.id == floor_id).delete()
+                session.query(FloorBase).filter(FloorBase.id == floor.id).delete()
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
@@ -224,14 +224,14 @@ class MapsDbDal:
                 return DataSuccess()
 
     @staticmethod
-    def section_delete(section_id: int) -> DataState:
+    def section_delete(section: Section) -> DataState:
         Session = connection_db()
 
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                session.query(SectionBase).filter(SectionBase.id == section_id).delete()
+                session.query(SectionBase).filter(SectionBase.id == section.id).delete()
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
@@ -239,5 +239,77 @@ class MapsDbDal:
                 return DataFailedMessage('Ошибка в удалении отдела!')
             else:
                 session.commit()  # - используйте, если что-то меняете
+
+                return DataSuccess()
+
+    @staticmethod
+    def update_building(building: Building) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                building_base = session.query(BuildingBase).get(building.id)
+                if not building_base:
+                    return DataFailedMessage('Здание было удалено!')
+
+                building_base.name = building.name
+                building_base.photo_path = building.photo_path
+
+            except Exception as e:
+                session.rollback() # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+            else:
+                session.commit() # - используйте, если что-то меняете
+
+                return DataSuccess()
+
+    @staticmethod
+    def update_floor(floor: Floor) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                floor_base = session.query(FloorBase).get(floor.id)
+                if not floor_base:
+                    return DataFailedMessage('Этаж был удален!')
+
+                floor_base.name = floor.name
+                floor_base.photo_path = floor.photo_path
+
+            except Exception as e:
+                session.rollback() # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+            else:
+                session.commit() # - используйте, если что-то меняете
+
+                return DataSuccess()
+
+    @staticmethod
+    def update_section(section: Section) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                section_base = session.query(SectionBase).get(section.id)
+                if not section_base:
+                    return DataFailedMessage('Отдел был удален!')
+
+                section_base.name = section.name
+                section_base.photo_path = section.photo_path
+
+            except Exception as e:
+                session.rollback() # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+            else:
+                session.commit() # - используйте, если что-то меняете
 
                 return DataSuccess()

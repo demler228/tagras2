@@ -3,11 +3,9 @@ from application.tg_bot.office_maps.personal_actions.keyboards.callback_factorie
 from domain.office_maps.db_bl import MapsDbBl
 
 from .callback_factories import (
-    BuildingCallbackFactory,
-    FloorCallbackFactory,
-    SectionCallbackFactory,
-    BackToBuildingCallbackFactory, DeleteBuildingCallbackFactory, ChangeNameBuildingCallbackFactory,
-    ChangePhotoBuildingCallbackFactory,
+    AdminBuildingCallbackFactory,
+    AdminFloorCallbackFactory,
+    AdminSectionCallbackFactory,
 )
 from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallbackFactory
 from utils.data_state import DataSuccess
@@ -26,7 +24,7 @@ def get_buildings_keyboard():
         for building in data_state.data:
             builder.button(
                 text=building.name,
-                callback_data=BuildingCallbackFactory(building_id=building.id)
+                callback_data=AdminBuildingCallbackFactory(building_id=building.id)
             )
     else:
         # Если данные не получены, можно добавить кнопку с сообщением об ошибке
@@ -44,20 +42,20 @@ def get_floors_keyboard(building_id: int):
     builder = InlineKeyboardBuilder()
 
     builder.button(
-        text="Добавить здание",
-        callback_data='create_building'
+        text="Добавить этаж",
+        callback_data='create_floor'
     )
     builder.button(
         text="Изменить название",
-        callback_data=ChangeNameBuildingCallbackFactory(building_id=building_id)
+        callback_data='change_building_name'
     )
     builder.button(
         text="Изменить фото",
-        callback_data=ChangePhotoBuildingCallbackFactory(building_id=building_id)
+        callback_data='change_building_photo'
     )
     builder.button(
         text="Удалить здание",
-        callback_data=DeleteBuildingCallbackFactory(building_id=building_id)
+        callback_data='delete_building'
     )
     # Получаем список этажей для конкретного здания
     data_state = MapsDbBl.get_floors_by_building(building_id)
@@ -65,7 +63,7 @@ def get_floors_keyboard(building_id: int):
         for floor in data_state.data:
             builder.button(
                 text=floor.name,
-                callback_data=FloorCallbackFactory(building_id=building_id, floor_id=floor.id)
+                callback_data=AdminFloorCallbackFactory(building_id=building_id, floor_id=floor.id)
             )
     else:
         # Если данные не получены, можно добавить кнопку с сообщением об ошибке
@@ -73,11 +71,11 @@ def get_floors_keyboard(building_id: int):
 
     builder.button(
         text="🔙 Назад к зданиям",
-        callback_data='back_to_buildings'
+        callback_data='office_maps_button_admin'
     )
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackToMenuCallbackFactory()
+        callback_data='back_to_admin_main_menu'
     )
     builder.adjust(1,3,1)
     return builder.as_markup()
@@ -109,7 +107,7 @@ def get_sections_keyboard(building_id: int, floor_id: int):
         for section in sections:
             builder.button(
                 text=section.name,
-                callback_data=SectionCallbackFactory(building_id=building_id, floor_id=floor_id, section_id=section.id)
+                callback_data=AdminSectionCallbackFactory(building_id=building_id, floor_id=floor_id, section_id=section.id)
             )
     else:
         # Если данные не получены, можно добавить кнопку с сообщением об ошибке
@@ -118,13 +116,13 @@ def get_sections_keyboard(building_id: int, floor_id: int):
     # Кнопка "Назад к зданиям"
     builder.button(
         text="🔙 Назад к этажам",
-        callback_data=BuildingCallbackFactory(building_id=building_id)
+        callback_data=AdminBuildingCallbackFactory(building_id=building_id)
     )
 
     # Кнопка "Назад в меню"
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackToMenuCallbackFactory()
+        callback_data='back_to_admin_main_menu'
     )
 
     builder.adjust(1,3,1)
@@ -148,13 +146,13 @@ def get_section_keyboard(building_id: int, floor_id: int):
     # Кнопка "Назад к этажам"
     builder.button(
         text="🔙 Назад к отделам",
-        callback_data=BackToSectionCallbackFactory(building_id=building_id, floor_id=floor_id)
+        callback_data=AdminFloorCallbackFactory(building_id=building_id, floor_id=floor_id)
     )
 
     # Кнопка "Назад в меню"
     builder.button(
         text="🔙 Назад в меню",
-        callback_data=BackToMenuCallbackFactory()
+        callback_data='back_to_admin_main_menu'
     )
 
     builder.adjust(3,1)
