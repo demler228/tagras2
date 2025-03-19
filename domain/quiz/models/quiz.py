@@ -1,37 +1,48 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
-from sqlalchemy.orm import relationship
-from models.base import Base
+from sqlalchemy.orm import relationship, Mapped, mapped_column
 from pydantic import BaseModel
 
-class Theme(Base):
+from domain.quiz.models.base import Base
+
+
+class ThemeBase(Base):
     __tablename__ = "themes"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    theme_name = Column(String, nullable=False)
-    questions = relationship("Question", back_populates="theme")
 
-class Question(Base):
-    __tablename__ = "questions"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    theme_id = Column(Integer, ForeignKey("themes.id"), nullable=False)
-    question_text = Column(String, nullable=False)
-    theme = relationship("Theme", back_populates="questions")
-    answers = relationship("Answer", back_populates="question")
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column()
 
-class Answer(Base):
+
+class QuestionBase(Base):
+    __tablename__ = 'questions'
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    theme_id: Mapped[int] = mapped_column(ForeignKey("themes.id"), nullable=False)
+    text: Mapped[str] = mapped_column(String, nullable=False)
+
+    answers: Mapped[list["AnswerBase"]] = relationship("AnswerBase", back_populates="question")
+
+
+class AnswerBase(Base):
     __tablename__ = "answers"
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    question_id = Column(Integer, ForeignKey("questions.id"), nullable=False)
-    answer_text = Column(String, nullable=False)
-    is_correct = Column(Boolean, nullable=False)
-    question = relationship("Question", back_populates="answers")
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    question_id: Mapped[int] = mapped_column(ForeignKey("questions.id"), nullable=False)
+    text: Mapped[str] = mapped_column(String, nullable=False)
+    is_correct: Mapped[bool] = mapped_column(Boolean, nullable=False)
+
+    question: Mapped["QuestionBase"] = relationship("QuestionBase", back_populates="answers")
+
+
 
 class QuizData(BaseModel):
     question: str
     answers: list[str]
     correct_answer: str
 
+
 class ThemeCreate(BaseModel):
     theme_name: str
+
 
 class QuizCreate(BaseModel):
     theme_name: str

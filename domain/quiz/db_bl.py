@@ -1,6 +1,9 @@
-from db_dal import FileRepository, WebRepository, QuizRepository, DBRepository
-from models.quiz import QuizData, ThemeCreate, QuizCreate
 from typing import Optional
+
+from domain.training.education.bl_models import EducationBL
+from .db_dal import FileRepository, WebRepository, QuizRepository, QuizDAL
+from .models.quiz import QuizData, ThemeCreate, QuizCreate
+
 
 
 class FileService:
@@ -24,11 +27,12 @@ class QuizService:
 class DBService:
     @staticmethod
     def save_quiz(quiz_data: list, theme_name: str) -> bool:
-        return DBRepository.save_quiz(quiz_data, theme_name)
+        return QuizDAL.save_quiz(quiz_data, theme_name)
+
     @staticmethod
     def get_themes():
-        return DBRepository.get_themes()
+        return EducationBL.get_themes()
 
     @staticmethod
     def get_questions_by_theme(theme_id: int):
-        return DBRepository.get_questions_by_theme(theme_id)
+        return QuizDAL.get_questions_by_theme(theme_id)
