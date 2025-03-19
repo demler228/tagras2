@@ -12,7 +12,7 @@ from utils.data_state import DataSuccess, DataState
 class MapsDbBl:
 
     @staticmethod
-    def get_buildings() -> DataState:
+    def get_buildings() -> DataState[list[Building]]:
         """
         Получает список всех зданий.
         """

@@ -1,11 +1,9 @@
 import os
-
 from aiogram import Router, types, F
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
-from aiogram.types import FSInputFile, InputMediaPhoto, Message
+from aiogram.types import FSInputFile, Message
 from loguru import logger
-
 from domain.office_maps.db_bl import MapsDbBl
 from utils.config import settings
 from .keyboards import (

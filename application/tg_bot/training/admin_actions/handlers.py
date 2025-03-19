@@ -14,7 +14,7 @@ from application.tg_bot.training.admin_actions.keyboards.theme_choose_materials_
     ThemeChooseMaterialsCallback, get_theme_choose_materials_keyboard
 from application.tg_bot.training.entities.materials import Material
 from application.tg_bot.training.entities.theme import Theme
-from domain.training.education.bl_models import EducationBL
+from domain.training.education.db_bl import EducationBL
 from utils.data_state import DataSuccess
 
 router = Router()

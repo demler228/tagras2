@@ -1,14 +1,17 @@
-from sqlalchemy import String
+from xmlrpc.client import DateTime
+
+from sqlalchemy import String, DATETIME
 from sqlalchemy.orm import Mapped, mapped_column
 from utils.base_model import Base
 
 
-class FaqBase(Base):
-    __tablename__ = "faq"
+class EventBase(Base):
+    __tablename__ = "events"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    question: Mapped[str] = mapped_column(String)
-    answer: Mapped[str] = mapped_column(String)
+    name: Mapped[str] = mapped_column(String)
+    description: Mapped[str] = mapped_column(String)
+    date: Mapped[DateTime] = mapped_column(DATETIME)
 
     #чисто для отладки, чтобы в консоли нормально объекты видеть
     def __repr__(self):

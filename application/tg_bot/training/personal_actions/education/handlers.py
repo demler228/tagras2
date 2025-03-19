@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import  get_main_menu_keyboard
 from .keyboards.education_themes_keyboard import get_themes_keyboard, get_materials_keyboard, ThemeCallback
-from domain.training.education.bl_models import EducationBL
+from domain.training.education.db_bl import EducationBL
 
 
 router = Router()
