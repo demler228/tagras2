@@ -1,5 +1,7 @@
 from aiogram import Router, types, F
 from aiogram.types import FSInputFile, InputMediaPhoto
+
+from domain.office_maps.db_bl import MapsDbBl
 from .keyboards import (
     get_buildings_keyboard,
     get_floors_keyboard,
@@ -13,7 +15,6 @@ from .keyboards import (
     BackToFloorCallbackFactory,
     BackToSectionCallbackFactory,
 )
-from domain.office_maps.db_bl import BuildingDbBl, FloorDbBl, SectionDbBl
 from utils.data_state import DataSuccess
 
 router = Router()
@@ -29,7 +30,7 @@ async def handle_office_maps_button(callback_query: types.CallbackQuery):
 @router.callback_query(BuildingCallbackFactory.filter())
 async def handle_building_selection(callback_query: types.CallbackQuery, callback_data: BuildingCallbackFactory):
     building_id = callback_data.building_id
-    data_state = BuildingDbBl.get_buildings()  # Получаем список всех зданий
+    data_state = MapsDbBl.get_buildings()  # Получаем список всех зданий
     if isinstance(data_state, DataSuccess):
         buildings = data_state.data
         # Ищем здание по ID
@@ -58,7 +59,7 @@ async def handle_floor_selection(
     building_id = callback_data.building_id
 
     # Получаем данные этажа
-    data_state = FloorDbBl.get_floors_by_building(building_id)
+    data_state = MapsDbBl.get_floors_by_building(building_id)
     if isinstance(data_state, DataSuccess):
         floors = data_state.data
         floor = next((f for f in floors if f.id == floor_id), None)
@@ -87,7 +88,7 @@ async def handle_section_selection(
     building_id = callback_data.building_id
 
     # Получаем данные отдела
-    data_state = SectionDbBl.get_sections_by_floor(floor_id)
+    data_state = MapsDbBl.get_sections_by_floor(floor_id)
     if isinstance(data_state, DataSuccess):
         sections = data_state.data
         section = next((s for s in sections if s.id == section_id), None)
@@ -125,7 +126,7 @@ async def handle_back_to_building_button(callback_query: types.CallbackQuery, ca
 @router.callback_query(BackToFloorCallbackFactory.filter())
 async def handle_back_to_floor_button(callback_query: types.CallbackQuery, callback_data: BackToFloorCallbackFactory):
     building_id = callback_data.building_id
-    data_state = BuildingDbBl.get_buildings()  # Получаем список всех зданий
+    data_state = MapsDbBl.get_buildings()  # Получаем список всех зданий
     if isinstance(data_state, DataSuccess):
         buildings = data_state.data
         # Ищем здание по ID
@@ -156,7 +157,7 @@ async def handle_back_to_sections(
     floor_id = callback_data.floor_id
 
     # Получаем данные этажа
-    data_state = FloorDbBl.get_floors_by_building(building_id)
+    data_state = MapsDbBl.get_floors_by_building(building_id)
     if isinstance(data_state, DataSuccess):
         floors = data_state.data
         floor = next((f for f in floors if f.id == floor_id), None)
