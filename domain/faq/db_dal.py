@@ -1,10 +1,10 @@
 from aiogram.client.session.middlewares.request_logging import logger
 from sqlalchemy import select
+from pydantic import BaseModel
+
 from application.tg_bot.faq.entities.faq import Faq
 from domain.faq.models.faq import FaqBase
 from utils.connection_db import connection_db
-from pydantic import BaseModel
-
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 
 
@@ -86,10 +86,10 @@ class FaqDbDal(BaseModel):
                 session.add(faq_base)
 
             except Exception as e:
-                session.rollback() # - используйте, если что-то меняете
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
-                session.commit() # - используйте, если что-то меняете
+                session.commit()
 
                 return DataSuccess(faq_base.id)

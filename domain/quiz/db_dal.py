@@ -7,13 +7,16 @@ import moviepy as mp
 import whisper
 import json
 import uuid
-from domain.quiz.modules.utils import remove_empty_lines
+from aiogram.client.session.middlewares.request_logging import logger
 from sqlalchemy import select
-from sqlalchemy.orm import Session
-from domain.quiz.models.quiz import Theme, Question, Answer
+
+from application.tg_bot.training.entities.questions import Question
+from .models.quiz import QuestionBase, AnswerBase
+from domain.training.education.models.theme import ThemeBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
-from aiogram.client.session.middlewares.request_logging import logger
+from .modules.utils import remove_empty_lines
+
 
 class FileRepository:
     @staticmethod
@@ -47,6 +50,7 @@ class FileRepository:
             return FileRepository.process_docx(file_path)
         return None
 
+
 class WebRepository:
     @staticmethod
     def process_url(url):
@@ -61,6 +65,7 @@ class WebRepository:
         except requests.RequestException as e:
             print(f"Ошибка при загрузке страницы: {e}")
             return None
+
 
 class QuizRepository:
     client_id = "ce7d7680-4bf7-4ff3-b172-3be3794aa5b8"
@@ -140,7 +145,8 @@ class QuizRepository:
             print(f"Произошла ошибка: {str(e)}")
             return None
 
-class DBRepository:
+
+class QuizDAL:
     @staticmethod
     def save_quiz(quiz_data: list, theme_name: str) -> DataState:
         Session = connection_db()
@@ -150,28 +156,28 @@ class DBRepository:
         
         with Session() as session:
             try:
-                theme = Theme(theme_name=theme_name)
+                theme = ThemeBase(name=theme_name)
                 session.add(theme)
                 session.commit()
 
                 for question_data in quiz_data:
-                    question = Question(
-                        question_text=question_data["question"],
+                    question = QuestionBase(
+                        text=question_data["question"],
                         theme_id=theme.id
                     )
                     session.add(question)
                     session.commit()
 
-                    correct_answer = Answer(
-                        answer_text=question_data["correct_answer"],
+                    correct_answer = AnswerBase(
+                        text=question_data["correct_answer"],
                         is_correct=True,
                         question_id=question.id
                     )
                     session.add(correct_answer)
 
                     for incorrect_answer in question_data["incorrect_answers"]:
-                        answer = Answer(
-                            answer_text=incorrect_answer,
+                        answer = AnswerBase(
+                            text=incorrect_answer,
                             is_correct=False,
                             question_id=question.id
                         )
@@ -179,23 +185,9 @@ class DBRepository:
 
                 session.commit()
                 return DataSuccess()
+
             except Exception as e:
                 session.rollback()
-                logger.error(e)
-                return DataFailedMessage("Ошибка в работе базы данных!")
-
-    @staticmethod
-    def get_themes() -> DataState:
-        Session = connection_db()
-
-        if Session is None:
-            return DataFailedMessage("Ошибка в работе базы данных!")
-        
-        with Session() as session:
-            try:
-                themes = session.execute(select(Theme)).scalars().all()
-                return DataSuccess([{"id": theme.id, "theme_name": theme.theme_name} for theme in themes])
-            except Exception as e:
                 logger.error(e)
                 return DataFailedMessage("Ошибка в работе базы данных!")
 
@@ -205,28 +197,40 @@ class DBRepository:
 
         if Session is None:
             return DataFailedMessage("Ошибка в работе базы данных!")
-        
+
         with Session() as session:
             try:
-                questions = session.execute(
-                    select(Question).where(Question.theme_id == theme_id)
+                questions_db = session.execute(
+                    select(QuestionBase).where(QuestionBase.theme_id == theme_id)
                 ).scalars().all()
 
                 result = []
-                for question in questions:
-                    answers = session.execute(
-                        select(Answer).where(Answer.question_id == question.id)
+
+                for question_db in questions_db:
+                    answers_db = session.execute(
+                        select(AnswerBase).where(AnswerBase.question_id == question_db.id)
                     ).scalars().all()
 
-                    result.append({
-                        "question_text": question.question_text,
-                        "answers": [answer.answer_text for answer in answers],
-                        "correct_answer": next(
-                            answer.answer_text for answer in answers if answer.is_correct
-                        ),
-                    })
+                    answers = [answer_db.text for answer_db in answers_db]
+                    print(f'answers dal - {answers}')
+
+                    correct_answer = next((answer_db.text for answer_db in answers_db if answer_db.is_correct), None)
+                    print(f'correct answer dal - {correct_answer}')
+
+                    question_obj = Question(
+                        id=question_db.id,
+                        theme_id=question_db.theme_id,
+                        text=question_db.text,
+                        answers=answers,
+                        correct_answer=correct_answer
+                    )
+
+                    result.append(question_obj)
 
                 return DataSuccess(result)
             except Exception as e:
                 logger.error(e)
                 return DataFailedMessage("Ошибка в работе базы данных!")
+
+
+
