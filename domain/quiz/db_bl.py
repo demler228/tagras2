@@ -1,6 +1,6 @@
 from typing import Optional
 
-from domain.training.education.bl_models import EducationBL
+from domain.training.education.db_bl import EducationBL
 from .db_dal import FileRepository, WebRepository, QuizRepository, QuizDAL
 from .models.quiz import QuizData, ThemeCreate, QuizCreate
 
