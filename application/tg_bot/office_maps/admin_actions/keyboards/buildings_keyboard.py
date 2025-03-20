@@ -1,5 +1,5 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from application.tg_bot.office_maps.admin_actions.keyboards import AdminBuildingCallbackFactory
+from .callback_factories import AdminBuildingCallbackFactory
 from domain.office_maps.db_bl import MapsDbBl
 from utils.data_state import DataSuccess
 
