@@ -7,5 +7,5 @@ from application.tg_bot.menu.admin_actions.handlers import router as admin_actio
 
 router = Router()
 
-router.include_router(employee_router)
 router.include_router(admin_actions_router)
+router.include_router(employee_router)

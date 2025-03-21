@@ -40,7 +40,7 @@ async def handle_events_button(callback_query: types.CallbackQuery, callback_dat
             for event in events:
                 if event.date.day == current_date.day:
                     this_day_events.append(event)
-                    text += f'\n\t\t<b>{event.name}</b> - {event.description}'
+                    text += f'\n\t\t<b>{event.date.strftime("%H:%M")} {event.name}</b> - {event.description}'
             if len(this_day_events) == 0:
                 text+='\n\t\tНету мероприятий.'
             text += '\n'

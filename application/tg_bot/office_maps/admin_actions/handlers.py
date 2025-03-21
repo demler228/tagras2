@@ -77,7 +77,7 @@ async def section_selection(
         await state.update_data({'message': answer,'section':section}) #!!!!!!!!!
 
     else:
-        await callback_query.message.answer(data_state.message)
+        await callback_query.message.answer(data_state.error_message)
 
 # Обработчик кнопки "Карта офиса"
 @router.callback_query(F.data == "office_maps_button_admin")
@@ -120,7 +120,7 @@ async def floors_button(state: FSMContext, message: Message=None, building_id:in
         )
         await state.update_data({'message': answer,'building':building}) #!!!!!!!!!
     else:
-        await message.answer(data_state.message)
+        await message.answer(data_state.error_message)
 
 @router.callback_query(AdminFloorCallbackFactory.filter())
 async def handle_floors_selection(callback_query: types.CallbackQuery, callback_data: AdminFloorCallbackFactory, state: FSMContext):

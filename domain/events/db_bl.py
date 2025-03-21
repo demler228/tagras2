@@ -17,3 +17,27 @@ class EventDbBl(BaseModel):
             data_state = EventDbDal.get_events_by_user_id(user_id, start_date, end_date)
 
         return data_state
+
+    @staticmethod
+    def create_event(event: Event) -> DataState[int]:
+        data_state = EventDbDal.create_event(event)
+
+        return data_state
+
+    @staticmethod
+    def get_event(event_id: int) -> DataState[Event]:
+        data_state = EventDbDal.get_event(event_id)
+
+        return data_state
+
+    @staticmethod
+    def delete_event(event: Event) -> DataState:
+        data_state = EventDbDal.delete_event(event)
+
+        return data_state
+
+    @staticmethod
+    def update_event(event: Event) -> DataState[Event]:
+        data_state = EventDbDal.update_event(event)
+
+        return data_state
