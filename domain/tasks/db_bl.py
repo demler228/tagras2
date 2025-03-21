@@ -1,8 +1,15 @@
-from pydantic import BaseModel, Field
+# db_bl.py
+import os
 
-class Section(BaseModel):
+from loguru import logger
 
-    id: int = Field(default=-1)
-    name: str
-    photo_path: str
-    floor_id: int
+from application.tg_bot.tasks.entities.task import Task
+from application.tg_bot.tasks.entities.user_tasks import UserTask
+from .db_dal import TasksDbDal
+from utils.data_state import DataSuccess, DataState
+
+class TasksDbBl:
+
+    @staticmethod
+    def get_tasks() -> DataState[list[Task]]:
+        return TasksDbDal.get_tasks()
