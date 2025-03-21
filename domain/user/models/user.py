@@ -1,16 +1,11 @@
-import enum
 from xmlrpc.client import DateTime
 
 from sqlalchemy import String, DATETIME, Integer, Enum
 from sqlalchemy.dialects.postgresql import TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from domain.events.models.user_events import UserEvent
 from utils.base_model import Base
 
-# class MyEnum(enum.Enum):
-#     user = 0
-#     admin = 1
 
 class UserBase(Base):
     __tablename__ = "users"
