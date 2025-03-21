@@ -7,6 +7,7 @@ from application.tg_bot.menu.admin_actions.keyboards.menu_keyboard import get_ad
 
 
 router = Router()
+
 router.message.filter(F.chat.type == "private", IsAdminFilter()) # allow bot admin actions only for bot owner
 
 @router.message(CommandStart())

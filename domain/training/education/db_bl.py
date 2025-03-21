@@ -1,7 +1,7 @@
 from application.tg_bot.training.entities.materials import Material
 from application.tg_bot.training.entities.theme import Theme
 from utils.data_state import DataState
-from .dal_models import EducationDAL
+from .db_dal import EducationDAL
 
 
 class EducationBL(object):

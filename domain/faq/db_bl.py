@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+
 from application.tg_bot.faq.entities.faq import Faq
 from domain.faq.db_dal import FaqDbDal
 from utils.data_state import DataSuccess, DataState
