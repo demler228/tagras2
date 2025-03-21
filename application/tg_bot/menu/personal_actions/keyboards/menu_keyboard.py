@@ -10,6 +10,7 @@ def get_main_menu_keyboard() -> InlineKeyboardMarkup:
     builder.button(text="FAQ", callback_data="faq_button")
     builder.button(text="Полезные контакты", callback_data="contacts_button")
     builder.button(text="Мероприятия и встречи", callback_data="events_button")
+    builder.button(text="Задачи", callback_data="tasks_button")
     builder.button(text="Мой профиль", callback_data="profile_button")
     builder.button(text="Карты офиса", callback_data="office_maps_button")
     builder.button(text="ИИ - Помощник", callback_data="ai_assistant_button")
