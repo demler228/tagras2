@@ -95,4 +95,18 @@ class UserDbDal:
         except Exception as e:
             return DataFailedMessage(error_message=str(e))
 
+    @staticmethod
+    def get_users_by_name(username: str) -> DataState:
+        Session = connection_db()
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                statement = select(UserBase).where(UserBase.username.ilike(f'%{username}%'))
+                users = session.scalars(statement).all()
+                return DataSuccess(users)
+            except Exception as e:
+                logger.exception(e)
+                return DataFailedMessage('Ошибка в получении пользователей!')
+
 

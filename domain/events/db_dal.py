@@ -5,7 +5,7 @@ from sqlalchemy import select
 
 from application.tg_bot.events.entites.event import Event
 from domain.events.models.event import EventBase
-from domain.events.models.user_events import UserEvent
+from domain.events.models.user_events import UserEventBase
 from domain.user.models.user import UserBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataFailedMessage, DataSuccess
@@ -22,8 +22,8 @@ class EventDbDal:
             try:
                 events =  (
                     session.query(EventBase)
-                    .join(UserEvent, EventBase.id == UserEvent.event_id)
-                    .join(UserBase, UserBase.id == UserEvent.user_id)
+                    .join(UserEventBase, EventBase.id == UserEventBase.event_id)
+                    .join(UserBase, UserBase.id == UserEventBase.user_id)
                     .filter(UserBase.id == user_id,
                     EventBase.date >= start_date,
                     EventBase.date <= end_date)).all()
@@ -107,5 +107,61 @@ class EventDbDal:
                 return DataFailedMessage('Ошибка в удалении мероприятия!')
             else:
                 session.commit()  # - используйте, если что-то меняете
+
+                return DataSuccess()
+
+    @staticmethod
+    def get_event_members(event_id: int) -> DataState:
+        Session = connection_db()
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                members =  (
+                    session.query(UserBase)
+                    .join(UserEventBase, UserBase.id == UserEventBase.user_id)
+                    .join(EventBase,EventBase.id == UserEventBase.event_id)
+                    .filter(EventBase.id == event_id)).all()
+
+                return DataSuccess(members)
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage('Ошибка в получении участников мероприятия!')
+
+    @staticmethod
+    def delete_member(user_id: int, event_id: int) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                session.query(UserEventBase).filter(UserEventBase.user_id == user_id, UserEventBase.event_id == event_id).delete()
+            except Exception as e:
+                session.rollback()  # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Ошибка в удалении пользователя из мероприятия!')
+            else:
+                session.commit()  # - используйте, если что-то меняете
+
+                return DataSuccess()
+
+    @staticmethod
+    def add_member(user_id: int, event_id: int) -> DataState:
+        Session = connection_db()
+
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                user_event_base = UserEventBase(user_id=user_id, event_id=event_id)
+                session.add(user_event_base)
+
+            except Exception as e:
+                session.rollback() # - используйте, если что-то меняете
+                logger.error(e)
+                return DataFailedMessage('Не удалось добавить пользователя в мероприятие!')
+            else:
+                session.commit() # - используйте, если что-то меняете
 
                 return DataSuccess()

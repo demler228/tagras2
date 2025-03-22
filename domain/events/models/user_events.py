@@ -2,7 +2,7 @@ from sqlalchemy import Column, ForeignKey, Integer
 from utils.base_model import Base
 
 
-class UserEvent(Base):
+class UserEventBase(Base):
     __tablename__ = 'user_events'
 
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)

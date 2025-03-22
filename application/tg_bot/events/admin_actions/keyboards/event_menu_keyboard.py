@@ -1,6 +1,10 @@
+from aiogram.filters.callback_data import CallbackData
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-def get_event_menu_keyboard():
+class BackToEventMenuCallback(CallbackData, prefix="back_to_event_menu"):
+    event_id: int
+
+def get_event_menu_keyboard(event_id: int):
     builder = InlineKeyboardBuilder()
     builder.button(
         text="Изменить название",
@@ -15,8 +19,8 @@ def get_event_menu_keyboard():
         callback_data='change_event_date'
     )
     builder.button(
-        text="Изменить участников",
-        callback_data='change_event_users'
+        text="Удалить участника(ов)",
+        callback_data='change_event_members'
     )
     builder.button(
         text="Удалить мероприятие",
@@ -24,7 +28,7 @@ def get_event_menu_keyboard():
     )
     builder.button(
         text="🔙 Назад",
-        callback_data='events_button_admin'
+        callback_data=BackToEventMenuCallback(event_id)
     )
     builder.adjust(1)
     return builder.as_markup()
