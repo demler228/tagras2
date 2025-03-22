@@ -9,11 +9,11 @@ from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallback
 from utils.data_state import DataSuccess
 
 
-def get_tasks_keyboard():
+def get_tasks_for_user_keyboard(tg_id):
     builder = InlineKeyboardBuilder()
 
     # Получаем список зданий из базы данных
-    data_state = TasksDbBl.get_tasks()
+    data_state = TasksDbBl.get_tasks_by_tg_id(tg_id)
     if isinstance(data_state, DataSuccess):
         for task in data_state.data:
             builder.button(
