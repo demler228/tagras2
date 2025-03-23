@@ -17,7 +17,6 @@ from .keyboards import (
 # Создаем роутер для редактирования
 router = Router()
 
-
 # Состояния для редактирования
 class EditEmployeeStates(StatesGroup):
     username = State()
@@ -25,7 +24,6 @@ class EditEmployeeStates(StatesGroup):
     phone = State()
     role = State()
     telegram_username = State()
-
 
 # Обработчик для выбора поля для редактирования
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_field"))
@@ -36,63 +34,53 @@ async def handle_edit_field(callback: CallbackQuery, callback_data: EmployeeCall
         reply_markup=get_employee_edit_keyboard(callback_data.employee_id)
     )
 
-
 # Обработчики для выбора конкретного поля
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_name"))
 async def handle_edit_name(callback: CallbackQuery, callback_data: EmployeeCallback, state: FSMContext):
-    # Сохраняем employee_id в состоянии
     await state.update_data(employee_id=callback_data.employee_id)
     await callback.message.edit_text("Введите новое имя сотрудника:")
     await state.set_state(EditEmployeeStates.username)
 
-
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_description"))
 async def handle_edit_description(callback: CallbackQuery, callback_data: EmployeeCallback, state: FSMContext):
-    # Сохраняем employee_id в состоянии
     await state.update_data(employee_id=callback_data.employee_id)
     await callback.message.edit_text("Введите новое описание сотрудника:")
     await state.set_state(EditEmployeeStates.description)
 
-
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_phone"))
 async def handle_edit_phone(callback: CallbackQuery, callback_data: EmployeeCallback, state: FSMContext):
-    # Сохраняем employee_id в состоянии
     await state.update_data(employee_id=callback_data.employee_id)
     await callback.message.edit_text("Введите новый телефон сотрудника:")
     await state.set_state(EditEmployeeStates.phone)
 
-
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_role"))
 async def handle_edit_role(callback: CallbackQuery, callback_data: EmployeeCallback, state: FSMContext):
-    # Сохраняем employee_id в состоянии
     await state.update_data(employee_id=callback_data.employee_id)
     await callback.message.edit_text("Введите новую роль сотрудника:")
     await state.set_state(EditEmployeeStates.role)
 
-
 @router.callback_query(EmployeeCallback.filter(F.action == "edit_telegram"))
 async def handle_edit_telegram(callback: CallbackQuery, callback_data: EmployeeCallback, state: FSMContext):
-    # Сохраняем employee_id в состоянии
     await state.update_data(employee_id=callback_data.employee_id)
     await callback.message.edit_text(
-        "Введите новый Telegram username сотрудника (например, @username) или введите \"-\" для пропуска этого поля:")
+        "Введите новый Telegram username сотрудника (например, @username) или введите \"-\" для пропуска этого поля:"
+    )
     await state.set_state(EditEmployeeStates.telegram_username)
 
-
+# Универсальный обработчик для сохранения изменений
 async def process_edit_field(message: Message, state: FSMContext, field_name: str):
     # Получаем данные из состояния
     user_data = await state.get_data()
     employee_id = user_data.get('employee_id')
-    new_value = user_data.get(f'new_{field_name}')  # Получаем новое значение из состояния
+    new_value = message.text.strip()
 
-    # Проверяем, что employee_id и new_value существуют
+    # Если поле telegram_username и введен "-", сохраняем None
+    if field_name == 'telegram_username' and new_value in ("-", ""):
+        new_value = None
+
+    # Проверяем, что employee_id существует
     if not employee_id:
         await message.answer("Ошибка: не удалось определить сотрудника для редактирования.")
-        await state.clear()
-        return
-
-    if new_value is None and field_name != 'telegram_username':  # telegram_username может быть None
-        await message.answer(f"Ошибка: новое значение для {field_name} не указано.")
         await state.clear()
         return
 
@@ -109,7 +97,7 @@ async def process_edit_field(message: Message, state: FSMContext, field_name: st
             if isinstance(data_state, DataSuccess):
                 await message.answer(
                     text=f"{field_name.capitalize()} сотрудника успешно обновлено!",
-                    reply_markup=get_admin_main_keyboard()
+                    reply_markup=get_admin_main_keyboard()  # Показываем меню выбора действия
                 )
             else:
                 await message.answer(
@@ -124,39 +112,23 @@ async def process_edit_field(message: Message, state: FSMContext, field_name: st
     # Очищаем состояние после завершения
     await state.clear()
 
-
 # Обработчики для каждого поля
 @router.message(EditEmployeeStates.username)
 async def process_edit_username(message: Message, state: FSMContext):
     await process_edit_field(message, state, 'username')
 
-
 @router.message(EditEmployeeStates.description)
 async def process_edit_description(message: Message, state: FSMContext):
     await process_edit_field(message, state, 'description')
-
 
 @router.message(EditEmployeeStates.phone)
 async def process_edit_phone(message: Message, state: FSMContext):
     await process_edit_field(message, state, 'phone')
 
-
 @router.message(EditEmployeeStates.role)
 async def process_edit_role(message: Message, state: FSMContext):
     await process_edit_field(message, state, 'role')
 
-
 @router.message(EditEmployeeStates.telegram_username)
 async def process_edit_telegram_username(message: Message, state: FSMContext):
-    # Получаем ввод пользователя
-    new_telegram_username = message.text.strip()
-
-    # Если пользователь ввел "-", сохраняем None (NULL в базе данных)
-    if new_telegram_username in ("-", ""):
-        new_telegram_username = None
-
-    # Обновляем состояние с новым значением
-    await state.update_data(new_telegram_username=new_telegram_username)
-
-    # Передаем управление в process_edit_field
     await process_edit_field(message, state, 'telegram_username')

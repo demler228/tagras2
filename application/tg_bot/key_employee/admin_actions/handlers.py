@@ -101,7 +101,7 @@ async def handle_view_employee(callback: CallbackQuery, callback_data: EmployeeC
 
 @router.callback_query(AdminActionCallback.filter(F.action == "add"))
 async def handle_add_employee(callback: CallbackQuery, state: FSMContext):
-    await callback.message.edit_text("Введите username сотрудника:")
+    await callback.message.edit_text("Введите ФИО сотрудника:")
     await state.set_state(AddEmployeeStates.username)
 
 

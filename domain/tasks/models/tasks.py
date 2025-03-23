@@ -1,7 +1,8 @@
 from xmlrpc.client import DateTime
 from sqlalchemy import String
 from sqlalchemy.dialects.postgresql import TIMESTAMP
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from domain.events.models.user_events import UserEventBase
 from utils.base_model import Base
 
 
