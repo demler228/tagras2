@@ -1,15 +1,7 @@
-from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from application.tg_bot.events.admin_actions.keyboards.callbacks import BackToEventMenuCallback, ChangeUserStateCallback
 from application.tg_bot.events.entites.userMember import UserMember
-
-class ChangeUserStateCallback(CallbackData, prefix="change_member_state"):
-    text: str
-    user_id: int
-    is_member: bool
-
-class BackToEventMenuCallback(CallbackData, prefix="back_to_event_menu"):
-    event_id: int
 
 def get_users_event_keyboard(text: str, members: list[UserMember], event_id: int) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()

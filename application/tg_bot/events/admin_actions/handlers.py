@@ -1,16 +1,24 @@
 from datetime import datetime
+import datetime as dd
 from aiogram import Router, F, types
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message
+
+from application.tg_bot.events.admin_actions.keyboards.callbacks import EventMonthCallback, EventWeekCallback, \
+    EventMenuFromCalendarCallback
 from application.tg_bot.events.admin_actions.keyboards.event_members_keyboard import ChangeMemberStateCallback, \
     get_members_event_keyboard
+from application.tg_bot.events.admin_actions.keyboards.event_months_keyboard import get_event_months_keyboard
 from application.tg_bot.events.admin_actions.keyboards.event_users_keyboard import get_users_event_keyboard, \
     ChangeUserStateCallback, BackToEventMenuCallback
 from application.tg_bot.events.admin_actions.keyboards.event_menu_keyboard import get_event_menu_keyboard
 from application.tg_bot.events.admin_actions.keyboards.event_start_keyboard import get_event_start_keyboard
+from application.tg_bot.events.admin_actions.keyboards.event_weeks_keyboard import get_event_weeks_keyboard
+from application.tg_bot.events.admin_actions.keyboards.events_for_week import get_events_for_week_keyboard
 from application.tg_bot.events.entites.event import Event
 from domain.events.db_bl import EventDbBl
+from utils.constants import months
 from utils.data_state import DataSuccess
 
 router = Router()
@@ -71,13 +79,20 @@ async def handle_create_event_date(message: Message, state: FSMContext):
     else:
         await message.answer('❌ Неверно ввели дату!\nВведите дату мероприятия в формате dd mm yyyy HH MM(20 03 2025 16 56):')
 
+@router.callback_query(EventMenuFromCalendarCallback.filter())
 @router.callback_query(BackToEventMenuCallback.filter())
-async def handle_event_menu_button(callback_query: types.CallbackQuery, callback_data: BackToEventMenuCallback, state: FSMContext):
-        pass # пока нету просмотра всех событий
+async def handle_event_menu_button(callback_query: types.CallbackQuery,
+                                   callback_data: [BackToEventMenuCallback, EventMenuFromCalendarCallback],
+                                   state: FSMContext):
         event_id = callback_data.event_id
         message = callback_query.message
+        if isinstance(callback_data, EventMenuFromCalendarCallback):
+            await state.update_data({'calendar': EventWeekCallback(month_id=callback_data.month_id,day_id=callback_data.day_id)})
         await message.delete()
-        await (await state.get_data())['message'].delete()
+        try:
+            await (await state.get_data())['message'].delete()
+        except Exception:
+            pass
         await  event_menu_button(state,message=callback_query.message,event_id=event_id)
 
 
@@ -89,13 +104,17 @@ async def event_menu_button(state: FSMContext, message: Message, event_id: int):
         event = data_state.data
         data_state = EventDbBl.get_event_members(event_id)
         if isinstance(data_state, DataSuccess):
+            callback = 'events_button_admin'
+            if 'calendar' in (await state.get_data()):
+                callback = (await state.get_data())['calendar']
+
             message = await message.answer(f'📅 <b>{event.name}</b>\nОписание: {event.description}\n'
                                                    f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
                                             f'Участники:\n{'Участников нету' if len(data_state.data) == 0 else
-                                            '\n'.join([f'<a href="https://t.me/{user.telegram_id}">{user.username}</a>'
+                                            '\n'.join([f'<a href="{user.tg_username}">{user.username}</a>'
                                                        for user in data_state.data])}\n\n❕ Чтобы добавить участника, напишите его имя.',
                                            parse_mode='HTML',
-                                           reply_markup=get_event_menu_keyboard(event_id))
+                                           reply_markup=get_event_menu_keyboard(event_id,callback))
             await state.update_data({'event': event,'message':message})
         else:
             await message.answer(f'❌ {data_state.error_message}')
@@ -163,8 +182,11 @@ async def delete_event_button(callback_query: types.CallbackQuery, state: FSMCon
     event = (await state.get_data())['event']
     data_state = EventDbBl.delete_event(event)
     if isinstance(data_state, DataSuccess):
-        #await (await state.get_data())['message'].delete()
-        await handle_events_button(callback_query,state)
+        if 'calendar' in (await state.get_data()):
+            await choose_week_event(callback_query, state, (await state.get_data())['calendar'])
+        else:
+            await handle_events_button(callback_query, state)
+    else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
 
 @router.message(F.text, AdminStates.users_choose)
@@ -201,7 +223,7 @@ async def update_choose_members_event(callback_query: types.CallbackQuery, state
                     await message.edit_text(f'📅 <b>{event.name}</b>\nОписание: {event.description}\n'
                                                    f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
                                             f'Участники:\n {'Участников нету' if len(data_state.data) == 0 else
-                                            '\n'.join([f'<a href="https://t.me/{user.telegram_id}">{user.username}</a>'
+                                            '\n'.join([f'<a href="{user.tg_username}">{user.username}</a>'
                                                        for user in data_state.data])}',parse_mode='HTML')
                     return
 
@@ -209,7 +231,8 @@ async def update_choose_members_event(callback_query: types.CallbackQuery, state
 
 @router.callback_query(F.data == 'change_event_members')
 async def members_event(callback_query: types.CallbackQuery,state: FSMContext):
-    await (await state.get_data())['message'].delete()
+    await callback_query.message.delete()
+
     await  state.set_state(AdminStates.remove_member)
     event = (await state.get_data())['event']
     await state.set_state(AdminStates.users_choose)
@@ -227,4 +250,29 @@ async def update_choose_members_event(callback_query: types.CallbackQuery, state
         data_state = EventDbBl.get_event_members(event.id)
         if isinstance(data_state, DataSuccess):
             await members_event(callback_query,state)
+            return
+    await callback_query.message.answer(f'❌ {data_state.error_message}')
+
+@router.callback_query(F.data == 'view_events')
+async def choose_month_event(callback_query: types.CallbackQuery, state: FSMContext):
+    await callback_query.message.delete()
+    await  callback_query.message.answer('Выберите месяц:',reply_markup=get_event_months_keyboard())
+
+@router.callback_query(EventMonthCallback.filter())
+async def choose_week_event(callback_query: types.CallbackQuery, state: FSMContext, callback_data: EventMonthCallback):
+    await callback_query.message.delete()
+    await  callback_query.message.answer(f'Выбран: <b>{months[callback_data.month_id]}</b>\nВыберите неделю:', reply_markup=get_event_weeks_keyboard(callback_data.month_id),parse_mode='HTML')
+
+@router.callback_query(EventWeekCallback.filter())
+async def choose_week_event(callback_query: types.CallbackQuery, state: FSMContext, callback_data: EventWeekCallback):
+    await callback_query.message.delete()
+    start_date = datetime(year=datetime.now().year, month=callback_data.month_id, day=callback_data.day_id)
+    end_date = start_date + dd.timedelta(days=6)
+    data_state = EventDbBl.get_all_events_for_week(start_date, end_date)
+    if isinstance(data_state, DataSuccess):
+        events = data_state.data
+        await  callback_query.message.answer(f'🗓️ Мероприятия за <b>{start_date.strftime("%d.%m.%Y")}</b> по'
+                                             f' <b>{end_date.strftime("%d.%m.%Y")}</b>\nВыберите мероприятие:',
+                                             reply_markup=get_events_for_week_keyboard(events,start_date),parse_mode='HTML')
+    else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')

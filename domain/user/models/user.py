@@ -12,6 +12,7 @@ class UserBase(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     telegram_id: Mapped[int] = mapped_column(Integer)
+    tg_username: Mapped[str] = mapped_column(String)
     username: Mapped[str] = mapped_column(String)
     phone: Mapped[str] = mapped_column(String)
     created_at: Mapped[DateTime] = mapped_column(TIMESTAMP(True))
