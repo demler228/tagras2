@@ -34,6 +34,23 @@ class EventDbDal:
                 return DataFailedMessage('Ошибка в получении мероприятий!')
 
     @staticmethod
+    def get_all_events_for_week(start_date: datetime, end_date:datetime) -> DataState:
+        Session = connection_db()
+        if Session is None:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                events =  (
+                    session.query(EventBase)
+                    .where(EventBase.date >= start_date,
+                    EventBase.date <= end_date)).all()
+
+                return DataSuccess(events)
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage('Ошибка в получении мероприятий!')
+
+    @staticmethod
     def create_event(event: Event) -> DataState:
         Session = connection_db()
 

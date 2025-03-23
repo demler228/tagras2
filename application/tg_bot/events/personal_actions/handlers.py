@@ -3,12 +3,11 @@ from aiogram import Router, F, types
 from application.tg_bot.events.personal_actions.keyboards.events_keyboard import EventsCallbackFactory, \
     get_events_keyboard
 from domain.events.db_bl import EventDbBl
+from utils.constants import week_days
 from utils.data_state import DataSuccess
 from utils.get_week_start_end import get_week_start_end
 
 router = Router()
-
-week_days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
 
 @router.callback_query(F.data == "events_button")
 @router.callback_query(EventsCallbackFactory.filter())

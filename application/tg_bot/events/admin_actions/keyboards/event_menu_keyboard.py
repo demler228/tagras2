@@ -1,10 +1,9 @@
-from aiogram.filters.callback_data import CallbackData
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-class BackToEventMenuCallback(CallbackData, prefix="back_to_event_menu"):
-    event_id: int
+from application.tg_bot.events.admin_actions.keyboards.callbacks import BackToEventMenuCallback
 
-def get_event_menu_keyboard(event_id: int):
+
+def get_event_menu_keyboard(event_id: int,callback):
     builder = InlineKeyboardBuilder()
     builder.button(
         text="Изменить название",
@@ -28,7 +27,7 @@ def get_event_menu_keyboard(event_id: int):
     )
     builder.button(
         text="🔙 Назад",
-        callback_data=BackToEventMenuCallback(event_id)
+        callback_data=callback
     )
     builder.adjust(1)
     return builder.as_markup()

@@ -3,7 +3,7 @@ from datetime import  timedelta
 from typing import Tuple, Any
 
 
-def get_week_start_end(date: datetime,offset:int) -> tuple[timedelta | Any, timedelta | Any]:
+def get_week_start_end(date: datetime,offset:int=0) -> tuple[timedelta | Any, timedelta | Any]:
 
     # Определяем день недели (0 — понедельник, 6 — воскресенье)
     weekday = date.weekday()
