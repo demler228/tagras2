@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from typing import Optional
 
 class KeyEmployee(BaseModel):
-    id: int = Field(default=-1)
+    id: Optional[int] = Field(default=None)  # Необязательное поле
     telegram_username: Optional[str] = Field(default=None)
     username: str
     description: str

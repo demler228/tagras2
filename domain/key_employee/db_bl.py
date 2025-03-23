@@ -22,7 +22,7 @@ class KeyEmployeeDbBl(BaseModel):
     @staticmethod
     def _to_sqlalchemy(employee: KeyEmployee) -> KeyEmployeeBase:
         return KeyEmployeeBase(
-            id=employee.id,
+            id=employee.id if employee.id is not None else None,
             telegram_username=employee.telegram_username,
             username=employee.username,
             description=employee.description,
