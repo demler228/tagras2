@@ -6,7 +6,7 @@ router = Router()
 
 @router.callback_query(F.data == "contacts_button")
 async def handle_contacts_button(callback_query: CallbackQuery):
-    await callback_query.message.answer(
+    await callback_query.message.edit_text(
         text="Выберите что хотите узнать:\n",
         reply_markup=get_user_keyboard()
     )

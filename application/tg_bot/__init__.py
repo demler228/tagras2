@@ -12,6 +12,7 @@ from application.tg_bot.ai_assistant import router as ai_assistant_router
 from application.tg_bot.training import router as training_router
 from application.tg_bot.key_employee import router as key_employee_routers
 from application.tg_bot.useful_contacts import router as useful_contacts_routers
+from application.tg_bot.department_list import router as department_list_routers
 
 router = Router()
 
@@ -21,6 +22,7 @@ router.include_router(event_routers)
 router.include_router(faq_routers)
 router.include_router(useful_contacts_routers)
 router.include_router(key_employee_routers)
+router.include_router(department_list_routers)
 router.include_router(tasks_routers)
 router.include_router(office_maps_routers)
 router.include_router(ai_assistant_router)
