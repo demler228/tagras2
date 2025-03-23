@@ -18,9 +18,10 @@ router.include_router(user_routers)
 router.include_router(menu_routers)
 router.include_router(event_routers)
 router.include_router(faq_routers)
+router.include_router(key_employee_router)
 router.include_router(tasks_routers)
 router.include_router(office_maps_routers)
 router.include_router(ai_assistant_router)
 router.include_router(training_router)
-router.include_router(key_employee_router)
+
 
