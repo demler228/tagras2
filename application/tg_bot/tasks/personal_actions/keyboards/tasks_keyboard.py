@@ -3,7 +3,7 @@ from application.tg_bot.office_maps.personal_actions.keyboards.callback_factorie
 from domain.tasks.db_bl import TasksDbBl
 
 from .callback_factories import (
-    TaskCallbackFactory
+    TaskCallbackFactory, BackTasksListCallbackFactory
 )
 from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallbackFactory
 from utils.data_state import DataSuccess
@@ -28,5 +28,14 @@ def get_tasks_for_user_keyboard(tg_id):
         text="🔙 Назад в меню",
         callback_data=BackToMenuCallbackFactory()
     )
+    builder.adjust(1)
+    return builder.as_markup()
+
+
+def back_to_tasks_list():
+    builder = InlineKeyboardBuilder()
+
+    builder.button(text="🔙 Назад к списку заданий", callback_data=BackTasksListCallbackFactory())
+
     builder.adjust(1)
     return builder.as_markup()
