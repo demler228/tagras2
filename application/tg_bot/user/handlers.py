@@ -1,5 +1,4 @@
 from aiogram import Router, F, types
-
 from utils.data_state import DataSuccess
 from domain.user.bl_models.db_bl import UserBL
 

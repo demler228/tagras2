@@ -1,8 +1,9 @@
+from application.tg_bot.user.entities.user import User
 from domain.user.dal_models.db_dal import UserDbDal
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 
 
-class UserBL():
+class UserBL:
     @staticmethod
     def get_employee_data_from_1c() -> DataState:
         data_state = UserDbDal.get_employee_data_from_1c()
@@ -22,6 +23,11 @@ class UserBL():
         else:
             return DataFailedMessage("Произошла ошибка при обновлении информации сотрудников из базы 1С")
 
+    @staticmethod
+    def get_user_by_telegram_id(telegram_id: int) -> DataState[User]:
+        data_state = UserDbDal.get_user_by_telegram_id(telegram_id)
+
+        return data_state
 
 
 
