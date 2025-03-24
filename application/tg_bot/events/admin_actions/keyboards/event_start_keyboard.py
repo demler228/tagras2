@@ -12,7 +12,7 @@ def get_event_start_keyboard():
     )
     builder.button(
         text="🔙 Назад в меню",
-        callback_data='back_to_main_menu'
+        callback_data='back_to_admin_main_menu'
     )
     builder.adjust(1)
     return builder.as_markup()

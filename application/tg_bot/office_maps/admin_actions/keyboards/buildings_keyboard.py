@@ -7,7 +7,7 @@ def get_buildings_keyboard():
     builder = InlineKeyboardBuilder()
 
     builder.button(
-        text="🔙Добавить здание",
+        text="Добавить здание",
         callback_data='create_building'
     )
     # Получаем список зданий из базы данных
