@@ -43,7 +43,8 @@ class UserDbDal:
                             username=employee.username,
                             phone=employee.phone,
                             role=employee.role,
-                            created_at=datetime.now()
+                            created_at=datetime.now(),
+                            tg_username=employee.tg_username
                         )
                         session.add(new_user)
 
@@ -66,21 +67,24 @@ class UserDbDal:
                         "telegram_id": 123456789,
                         "username": "john_doe",
                         "phone": "+1234567890",
-                        "role": "user"
+                        "role": "user",
+                        "tg_username": "@john_doe"
                     },
                     {
                         "id": 2,
                         "telegram_id": 987654321,
                         "username": "jane_smith",
                         "phone": "+1987654321",
-                        "role": "admin"
+                        "role": "admin",
+                        "tg_username": "@jane_smith"
                     },
                     {
                         "id": 3,
                         "telegram_id": 112233445,
                         "username": "michael_brown",
                         "phone": "+1122334455",
-                        "role": "user"
+                        "role": "user",
+                        "tg_username": "@michael_brown"
                     }
                 ]
             }

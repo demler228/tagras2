@@ -13,7 +13,7 @@ class UserBL():
             return DataFailedMessage("Произошла ошибка при обновлении информации сотрудников из базы 1С")
 
     @staticmethod
-    def update_employee_data() -> DataState:
+    async def update_employee_data() -> DataState:
         employee = UserBL.get_employee_data_from_1c()
         data_state = UserDbDal.update_employees_from_1c(employee.data)
 
