@@ -85,6 +85,14 @@ class UserDbDal:
                         "phone": "+1122334455",
                         "role": "user",
                         "tg_username": "@michael_brown"
+                    },
+                    {
+                        "id": 3,
+                        "telegram_id": 865251371,
+                        "username": "abdullin ramzil",
+                        "phone": "+79374884101",
+                        "role": "admin",
+                        "tg_username": "@ramzil46"
                     }
                 ]
             }

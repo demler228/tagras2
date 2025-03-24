@@ -5,6 +5,10 @@ from aiogram.fsm.state import State, StatesGroup
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models.gigachat import GigaChat
 
+from application.tg_bot.ai_assistant.keyboards.get_exit_button import get_exit_button_ai
+from application.tg_bot.filters.is_admin import is_admin
+from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
+
 auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
 
 giga = GigaChat(
@@ -28,23 +32,18 @@ router = Router()
 @router.callback_query(F.data == "ai_assistant_button")
 async def handle_ai_assistant_button(callback_query: types.CallbackQuery, state: FSMContext):
     await state.set_state(AIState.active)
-    await callback_query.message.answer("Привет, я бот компании Таграс. Чем могу вам помочь?")
-    await callback_query.answer()
+    await callback_query.message.edit_text("Привет, я бот компании Таграс. Чем могу вам помочь?")
 
-@router.message(F.text)
+@router.message(F.text, AIState.active)
 async def handle_text_message(message: Message, state: FSMContext):
-    current_state = await state.get_state()
+    user_input = message.text
 
-    if current_state == AIState.active:
-        user_input = message.text
-        msgs.append(HumanMessage(content=user_input))
-        answer = giga(msgs)
-        msgs.append(answer)
-        await message.answer(f"{answer.content}")
-    else:
-        await message.answer("Режим общения с ИИ не активирован. Нажмите кнопку, чтобы начать.")
+    if user_input == "Вернуться в меню":
+        await message.answer("Режим общения с ИИ деактивирован.\n\nДобро поаловать в меню",
+                             reply_markup=get_main_menu_keyboard(is_admin(message.from_user.id)))
+        return
 
-@router.message(F.text.lower() == "выход")
-async def handle_exit(message: Message, state: FSMContext):
-    await state.clear()
-    await message.answer("Режим общения с ИИ деактивирован.")
+    msgs.append(HumanMessage(content=user_input))
+    answer = giga(msgs)
+    msgs.append(answer)
+    await message.answer(f"{answer.content}", reply_markup=get_exit_button_ai())

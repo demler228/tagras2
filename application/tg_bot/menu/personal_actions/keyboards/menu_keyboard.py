@@ -21,3 +21,4 @@ def get_main_menu_keyboard(is_admin: bool) -> InlineKeyboardMarkup:
     builder.adjust(1)
 
     return builder.as_markup()
+
