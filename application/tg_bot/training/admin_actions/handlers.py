@@ -16,6 +16,8 @@ from application.tg_bot.training.entities.materials import Material
 from application.tg_bot.training.entities.theme import Theme
 from domain.training.education.db_bl import EducationBL
 from utils.data_state import DataSuccess
+from domain.quiz.db_bl import QuizService
+from domain.quiz.db_dal import *
 
 router = Router()
 
@@ -214,12 +216,39 @@ async def faq_create_answer(message: Message, state: FSMContext):
 
 @router.message(F.text, AdminStates.create_material_url)
 async def theme_created_material(message: Message, state: FSMContext):
-    material = Material(title= (await state.get_data())['material_name'], url=message.text,theme_id=(await state.get_data())['theme'].id)
+    theme = (await state.get_data())['theme']
+    material = Material(
+        title=(await state.get_data())['material_name'], 
+        url=message.text,
+        theme_id=theme.id
+    )
     data_state = EducationBL.material_create(material)
-
+    
     if isinstance(data_state, DataSuccess):
         await (await state.get_data())['message'].delete()
-        await get_theme(state,message,get_theme_material_menu_keyboard(),ThemeChooseMaterialsCallback(material_id=data_state.data))
+        await get_theme(
+            state, 
+            message,
+            get_theme_material_menu_keyboard(),
+            ThemeChooseMaterialsCallback(material_id=data_state.data)
+        )
+        
+        text = None
+        if material.url.startswith(('http://', 'https://')):
+            text = WebRepository.process_url(material.url)
+        else:
+            text = FileRepository.process_file(material.url)
+        
+        if text:
+            token = QuizRepository.get_token()
+            if token:
+                quiz_data = QuizRepository.get_quiz_questions(token, text)
+                if isinstance(quiz_data, DataSuccess):
+                    save_result = QuizDAL.save_quiz(quiz_data.data, theme.name)
+                    if not isinstance(save_result, DataSuccess):
+                        await message.answer(f'❌ Ошибка при сохранении викторины: {save_result.error_message}')
+            else:
+                await message.answer('❌ Не удалось получить токен для генерации викторины')
     else:
         await message.answer(f'❌ {data_state.error_message}')
 
