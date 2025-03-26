@@ -9,6 +9,7 @@ def get_admin_main_menu_keyboard() -> InlineKeyboardMarkup:
 
     builder.button(text="FAQ", callback_data="faq_button_admin")
     builder.button(text="Мероприятия и встречи", callback_data="events_button_admin")
+    builder.button(text="Задачи", callback_data="tasks_button_admin")
     builder.button(text="Карты офиса", callback_data="office_maps_button_admin")
     builder.button(text="Тренинги", callback_data="training_button_admin")
     builder.button(text="Обновить пользовательскую информацию", callback_data="update_user_information")
