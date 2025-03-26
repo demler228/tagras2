@@ -4,7 +4,6 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     BOT_TOKEN : str
     DB_NAME : str
-    OWNERS: list
     USER : str
     IMAGES_PATH: str
     PASSWORD : str

@@ -140,57 +140,81 @@ class QuizRepository:
         }
         try:
             response = requests.post(url, headers=headers, data=payload, verify=False)
-            return response.json()
+            if response.status_code == 200:
+                try:
+                    # Парсим JSON ответ
+                    content = response.json()
+                    choices = content.get('choices', [])
+                    if choices:
+                        message = choices[0].get('message', {})
+                        content_str = message.get('content', '')
+                        try:
+                            quiz_data = json.loads(content_str)
+                            return DataSuccess(quiz_data)
+                        except json.JSONDecodeError:
+                            return DataFailedMessage("Неверный формат ответа от GigaChat")
+                    return DataFailedMessage("Пустой ответ от GigaChat")
+                except Exception as e:
+                    logger.error(f"Ошибка парсинга ответа: {str(e)}")
+                    return DataFailedMessage("Ошибка обработки ответа")
+            else:
+                return DataFailedMessage(f"Ошибка API: {response.status_code}")
         except requests.RequestException as e:
-            print(f"Произошла ошибка: {str(e)}")
-            return None
+            logger.error(f"Произошла ошибка: {str(e)}")
+            return DataFailedMessage("Ошибка соединения с GigaChat API")
 
 
 class QuizDAL:
     @staticmethod
     def save_quiz(quiz_data: list, theme_name: str) -> DataState:
         Session = connection_db()
-
         if Session is None:
-            return DataFailedMessage("Ошибка в работе базы данных!")
+            return DataFailedMessage("Ошибка подключения к базе данных")
         
         with Session() as session:
             try:
-                theme = ThemeBase(name=theme_name)
-                session.add(theme)
-                session.commit()
-
+                # Проверяем, существует ли тема
+                theme = session.query(ThemeBase).filter_by(name=theme_name).first()
+                if not theme:
+                    theme = ThemeBase(name=theme_name)
+                    session.add(theme)
+                    session.commit()
+                
                 for question_data in quiz_data:
+                    # Создаем вопрос
                     question = QuestionBase(
                         text=question_data["question"],
                         theme_id=theme.id
                     )
                     session.add(question)
-                    session.commit()
-
+                    session.flush()  # Получаем ID вопроса
+                    
+                    # Добавляем правильный ответ
                     correct_answer = AnswerBase(
                         text=question_data["correct_answer"],
                         is_correct=True,
                         question_id=question.id
                     )
                     session.add(correct_answer)
-
-                    for incorrect_answer in question_data["incorrect_answers"]:
-                        answer = AnswerBase(
-                            text=incorrect_answer,
-                            is_correct=False,
-                            question_id=question.id
-                        )
-                        session.add(answer)
-
+                    
+                    # Добавляем неправильные ответы
+                    for answer_text in question_data["answers"]:
+                        if answer_text != question_data["correct_answer"]:
+                            answer = AnswerBase(
+                                text=answer_text,
+                                is_correct=False,
+                                question_id=question.id
+                            )
+                            session.add(answer)
+                
                 session.commit()
                 return DataSuccess()
-
+                
             except Exception as e:
                 session.rollback()
-                logger.error(e)
-                return DataFailedMessage("Ошибка в работе базы данных!")
-
+                logger.error(f"Database error: {str(e)}")
+                return DataFailedMessage(f"Ошибка базы данных: {str(e)}")
+            
     @staticmethod
     def get_questions_by_theme(theme_id: int) -> DataState:
         Session = connection_db()
