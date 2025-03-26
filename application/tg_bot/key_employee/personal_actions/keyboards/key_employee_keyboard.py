@@ -29,6 +29,7 @@ def get_user_employee_list_keyboard(employees: list, page: int, page_size: int =
 
 def get_employee_detail_keyboard(employee_id: int):
     builder = InlineKeyboardBuilder()
+    builder.button(text="◀️ Назад к списку", callback_data="key_users_button")
     builder.button(text="Назад в меню", callback_data="back_to_main_menu")
     builder.adjust(1)
     return builder.as_markup()
