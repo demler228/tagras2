@@ -4,9 +4,9 @@ import os
 from loguru import logger
 
 from application.tg_bot.tasks.entities.task import Task
-from application.tg_bot.tasks.entities.user_tasks import UserTask
+from application.tg_bot.user.entities.user import User
 from .db_dal import TasksDbDal
-from utils.data_state import DataSuccess, DataState
+from utils.data_state import DataSuccess, DataState, DataFailedMessage
 from ..user.dal_models.db_dal import UserDbDal
 
 
@@ -21,6 +21,11 @@ class TasksDbBl:
         return data_state
 
     @staticmethod
+    def get_all_users() -> DataState[list[User]]:
+        data_state = TasksDbDal.get_all_users()
+        return data_state
+
+    @staticmethod
     def get_all_tasks() -> DataState[list[Task]]:
         data_state = TasksDbDal.get_all_tasks()
         return data_state
@@ -31,13 +36,14 @@ class TasksDbBl:
     def get_task_by_task_id(task_id: int) -> DataState:
         return TasksDbDal.get_task_by_task_id(task_id)
 
-    # @staticmethod
-    # def assign_task_to_user(task_id: int, user_tg_id: int) -> DataState:
-    #     data_state = UserDbDal.get_user_by_telegram_id(user_tg_id)
-    #     if isinstance(data_state, DataSuccess):
-    #         user_id = data_state.data.id
-    #         return TasksDbDal.assign_task_to_user(task_id, user_id)
-    #     return DataFailedMessage('Пользователь не найден!')
+    @staticmethod
+    def assign_task_to_user(task_id: int, selected_users: list) -> DataState:
+        print("Selected_users: ", selected_users)
+        if selected_users is not None:
+            for user_id in selected_users:
+                return TasksDbDal.assign_task_to_user(task_id, user_id)
+        else:
+            return DataFailedMessage('Пользователь не найден!')
 
     @staticmethod
     def update_task(task_id: int, name: str = None, description: str = None, deadline: str = None) -> DataState:

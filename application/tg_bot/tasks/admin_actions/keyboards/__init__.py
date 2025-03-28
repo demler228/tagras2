@@ -3,5 +3,6 @@ from .tasks_keyboard import (task_admin_panel_keyboard,
                              get_all_tasks_button,
                              task_action_keyboard,
                              back_to_tasks_list,
-                             get_all_tasks_button)
+                             get_all_tasks_button,
+                             build_user_selection_keyboard)
 # from .callback_factories import TaskCallbackFactory, BackTasksListCallbackFactory

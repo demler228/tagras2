@@ -16,4 +16,7 @@ class BackToTasksActionsAdminCallbackFactory(CallbackData, prefix="back_to_actio
 class BackToMenuAdminCallbackFactory(CallbackData, prefix="back_to_admin_main_menu"):
     pass
 
+class UserIdCallbackFactory(CallbackData, prefix="user"):
+    user_id: int
+
 

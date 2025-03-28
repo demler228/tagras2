@@ -3,7 +3,8 @@ from .callback_factories import (
     TaskAdminCallbackFactory,
     BackTasksListAdminCallbackFactory,
     BackToMenuAdminCallbackFactory,
-    TaskActionCallbackFactory
+    TaskActionCallbackFactory,
+    UserIdCallbackFactory
 )
 
 from domain.tasks.db_bl import TasksDbBl
@@ -44,18 +45,19 @@ def back_to_tasks_list():
     return builder.as_markup()
 
 
+def build_user_selection_keyboard(all_users: list, selected_users: list = None):
+    if selected_users is None:
+        selected_users = []
 
-def task_admin_panel_keyboard_old():
     builder = InlineKeyboardBuilder()
-    builder.button(text="Создать задачу", callback_data="create_task")
-    builder.button(text="Присвоить задачу", callback_data="assign_task")
-    builder.button(text="Изменить задачу", callback_data="update_task")
-    builder.button(text="Удалить задачу", callback_data="delete_task")
-    builder.button(
-        text="🔙 Назад в меню админа",
-        callback_data="back_to_admin_main_menu"
-    )
+    for user in all_users:
+        user_label = f"{user.username} ✅" if user.id in selected_users else user.username
+        callback_data = UserIdCallbackFactory(user_id=user.id).pack()
+        builder.button(text=user_label, callback_data=callback_data)
+
+    builder.button(text="Готово", callback_data="done")
     builder.adjust(1)
+
     return builder.as_markup()
 
 def menu_of_action_after_creating():
@@ -89,10 +91,3 @@ def get_all_tasks_button():
     return builder.as_markup()
 
 
-def back_to_tasks_list():
-    builder = InlineKeyboardBuilder()
-
-    builder.button(text="🔙 Назад к списку заданий", callback_data=BackTasksListAdminCallbackFactory())
-
-    builder.adjust(1)
-    return builder.as_markup()
