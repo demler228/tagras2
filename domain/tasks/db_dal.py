@@ -61,7 +61,7 @@ class TasksDbDal:
             try:
                 statement = (select(TaskBase)
                              .join(UserTaskBase, TaskBase.id == UserTaskBase.task_id, isouter=True)
-                             .join(UserBase, UserTaskBase.user_id == UserBase.id, isouter=True)
+                             .join(UserBase, UserTaskBase.user_id == UserBase.id, isouter=True).filter(TaskBase.id)
                              )
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)

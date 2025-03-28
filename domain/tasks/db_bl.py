@@ -38,12 +38,13 @@ class TasksDbBl:
 
     @staticmethod
     def assign_task_to_user(task_id: int, selected_users: list) -> DataState:
-        print("Selected_users: ", selected_users)
-        if selected_users is not None:
-            for user_id in selected_users:
-                return TasksDbDal.assign_task_to_user(task_id, user_id)
-        else:
+        if selected_users is None:
             return DataFailedMessage('Пользователь не найден!')
+        else:
+            for user_id in selected_users:
+                TasksDbDal.assign_task_to_user(task_id, user_id)
+            return DataSuccess("Пользователи успешно присвоены")
+
 
     @staticmethod
     def update_task(task_id: int, name: str = None, description: str = None, deadline: str = None) -> DataState:

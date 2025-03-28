@@ -97,7 +97,6 @@ async def select_user_handler(
         await callback_query.answer()
         data = await state.get_data()
         user_id = callback_data.user_id
-        print("Айди пользователя: ", user_id)
 
         selected_users = set(data.get("selected_users", []))
 
@@ -173,7 +172,6 @@ async def select_task_handler(message: types.Message, state: FSMContext):
 
         if isinstance(data_state, DataSuccess) and data_state.data:
             tasks = data_state.data
-            print("Список задач: ", tasks)
 
             if 0 <= task_number < len(tasks):
                 task = tasks[task_number]
