@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram import Router, F, types
@@ -7,7 +9,8 @@ from .keyboards import (
     task_admin_panel_keyboard,
     task_action_keyboard,
     back_to_tasks_list,
-    get_all_tasks_button, menu_of_action_after_creating
+    menu_of_action_after_creating,
+    build_user_selection_keyboard
 )
 from .keyboards.callback_factories import TaskActionCallbackFactory
 
@@ -21,6 +24,9 @@ class CreateTaskStates(StatesGroup):
     name = State()
     description = State()
     deadline = State()
+
+class AssignTaskStates(StatesGroup):
+    select_users = State()
 
 # Обработчик перехода в раздел задач
 @router.callback_query(F.data == "tasks_button_admin")
@@ -50,21 +56,72 @@ async def process_description(message: types.Message, state: FSMContext):
 
 @router.message(CreateTaskStates.deadline)
 async def process_deadline(message: types.Message, state: FSMContext):
-    deadline = message.text
+    try:
+
+        deadline = message.text
+        parsed_date = datetime.strptime(deadline, "%Y-%m-%d").date()
+        current_date = datetime.today().date()
+        print("Дата от пользователя: ", parsed_date, "\nСегодня: ", current_date)
+        if parsed_date < current_date:
+            await message.answer(
+                "Дедлайн не может быть раньше даты создания. Введите дедлайн заново (формат YYYY-MM-DD):")
+            return
+        else:
+            data = await state.get_data()
+            data_state = TasksDbBl.create_task(
+                name=data['name'],
+                description=data['description'],
+                deadline=deadline
+            )
+            if isinstance(data_state, DataSuccess):
+                task_id = data_state.data
+                await message.answer(
+                    f"Задача успешно создана! ID: {task_id}",
+                    reply_markup=menu_of_action_after_creating()
+                )
+                await state.update_data(task_id=task_id)
+            else:
+                await message.answer(f"Ошибка: {data_state.error_message}")
+            await state.clear()
+    except ValueError:
+        await message.answer("Неверный формат даты. Введите дедлайн заново (формат YYYY-MM-DD):")
+
+@router.callback_query(AssignTaskStates.select_users, F.data.startswith("user_"))
+async def select_user_handler(callback_query: types.CallbackQuery, state: FSMContext):
+    user_id = int(callback_query.data.split("_")[1])
     data = await state.get_data()
+    selected_users = set(data.get("selected_users", []))
 
-    data_state = TasksDbBl.create_task(
-        name=data['name'],
-        description=data['description'],
-        deadline=deadline
-    )
-
-    if isinstance(data_state, DataSuccess):
-        await message.answer(f"Задача успешно создана! ID: {data_state.data}", reply_markup=menu_of_action_after_creating())
+    # Добавляем/удаляем пользователя из выбранных
+    if user_id in selected_users:
+        selected_users.remove(user_id)
     else:
-        await message.answer(f"Ошибка: {data_state.error_message}")
+        selected_users.add(user_id)
+
+    await state.update_data(selected_users=list(selected_users))
+
+    # Обновляем клавиатуру
+    users_data_state = TasksDbBl.get_all_users()
+    if isinstance(users_data_state, DataSuccess) and users_data_state.data:
+        all_users = users_data_state.data
+        keyboard = build_user_selection_keyboard(all_users, list(selected_users))
+        await callback_query.message.edit_reply_markup(reply_markup=keyboard)
+        await callback_query.answer()
+
+@router.callback_query(AssignTaskStates.select_users, F.data == "done")
+async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    selected_users = data.get("selected_users", [])
+    task_id = data.get("task_id")
+
+    if selected_users:
+        TasksDbBl.assign_task_to_user(task_id, selected_users)
+        await callback_query.message.answer("Пользователи успешно назначены на задачу!")
+    else:
+        await callback_query.message.answer("Необходимо выбрать хотя бы одного пользователя.")
 
     await state.clear()
+
 
 # Обработчик просмотра задач
 @router.callback_query(F.data == "view_tasks")
@@ -135,7 +192,32 @@ async def task_action_handler(
     elif action == "reassign":
         await callback_query.message.answer(f"Переопределение исполнителей для задачи {task_id}...")
     elif action == "delete":
-        await callback_query.message.answer(f"Удаление задачи {task_id}...", reply_markup=back_to_tasks_list())
+        TasksDbBl.delete_task(task_id)
+        await callback_query.message.edit_text(f"Удаление задачи {task_id}...", reply_markup=back_to_tasks_list())
+
+@router.callback_query(F.data == "assign_task")
+async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMContext):
+    # Получаем данные из состояния
+    data = await state.get_data()
+    task_id = data.get("task_id")
+
+    if not task_id:
+        await callback_query.message.answer("Ошибка: ID задачи не найден.")
+        return
+
+    # Получаем список пользователей для назначения
+    users_data_state = TasksDbBl.get_all_users()
+    if isinstance(users_data_state, DataSuccess) and users_data_state.data:
+        all_users = users_data_state.data
+        keyboard = build_user_selection_keyboard(all_users)
+        await callback_query.message.answer(
+            "Выберите пользователей для назначения задачи:",
+            reply_markup=keyboard
+        )
+        await state.update_data(task_id=task_id, selected_users=[])
+        await state.set_state(AssignTaskStates.select_users)
+    else:
+        await callback_query.message.answer("Ошибка при получении списка пользователей.")
 
 
 
