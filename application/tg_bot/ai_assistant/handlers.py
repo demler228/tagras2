@@ -20,6 +20,7 @@ from langchain.docstore.document import Document
 from application.tg_bot.ai_assistant.keyboards.get_exit_button import get_exit_button_ai
 from application.tg_bot.filters.is_admin import is_admin
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
+from aiogram.types.input_file import FSInputFile
 
 logging.basicConfig(
     filename='assistant.log',
@@ -212,8 +213,12 @@ async def handle_text_message(message: Message, state: FSMContext):
             )
             return
 
+        # Получаем наиболее релевантные документы
         relevant_docs = vectorstore.similarity_search(user_input, k=4)
         context = "\n\n".join([doc.page_content for doc in relevant_docs])
+        
+        # Получаем пути к исходным файлам из метаданных
+        source_files = list(set([doc.metadata["source"] for doc in relevant_docs if "source" in doc.metadata]))
         
         system_prompt = (
             "Ты - ассистент компании Таграс. Отвечай на вопросы на основании предоставленных документов. "
@@ -221,7 +226,6 @@ async def handle_text_message(message: Message, state: FSMContext):
             "работы связанной с Таграс не говори. В контексте могут встречаться расшифровки видео - учитывай их тоже."
         )
         
-        # Формирование промта
         user_prompt = f"""
         Контекст:
         {context}
@@ -236,7 +240,37 @@ async def handle_text_message(message: Message, state: FSMContext):
         response = giga.chat(system_prompt + "\n" + user_prompt)
         answer = response.choices[0].message.content
         
+        # Отправляем текстовый ответ
         await message.answer(answer, reply_markup=get_exit_button_ai())
+        
+        # Отправляем исходные файлы, если они есть
+        if source_files:
+            await message.answer("Вот документы, которые могут содержать полезную информацию:")
+            
+            for file_path in source_files:
+                try:
+                    # Проверяем существование файла
+                    if not os.path.exists(file_path):
+                        continue
+                        
+                    # Определяем тип файла
+                    file_ext = file_path.split('.')[-1].lower()
+                    file_name = os.path.basename(file_path)
+                    
+                    # Отправляем файл пользователю
+                    if file_ext in ['pdf', 'docx']:
+                        file = FSInputFile(file_path, filename=file_name)
+                        if file_ext == 'pdf':
+                            await message.answer_document(file, caption=f"PDF файл: {file_name}")
+                        else:
+                            await message.answer_document(file, caption=f"Word документ: {file_name}")
+                    elif file_ext in ['mp4', 'avi', 'mov', 'mkv']:
+                        file = FSInputFile(file_path, filename=file_name)
+                        await message.answer_video(file, caption=f"Видео файл: {file_name}")
+                    
+                except Exception as e:
+                    logging.error(f"Ошибка при отправке файла {file_path}: {e}")
+                    await message.answer(f"Не удалось отправить файл {file_name}")
         
     except Exception as e:
         logging.error(f"Ошибка при обработке запроса: {e}")
@@ -244,5 +278,4 @@ async def handle_text_message(message: Message, state: FSMContext):
             "Произошла ошибка при обработке запроса. Попробуйте переформулировать вопрос.",
             reply_markup=get_exit_button_ai()
         )
-
 initialize_vector_store()
