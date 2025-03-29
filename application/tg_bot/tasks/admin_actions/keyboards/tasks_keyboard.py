@@ -1,14 +1,17 @@
+from aiogram.types import InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from .callback_factories import (
     TaskAdminCallbackFactory,
     BackTasksListAdminCallbackFactory,
     BackToMenuAdminCallbackFactory,
     TaskActionCallbackFactory,
-    UserIdCallbackFactory
+    UserIdCallbackFactory,
+    PaginationCallbackFactory
 )
 
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
+
 
 def task_admin_panel_keyboard():
     builder = InlineKeyboardBuilder()
@@ -17,6 +20,7 @@ def task_admin_panel_keyboard():
     builder.button(text="🔙 Назад в меню", callback_data=BackToMenuAdminCallbackFactory())
     builder.adjust(1)
     return builder.as_markup()
+
 
 def task_action_keyboard(task_id):
     builder = InlineKeyboardBuilder()
@@ -35,6 +39,7 @@ def task_action_keyboard(task_id):
     builder.adjust(1)
     return builder.as_markup()
 
+
 def back_to_tasks_list():
     builder = InlineKeyboardBuilder()
     builder.button(
@@ -45,27 +50,58 @@ def back_to_tasks_list():
     return builder.as_markup()
 
 
-def build_user_selection_keyboard(all_users: list, selected_users: list = None):
+def build_user_selection_keyboard(
+        all_users: list,
+        selected_users: list = None,
+        page: int = 1,
+        users_per_page: int = 10,
+        task_id: int = None,
+):
     if selected_users is None:
         selected_users = []
 
+    # Вычисляем индексы для текущей страницы
+    start_index = (page - 1) * users_per_page
+    end_index = start_index + users_per_page
+    paginated_users = all_users[start_index:end_index]
+
     builder = InlineKeyboardBuilder()
-    for user in all_users:
+
+    # Добавляем пользователей для текущей страницы
+    for user in paginated_users:
         user_label = f"{user.username} ✅" if user.id in selected_users else user.username
-        callback_data = UserIdCallbackFactory(user_id=user.id).pack()
+        callback_data = UserIdCallbackFactory(user_id=user.id, task_id=task_id).pack()
         builder.button(text=user_label, callback_data=callback_data)
 
+    # Добавляем кнопки пагинации
+    total_pages = (len(all_users) + users_per_page - 1) // users_per_page  # Вычисляем общее количество страниц
+    if total_pages > 1:
+        buttons = []
+        if page > 1:
+            buttons.append(InlineKeyboardButton(
+                text="⬅️ Предыдущая страница",
+                callback_data=PaginationCallbackFactory(action="prev", page=page - 1, task_id=task_id).pack()
+            ))
+        if page < total_pages:
+            buttons.append(InlineKeyboardButton(
+                text="➡️ Следующая страница",
+                callback_data=PaginationCallbackFactory(action="next", page=page + 1, task_id=task_id).pack()
+            ))
+        builder.row(*buttons)
+
+    # Добавляем кнопку "Готово"
     builder.button(text="Готово", callback_data="done")
+
     builder.adjust(1)
 
     return builder.as_markup()
+
 
 def menu_of_action_after_creating():
     builder = InlineKeyboardBuilder()
     builder.button(text="Присвоить задачу", callback_data="assign_task")
     builder.adjust(1)
     return builder.as_markup()
-
 
 
 def get_all_tasks_button():
@@ -89,5 +125,3 @@ def get_all_tasks_button():
     )
     builder.adjust(1)
     return builder.as_markup()
-
-

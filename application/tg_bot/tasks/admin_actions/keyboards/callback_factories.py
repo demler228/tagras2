@@ -18,5 +18,11 @@ class BackToMenuAdminCallbackFactory(CallbackData, prefix="back_to_admin_main_me
 
 class UserIdCallbackFactory(CallbackData, prefix="user"):
     user_id: int
+    task_id: int
 
+
+class PaginationCallbackFactory(CallbackData, prefix="pagination"):
+    action: str  # "prev" или "next"
+    page: int    # Номер страницы
+    task_id: int # ID задачи
 

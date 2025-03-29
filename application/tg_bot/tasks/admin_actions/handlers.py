@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from loguru import logger
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram import Router, F, types
@@ -12,7 +12,7 @@ from .keyboards import (
     menu_of_action_after_creating,
     build_user_selection_keyboard
 )
-from .keyboards.callback_factories import TaskActionCallbackFactory, UserIdCallbackFactory
+from .keyboards.callback_factories import TaskActionCallbackFactory, UserIdCallbackFactory, PaginationCallbackFactory
 
 router = Router()
 
@@ -97,6 +97,8 @@ async def select_user_handler(
         await callback_query.answer()
         data = await state.get_data()
         user_id = callback_data.user_id
+        task_id = callback_data.task_id
+        current_page = data.get("current_page", 1)
 
         selected_users = set(data.get("selected_users", []))
 
@@ -105,20 +107,56 @@ async def select_user_handler(
         else:
             selected_users.add(user_id)
 
-        await state.update_data(selected_users=list(selected_users))
+        await state.update_data(selected_users=list(selected_users), current_page=current_page)
 
         users_data_state = TasksDbBl.get_all_users()
         if not isinstance(users_data_state, DataSuccess) or not users_data_state.data:
             await callback_query.answer("Ошибка получения списка пользователей", show_alert=True)
             return
 
-        keyboard = build_user_selection_keyboard(users_data_state.data, list(selected_users))
+        updated_data = await state.get_data()
+        logger.info("Содержимое state: ", updated_data)
+        keyboard = build_user_selection_keyboard(users_data_state.data,
+                                                 list(selected_users),
+                                                 page=current_page,
+                                                 task_id=task_id)
         await callback_query.message.edit_reply_markup(reply_markup=keyboard)
 
     except Exception as e:
         print(f"Ошибка в select_user_handler: {e}")
         await callback_query.answer("Произошла ошибка", show_alert=True)
 
+@router.callback_query(PaginationCallbackFactory.filter())
+async def pagination_handler(
+    callback_query: types.CallbackQuery,
+    callback_data: PaginationCallbackFactory,
+    state: FSMContext
+):
+    try:
+        await callback_query.answer()
+
+        # Получаем данные из состояния
+        data = await state.get_data()
+        task_id = data.get("task_id")
+        all_users_data_state = TasksDbBl.get_all_users()
+
+        if isinstance(all_users_data_state, DataSuccess) and all_users_data_state.data:
+            all_users = all_users_data_state.data
+            selected_users = set(data.get("selected_users", []))
+
+            # Обновляем клавиатуру для новой страницы
+            page = callback_data.page
+            keyboard = build_user_selection_keyboard(
+                all_users=all_users,
+                selected_users=list(selected_users),
+                page=page,
+                users_per_page=10,
+                task_id=task_id
+            )
+            await callback_query.message.edit_reply_markup(reply_markup=keyboard)
+    except Exception as e:
+        print(f"Ошибка в pagination_handler: {e}")
+        await callback_query.answer("Произошла ошибка", show_alert=True)
 
 @router.callback_query(AssignTaskStates.select_users, F.data == "done")
 async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMContext):
@@ -134,7 +172,7 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
         result = TasksDbBl.assign_task_to_user(task_id, selected_users)
 
         if isinstance(result, DataSuccess):
-            await callback_query.message.edit_text("Пользователи успешно назначены на задачу!")
+            await callback_query.message.edit_text("Пользователи успешно назначены на задачу!", reply_markup=task_admin_panel_keyboard())
         else:
             await callback_query.message.edit_text(f"Ошибка: {result.error_message}")
 
@@ -230,9 +268,13 @@ async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMCont
 
         if isinstance(users_data_state, DataSuccess) and users_data_state.data:
             all_users = users_data_state.data
-            keyboard = build_user_selection_keyboard(all_users)
+            if not all_users:
+                await callback_query.message.answer("Список пользователей пуст.")
+                return
 
-            msg = await callback_query.message.answer(
+            keyboard = build_user_selection_keyboard(all_users, task_id=task_id)
+
+            msg = await callback_query.message.edit_text(
                 "Выберите пользователей для назначения задачи:",
                 reply_markup=keyboard
             )
@@ -246,8 +288,8 @@ async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMCont
         else:
             await callback_query.message.answer("Ошибка при получении списка пользователей.")
     except Exception as e:
-        print(f"Ошибка в handle_assign_task: {e}")
-        await callback_query.message.answer("Произошла ошибка при обработке запроса")
+        logger.error(f"Ошибка в handle_assign_task: {e}")
+        await callback_query.message.answer("Произошла ошибка при обработке запроса.")
 
 
 
