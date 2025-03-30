@@ -5,6 +5,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram import Router, F, types
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
+from .edit_handler import handle_edit_task
 from .keyboards import (
     task_admin_panel_keyboard,
     task_action_keyboard,
@@ -16,17 +17,21 @@ from .keyboards.callback_factories import TaskActionCallbackFactory, UserIdCallb
 
 router = Router()
 
+
 # Состояния для просмотра задач
 class ViewTaskStates(StatesGroup):
     select_task = State()
+
 
 class CreateTaskStates(StatesGroup):
     name = State()
     description = State()
     deadline = State()
 
+
 class AssignTaskStates(StatesGroup):
     select_users = State()
+
 
 # Обработчик перехода в раздел задач
 @router.callback_query(F.data == "tasks_button_admin")
@@ -36,11 +41,13 @@ async def handle_tasks_button(callback_query: types.CallbackQuery):
         reply_markup=task_admin_panel_keyboard()
     )
 
+
 # Обработчик создания новой задачи
 @router.callback_query(F.data == "create_task")
 async def start_create_task(callback_query: types.CallbackQuery, state: FSMContext):
     await callback_query.message.answer("Введите название задачи:")
     await state.set_state(CreateTaskStates.name)
+
 
 @router.message(CreateTaskStates.name)
 async def process_name(message: types.Message, state: FSMContext):
@@ -48,11 +55,13 @@ async def process_name(message: types.Message, state: FSMContext):
     await message.answer("Введите описание задачи:")
     await state.set_state(CreateTaskStates.description)
 
+
 @router.message(CreateTaskStates.description)
 async def process_description(message: types.Message, state: FSMContext):
     await state.update_data(description=message.text)
     await message.answer("Введите дедлайн задачи (формат YYYY-MM-DD):")
     await state.set_state(CreateTaskStates.deadline)
+
 
 @router.message(CreateTaskStates.deadline)
 async def process_deadline(message: types.Message, state: FSMContext):
@@ -126,11 +135,12 @@ async def select_user_handler(
         print(f"Ошибка в select_user_handler: {e}")
         await callback_query.answer("Произошла ошибка", show_alert=True)
 
+
 @router.callback_query(PaginationCallbackFactory.filter())
 async def pagination_handler(
-    callback_query: types.CallbackQuery,
-    callback_data: PaginationCallbackFactory,
-    state: FSMContext
+        callback_query: types.CallbackQuery,
+        callback_data: PaginationCallbackFactory,
+        state: FSMContext
 ):
     try:
         await callback_query.answer()
@@ -158,6 +168,7 @@ async def pagination_handler(
         print(f"Ошибка в pagination_handler: {e}")
         await callback_query.answer("Произошла ошибка", show_alert=True)
 
+
 @router.callback_query(AssignTaskStates.select_users, F.data == "done")
 async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMContext):
     try:
@@ -172,7 +183,8 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
         result = TasksDbBl.assign_task_to_user(task_id, selected_users)
 
         if isinstance(result, DataSuccess):
-            await callback_query.message.edit_text("Пользователи успешно назначены на задачу!", reply_markup=task_admin_panel_keyboard())
+            await callback_query.message.edit_text("Пользователи успешно назначены на задачу!",
+                                                   reply_markup=task_admin_panel_keyboard())
         else:
             await callback_query.message.edit_text(f"Ошибка: {result.error_message}")
 
@@ -180,6 +192,7 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
     except Exception as e:
         print(f"Ошибка в done_selecting_users: {e}")
         await callback_query.answer("Произошла ошибка", show_alert=True)
+
 
 # Обработчик просмотра задач
 @router.callback_query(F.data == "view_tasks")
@@ -236,21 +249,23 @@ async def select_task_handler(message: types.Message, state: FSMContext):
     finally:
         await state.clear()
 
+
 @router.callback_query(TaskActionCallbackFactory.filter())
 async def task_action_handler(
-    callback_query: types.CallbackQuery,
-    callback_data: TaskActionCallbackFactory
+        callback_query: types.CallbackQuery,
+        callback_data: TaskActionCallbackFactory
 ):
     task_id = callback_data.task_id
     action = callback_data.action
-
-    if action == "edit":
-        await callback_query.message.answer(f"Редактирование задачи {task_id}...")
-    elif action == "reassign":
-        await callback_query.message.answer(f"Переопределение исполнителей для задачи {task_id}...")
-    elif action == "delete":
+    if action == "delete_task":
         TasksDbBl.delete_task(task_id)
         await callback_query.message.edit_text(f"Задача {task_id} удалена", reply_markup=back_to_tasks_list())
+    elif action == "edit_task":
+        await handle_edit_task(callback_query, task_id)
+
+
+# async def handle_edit_task(callback_query: types.CallbackQuery, task_id: int):
+#     await callback_query.message.answer(f"Редактирование задачи {task_id}")
 
 
 @router.callback_query(F.data == "assign_task")
@@ -290,6 +305,3 @@ async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMCont
     except Exception as e:
         logger.error(f"Ошибка в handle_assign_task: {e}")
         await callback_query.message.answer("Произошла ошибка при обработке запроса.")
-
-
-

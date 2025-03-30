@@ -1,9 +1,12 @@
 from aiogram.filters.callback_data import CallbackData
 
 class TaskActionCallbackFactory(CallbackData, prefix="task_action"):
-    action: str  # "edit", "reassign", "delete"
+    action: str
     task_id: int
 
+class UpdateActionCallbackFactory(CallbackData, prefix="update_action"):
+    action: str
+    task_id: int
 class TaskAdminCallbackFactory(CallbackData, prefix="task"):
     task_id: int
 

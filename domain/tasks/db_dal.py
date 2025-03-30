@@ -60,8 +60,7 @@ class TasksDbDal:
         with Session() as session:
             try:
                 statement = (select(TaskBase)
-                             .join(UserTaskBase, TaskBase.id == UserTaskBase.task_id, isouter=True)
-                             .join(UserBase, UserTaskBase.user_id == UserBase.id, isouter=True).filter(TaskBase.id)
+                             .order_by(TaskBase.id)
                              )
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)
@@ -125,6 +124,7 @@ class TasksDbDal:
                 session.commit()
                 return DataSuccess()
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка при обновлении задачи!')
 
@@ -144,6 +144,7 @@ class TasksDbDal:
                 return DataSuccess()
             except Exception as e:
                 logger.error(e)
+                session.rollback()
                 return DataFailedMessage('Ошибка при удалении задачи!')
 
     @staticmethod
@@ -166,4 +167,5 @@ class TasksDbDal:
                 return DataSuccess()
             except Exception as e:
                 logger.error(e)
+                session.rollback()
                 return DataFailedMessage('Ошибка при присвоении задачи!')
