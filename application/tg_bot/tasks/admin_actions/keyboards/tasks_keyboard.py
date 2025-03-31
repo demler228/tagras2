@@ -53,6 +53,7 @@ def update_task_actions(task_id):
         text="Изменить дедлайн",
         callback_data=UpdateActionCallbackFactory(action="update_deadline", task_id=task_id).pack()
     )
+    builder.button(text="🔙 Назад к действиям", callback_data=UpdateActionCallbackFactory(action="back_to_task_actions", task_id=task_id))
     builder.adjust(1)
     return builder.as_markup()
 
@@ -142,9 +143,11 @@ def get_all_tasks_button():
     builder.adjust(1)
     return builder.as_markup()
 
+
+
 def skip_keyboard():
     builder = InlineKeyboardBuilder()
-    builder.button(text="Пропустить", callback_data="skip")
+    builder.button(text="Отмена", callback_data="skip")
     builder.adjust(1)
     return builder.as_markup()
 

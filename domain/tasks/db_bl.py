@@ -32,9 +32,11 @@ class TasksDbBl:
     @staticmethod
     def create_task(name: str, description: str, deadline: str = None) -> DataState:
         return TasksDbDal.create_task(name, description, deadline)
+
     @staticmethod
-    def get_task_by_task_id(task_id: int) -> DataState:
-        return TasksDbDal.get_task_by_task_id(task_id)
+    def get_task_detail_by_task_id(task_id: int) -> DataState:
+        data_state = TasksDbDal.get_task_by_task_id(task_id)
+        return data_state
 
     @staticmethod
     def assign_task_to_user(task_id: int, selected_users: list) -> DataState:
