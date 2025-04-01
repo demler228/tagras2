@@ -83,7 +83,7 @@ async def start_edit_description(callback_query: types.CallbackQuery, callback_d
     task_id = callback_data.task_id
     await state.update_data(task_id=task_id)
     await callback_query.message.answer(
-        "Введите новое описание задачи или нажмите 'Пропустить':",
+        "Введите новое описание задачи или нажмите 'Отмена':",
         reply_markup=skip_keyboard()
     )
     await state.set_state(EditTaskStates.edit_description)
@@ -123,7 +123,7 @@ async def start_edit_deadline(callback_query: types.CallbackQuery, callback_data
     task_id = callback_data.task_id
     await state.update_data(task_id=task_id)
     await callback_query.message.answer(
-        "Введите новый дедлайн (формат YYYY-MM-DD) или нажмите 'Пропустить':",
+        "Введите новый дедлайн (формат YYYY-MM-DD) или нажмите 'Отмена':",
         reply_markup=skip_keyboard()
     )
     await state.set_state(EditTaskStates.edit_deadline)
@@ -174,22 +174,21 @@ async def handle_skip(callback_query: types.CallbackQuery, state: FSMContext):
         EditTaskStates.edit_description,
         EditTaskStates.edit_deadline
     ]:
-        await callback_query.answer("Редактирование пропущено.")
+        await callback_query.answer("Редактирование отменено.", show_alert=True)
         await state.clear()
-        await callback_query.message.answer("Редактирование параметра пропущено.")
+        await callback_query.message.delete()
     else:
-        await callback_query.answer("Нечего пропускать.")
+        await callback_query.answer("Нечего пропускать.", show_alert=True)
+
 
 @router.callback_query(UpdateActionCallbackFactory.filter(F.action == "back_to_task_actions"))
-async def handle_back_to_actions(callback_query: types.CallbackQuery, state: FSMContext,  callback_data: UpdateActionCallbackFactory):
+async def handle_back_to_actions(callback_query: types.CallbackQuery, callback_data: UpdateActionCallbackFactory):
     try:
         logger.info("back_to_task is handled")
 
         task_id = callback_data.task_id
 
         logger.info(f"task_id: {task_id}")
-
-
         if not task_id:
             await callback_query.answer("Ошибка: ID задачи не найден.", show_alert=True)
             return

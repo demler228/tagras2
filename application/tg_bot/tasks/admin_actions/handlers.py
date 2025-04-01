@@ -11,9 +11,14 @@ from .keyboards import (
     task_action_keyboard,
     back_to_tasks_list,
     menu_of_action_after_creating,
-    build_user_selection_keyboard
+    build_user_selection_keyboard,
+    back_to_task_actions
 )
-from .keyboards.callback_factories import TaskActionCallbackFactory, UserIdCallbackFactory, PaginationCallbackFactory
+from .keyboards.callback_factories import (TaskActionCallbackFactory,
+                                           UserIdCallbackFactory,
+                                           PaginationCallbackFactory,
+                                           BackTasksListAdminCallbackFactory,
+                                           BackToActionsAdminCallbackFactory)
 
 router = Router()
 
@@ -34,9 +39,10 @@ class AssignTaskStates(StatesGroup):
 
 
 # Обработчик перехода в раздел задач
+@router.callback_query(BackToActionsAdminCallbackFactory.filter())
 @router.callback_query(F.data == "tasks_button_admin")
 async def handle_tasks_button(callback_query: types.CallbackQuery):
-    await callback_query.message.answer(
+    await callback_query.message.edit_text(
         "Вы в разделе задач:",
         reply_markup=task_admin_panel_keyboard()
     )
@@ -124,7 +130,7 @@ async def select_user_handler(
             return
 
         updated_data = await state.get_data()
-        logger.info("Содержимое state: ", updated_data)
+        logger.info(f"Содержимое state: {updated_data}")
         keyboard = build_user_selection_keyboard(users_data_state.data,
                                                  list(selected_users),
                                                  page=current_page,
@@ -155,7 +161,7 @@ async def pagination_handler(
             selected_users = set(data.get("selected_users", []))
 
             # Обновляем клавиатуру для новой страницы
-            page = callback_data.page
+            page = data.get("current_page")
             keyboard = build_user_selection_keyboard(
                 all_users=all_users,
                 selected_users=list(selected_users),
@@ -195,6 +201,7 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
 
 
 # Обработчик просмотра задач
+@router.callback_query(BackTasksListAdminCallbackFactory.filter())
 @router.callback_query(F.data == "view_tasks")
 async def view_tasks_handler(callback_query: types.CallbackQuery, state: FSMContext):
     data_state = TasksDbBl.get_all_tasks()
@@ -206,13 +213,13 @@ async def view_tasks_handler(callback_query: types.CallbackQuery, state: FSMCont
         for idx, task in enumerate(tasks, start=1):
             message += f"{idx}. {task.name}\n"
 
-        await callback_query.message.answer(
+        await callback_query.message.edit_text(
             message + "\nВведите номер задачи для просмотра деталей:",
-            reply_markup=back_to_tasks_list()
+            reply_markup=back_to_task_actions()
         )
         await state.set_state(ViewTaskStates.select_task)
     else:
-        await callback_query.message.answer("Задачи не найдены", reply_markup=back_to_tasks_list())
+        await callback_query.message.answer("Задачи не найдены", reply_markup=back_to_task_actions())
 
 
 @router.message(ViewTaskStates.select_task)
@@ -264,14 +271,9 @@ async def task_action_handler(
         await handle_edit_task(callback_query, task_id)
 
 
-# async def handle_edit_task(callback_query: types.CallbackQuery, task_id: int):
-#     await callback_query.message.answer(f"Редактирование задачи {task_id}")
-
-
 @router.callback_query(F.data == "assign_task")
 async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMContext):
     try:
-        await callback_query.answer("Обработка назначения задачи...")
         data = await state.get_data()
         task_id = data.get("task_id")
 
@@ -305,3 +307,4 @@ async def handle_assign_task(callback_query: types.CallbackQuery, state: FSMCont
     except Exception as e:
         logger.error(f"Ошибка в handle_assign_task: {e}")
         await callback_query.message.answer("Произошла ошибка при обработке запроса.")
+

@@ -7,5 +7,6 @@ from .tasks_keyboard import (task_admin_panel_keyboard,
                              build_user_selection_keyboard,
                              skip_keyboard,
                              update_task_actions,
+                             back_to_task_actions
                              )
 # from .callback_factories import TaskCallbackFactory, BackTasksListCallbackFactory

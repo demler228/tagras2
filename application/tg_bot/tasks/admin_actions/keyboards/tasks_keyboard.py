@@ -7,7 +7,8 @@ from .callback_factories import (
     TaskActionCallbackFactory,
     UserIdCallbackFactory,
     PaginationCallbackFactory,
-    UpdateActionCallbackFactory
+    UpdateActionCallbackFactory,
+    BackToActionsAdminCallbackFactory
 )
 
 from domain.tasks.db_bl import TasksDbBl
@@ -37,8 +38,14 @@ def task_action_keyboard(task_id):
         text="Удалить задачу",
         callback_data=TaskActionCallbackFactory(action="delete_task", task_id=task_id)
     )
+    builder.button(
+        text="🔙 Назад к списку заданий",
+        callback_data=BackTasksListAdminCallbackFactory()
+    )
     builder.adjust(1)
     return builder.as_markup()
+
+
 def update_task_actions(task_id):
     builder = InlineKeyboardBuilder()
     builder.button(
@@ -53,9 +60,11 @@ def update_task_actions(task_id):
         text="Изменить дедлайн",
         callback_data=UpdateActionCallbackFactory(action="update_deadline", task_id=task_id).pack()
     )
-    builder.button(text="🔙 Назад к действиям", callback_data=UpdateActionCallbackFactory(action="back_to_task_actions", task_id=task_id))
+    builder.button(text="🔙 Назад к действиям",
+                   callback_data=UpdateActionCallbackFactory(action="back_to_task_actions", task_id=task_id))
     builder.adjust(1)
     return builder.as_markup()
+
 
 def back_to_tasks_list():
     builder = InlineKeyboardBuilder()
@@ -66,6 +75,15 @@ def back_to_tasks_list():
     builder.adjust(1)
     return builder.as_markup()
 
+
+def back_to_task_actions():
+    builder = InlineKeyboardBuilder()
+    builder.button(
+        text="🔙 Назад к действиям",
+        callback_data=BackToActionsAdminCallbackFactory()
+    )
+    builder.adjust(1)
+    return builder.as_markup()
 
 def build_user_selection_keyboard(
         all_users: list,
@@ -144,11 +162,8 @@ def get_all_tasks_button():
     return builder.as_markup()
 
 
-
 def skip_keyboard():
     builder = InlineKeyboardBuilder()
     builder.button(text="Отмена", callback_data="skip")
     builder.adjust(1)
     return builder.as_markup()
-
-

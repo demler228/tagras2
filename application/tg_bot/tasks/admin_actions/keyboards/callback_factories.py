@@ -13,9 +13,8 @@ class TaskAdminCallbackFactory(CallbackData, prefix="task"):
 class BackTasksListAdminCallbackFactory(CallbackData, prefix="back_to_tasks_list_admin"):
     pass
 
-class BackToTasksActionsAdminCallbackFactory(CallbackData, prefix="back_to_actions_admin"):
+class BackToActionsAdminCallbackFactory(CallbackData, prefix="back_to_tasks_actions"):
     pass
-
 class BackToMenuAdminCallbackFactory(CallbackData, prefix="back_to_admin_main_menu"):
     pass
 
