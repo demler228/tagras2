@@ -160,12 +160,25 @@ async def pagination_handler(
             all_users = all_users_data_state.data
             selected_users = set(data.get("selected_users", []))
 
+            # Обновляем текущую страницу на основе действия (prev/next)
+            current_page = data.get("current_page", 1)
+            if callback_data.action == "prev":
+                current_page -= 1
+            elif callback_data.action == "next":
+                current_page += 1
+
+            # Убедимся, что страница не выходит за границы
+            total_pages = (len(all_users) + 9) // 10  # users_per_page = 10
+            current_page = max(1, min(total_pages, current_page))
+
+            # Сохраняем новую текущую страницу в состоянии
+            await state.update_data(current_page=current_page)
+
             # Обновляем клавиатуру для новой страницы
-            page = data.get("current_page")
             keyboard = build_user_selection_keyboard(
                 all_users=all_users,
                 selected_users=list(selected_users),
-                page=page,
+                page=current_page,
                 users_per_page=10,
                 task_id=task_id
             )

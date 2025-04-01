@@ -85,6 +85,7 @@ def back_to_task_actions():
     builder.adjust(1)
     return builder.as_markup()
 
+
 def build_user_selection_keyboard(
         all_users: list,
         selected_users: list = None,
