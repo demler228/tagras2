@@ -17,6 +17,13 @@ from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 from .modules.utils import remove_empty_lines
 
+def process_text(input_text):
+    lines = [line.strip() for line in input_text.split('\n') if line.strip()]
+    
+    single_line = ' '.join(lines)
+    
+    processed_text = ' '.join(single_line.split())
+    return processed_text
 
 class FileRepository:
     @staticmethod
@@ -61,7 +68,7 @@ class WebRepository:
             for script in soup(["script", "style"]):
                 script.decompose()
             text = soup.get_text(separator="\n")
-            return remove_empty_lines(text)
+            return process_text(remove_empty_lines(text))[:6000]
         except requests.RequestException as e:
             print(f"Ошибка при загрузке страницы: {e}")
             return None
@@ -100,7 +107,7 @@ class QuizRepository:
                     {
                         "role": "user",
                         "content": f"""
-    Сгенерируй 10 вопросов по тексту. Каждый вопрос должен быть в следующем формате:
+    Сгенерируй 20 вопросов по тексту. Каждый вопрос должен быть в следующем формате:
     - Вопрос
     - 4 варианта ответа (пронумерованные от 1 до 4)
     - Правильный ответ (указанный в формате "Правильный ответ: X)")
@@ -142,12 +149,12 @@ class QuizRepository:
             response = requests.post(url, headers=headers, data=payload, verify=False)
             if response.status_code == 200:
                 try:
-                    # Парсим JSON ответ
                     content = response.json()
                     choices = content.get('choices', [])
                     if choices:
                         message = choices[0].get('message', {})
                         content_str = message.get('content', '')
+                        print(message)
                         try:
                             quiz_data = json.loads(content_str)
                             return DataSuccess(quiz_data)
@@ -255,6 +262,3 @@ class QuizDAL:
             except Exception as e:
                 logger.error(e)
                 return DataFailedMessage("Ошибка в работе базы данных!")
-
-
-
