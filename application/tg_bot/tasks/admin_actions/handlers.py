@@ -274,17 +274,19 @@ async def select_task_handler(message: types.Message, state: FSMContext):
 @router.callback_query(TaskActionCallbackFactory.filter())
 async def task_action_handler(
         callback_query: types.CallbackQuery,
-        callback_data: TaskActionCallbackFactory
+        callback_data: TaskActionCallbackFactory,
+        state: FSMContext
 ):
     task_id = callback_data.task_id
     action = callback_data.action
+    await state.update_data(task_id=task_id)
     if action == "delete_task":
         TasksDbBl.delete_task(task_id)
         await callback_query.message.edit_text(f"Задача {task_id} удалена", reply_markup=back_to_tasks_list())
     elif action == "edit_task":
         await handle_edit_task(callback_query, task_id)
     elif action == "reassign_task":
-        await handle_reassign_task(callback_query, task_id)
+        await handle_reassign_task(callback_query, state)
 
 
 @router.callback_query(F.data == "assign_task")

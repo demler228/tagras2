@@ -26,6 +26,11 @@ class TasksDbBl:
         return data_state
 
     @staticmethod
+    def get_assigned_users_by_task_id(task_id: int) -> DataState[list[User]]:
+        data_state = TasksDbDal.get_assigned_users_by_task_id(task_id)
+        return data_state
+
+    @staticmethod
     def get_all_tasks() -> DataState[list[Task]]:
         data_state = TasksDbDal.get_all_tasks()
         return data_state

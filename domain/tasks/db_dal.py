@@ -5,13 +5,11 @@ from loguru import logger
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-
 from application.tg_bot.tasks.entities.task import Task
 
 from domain.tasks.models.tasks import TaskBase
 from domain.tasks.models.user_tasks import UserTaskBase
 from domain.user.models.user import UserBase
-
 
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
@@ -169,3 +167,21 @@ class TasksDbDal:
                 logger.error(e)
                 session.rollback()
                 return DataFailedMessage('Ошибка при присвоении задачи!')
+
+    @staticmethod
+    def get_assigned_users_by_task_id(task_id: int) -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                statement = (
+                    select(UserBase)
+                    .join(UserTaskBase, UserBase.id == UserTaskBase.user_id)
+                    .filter(UserTaskBase.task_id == task_id)
+                )
+                tasks = session.scalars(statement).all()
+                return DataSuccess(tasks)
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
