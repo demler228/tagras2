@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.enums import ParseMode
 from domain.quiz.db_bl import DBService
-
+import random
 from application.tg_bot.training.entities.questions import Question
 from .keyboards import get_answers_keyboard, get_themes_keyboard
 from .callback_factories import QuizCallbackFactory
@@ -12,7 +12,6 @@ from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get
 router = Router()
 
 user_data = {}
-
 
 @router.callback_query(F.data == "quiz_button")
 async def handle_quiz_button(callback_query: types.CallbackQuery):
@@ -30,7 +29,6 @@ async def handle_quiz_button(callback_query: types.CallbackQuery):
     )
     await callback_query.answer()
 
-
 @router.callback_query(QuizCallbackFactory.filter(F.action == "select_theme"))
 async def handle_theme_selection(callback_query: CallbackQuery, callback_data: QuizCallbackFactory):
     theme_id = callback_data.theme_id
@@ -38,8 +36,8 @@ async def handle_theme_selection(callback_query: CallbackQuery, callback_data: Q
 
     questions_result = DBService.get_questions_by_theme(theme_id)
     if isinstance(questions_result, DataSuccess):
-        questions = questions_result.data  # Список объектов Question
-        print(f'questions - {questions}')
+        all_questions = questions_result.data
+        questions = random.sample(all_questions, min(10, len(all_questions)))
     else:
         await callback_query.message.answer("🚫 Вопросы по выбранной теме не найдены.")
         return
@@ -69,19 +67,18 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         return
 
     selected_answer_index = callback_data.answer_index
-    print(f'selected answer - {selected_answer_index}')
     questions = user_state["questions"]
     current_question_index = user_state["current_question"]
     current_question: Question = questions[current_question_index]
 
     correct_answer = current_question.correct_answer
-    print(f'correct_answer - {correct_answer}')
-
     correct_answer_index = current_question.answers.index(correct_answer)
-    print(f'correct_answer_index - {correct_answer_index}')
 
     if selected_answer_index == correct_answer_index:
         user_state["score"] += 1
+        await callback_query.answer("✅ Верно!")
+    else:
+        await callback_query.answer(f"❌ Неверно! Правильный ответ: {correct_answer}")
 
     user_state["current_question"] += 1
     if user_state["current_question"] < len(questions):
@@ -90,20 +87,31 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         score = user_state["score"]
         total_questions = len(questions)
 
-        await callback_query.message.bot.delete_message(
-            chat_id=callback_query.message.chat.id,
-            message_id=user_state["message_id"]
+        if user_state.get("message_id"):
+            try:
+                await callback_query.message.bot.delete_message(
+                    chat_id=callback_query.message.chat.id,
+                    message_id=user_state["message_id"]
+                )
+            except:
+                pass
+
+        # Здесь должна быть ваша логика определения is_admin
+        # Например, проверка в базе данных или другом хранилище
+        is_admin = False  # Временное значение - замените на реальную проверку
+
+        result_message = (
+            f"🎉 *Викторина завершена!*\n"
+            f"✅ Вы ответили правильно на *{score}* из *{total_questions}* вопросов.\n\n"
+            f"Выберите следующее действие из главного меню"
         )
 
         await callback_query.message.answer(
-            f"🎉 *Викторина завершена!*\n"
-            f"✅ Вы ответили правильно на *{score}* из *{total_questions}* вопросов.\n\nВыберите следующее действие из главного меню",
-            parse_mode=ParseMode.MARKDOWN, reply_markup=get_main_menu_keyboard()
+            result_message,
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=get_main_menu_keyboard(is_admin=is_admin)
         )
         user_data.pop(user_id)
-
-    await callback_query.answer()
-
 
 async def send_question(message: Message, user_id: int):
     user_state = user_data[user_id]

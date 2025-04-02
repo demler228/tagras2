@@ -1,9 +1,11 @@
 from random import randint
-
 from aiogram import Router, types, F
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
-from aiogram.types import Message
+from aiogram.types import Message, ContentType
+from aiogram.client.session.middlewares.request_logging import logger
+import os
+from pathlib import Path
 
 from application.tg_bot.training.admin_actions.keyboards.theme_list_keyboard import ThemeListCallback, \
     get_theme_list_keyboard, ThemeCallback
@@ -16,11 +18,13 @@ from application.tg_bot.training.entities.materials import Material
 from application.tg_bot.training.entities.theme import Theme
 from domain.training.education.db_bl import EducationBL
 from utils.data_state import DataSuccess
-from domain.quiz.db_bl import QuizService
-from domain.quiz.db_dal import *
+from domain.quiz.db_dal import FileRepository, WebRepository, QuizRepository, QuizDAL
 
 router = Router()
 
+# Папка для временного хранения файлов
+TEMP_DIR = Path("temp_files")
+TEMP_DIR.mkdir(exist_ok=True)
 
 class AdminStates(StatesGroup):
     theme_menu = State()
@@ -31,20 +35,17 @@ class AdminStates(StatesGroup):
     change_material_name = State()
     change_material_url = State()
 
-
 emoji_books = ['📒', '📕', '📗', '📘', '📙']
 
-
-async def get_theme(state, object,  keyboard_markup, callback_data=None):
+async def get_theme(state, object, keyboard_markup, callback_data=None):
     await state.set_state(AdminStates.theme_menu)
     message = None
     data_state = None
     theme = None
     material_id = None
 
-    if isinstance(object, Message): # смотрим от кого у нас вызвалась фунуция; от callback или message
+    if isinstance(object, Message):  # Проверяем, от кого вызвана функция: callback или message
         message = object
-        # если вдруг еще кто-то изменяет этот вопрос-ответ, чтобы были актуальные данные
         data_state = EducationBL.get_themes()
 
         if isinstance(data_state, DataSuccess):
@@ -54,7 +55,7 @@ async def get_theme(state, object,  keyboard_markup, callback_data=None):
             theme = next((theme for theme in theme_list if theme.id == changed_theme_id), None)
             data_state = EducationBL.get_materials(theme.id)
 
-            if callback_data: # material_id check
+            if callback_data:  # Проверка material_id
                 if isinstance(data_state, DataSuccess):
                     materials = data_state.data
                     material_id = callback_data.material_id
@@ -73,7 +74,7 @@ async def get_theme(state, object,  keyboard_markup, callback_data=None):
 
     if isinstance(data_state, DataSuccess):
         materials = data_state.data
-        materials_text = '🧐 Материалов нету'if len(materials) == 0 else\
+        materials_text = '🧐 Материалов нету' if len(materials) == 0 else \
             '\n'.join([f'<u><b>[{i}]{material.title}:\n{material.url}</b></u>'
                        if material_id and material.id == material_id
                        else f'[{i}]{material.title}:\n{material.url}'
@@ -84,9 +85,7 @@ async def get_theme(state, object,  keyboard_markup, callback_data=None):
     else:
         await message.answer(f'❌ {data_state.error_message}')
 
-    #стараемся минимизировать кол-во обращений к бд
     await state.update_data({'theme': theme, 'message': message})
-
 
 async def get_theme_list_button(callback_query: types.CallbackQuery, state: FSMContext,
                                 callback_data: ThemeListCallback = None):
@@ -106,25 +105,22 @@ async def get_theme_list_button(callback_query: types.CallbackQuery, state: FSMC
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
 
-
 @router.callback_query(F.data == "training_button_admin")
 async def handle_theme_list_button(callback_query: types.CallbackQuery, state: FSMContext):
     await get_theme_list_button(callback_query, state)
-
 
 @router.callback_query(ThemeListCallback.filter())
 async def handle_theme_list_button_by_callback(callback_query: types.CallbackQuery, state: FSMContext,
                                                callback_data: ThemeListCallback):
     await get_theme_list_button(callback_query, state, callback_data)
 
-
 @router.callback_query(ThemeChooseMaterialsCallback.filter())
 async def handle_theme_choose_materials_button(callback_query: types.CallbackQuery, callback_data: ThemeChooseMaterialsCallback, state: FSMContext):
-    await get_theme(state, callback_query.message,get_theme_material_menu_keyboard(), callback_data=callback_data)
+    await get_theme(state, callback_query.message, get_theme_material_menu_keyboard(), callback_data=callback_data)
 
 @router.callback_query(ThemeCallback.filter())
 async def handle_theme_button(callback_query: types.CallbackQuery, callback_data: ThemeCallback, state: FSMContext):
-    await get_theme(state, callback_query,get_theme_menu_keyboard(), callback_data=callback_data)
+    await get_theme(state, callback_query, get_theme_menu_keyboard(), callback_data=callback_data)
 
 @router.callback_query(F.data == "back_theme_button")
 async def handle_theme_button(callback_query: types.CallbackQuery, state: FSMContext):
@@ -136,18 +132,15 @@ async def handle_theme_delete_button(callback_query: types.CallbackQuery, state:
     data_state = EducationBL.theme_delete(theme)
 
     if isinstance(data_state, DataSuccess):
-        #await (await state.get_data())['message'].delete()
         await get_theme_list_button(callback_query, state)
         await callback_query.message.answer(f'Тема удалена!')
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
 
-
 @router.callback_query(F.data == "theme_create_button")
 async def theme_create_name(callback_query: types.CallbackQuery, state: FSMContext):
     await state.set_state(AdminStates.create_theme_name)
     await callback_query.message.answer(f"✍️ Введите название темы")
-
 
 @router.message(F.text, AdminStates.create_theme_name)
 async def theme_create(message: Message, state: FSMContext):
@@ -156,16 +149,14 @@ async def theme_create(message: Message, state: FSMContext):
     if isinstance(data_state, DataSuccess):
         theme.id = data_state.data
         await state.update_data({'theme': theme})
-        await get_theme(state, message,get_theme_menu_keyboard())
+        await get_theme(state, message, get_theme_menu_keyboard())
     else:
         await message.answer(f'❌ {data_state.error_message}')
-
 
 @router.callback_query(F.data == "theme_change_name_button")
 async def theme_change_name(callback_query: types.CallbackQuery, state: FSMContext):
     await state.set_state(AdminStates.change_theme_name)
     await callback_query.message.answer(f"✍️ Введите новое название темы")
-
 
 @router.message(F.text, AdminStates.change_theme_name)
 async def theme_changed_name(message: Message, state: FSMContext):
@@ -175,7 +166,7 @@ async def theme_changed_name(message: Message, state: FSMContext):
 
     if isinstance(data_state, DataSuccess):
         await (await state.get_data())['message'].delete()
-        await get_theme(state,message,get_theme_menu_keyboard())
+        await get_theme(state, message, get_theme_menu_keyboard())
     else:
         await message.answer(f'❌ {data_state.error_message}')
 
@@ -188,10 +179,6 @@ async def handle_back_theme_choose_button(callback_query: types.CallbackQuery, s
         await get_theme(state, callback_query.message, get_theme_choose_materials_keyboard(data_state.data))
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
-
-@router.callback_query(F.data == "back_theme_button")
-async def handle_back_theme_button(callback_query: types.CallbackQuery, state: FSMContext):
-    await get_theme(state, callback_query.message, get_theme_menu_keyboard())
 
 @router.callback_query(F.data == "theme_change_materials_button")
 async def handle_back_theme_button(callback_query: types.CallbackQuery, state: FSMContext):
@@ -212,33 +199,103 @@ async def theme_create_material_name(callback_query: types.CallbackQuery, state:
 async def faq_create_answer(message: Message, state: FSMContext):
     await state.update_data({'material_name': message.text})
     await state.set_state(AdminStates.create_material_url)
-    await message.answer(f"✍️ Введите url")
+    await message.answer(f"✍️ Введите URL или загрузите файл (PDF, Word, видео)")
 
+# Обработка текстового ввода (URL)
 @router.message(F.text, AdminStates.create_material_url)
-async def theme_created_material(message: Message, state: FSMContext):
+async def theme_created_material_url(message: Message, state: FSMContext):
     theme = (await state.get_data())['theme']
     material = Material(
-        title=(await state.get_data())['material_name'], 
+        title=(await state.get_data())['material_name'],
         url=message.text,
         theme_id=theme.id
     )
     data_state = EducationBL.material_create(material)
-    
+
     if isinstance(data_state, DataSuccess):
         await (await state.get_data())['message'].delete()
         await get_theme(
-            state, 
+            state,
             message,
             get_theme_material_menu_keyboard(),
             ThemeChooseMaterialsCallback(material_id=data_state.data)
         )
-        
-        text = None
-        if material.url.startswith(('http://', 'https://')):
+
+        # Проверка и обработка URL
+        if not material.url.startswith(('http://', 'https://')):
+            await message.answer("❌ Неверный формат ссылки! Пожалуйста, отправьте корректную URL (начинающуюся с http:// или https://).")
+            return
+
+        try:
+            # Обработка URL и получение текста
             text = WebRepository.process_url(material.url)
-        else:
-            text = FileRepository.process_file(material.url)
-        
+            print(text)
+            if not text:
+                await message.answer("ℹ️ Не удалось извлечь текст из ссылки для создания викторины.")
+                return
+
+            # Получение токена и генерация викторины
+            token = QuizRepository.get_token()
+            if not token:
+                await message.answer("❌ Не удалось получить токен для генерации викторины.")
+                return
+
+            quiz_data = QuizRepository.get_quiz_questions(token, text)
+            if isinstance(quiz_data, DataSuccess):
+                save_result = QuizDAL.save_quiz(quiz_data.data, theme.name)
+                if isinstance(save_result, DataSuccess):
+                    await message.answer("✅ Викторина успешно создана и сохранена!")
+                else:
+                    await message.answer(f"❌ Ошибка при сохранении викторины: {save_result.error_message}")
+            else:
+                await message.answer(f"❌ Ошибка при генерации викторины: {quiz_data.error_message}")
+        except Exception as e:
+            await message.answer(f"❌ Произошла ошибка при обработке ссылки: {str(e)}")
+    else:
+        await message.answer(f"❌ Ошибка при создании материала: {data_state.error_message}")
+
+# Обработка загруженных файлов (PDF, Word, видео)
+@router.message(F.content_type.in_({ContentType.DOCUMENT, ContentType.VIDEO}), AdminStates.create_material_url)
+async def theme_created_material_file(message: Message, state: FSMContext, bot):
+    theme = (await state.get_data())['theme']
+    material_name = (await state.get_data())['material_name']
+
+    # Определяем тип файла и получаем его
+    if message.document:
+        file_id = message.document.file_id
+        file_name = message.document.file_name
+    elif message.video:
+        file_id = message.video.file_id
+        file_name = f"{message.video.file_id}.mp4"  # Присваиваем расширение для видео
+    else:
+        await message.answer("❌ Неверный тип файла! Поддерживаются PDF, Word и видео.")
+        return
+
+    # Скачиваем файл
+    file_info = await bot.get_file(file_id)
+    file_path = TEMP_DIR / file_name
+    await bot.download_file(file_info.file_path, file_path)
+
+    # Создаем объект Material с путем к файлу
+    material = Material(
+        title=material_name,
+        url=str(file_path),  # Сохраняем путь к файлу как URL
+        theme_id=theme.id
+    )
+    data_state = EducationBL.material_create(material)
+
+    if isinstance(data_state, DataSuccess):
+        await (await state.get_data())['message'].delete()
+        await get_theme(
+            state,
+            message,
+            get_theme_material_menu_keyboard(),
+            ThemeChooseMaterialsCallback(material_id=data_state.data)
+        )
+
+        # Обработка содержимого файла с помощью FileRepository
+        text = FileRepository.process_file(str(file_path))
+        print(text)
         if text:
             token = QuizRepository.get_token()
             if token:
@@ -249,6 +306,11 @@ async def theme_created_material(message: Message, state: FSMContext):
                         await message.answer(f'❌ Ошибка при сохранении викторины: {save_result.error_message}')
             else:
                 await message.answer('❌ Не удалось получить токен для генерации викторины')
+        else:
+            await message.answer('ℹ️ Не удалось извлечь текст из файла для викторины')
+
+        # Удаляем временный файл после обработки
+        os.remove(file_path)
     else:
         await message.answer(f'❌ {data_state.error_message}')
 
@@ -273,7 +335,7 @@ async def material_changed_name(message: Message, state: FSMContext):
 @router.callback_query(F.data == "change_material_url_button")
 async def change_material_url(callback_query: types.CallbackQuery, state: FSMContext):
     await state.set_state(AdminStates.change_material_url)
-    await callback_query.message.answer(f"✍️ Введите новый url")
+    await callback_query.message.answer(f"✍️ Введите новый URL или загрузите файл (PDF, Word, видео)")
 
 @router.message(F.text, AdminStates.change_material_url)
 async def changed_material_url(message: Message, state: FSMContext):
@@ -295,6 +357,6 @@ async def change_material_url(callback_query: types.CallbackQuery, state: FSMCon
 
     if isinstance(data_state, DataSuccess):
         await get_theme(state, callback_query.message, get_theme_menu_keyboard())
+        await callback_query.message.answer(f"Материал удален!")
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
-    await callback_query.message.answer(f"Материал удален!")
