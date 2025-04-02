@@ -3,7 +3,7 @@ from application.tg_bot.office_maps.personal_actions.keyboards.callback_factorie
 from domain.tasks.db_bl import TasksDbBl
 
 from .callback_factories import (
-    TaskCallbackFactory, BackTasksListCallbackFactory
+    TaskPersonalCallbackFactory, BackTasksListCallbackFactory
 )
 from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallbackFactory
 from utils.data_state import DataSuccess
@@ -18,7 +18,7 @@ def get_tasks_for_user_keyboard(tg_id):
         for task in data_state.data:
             builder.button(
                 text=task.name,
-                callback_data=TaskCallbackFactory(task_id=task.id)
+                callback_data=TaskPersonalCallbackFactory(task_id=task.id)
             )
     else:
         # Если данные не получены, можно добавить кнопку с сообщением об ошибке
@@ -32,7 +32,7 @@ def get_tasks_for_user_keyboard(tg_id):
     return builder.as_markup()
 
 
-def back_to_tasks_list():
+def back_to_tasks_list_personal():
     builder = InlineKeyboardBuilder()
 
     builder.button(text="🔙 Назад к списку заданий", callback_data=BackTasksListCallbackFactory())

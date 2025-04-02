@@ -6,6 +6,7 @@ from aiogram import Router, F, types
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
 from .edit_handler import handle_edit_task
+from .reassign_task_handlers import handle_reassign_task
 from .keyboards import (
     task_admin_panel_keyboard,
     task_action_keyboard,
@@ -282,6 +283,8 @@ async def task_action_handler(
         await callback_query.message.edit_text(f"Задача {task_id} удалена", reply_markup=back_to_tasks_list())
     elif action == "edit_task":
         await handle_edit_task(callback_query, task_id)
+    elif action == "reassign_task":
+        await handle_reassign_task(callback_query, task_id)
 
 
 @router.callback_query(F.data == "assign_task")

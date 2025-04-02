@@ -7,7 +7,7 @@ class TaskActionCallbackFactory(CallbackData, prefix="task_action"):
 class UpdateActionCallbackFactory(CallbackData, prefix="update_action"):
     action: str
     task_id: int
-class TaskAdminCallbackFactory(CallbackData, prefix="task"):
+class TaskAdminCallbackFactory(CallbackData, prefix="task_admin"):
     task_id: int
 
 class BackTasksListAdminCallbackFactory(CallbackData, prefix="back_to_tasks_list_admin"):

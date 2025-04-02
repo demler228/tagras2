@@ -1,8 +1,9 @@
+import loguru
 from aiogram import Router, F, types
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
-from .keyboards import get_tasks_for_user_keyboard, back_to_tasks_list
-from .keyboards import TaskCallbackFactory, BackTasksListCallbackFactory
+from .keyboards import get_tasks_for_user_keyboard, back_to_tasks_list_personal
+from .keyboards import TaskPersonalCallbackFactory, BackTasksListCallbackFactory
 
 router = Router()
 
@@ -17,11 +18,12 @@ async def handle_tasks_button(callback_query: types.CallbackQuery):
     )
 
 
-@router.callback_query(TaskCallbackFactory.filter())
-async def handle_task_description_button(callback_query: types.CallbackQuery, callback_data: TaskCallbackFactory):
+@router.callback_query(TaskPersonalCallbackFactory.filter())
+async def handle_task_description_button(callback_query: types.CallbackQuery, callback_data: TaskPersonalCallbackFactory):
     task_id = callback_data.task_id
     user_tg_id = callback_query.from_user.id
     data_state = TasksDbBl.get_tasks_by_tg_id(user_tg_id)
+    loguru.logger.info("handle_task_description_button_personal is handled")
     if isinstance(data_state, DataSuccess):
         tasks = data_state.data
 
@@ -35,7 +37,7 @@ async def handle_task_description_button(callback_query: types.CallbackQuery, ca
                 f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
                 f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
             )
-            await callback_query.message.edit_text(message, parse_mode="HTML", reply_markup=back_to_tasks_list())
+            await callback_query.message.edit_text(message, parse_mode="HTML", reply_markup=back_to_tasks_list_personal())
         else:
             await callback_query.message.edit_text(f"Ошибка в получении данных задачи")
     else:
