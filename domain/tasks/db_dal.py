@@ -60,11 +60,24 @@ class TasksDbDal:
         with Session() as session:
             try:
                 statement = (select(TaskBase)
-                             .join(UserTaskBase, TaskBase.id == UserTaskBase.task_id, isouter=True)
-                             .join(UserBase, UserTaskBase.user_id == UserBase.id, isouter=True)
+                             .order_by(TaskBase.id)
                              )
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)
+            except Exception as e:
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+
+    @staticmethod
+    def get_all_users() -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                statement = (select(UserBase))
+                users = session.scalars(statement).all()
+                return DataSuccess(users)
             except Exception as e:
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
@@ -97,7 +110,7 @@ class TasksDbDal:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                task = session.query(Task).filter_by(id=task_id).first()
+                task = session.query(TaskBase).filter_by(id=task_id).first()
                 if not task:
                     return DataFailedMessage('Задача не найдена!')
 
@@ -111,6 +124,7 @@ class TasksDbDal:
                 session.commit()
                 return DataSuccess()
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка при обновлении задачи!')
 
@@ -121,7 +135,7 @@ class TasksDbDal:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                task = session.query(Task).filter_by(id=task_id).first()
+                task = session.query(TaskBase).filter_by(id=task_id).first()
                 if not task:
                     return DataFailedMessage('Задача не найдена!')
 
@@ -130,26 +144,28 @@ class TasksDbDal:
                 return DataSuccess()
             except Exception as e:
                 logger.error(e)
+                session.rollback()
                 return DataFailedMessage('Ошибка при удалении задачи!')
 
-    # @staticmethod
-    # def assign_task_to_user(task_id: int, user_id: int) -> DataState:
-    #     Session = connection_db()
-    #     if not Session:
-    #         return DataFailedMessage('Ошибка в работе базы данных!')
-    #     with Session() as session:
-    #         try:
-    #             # Проверяем существование задачи и пользователя
-    #             task = session.query(Task).filter_by(id=task_id).first()
-    #             user = session.query(User).filter_by(id=user_id).first()
-    #             if not task or not user:
-    #                 return DataFailedMessage('Задача или пользователь не найдены!')
-    #
-    #             # Создаем связь между задачей и пользователем
-    #             user_task = UserTask(user_id=user_id, task_id=task_id)
-    #             session.add(user_task)
-    #             session.commit()
-    #             return DataSuccess()
-    #         except Exception as e:
-    #             logger.error(e)
-    #             return DataFailedMessage('Ошибка при присвоении задачи!')
+    @staticmethod
+    def assign_task_to_user(task_id: int, user_id: int) -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                # Проверяем существование задачи и пользователя
+                task = session.query(TaskBase).filter_by(id=task_id).first()
+                user = session.query(UserBase).filter_by(id=user_id).first()
+                if not task or not user:
+                    return DataFailedMessage('Задача или пользователь не найдены!')
+
+                # Создаем связь между задачей и пользователем
+                user_task = UserTaskBase(user_id=user_id, task_id=task_id)
+                session.add(user_task)
+                session.commit()
+                return DataSuccess()
+            except Exception as e:
+                logger.error(e)
+                session.rollback()
+                return DataFailedMessage('Ошибка при присвоении задачи!')

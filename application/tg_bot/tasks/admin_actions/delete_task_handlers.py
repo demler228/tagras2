@@ -4,10 +4,7 @@ from aiogram import Router, F, types
 
 from domain.tasks.db_bl import TasksDbBl
 
-from .keyboards.callback_factories import (TaskAdminCallbackFactory,
-                                           BackTasksListAdminCallbackFactory,
-                                           BackToTasksActionsAdminCallbackFactory,
-                                           BackToMenuAdminCallbackFactory)
+from .keyboards.callback_factories import (TaskAdminCallbackFactory)
 
 from utils.data_state import DataSuccess
 
@@ -40,7 +37,7 @@ async def handle_task_info(
     task_id = callback_data.task_id
     await state.update_data(task_id=task_id)
 
-    data_state = TasksDbBl.get_task_by_task_id(task_id)
+    data_state = TasksDbBl.get_task_detail_by_task_id(task_id)
 
     if isinstance(data_state, DataSuccess) and data_state.data:
         task = data_state.data

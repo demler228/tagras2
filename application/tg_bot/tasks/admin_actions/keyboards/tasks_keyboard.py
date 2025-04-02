@@ -1,13 +1,19 @@
+from aiogram.types import InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from .callback_factories import (
     TaskAdminCallbackFactory,
     BackTasksListAdminCallbackFactory,
     BackToMenuAdminCallbackFactory,
-    TaskActionCallbackFactory
+    TaskActionCallbackFactory,
+    UserIdCallbackFactory,
+    PaginationCallbackFactory,
+    UpdateActionCallbackFactory,
+    BackToActionsAdminCallbackFactory
 )
 
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
+
 
 def task_admin_panel_keyboard():
     builder = InlineKeyboardBuilder()
@@ -17,22 +23,48 @@ def task_admin_panel_keyboard():
     builder.adjust(1)
     return builder.as_markup()
 
+
 def task_action_keyboard(task_id):
     builder = InlineKeyboardBuilder()
     builder.button(
-        text="Изменить задачу",
-        callback_data=TaskActionCallbackFactory(action="edit", task_id=task_id)
+        text="Редактировать задачу",
+        callback_data=TaskActionCallbackFactory(action="edit_task", task_id=task_id)
     )
     builder.button(
         text="Переопределить исполнителей",
-        callback_data=TaskActionCallbackFactory(action="reassign", task_id=task_id)
+        callback_data=TaskActionCallbackFactory(action="reassign_task", task_id=task_id)
     )
     builder.button(
         text="Удалить задачу",
-        callback_data=TaskActionCallbackFactory(action="delete", task_id=task_id)
+        callback_data=TaskActionCallbackFactory(action="delete_task", task_id=task_id)
+    )
+    builder.button(
+        text="🔙 Назад к списку заданий",
+        callback_data=BackTasksListAdminCallbackFactory()
     )
     builder.adjust(1)
     return builder.as_markup()
+
+
+def update_task_actions(task_id):
+    builder = InlineKeyboardBuilder()
+    builder.button(
+        text="Изменить название",
+        callback_data=UpdateActionCallbackFactory(action="update_name", task_id=task_id).pack()
+    )
+    builder.button(
+        text="Изменить описание",
+        callback_data=UpdateActionCallbackFactory(action="update_description", task_id=task_id).pack()
+    )
+    builder.button(
+        text="Изменить дедлайн",
+        callback_data=UpdateActionCallbackFactory(action="update_deadline", task_id=task_id).pack()
+    )
+    builder.button(text="🔙 Назад к действиям",
+                   callback_data=UpdateActionCallbackFactory(action="back_to_task_actions", task_id=task_id))
+    builder.adjust(1)
+    return builder.as_markup()
+
 
 def back_to_tasks_list():
     builder = InlineKeyboardBuilder()
@@ -44,26 +76,68 @@ def back_to_tasks_list():
     return builder.as_markup()
 
 
-
-def task_admin_panel_keyboard_old():
+def back_to_task_actions():
     builder = InlineKeyboardBuilder()
-    builder.button(text="Создать задачу", callback_data="create_task")
-    builder.button(text="Присвоить задачу", callback_data="assign_task")
-    builder.button(text="Изменить задачу", callback_data="update_task")
-    builder.button(text="Удалить задачу", callback_data="delete_task")
     builder.button(
-        text="🔙 Назад в меню админа",
-        callback_data="back_to_admin_main_menu"
+        text="🔙 Назад к действиям",
+        callback_data=BackToActionsAdminCallbackFactory()
     )
     builder.adjust(1)
     return builder.as_markup()
+
+
+def build_user_selection_keyboard(
+        all_users: list,
+        selected_users: list = None,
+        page: int = 1,
+        users_per_page: int = 10,
+        task_id: int = None,
+):
+    if selected_users is None:
+        selected_users = []
+
+    # Вычисляем индексы для текущей страницы
+    start_index = (page - 1) * users_per_page
+    end_index = start_index + users_per_page
+    paginated_users = all_users[start_index:end_index]
+
+    builder = InlineKeyboardBuilder()
+
+    # Добавляем пользователей для текущей страницы
+    for user in paginated_users:
+        user_label = f"{user.username} ✅" if user.id in selected_users else user.username
+        callback_data = UserIdCallbackFactory(user_id=user.id, task_id=task_id).pack()
+        builder.button(text=user_label, callback_data=callback_data)
+
+    # Добавляем кнопки пагинации
+    total_pages = (len(all_users) + users_per_page - 1) // users_per_page  # Вычисляем общее количество страниц
+    if total_pages > 1:
+        buttons = []
+        if page > 1:
+            buttons.append(InlineKeyboardButton(
+                text="⬅️ Предыдущая страница",
+                callback_data=PaginationCallbackFactory(action="prev", page=page - 1, task_id=task_id).pack()
+            ))
+        if page < total_pages:
+            buttons.append(InlineKeyboardButton(
+                text="➡️ Следующая страница",
+                callback_data=PaginationCallbackFactory(action="next", page=page + 1, task_id=task_id).pack()
+            ))
+        builder.row(*buttons)
+
+    # Добавляем кнопку "Готово"
+    builder.button(text="Готово", callback_data="done")
+
+    builder.adjust(1)
+
+    return builder.as_markup()
+
 
 def menu_of_action_after_creating():
     builder = InlineKeyboardBuilder()
     builder.button(text="Присвоить задачу", callback_data="assign_task")
     builder.adjust(1)
     return builder.as_markup()
-
 
 
 def get_all_tasks_button():
@@ -89,10 +163,8 @@ def get_all_tasks_button():
     return builder.as_markup()
 
 
-def back_to_tasks_list():
+def skip_keyboard():
     builder = InlineKeyboardBuilder()
-
-    builder.button(text="🔙 Назад к списку заданий", callback_data=BackTasksListAdminCallbackFactory())
-
+    builder.button(text="Отмена", callback_data="skip")
     builder.adjust(1)
     return builder.as_markup()
