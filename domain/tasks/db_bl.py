@@ -28,7 +28,10 @@ class TasksDbBl:
     @staticmethod
     def get_assigned_users_by_task_id(task_id: int) -> DataState[list[User]]:
         data_state = TasksDbDal.get_assigned_users_by_task_id(task_id)
-        return data_state
+        if isinstance(data_state, DataSuccess):
+            return data_state
+        else:
+            logger.info(f"Состояние присвоенных пользователей {data_state.data}")
 
     @staticmethod
     def get_all_tasks() -> DataState[list[Task]]:
@@ -45,12 +48,14 @@ class TasksDbBl:
 
     @staticmethod
     def assign_task_to_user(task_id: int, selected_users: list) -> DataState:
-        if selected_users is None:
-            return DataFailedMessage('Пользователь не найден!')
-        else:
-            for user_id in selected_users:
-                TasksDbDal.assign_task_to_user(task_id, user_id)
-            return DataSuccess("Пользователи успешно присвоены")
+        clear_process_data_state = TasksDbDal.delete_assigned_users_by_task_id(task_id)
+        if isinstance(clear_process_data_state, DataSuccess):
+            if selected_users is None:
+                return DataFailedMessage('Пользователь не найден!')
+            else:
+                for user_id in selected_users:
+                    TasksDbDal.assign_task_to_user(task_id, user_id)
+                return DataSuccess("Пользователи успешно присвоены")
 
 
     @staticmethod

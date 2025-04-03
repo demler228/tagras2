@@ -31,6 +31,7 @@ class TasksDbDal:
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
@@ -63,6 +64,7 @@ class TasksDbDal:
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
@@ -77,6 +79,7 @@ class TasksDbDal:
                 users = session.scalars(statement).all()
                 return DataSuccess(users)
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
@@ -98,6 +101,7 @@ class TasksDbDal:
                 session.refresh(new_task)  # Получаем ID созданной задачи
                 return DataSuccess(new_task.id)
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка при создании задачи!')
 
@@ -183,5 +187,29 @@ class TasksDbDal:
                 tasks = session.scalars(statement).all()
                 return DataSuccess(tasks)
             except Exception as e:
+                session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
+    @staticmethod
+    def delete_assigned_users_by_task_id(task_id: int) -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                users_tasks = session.query(UserTaskBase).filter_by(task_id=task_id).all()
+
+                if not users_tasks:
+                    return DataSuccess(f'Связка пользователей с задачей {task_id} пока не существует')
+
+                # Удаляем каждую запись по отдельности
+                for user_task in users_tasks:
+                    session.delete(user_task)
+
+                session.commit()
+                return DataSuccess()
+            except Exception as e:
+                session.rollback()
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+
