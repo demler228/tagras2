@@ -1,2 +1,2 @@
-from .tasks_keyboard import get_tasks_for_user_keyboard, back_to_tasks_list
-from .callback_factories import TaskCallbackFactory, BackTasksListCallbackFactory
+from .tasks_keyboard import get_tasks_for_user_keyboard, back_to_tasks_list_personal
+from .callback_factories import TaskPersonalCallbackFactory, BackTasksListCallbackFactory
