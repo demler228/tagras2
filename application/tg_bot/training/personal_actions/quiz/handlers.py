@@ -71,14 +71,16 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
     current_question_index = user_state["current_question"]
     current_question: Question = questions[current_question_index]
 
+    # Используем перемешанный список ответов, сохраненный в состоянии
+    shuffled_answers = user_state["shuffled_answers"][current_question_index]
+    selected_answer = shuffled_answers[selected_answer_index]
     correct_answer = current_question.correct_answer
-    correct_answer_index = current_question.answers.index(correct_answer)
 
-    if selected_answer_index == correct_answer_index:
+    if selected_answer == correct_answer:
         user_state["score"] += 1
         await callback_query.answer("✅ Верно!")
     else:
-        await callback_query.answer(f"❌ Неверно! Правильный ответ: {correct_answer}")
+        await callback_query.answer("❌ Неверно!")
 
     user_state["current_question"] += 1
     if user_state["current_question"] < len(questions):
@@ -97,7 +99,6 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
                 pass
 
         # Здесь должна быть ваша логика определения is_admin
-        # Например, проверка в базе данных или другом хранилище
         is_admin = False  # Временное значение - замените на реальную проверку
 
         result_message = (
@@ -119,7 +120,17 @@ async def send_question(message: Message, user_id: int):
     current_question_index = user_state["current_question"]
     question: Question = questions[current_question_index]
 
-    answers_text = "\n".join([f"{i + 1}. {answer}" for i, answer in enumerate(question.answers)])
+    # Перемешиваем ответы
+    shuffled_answers = question.answers.copy()  # Создаем копию списка ответов
+    random.shuffle(shuffled_answers)  # Перемешиваем копию
+
+    # Сохраняем перемешанные ответы в состоянии пользователя
+    if "shuffled_answers" not in user_state:
+        user_state["shuffled_answers"] = [None] * len(questions)
+    user_state["shuffled_answers"][current_question_index] = shuffled_answers
+
+    # Формируем текст с перемешанными ответами
+    answers_text = "\n".join([f"{i + 1}. {answer}" for i, answer in enumerate(shuffled_answers)])
     question_message = (
         f"❓ *Вопрос {current_question_index + 1}:*\n"
         f"{question.text}\n\n"
@@ -134,7 +145,7 @@ async def send_question(message: Message, user_id: int):
             text=question_message,
             reply_markup=get_answers_keyboard(
                 question_index=current_question_index,
-                answers=question.answers
+                answers=shuffled_answers  # Передаем перемешанные ответы в клавиатуру
             ),
             parse_mode=ParseMode.MARKDOWN
         )
@@ -143,7 +154,7 @@ async def send_question(message: Message, user_id: int):
             question_message,
             reply_markup=get_answers_keyboard(
                 question_index=current_question_index,
-                answers=question.answers
+                answers=shuffled_answers  # Передаем перемешанные ответы в клавиатуру
             ),
             parse_mode=ParseMode.MARKDOWN
         )
