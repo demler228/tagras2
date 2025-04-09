@@ -22,7 +22,7 @@ class UserDbDal:
                 user = session.scalars(statement).one()
                 return DataSuccess(user)
             except Exception as e:
-                logger.exception(e)
+                logger.error(e)
                 return DataFailedMessage('Ошибка в получении пользователя!')
 
     @staticmethod
