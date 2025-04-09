@@ -40,6 +40,9 @@ class CreateTaskStates(StatesGroup):
 class AssignTaskStates(StatesGroup):
     select_users = State()
 
+class TaskListPaginationStates(StatesGroup):
+    viewing_page = State()
+
 
 # Обработчик перехода в раздел задач
 @router.callback_query(BackToActionsAdminCallbackFactory.filter())
@@ -217,8 +220,7 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
 
 
 
-class TaskListPaginationStates(StatesGroup):
-    viewing_page = State()
+
 
 
 def split_message_by_pages(message: str, max_length: int) -> list:

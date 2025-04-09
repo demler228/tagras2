@@ -1,20 +1,29 @@
 from aiogram import Router, types, F
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
+from loguru import logger
 from application.tg_bot.filters.is_admin import IsAdminFilter
+from application.tg_bot.filters.is_admin import is_super_admin
 from application.tg_bot.menu.admin_actions.keyboards.menu_keyboard import get_admin_main_menu_keyboard
 
 router = Router()
 
+
 @router.callback_query(F.data == "admin_main_menu_button")
 async def start_admin_handler(callback_query: types.CallbackQuery, state: FSMContext):
     await state.clear()
+    tg_id = callback_query.from_user.id
+    logger.info(f"start_admin_handler is handled. TG id: {tg_id}")
     await callback_query.message.delete()
-    await callback_query.message.answer("Привет! Вы в админ панели, что хотите изменить?", reply_markup=get_admin_main_menu_keyboard())
+    await callback_query.message.answer("Привет! Вы в админ панели, что хотите изменить?",
+                                        reply_markup=get_admin_main_menu_keyboard(
+                                            is_super_admin(tg_id)))
+
 
 @router.callback_query(F.data == "back_to_admin_main_menu")
 async def back_admin_handler(callback_query: types.CallbackQuery, state: FSMContext):
     await state.clear()
     await callback_query.message.delete()
     await callback_query.message.answer("Вы вернулись в главное меню!",
-                                       reply_markup=get_admin_main_menu_keyboard())
+                                        reply_markup=get_admin_main_menu_keyboard(
+                                            is_super_admin(callback_query.message.from_user.id)))
