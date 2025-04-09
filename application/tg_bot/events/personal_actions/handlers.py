@@ -36,6 +36,7 @@ async def handle_events_button(callback_query: types.CallbackQuery, callback_dat
             current_date = start_date + datetime.timedelta(days=i)
             text += f'\n{day} {current_date.strftime("%d.%m.%Y")}:'
             this_day_events = [] # этот список нужен только чтобы проверить потом, есть ли задачи на этот день
+            events = sorted(events, key=lambda event: event.date)
             for event in events:
                 if event.date.day == current_date.day:
                     this_day_events.append(event)
