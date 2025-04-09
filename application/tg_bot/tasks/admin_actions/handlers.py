@@ -13,17 +13,19 @@ from .keyboards import (
     back_to_tasks_list,
     menu_of_action_after_creating,
     build_user_selection_keyboard,
+    task_list_actions,
     back_to_task_actions
 )
 from .keyboards.callback_factories import (TaskActionCallbackFactory,
                                            UserIdCallbackFactory,
                                            PaginationCallbackFactory,
                                            BackTasksListAdminCallbackFactory,
-                                           BackToActionsAdminCallbackFactory)
+                                           BackToActionsAdminCallbackFactory,
+                                           PaginationTaskListCallbackFactory)
 
 router = Router()
 
-
+MAX_TEXT_LENGTH = 1000
 # Состояния для просмотра задач
 class ViewTaskStates(StatesGroup):
     select_task = State()
@@ -214,33 +216,95 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
         await callback_query.answer("Произошла ошибка", show_alert=True)
 
 
-# Обработчик просмотра задач
+
+class TaskListPaginationStates(StatesGroup):
+    viewing_page = State()
+
+
+def split_message_by_pages(message: str, max_length: int) -> list:
+    pages = []
+    current_page = ""
+
+    # Разделяем сообщение на строки
+    lines = message.split("\n")
+
+    for line in lines:
+        # Проверяем, влезет ли новая строка на текущую страницу
+        if len(current_page) + len(line) + 1 <= max_length:  # +1 для символа "\n"
+            current_page += line + "\n"
+        else:
+            # Если нет места, сохраняем текущую страницу и начинаем новую
+            pages.append(current_page.strip())
+            current_page = line + "\n"
+
+    # Добавляем последнюю страницу, если она не пустая
+    if current_page.strip():
+        pages.append(current_page.strip())
+
+    return pages
+
 @router.callback_query(BackTasksListAdminCallbackFactory.filter())
 @router.callback_query(F.data == "view_tasks")
 async def view_tasks_handler(callback_query: types.CallbackQuery, state: FSMContext):
     data_state = TasksDbBl.get_all_tasks()
-
+    logger.info("view_tasks_handler is handled")
+    message = f"Список задач:\n\n"
     if isinstance(data_state, DataSuccess) and data_state.data:
         tasks = data_state.data
-        message = "Список задач:\n\n"
 
         for idx, task in enumerate(tasks, start=1):
             message += f"{idx}. {task.name}\n"
 
-        await callback_query.message.edit_text(
-            message + "\nВведите номер задачи для просмотра деталей:",
-            reply_markup=back_to_task_actions()
-        )
+        # Разбиваем сообщение на страницы с учетом целостности строк
+        pages = split_message_by_pages(message, MAX_TEXT_LENGTH)
+
+        # Store the pages and current page in the state
+        await state.set_state(TaskListPaginationStates.viewing_page)
+        await state.update_data(pages=pages, current_page=1)
         await state.set_state(ViewTaskStates.select_task)
+
+        await callback_query.message.edit_text(
+            pages[0] + "\n\nВведите номер задачи для просмотра деталей:",
+            reply_markup=task_list_actions(1, len(pages))
+        )
     else:
         await callback_query.message.answer("Задачи не найдены", reply_markup=back_to_task_actions())
+
+@router.callback_query(PaginationTaskListCallbackFactory.filter())
+async def task_list_pagination_handler(callback_query: types.CallbackQuery, state: FSMContext, callback_data: PaginationTaskListCallbackFactory ):
+    logger.info("task_list_pagination_handler is handled")
+    data = await state.get_data()
+    pages = data['pages']
+    current_page = data['current_page']
+
+    action = callback_data.action
+    page = callback_data.page
+    page = int(page)
+
+    if action == "next_page" and page <= len(pages):
+        current_page = page
+        logger.info("next button is handled")
+    elif action == "prev_page" and page >= 1:
+        current_page = page
+        logger.info("previous button is handled")
+
+    await state.update_data(current_page=current_page)
+
+    await callback_query.message.edit_text(
+        pages[current_page -1] + "\n\nВведите номер задачи для просмотра деталей:",
+        reply_markup=task_list_actions(current_page, len(pages))
+    )
+    await state.set_state(ViewTaskStates.select_task)
+    await callback_query.answer()
 
 
 @router.message(ViewTaskStates.select_task)
 async def select_task_handler(message: types.Message, state: FSMContext):
     try:
-        task_number = int(message.text) - 1  # Номер начинается с 1
+        logger.info(f"select_task_handler is handled")
+        task_number = int(message.text) - 1
         data_state = TasksDbBl.get_all_tasks()
+        logger.info(f"Task number: {task_number}")
 
         if isinstance(data_state, DataSuccess) and data_state.data:
             tasks = data_state.data
@@ -262,11 +326,11 @@ async def select_task_handler(message: types.Message, state: FSMContext):
                     reply_markup=task_action_keyboard(task.id)
                 )
             else:
-                await message.answer("Некорректный номер задачи. Попробуйте снова.")
+                await message.answer("Некорректный номер задачи. Попробуйте снова.", reply_markup=back_to_tasks_list())
         else:
-            await message.answer("Задачи не найдены")
+            await message.answer("Задачи не найдены", reply_markup=back_to_tasks_list())
     except ValueError:
-        await message.answer("Введите корректный номер задачи.")
+        await message.answer("Введите корректный номер задачи.", reply_markup=back_to_tasks_list())
     finally:
         await state.clear()
 

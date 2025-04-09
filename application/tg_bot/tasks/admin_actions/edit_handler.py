@@ -22,6 +22,15 @@ class EditTaskStates(StatesGroup):
     edit_description = State()
     edit_deadline = State()
 
+def create_text_message(task):
+    text = (
+        f"<b>Задача:</b> {task.name}\n\n"
+        f"<b>Описание:</b> {task.description if task.description else 'Нет описания'}\n\n"
+        f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
+        f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
+    )
+    return text
+
 @router.callback_query(F.data == "edit_task")
 async def handle_edit_task(callback_query: types.CallbackQuery, task_id: int):
     try:
@@ -65,12 +74,7 @@ async def process_edit_name(message: types.Message,  state: FSMContext):
         tasks = tasks_data_state.data
         task = next((t for t in tasks if t.id == task_id), None)
         logger.info(f"task detail: {task.name}")
-        text = (
-            f"<b>Задача:</b> {task.name}\n\n"
-            f"<b>Описание:</b> {task.description if task.description else 'Нет описания'}\n\n"
-            f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
-            f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
-        )
+        text = create_text_message(task)
         await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
     else:
         await message.answer(f"Ошибка: {result.error_message}")
@@ -105,12 +109,7 @@ async def process_edit_description(message: types.Message, state: FSMContext):
         tasks = tasks_data_state.data
         task = next((t for t in tasks if t.id == task_id), None)
         logger.info(f"task detail: {task.name}")
-        text = (
-            f"<b>Задача:</b> {task.name}\n\n"
-            f"<b>Описание:</b> {task.description if task.description else 'Нет описания'}\n\n"
-            f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
-            f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
-        )
+        text = create_text_message(task)
         await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
     else:
         await message.answer(f"Ошибка: {result.error_message}")
@@ -151,12 +150,7 @@ async def process_edit_deadline(message: types.Message, state: FSMContext):
             tasks = tasks_data_state.data
             task = next((t for t in tasks if t.id == task_id), None)
             logger.info(f"task detail: {task.name}")
-            text = (
-                f"<b>Задача:</b> {task.name}\n\n"
-                f"<b>Описание:</b> {task.description if task.description else 'Нет описания'}\n\n"
-                f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
-                f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
-            )
+            text = create_text_message(task)
             await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
         else:
             await message.answer(f"Ошибка: {result.error_message}")
@@ -206,13 +200,7 @@ async def handle_back_to_actions(callback_query: types.CallbackQuery, callback_d
             await callback_query.answer("Ошибка: Задача не найдена.", show_alert=True)
             return
 
-        # Формируем текст с деталями задачи
-        text = (
-            f"<b>Задача:</b> {task.name}\n\n"
-            f"<b>Описание:</b> {task.description if task.description else 'Нет описания'}\n\n"
-            f"<b>Дата создания:</b> {task.creation_date.strftime('%Y-%m-%d')}\n\n"
-            f"<b>Дедлайн:</b> {task.deadline.strftime('%Y-%m-%d') if task.deadline else 'Не указан'}"
-        )
+        text = create_text_message(task)
 
         # Отправляем сообщение с текстом и клавиатурой
         await callback_query.message.edit_reply_markup(
