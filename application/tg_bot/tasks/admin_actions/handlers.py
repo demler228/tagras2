@@ -219,10 +219,6 @@ async def done_selecting_users(callback_query: types.CallbackQuery, state: FSMCo
         await callback_query.answer("Произошла ошибка", show_alert=True)
 
 
-
-
-
-
 def split_message_by_pages(message: str, max_length: int) -> list:
     pages = []
     current_page = ""
