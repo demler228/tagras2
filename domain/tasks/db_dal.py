@@ -75,7 +75,7 @@ class TasksDbDal:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                statement = (select(UserBase))
+                statement = (select(UserBase).order_by(UserBase.username))
                 users = session.scalars(statement).all()
                 return DataSuccess(users)
             except Exception as e:

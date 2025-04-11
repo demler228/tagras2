@@ -22,6 +22,9 @@ class UserIdCallbackFactory(CallbackData, prefix="user"):
     user_id: int
     task_id: int
 
+class PaginationTaskListCallbackFactory(CallbackData, prefix="task_list_pagination"):
+    action: str  # "prev_page" или "next_page"
+    page: int
 
 class PaginationCallbackFactory(CallbackData, prefix="pagination"):
     action: str  # "prev" или "next"

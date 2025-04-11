@@ -86,6 +86,7 @@ async def handle_faq_delete_button(callback_query: types.CallbackQuery, state: F
 
 @router.callback_query(F.data == "faq_create_button")
 async def faq_create_question(callback_query: types.CallbackQuery, state: FSMContext):
+    await callback_query.message.delete()
     await state.set_state(AdminStates.create_faq_question)
     await callback_query.message.answer(f"✍️ Введите вопрос")
 
