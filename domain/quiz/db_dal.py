@@ -8,22 +8,23 @@ import whisper
 import json
 import uuid
 from aiogram.client.session.middlewares.request_logging import logger
-from sqlalchemy import select
+from sqlalchemy import select, exists
 
 from application.tg_bot.training.entities.questions import Question
-from .models.quiz import QuestionBase, AnswerBase
+from .models.quiz import QuestionBase, AnswerBase, QuizResult
 from domain.training.education.models.theme import ThemeBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 from .modules.utils import remove_empty_lines
+from domain.user.models.user import UserBase
+
 
 def process_text(input_text):
     lines = [line.strip() for line in input_text.split('\n') if line.strip()]
-    
     single_line = ' '.join(lines)
-    
     processed_text = ' '.join(single_line.split())
     return processed_text
+
 
 class FileRepository:
     @staticmethod
@@ -180,7 +181,6 @@ class QuizDAL:
         
         with Session() as session:
             try:
-                # Проверяем, существует ли тема
                 theme = session.query(ThemeBase).filter_by(name=theme_name).first()
                 if not theme:
                     theme = ThemeBase(name=theme_name)
@@ -188,15 +188,13 @@ class QuizDAL:
                     session.commit()
                 
                 for question_data in quiz_data:
-                    # Создаем вопрос
                     question = QuestionBase(
                         text=question_data["question"],
                         theme_id=theme.id
                     )
                     session.add(question)
-                    session.flush()  # Получаем ID вопроса
+                    session.flush()
                     
-                    # Добавляем правильный ответ
                     correct_answer = AnswerBase(
                         text=question_data["correct_answer"],
                         is_correct=True,
@@ -204,7 +202,6 @@ class QuizDAL:
                     )
                     session.add(correct_answer)
                     
-                    # Добавляем неправильные ответы
                     for answer_text in question_data["answers"]:
                         if answer_text != question_data["correct_answer"]:
                             answer = AnswerBase(
@@ -216,7 +213,6 @@ class QuizDAL:
                 
                 session.commit()
                 return DataSuccess()
-                
             except Exception as e:
                 session.rollback()
                 logger.error(f"Database error: {str(e)}")
@@ -225,7 +221,6 @@ class QuizDAL:
     @staticmethod
     def get_questions_by_theme(theme_id: int) -> DataState:
         Session = connection_db()
-
         if Session is None:
             return DataFailedMessage("Ошибка в работе базы данных!")
 
@@ -236,17 +231,13 @@ class QuizDAL:
                 ).scalars().all()
 
                 result = []
-
                 for question_db in questions_db:
                     answers_db = session.execute(
                         select(AnswerBase).where(AnswerBase.question_id == question_db.id)
                     ).scalars().all()
 
                     answers = [answer_db.text for answer_db in answers_db]
-                    print(f'answers dal - {answers}')
-
                     correct_answer = next((answer_db.text for answer_db in answers_db if answer_db.is_correct), None)
-                    print(f'correct answer dal - {correct_answer}')
 
                     question_obj = Question(
                         id=question_db.id,
@@ -255,10 +246,39 @@ class QuizDAL:
                         answers=answers,
                         correct_answer=correct_answer
                     )
-
                     result.append(question_obj)
 
                 return DataSuccess(result)
             except Exception as e:
                 logger.error(e)
                 return DataFailedMessage("Ошибка в работе базы данных!")
+    
+    @staticmethod
+    def save_quiz_result(user_id: int, theme_id: int, score: int) -> DataState:
+        Session = connection_db()
+        if Session is None:
+            logger.error("Ошибка подключения к базе данных")
+            return DataFailedMessage("Ошибка подключения к базе данных")
+        
+        with Session() as session:
+            try:
+                # Поиск пользователя по telegram_id
+                user = session.query(UserBase).filter(UserBase.telegram_id == user_id).first()
+                if not user:
+                    logger.warning(f"Пользователь с telegram_id={user_id} не найден")
+                    return DataFailedMessage("Пользователь не найден в базе данных")
+                
+                # Используем id пользователя из таблицы users
+                result = QuizResult(
+                    user_id=user.id,
+                    theme_id=theme_id,
+                    score=score
+                )
+                session.add(result)
+                session.commit()
+                logger.info(f"Результат сохранен для user_id={user.id} (telegram_id={user_id})")
+                return DataSuccess()
+            except Exception as e:
+                session.rollback()
+                logger.error(f"Ошибка сохранения: {str(e)}")
+                return DataFailedMessage(f"Ошибка сохранения результата: {str(e)}")
