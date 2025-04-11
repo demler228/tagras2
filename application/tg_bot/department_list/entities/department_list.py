@@ -11,4 +11,3 @@ class Employee(BaseModel):
     phone: Optional[str] = None
     description: Optional[str] = None
     department_id: Optional[int] = None
-    department: Optional[Department] = None  # Для чтения связей
