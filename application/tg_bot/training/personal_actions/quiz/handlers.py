@@ -8,10 +8,12 @@ from .keyboards import get_answers_keyboard, get_themes_keyboard
 from .callback_factories import QuizCallbackFactory
 from utils.data_state import DataSuccess
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
+from domain.quiz.db_dal import QuizDAL
 
 router = Router()
 
 user_data = {}
+
 
 @router.callback_query(F.data == "quiz_button")
 async def handle_quiz_button(callback_query: types.CallbackQuery):
@@ -28,6 +30,7 @@ async def handle_quiz_button(callback_query: types.CallbackQuery):
         parse_mode=ParseMode.MARKDOWN
     )
     await callback_query.answer()
+
 
 @router.callback_query(QuizCallbackFactory.filter(F.action == "select_theme"))
 async def handle_theme_selection(callback_query: CallbackQuery, callback_data: QuizCallbackFactory):
@@ -57,6 +60,7 @@ async def handle_theme_selection(callback_query: CallbackQuery, callback_data: Q
     await send_question(callback_query.message, user_id)
     await callback_query.answer()
 
+
 @router.callback_query(QuizCallbackFactory.filter(F.action == "answer"))
 async def handle_answer_selection(callback_query: CallbackQuery, callback_data: QuizCallbackFactory):
     user_id = callback_query.from_user.id
@@ -71,7 +75,6 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
     current_question_index = user_state["current_question"]
     current_question: Question = questions[current_question_index]
 
-    # Используем перемешанный список ответов, сохраненный в состоянии
     shuffled_answers = user_state["shuffled_answers"][current_question_index]
     selected_answer = shuffled_answers[selected_answer_index]
     correct_answer = current_question.correct_answer
@@ -87,7 +90,13 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         await send_question(callback_query.message, user_id)
     else:
         score = user_state["score"]
-        total_questions = len(questions)
+        theme_id = questions[0].theme_id
+
+        save_result = QuizDAL.save_quiz_result(
+            user_id=user_id,
+            theme_id=theme_id,
+            score=score
+        )
 
         if user_state.get("message_id"):
             try:
@@ -98,14 +107,22 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
             except:
                 pass
 
-        # Здесь должна быть ваша логика определения is_admin
-        is_admin = False  # Временное значение - замените на реальную проверку
+        is_admin = False
 
-        result_message = (
-            f"🎉 *Викторина завершена!*\n"
-            f"✅ Вы ответили правильно на *{score}* из *{total_questions}* вопросов.\n\n"
-            f"Выберите следующее действие из главного меню"
-        )
+        if isinstance(save_result, DataSuccess):
+            result_message = (
+                f"🎉 *Викторина завершена!*\n"
+                f"✅ Ваш счет: *{score}* правильных ответов\n"
+                f"📊 Результат сохранен!\n\n"
+                f"Выберите следующее действие из главного меню"
+            )
+        else:
+            result_message = (
+                f"🎉 *Викторина завершена!*\n"
+                f"✅ Ваш счет: *{score}* правильных ответов\n"
+                f"⚠️ Не удалось сохранить результат\n\n"
+                f"Выберите следующее действие из главного меню"
+            )
 
         await callback_query.message.answer(
             result_message,
@@ -114,22 +131,20 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         )
         user_data.pop(user_id)
 
+
 async def send_question(message: Message, user_id: int):
     user_state = user_data[user_id]
     questions = user_state["questions"]
     current_question_index = user_state["current_question"]
     question: Question = questions[current_question_index]
 
-    # Перемешиваем ответы
-    shuffled_answers = question.answers.copy()  # Создаем копию списка ответов
-    random.shuffle(shuffled_answers)  # Перемешиваем копию
+    shuffled_answers = question.answers.copy()
+    random.shuffle(shuffled_answers)
 
-    # Сохраняем перемешанные ответы в состоянии пользователя
     if "shuffled_answers" not in user_state:
         user_state["shuffled_answers"] = [None] * len(questions)
     user_state["shuffled_answers"][current_question_index] = shuffled_answers
 
-    # Формируем текст с перемешанными ответами
     answers_text = "\n".join([f"{i + 1}. {answer}" for i, answer in enumerate(shuffled_answers)])
     question_message = (
         f"❓ *Вопрос {current_question_index + 1}:*\n"
@@ -145,7 +160,7 @@ async def send_question(message: Message, user_id: int):
             text=question_message,
             reply_markup=get_answers_keyboard(
                 question_index=current_question_index,
-                answers=shuffled_answers  # Передаем перемешанные ответы в клавиатуру
+                answers=shuffled_answers
             ),
             parse_mode=ParseMode.MARKDOWN
         )
@@ -154,7 +169,7 @@ async def send_question(message: Message, user_id: int):
             question_message,
             reply_markup=get_answers_keyboard(
                 question_index=current_question_index,
-                answers=shuffled_answers  # Передаем перемешанные ответы в клавиатуру
+                answers=shuffled_answers
             ),
             parse_mode=ParseMode.MARKDOWN
         )

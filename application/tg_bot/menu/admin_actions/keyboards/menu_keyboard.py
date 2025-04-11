@@ -14,6 +14,7 @@ def get_admin_main_menu_keyboard(is_super_admin: bool) -> InlineKeyboardMarkup:
     builder.button(text="Тренинги", callback_data="training_button_admin")
     builder.button(text="Обновить пользовательскую информацию", callback_data="update_user_information")
     builder.button(text="Ключевые сотрудники", callback_data="contacts_button_admin")
+    builder.button(text="Список отделов", callback_data="department_list_button_admin")
     if is_super_admin:
         builder.button(text="Определить роли", callback_data="redefining_roles_super_admin")
 
