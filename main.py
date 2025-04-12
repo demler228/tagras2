@@ -5,7 +5,7 @@ from loguru import logger
 
 from utils.config import settings
 from application import router
-from utils.get_employee_data_from_1c import hourly_request_to_1c
+from utils.employees_from_1c.get_employee_data_from_1c import hourly_request_to_1c
 
 
 async def main():
@@ -13,7 +13,7 @@ async def main():
     dp = Dispatcher()
     dp.include_router(router)
 
-    asyncio.create_task(hourly_request_to_1c())
+    #asyncio.create_task(hourly_request_to_1c())
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())

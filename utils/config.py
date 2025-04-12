@@ -9,6 +9,9 @@ class Settings(BaseSettings):
     PASSWORD : str
     PORT_NAME: str
     HOST_NAME : str
+    API_HASH_TELETHON: str
+    API_ID_TELETHON: str
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
