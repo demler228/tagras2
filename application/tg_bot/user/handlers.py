@@ -120,7 +120,6 @@ async def show_confirm_screen(message_or_query: types.Message | types.CallbackQu
 async def save_employee_handler(callback_query: types.CallbackQuery, state: FSMContext):
     data = await state.get_data()
 
-    # Если в состоянии присутствует идентификатор сотрудника – это редактирование.
     if "employee_id" in data:
         employee_id = data["employee_id"]
         updates = {
@@ -141,7 +140,6 @@ async def save_employee_handler(callback_query: types.CallbackQuery, state: FSMC
                 reply_markup=get_back_employee_button()
             )
     else:
-        # Если идентификатора нет, то выполняется сценарий создания.
         user = User(
             username=data["username"],
             phone=data["phone"],

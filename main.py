@@ -7,7 +7,6 @@ from aiogram.types import Message
 from application.tg_bot.middleware import LoggingMiddleware
 from utils.config import settings
 from application import router
-from utils.get_employee_data_from_1c import hourly_request_to_1c
 from utils.logs import program_logger
 
 
@@ -16,7 +15,6 @@ async def main():
     dp = Dispatcher()
     dp.callback_query.outer_middleware(LoggingMiddleware())
     dp.include_router(router)
-    asyncio.create_task(hourly_request_to_1c())
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
