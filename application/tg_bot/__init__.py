@@ -20,6 +20,7 @@ from application.tg_bot.key_employee import admin_router as key_employee_admin_r
 from application.tg_bot.key_employee import router as key_employee_routers
 from application.tg_bot.useful_contacts import router as useful_contacts_routers
 from application.tg_bot.department_list import router as department_list_routers
+from application.tg_bot.department_list import admin_router as department_list_admin_routers
 from application.tg_bot.redefining_roles import router as redefining_roles_routers
 from application.tg_bot.filters.is_admin import IsAdminFilter
 
@@ -37,6 +38,7 @@ admin_router.include_router(tasks_admin_routers)
 admin_router.include_router(redefining_roles_routers)
 admin_router.include_router(office_admin_maps_routers)
 admin_router.include_router(training_admin_router)
+admin_router.include_router(department_list_admin_routers)
 
 router.include_router(admin_router)
 router.include_router(user_routers)

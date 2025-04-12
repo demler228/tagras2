@@ -29,6 +29,7 @@ class EmployeeDbDal:
         Session = connection_db()
         if not Session:
             return DataFailedMessage("Database connection error")
+
         with Session() as session:
             try:
                 session.add(employee)
@@ -37,35 +38,37 @@ class EmployeeDbDal:
                 return DataSuccess(employee.id)
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f"Database error: {e}")
+                return DataFailedMessage(f"Database error: {str(e)}")
 
     @staticmethod
     def update_employee(employee: EmployeeModel) -> DataState:
         Session = connection_db()
         if not Session:
             return DataFailedMessage("Database connection error")
+
         with Session() as session:
             try:
                 db_employee = session.get(EmployeeModel, employee.id)
                 if not db_employee:
                     return DataFailedMessage("Employee not found")
 
-                db_employee.name = employee.name
-                db_employee.phone = employee.phone
-                db_employee.description = employee.description
-                db_employee.department_id = employee.department_id
+                # Обновляем только измененные поля
+                for field in ["name", "phone", "description"]:
+                    new_value = getattr(employee, field)
+                    setattr(db_employee, field, new_value)
 
                 session.commit()
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f"Database error: {e}")
+                return DataFailedMessage(f"Database error: {str(e)}")
 
     @staticmethod
     def delete_employee(employee_id: int) -> DataState:
         Session = connection_db()
         if not Session:
             return DataFailedMessage("Database connection error")
+
         with Session() as session:
             try:
                 employee = session.get(EmployeeModel, employee_id)
@@ -77,7 +80,7 @@ class EmployeeDbDal:
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f"Database error: {e}")
+                return DataFailedMessage(f"Database error: {str(e)}")
 
     @staticmethod
     def get_employee_details(employee_id: int) -> DataState:
@@ -125,3 +128,40 @@ class DepartmentDbDal:
             except Exception as e:
                 session.rollback()
                 return DataFailedMessage(f"Database error: {e}")
+
+    @staticmethod
+    def delete_department(department_id: int) -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage("Database connection error")
+
+        with Session() as session:
+            try:
+                # Проверяем существование отдела
+                department = session.get(DepartmentModel, department_id)
+                if not department:
+                    return DataFailedMessage("Department not found")
+
+                # Удаляем отдел (сотрудники удалятся каскадно, если настроено)
+                session.delete(department)
+                session.commit()
+                return DataSuccess()
+
+            except Exception as e:
+                session.rollback()
+                return DataFailedMessage(f"Database error: {str(e)}")
+
+    @staticmethod
+    def get_department_details(department_id: int) -> DataState:
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage("Database connection error")
+
+        with Session() as session:
+            try:
+                department = session.get(DepartmentModel, department_id)
+                if not department:
+                    return DataFailedMessage("Department not found")
+                return DataSuccess(department)
+            except Exception as e:
+                return DataFailedMessage(f"Database error: {str(e)}")
