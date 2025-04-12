@@ -19,7 +19,10 @@ async def handle_contacts_button(callback_query: CallbackQuery):
             reply_markup=get_user_employee_list_keyboard(employees, page=0)
         )
     else:
-        await callback_query.message.answer("Ошибка при загрузке контактов.")
+        await callback_query.answer(
+            text="❌ Ошибка при загрузке контактов",
+            show_alert=True
+        )
 
 @router.callback_query(UserEmployeeCallback.filter(F.action == "view"))
 async def handle_view_employee(callback: CallbackQuery, callback_data: UserEmployeeCallback):
