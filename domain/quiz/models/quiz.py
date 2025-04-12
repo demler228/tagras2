@@ -1,8 +1,10 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from pydantic import BaseModel
-
+from datetime import datetime
+from sqlalchemy import DateTime
 from domain.quiz.models.base import Base
+from sqlalchemy.sql import func
 
 
 class ThemeBase(Base):
@@ -32,6 +34,17 @@ class AnswerBase(Base):
 
     question: Mapped["QuestionBase"] = relationship("QuestionBase", back_populates="answers")
 
+
+class QuizResult(Base):
+    __tablename__ = "quiz_results"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
+    theme_id: Mapped[int] = mapped_column(ForeignKey("themes.id"), nullable=False)
+    score: Mapped[int] = mapped_column(Integer, nullable=False)
+    completed_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+
+    theme: Mapped["ThemeBase"] = relationship("ThemeBase")
 
 
 class QuizData(BaseModel):

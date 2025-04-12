@@ -10,8 +10,8 @@ router.message.filter(F.chat.type == "private")
 
 @router.message(CommandStart())
 async def start_handler(message: types.Message):
-    print(message.from_user.id)
-    await message.answer("Привет! Я бот для адаптации сотрудников. Выберите, чем я могу помочь!", reply_markup=get_main_menu_keyboard(is_admin(message.from_user.id)))
+    await message.answer("Привет! Я бот для адаптации сотрудников. Выберите, чем я могу помочь!",
+                         reply_markup=get_main_menu_keyboard(is_admin(message.from_user.id)))
 
 @router.callback_query(F.data == "back_to_main_menu" )
 async def back_handler(callback_query: types.CallbackQuery, state: FSMContext):

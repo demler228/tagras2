@@ -8,7 +8,7 @@ def get_theme_material_menu_keyboard() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     builder.button(text="Изменить название", callback_data="change_material_name_button")
-    builder.button(text="Иземнить url", callback_data="change_material_url_button")
+    builder.button(text="Изменить url", callback_data="change_material_url_button")
     builder.button(text="Удалить материал", callback_data="material_delete_button")
     builder.button(text="Назад", callback_data="back_theme_choose_materials")
 

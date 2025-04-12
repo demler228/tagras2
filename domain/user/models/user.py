@@ -16,5 +16,4 @@ class UserBase(Base):
     username: Mapped[str] = mapped_column(String)
     phone: Mapped[str] = mapped_column(String)
     created_at: Mapped[DateTime] = mapped_column(TIMESTAMP(True))
-    role: Mapped[str] = mapped_column(Enum('user','admin'))
-
+    role: Mapped[str] = mapped_column(Enum('user', 'admin', 'super_admin', name='user_role'))

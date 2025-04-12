@@ -19,6 +19,7 @@ def get_events_for_week_keyboard(events: list[Event],start_date: datetime) -> In
             if event.date.day == current_date.day:
                 this_day_events.append(event)
 
+        this_day_events = sorted(this_day_events,key=lambda event: event.date)
         if len(this_day_events) != 0:
             events_buttons += 1
             builder.button(text=f'⬇️{week_days[i]}⬇️',callback_data='None')

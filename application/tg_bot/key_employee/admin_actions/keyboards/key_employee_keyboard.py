@@ -1,4 +1,4 @@
-# application/tg_bot/key_employee/admin_actions/keyboards/keyboards.py
+# application/tg_bot/key_employee/admin_actions/keyboards/department_keyboard.py
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from .callback_factories import EmployeeCallback, PaginationCallback, AdminActionCallback
 

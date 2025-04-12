@@ -13,17 +13,23 @@ class IsAdminFilter(BaseFilter):
     async def __call__(self, message: Message) -> bool:
         data_state = UserBL.get_user_by_telegram_id(message.from_user.id)
         if isinstance(data_state, DataSuccess):
-            return  data_state.data.role == 'admin'
+            return data_state.data.role.endswith('admin')
 
         logger.error(f'Не получилось проверить пользователя с tg id: {message.from_user.id} на права администратора')
         return False
 
 
-
 def is_admin(user_id: int) -> bool:
     data_state = UserBL.get_user_by_telegram_id(user_id)
     if isinstance(data_state, DataSuccess):
-       return data_state.data.role == 'admin'
+        return data_state.data.role.endswith('admin')
 
     return True
 
+
+def is_super_admin(user_id: int) -> bool:
+    data_state = UserBL.get_user_by_telegram_id(user_id)
+    if isinstance(data_state, DataSuccess):
+        return data_state.data.role == 'super_admin'
+
+    return True

@@ -8,7 +8,8 @@ from .callback_factories import (
     UserIdCallbackFactory,
     PaginationCallbackFactory,
     UpdateActionCallbackFactory,
-    BackToActionsAdminCallbackFactory
+    BackToActionsAdminCallbackFactory,
+    PaginationTaskListCallbackFactory
 )
 
 from domain.tasks.db_bl import TasksDbBl
@@ -76,7 +77,33 @@ def back_to_tasks_list():
     return builder.as_markup()
 
 
+def task_list_actions(current_page: int, total_pages: int):
+
+    builder = InlineKeyboardBuilder()
+    if current_page > 1:
+        builder.button(
+            text="⬅️",
+            callback_data=PaginationTaskListCallbackFactory(action="prev_page", page=current_page - 1).pack()
+        )
+
+
+    if current_page < total_pages:
+        builder.button(
+            text="➡️",
+            callback_data=PaginationTaskListCallbackFactory(action="next_page", page=current_page + 1).pack()
+        )
+
+    builder.button(
+        text="🔙 Назад к действиям",
+        callback_data=BackToActionsAdminCallbackFactory()
+    )
+    builder.adjust(2, 1)
+    return builder.as_markup()
+
+
+
 def back_to_task_actions():
+
     builder = InlineKeyboardBuilder()
     builder.button(
         text="🔙 Назад к действиям",
@@ -84,7 +111,6 @@ def back_to_task_actions():
     )
     builder.adjust(1)
     return builder.as_markup()
-
 
 def build_user_selection_keyboard(
         all_users: list,
