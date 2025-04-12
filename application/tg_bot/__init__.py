@@ -23,7 +23,6 @@ from application.tg_bot.department_list import router as department_list_routers
 from application.tg_bot.department_list import admin_router as department_list_admin_routers
 from application.tg_bot.redefining_roles import router as redefining_roles_routers
 from application.tg_bot.filters.is_admin import IsAdminFilter
-
 router = Router()
 
 admin_router = Router()
