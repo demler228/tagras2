@@ -18,4 +18,9 @@ class RedefinigDbBl:
 
     @staticmethod
     def change_user_role(user_id: int, new_role: str) -> DataState:
-        return RedefiningDbDal.change_user_role(user_id, new_role)
+        change = RedefiningDbDal.change_user_role(user_id, new_role)
+        if isinstance(change, DataSuccess):
+            updated_user_data_state = RedefiningDbDal.get_user_info_by_user_id(user_id)
+            return DataSuccess(updated_user_data_state.data)
+        else:
+            return DataFailedMessage("Произошла ошибка при обновлении информации сотрудников при смене роли")

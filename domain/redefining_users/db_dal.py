@@ -24,13 +24,31 @@ class RedefiningDbDal:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:
             try:
-                statement = (select(UserBase).order_by(UserBase.role, UserBase.username))
+                statement = (select(UserBase)
+                             .filter(UserBase.role != "super_admin")
+                             .order_by(UserBase.role, UserBase.username))
                 users = session.scalars(statement).all()
                 return DataSuccess(users)
             except Exception as e:
                 session.rollback()
                 logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
+    @staticmethod
+    def get_user_info_by_user_id(user_id: int) -> DataState :
+        Session = connection_db()
+        if not Session:
+            return DataFailedMessage('Ошибка в работе базы данных!')
+        with Session() as session:
+            try:
+                statement = (select(UserBase)
+                             .filter(UserBase.id == user_id))
+                users = session.scalars(statement).first()
+                return DataSuccess(users)
+            except Exception as e:
+                session.rollback()
+                logger.error(e)
+                return DataFailedMessage('Ошибка в работе базы данных!')
+
 
     @staticmethod
     def change_user_role(user_id: int, new_role: str) -> DataState:
