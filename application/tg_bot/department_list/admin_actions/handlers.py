@@ -6,6 +6,7 @@ from aiogram.exceptions import TelegramBadRequest
 from domain.department_list.db_bl import DepartmentDbBl, EmployeeDbBl
 from sympy.printing.precedence import precedence_Integer
 
+from utils.logs import admin_logger
 from ..entities.department_list import Department, Employee
 from utils.data_state import DataSuccess
 from .keyboards.department_keyboard import (
@@ -111,6 +112,7 @@ async def process_add_department_name(message: Message, state: FSMContext):
 
     department = Department(name=name)
     result = DepartmentDbBl.create_department(department)
+    admin_logger.info(f'Админ {message.chat.full_name} ({message.chat.id} создал отдел {name})')
     if isinstance(result, DataSuccess):
         await message.answer(
             text=f"✅ Отдел '{name}' успешно создан!", reply_markup=back_to_dept()
@@ -186,6 +188,7 @@ async def process_employee_description(message: Message, state: FSMContext):
     result = EmployeeDbBl.create_employee(employee)
 
     if isinstance(result, DataSuccess):
+        admin_logger.info(f'Админ {message.chat.full_name} ({message.chat.id} добавил сотрудника {data["name"]})')
         await message.answer(
             text="✅ Сотрудник успешно добавлен!",
             reply_markup=back_to_employees(data["department_id"]),
@@ -228,6 +231,7 @@ async def confirm_delete_department(
         return
     result = DepartmentDbBl.delete_department(department_id)
     if isinstance(result, DataSuccess):
+        admin_logger.info(f'Админ {callback.message.chat.full_name} ({callback.message.chat.id} удалил отдел {dept_state.data.name})')
         await callback.message.edit_text(
             text=f"✅ Отдел '{dept_state.data.name}' и все его сотрудники удалены",
             reply_markup=back_to_dept(),
@@ -305,6 +309,8 @@ async def handle_confirm_delete_employee(
     # Удаляем сотрудника
     result = EmployeeDbBl.delete_employee(callback_data.entity_id)
     if isinstance(result, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback.message.chat.full_name} ({callback.message.chat.id} удалил сотрудника {employee.name})')
         await callback.message.edit_text(
             text=f"✅ Сотрудник {employee.name} успешно удалён",
             reply_markup=back_to_employees(employee.department_id),
@@ -388,6 +394,8 @@ async def handle_edit_field_value(
         employee_state = EmployeeDbBl.get_employee_details(employee_id)
         if isinstance(employee_state, DataSuccess):
             employee = employee_state.data
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} обновил данные {field} о сотруднике {employee.name})')
             await message.answer(
                 text=f"✅ Поле '{field}' успешно обновлено!",
                 reply_markup=back_to_employee_view(employee.id, employee.department_id)

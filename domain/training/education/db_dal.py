@@ -8,6 +8,7 @@ from domain.training.education.models.theme import ThemeBase
 from utils.connection_db import connection_db
 
 from utils.data_state import DataState, DataFailedMessage, DataSuccess
+from utils.logs import program_logger
 
 
 class EducationDAL(object):
@@ -23,7 +24,7 @@ class EducationDAL(object):
                 statement = select(ThemeBase).order_by(ThemeBase.id)
                 themes = session.scalars(statement).all()
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 return DataSuccess(themes)
@@ -40,7 +41,7 @@ class EducationDAL(object):
                 statement = select(MaterialBase).where(MaterialBase.theme_id == theme_id)
                 materials = session.scalars(statement).all()
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 return DataSuccess(materials)
@@ -61,7 +62,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -80,7 +81,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -100,7 +101,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -120,7 +121,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -144,7 +145,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -163,7 +164,7 @@ class EducationDAL(object):
 
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()  # - используйте, если что-то меняете

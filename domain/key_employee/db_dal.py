@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from pydantic import BaseModel
 
+from utils.logs import program_logger
 from .models.key_employee import KeyEmployeeBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
@@ -18,7 +19,8 @@ class KeyEmployeeDbDal(BaseModel):
                 key_employee_data = session.scalars(statement).all()
                 return DataSuccess(key_employee_data)
             except Exception as e:
-                return DataFailedMessage(f'Ошибка в работе базы данных: {e}')
+                program_logger.error(e)
+                return DataFailedMessage(f'Ошибка в работе базы данных')
 
     @staticmethod
     def key_employee_update(key_employee: KeyEmployeeBase) -> DataState:
@@ -39,7 +41,8 @@ class KeyEmployeeDbDal(BaseModel):
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f'Ошибка в работе базы данных: {e}')
+                program_logger.error(e)
+                return DataFailedMessage(f'Ошибка в работе базы данных')
 
     @staticmethod
     def key_employee_delete(employee_id: int) -> DataState:
@@ -53,7 +56,8 @@ class KeyEmployeeDbDal(BaseModel):
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f'Ошибка в работе базы данных: {e}')
+                program_logger.error(e)
+                return DataFailedMessage(f'Ошибка в работе базы данных')
 
     @staticmethod
     def key_employee_create(key_employee: KeyEmployeeBase) -> DataState:
@@ -67,4 +71,5 @@ class KeyEmployeeDbDal(BaseModel):
                 return DataSuccess(key_employee.id)
             except Exception as e:
                 session.rollback()
-                return DataFailedMessage(f'Ошибка в работе базы данных: {e}')
+                program_logger.error(e)
+                return DataFailedMessage(f'Ошибка в работе базы данных')

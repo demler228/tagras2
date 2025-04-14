@@ -5,6 +5,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.fsm.state import StatesGroup, State
 
 from domain.key_employee.db_bl import KeyEmployeeDbBl
+from utils.logs import admin_logger
 from ..entities import KeyEmployee
 from utils.data_state import DataSuccess
 
@@ -95,6 +96,8 @@ async def process_edit_field(message: Message, state: FSMContext, field_name: st
             # Сохраняем изменения
             data_state = KeyEmployeeDbBl.key_employee_update(employee)
             if isinstance(data_state, DataSuccess):
+                admin_logger.info(
+                    f'Админ {CallbackQuery.message.chat.full_name} ({CallbackQuery.message.chat.id} обновил данные о сотруднике {employee.username}')
                 await message.answer(
                     text=f"{field_name.capitalize()} сотрудника успешно обновлено!",
                     reply_markup=get_admin_main_keyboard()  # Показываем меню выбора действия

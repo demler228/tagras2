@@ -10,6 +10,7 @@ router.message.filter(F.chat.type == "private")
 
 @router.message(CommandStart())
 async def start_handler(message: types.Message):
+    print(message.chat.id)
     await message.answer("Привет! Я бот для адаптации сотрудников. Выберите, чем я могу помочь!",
                          reply_markup=get_main_menu_keyboard(is_admin(message.from_user.id)))
 

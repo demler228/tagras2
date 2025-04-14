@@ -9,6 +9,7 @@ from domain.events.models.user_events import UserEventBase
 from domain.user.models.user import UserBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataFailedMessage, DataSuccess
+from utils.logs import program_logger
 
 
 class EventDbDal:
@@ -30,7 +31,7 @@ class EventDbDal:
 
                 return DataSuccess(events)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в получении мероприятий!')
 
     @staticmethod
@@ -47,7 +48,7 @@ class EventDbDal:
 
                 return DataSuccess(events)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в получении мероприятий!')
 
     @staticmethod
@@ -63,7 +64,7 @@ class EventDbDal:
 
             except Exception as e:
                 session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Не удалось добавить новое событие!')
             else:
                 session.commit() # - используйте, если что-то меняете
@@ -81,7 +82,7 @@ class EventDbDal:
 
                 return DataSuccess(event_base)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в получении события!')
 
     @staticmethod
@@ -102,7 +103,7 @@ class EventDbDal:
 
             except Exception as e:
                 session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit() # - используйте, если что-то меняете
@@ -120,7 +121,7 @@ class EventDbDal:
                 session.query(EventBase).filter(EventBase.id == event.id).delete()
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в удалении мероприятия!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -142,7 +143,7 @@ class EventDbDal:
 
                 return DataSuccess(members)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в получении участников мероприятия!')
 
     @staticmethod
@@ -156,7 +157,7 @@ class EventDbDal:
                 session.query(UserEventBase).filter(UserEventBase.user_id == user_id, UserEventBase.event_id == event_id).delete()
             except Exception as e:
                 session.rollback()  # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в удалении пользователя из мероприятия!')
             else:
                 session.commit()  # - используйте, если что-то меняете
@@ -176,7 +177,7 @@ class EventDbDal:
 
             except Exception as e:
                 session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Не удалось добавить пользователя в мероприятие!')
             else:
                 session.commit() # - используйте, если что-то меняете

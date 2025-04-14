@@ -20,6 +20,7 @@ from application.tg_bot.events.entites.event import Event
 from domain.events.db_bl import EventDbBl
 from utils.constants import months
 from utils.data_state import DataSuccess
+from utils.logs import admin_logger
 
 router = Router()
 
@@ -73,6 +74,8 @@ async def handle_create_event_date(message: Message, state: FSMContext):
     if date:
         data_state = EventDbBl.create_event(Event(name=(await state.get_data())['event_name'],description=(await state.get_data())['event_description'],date=date))
         if isinstance(data_state, DataSuccess):
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} создал новое мероприятие {(await state.get_data())['event_name']})')
             await event_menu_button(state, message, data_state.data)
         else:
             await message.answer(f'❌ {data_state.error_message}')
@@ -130,10 +133,13 @@ async def change_event_name(callback_query: types.CallbackQuery, state: FSMConte
 @router.message(F.text, AdminStates.change_event_name)
 async def changed_event_name(message: Message, state: FSMContext):
     event = (await state.get_data())['event']
+    old_event_name = event.name
     event.name = message.text
     data_state = EventDbBl.update_event(event)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} изменил название мероприятия с {old_event_name} на {message.text})')
         await (await state.get_data())['message'].delete()
         await event_menu_button(state, message=message, event_id=event.id)
     else:
@@ -147,10 +153,13 @@ async def change_event_description(callback_query: types.CallbackQuery, state: F
 @router.message(F.text, AdminStates.change_event_description)
 async def changed_event_description(message: Message, state: FSMContext):
     event = (await state.get_data())['event']
+    old_event_description = event.description
     event.description = message.text
     data_state = EventDbBl.update_event(event)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} изменил название мероприятия с {old_event_description} на {message.text})')
         await (await state.get_data())['message'].delete()
         await event_menu_button(state, message=message, event_id=event.id)
     else:
@@ -164,12 +173,15 @@ async def change_event_date(callback_query: types.CallbackQuery, state: FSMConte
 @router.message(F.text, AdminStates.change_event_data)
 async def changed_event_date(message: Message, state: FSMContext):
     event = (await state.get_data())['event']
+    old_date = event.date
     date = get_date(message.text)
     if date:
         event.date =date
 
         data_state = EventDbBl.update_event(event)
         if isinstance(data_state, DataSuccess):
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} изменил дату мероприятия с {old_date} на {date})')
             await (await state.get_data())['message'].delete()
             await event_menu_button(state, message=message, event_id=event.id)
         else:
@@ -182,6 +194,8 @@ async def delete_event_button(callback_query: types.CallbackQuery, state: FSMCon
     event = (await state.get_data())['event']
     data_state = EventDbBl.delete_event(event)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} удалил мероприятие {event.name})')
         if 'calendar' in (await state.get_data()):
             await choose_week_event(callback_query, state, (await state.get_data())['calendar'])
         else:
@@ -212,6 +226,8 @@ async def update_choose_members_event(callback_query: types.CallbackQuery, state
     message = (await state.get_data())['message']
     data_state  = EventDbBl.change_member_state(callback_data.user_id,callback_data.is_member,event) # добавляем или удаляем юзера из мероприятия
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} изменил список участников мероприятия {event.name})')
         data_state = EventDbBl.get_users_by_name(callback_data.text, event.id) # получем обновленный список пользователей с их принадлежностью к мероприятию
         if isinstance(data_state, DataSuccess):
             await callback_query.message.edit_reply_markup(reply_markup=get_users_event_keyboard(callback_data.text, data_state.data,event.id))
@@ -247,6 +263,8 @@ async def update_choose_members_event(callback_query: types.CallbackQuery, state
     event = (await state.get_data())['event']
     data_state  = EventDbBl.change_member_state(callback_data.user_id,True,event)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} изменил список участников мероприятия {event.name})')
         data_state = EventDbBl.get_event_members(event.id)
         if isinstance(data_state, DataSuccess):
             await members_event(callback_query,state)

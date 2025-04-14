@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from .db_dal import EmployeeDbDal, DepartmentDbDal
 from .models import EmployeeModel, DepartmentModel
-from utils.data_state import DataSuccess, DataState
+from utils.data_state import DataSuccess, DataState, DataFailedMessage
 from application.tg_bot.department_list.entities import Department, Employee
 
 

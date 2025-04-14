@@ -5,6 +5,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram import Router, F, types
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
+from utils.logs import admin_logger
 from .edit_handler import handle_edit_task
 from .reassign_task_handlers import handle_reassign_task
 from .keyboards import (
@@ -96,6 +97,8 @@ async def process_deadline(message: types.Message, state: FSMContext):
             )
             if isinstance(data_state, DataSuccess):
                 task_id = data_state.data
+                admin_logger.info(
+                    f'админ {message.chat.full_name} создал задачу {data['name']}')
                 await state.update_data(task_id=task_id)  # Сохраняем ID задачи в состоянии
                 await message.answer(
                     f"Задача успешно создана! ID: {task_id}",
@@ -343,7 +346,9 @@ async def task_action_handler(
     action = callback_data.action
     await state.update_data(task_id=task_id)
     if action == "delete_task":
-        TasksDbBl.delete_task(task_id)
+        TasksDbBl.delete_task(task_id) # проверки нету !!!!! если будут проблемы с бд, то должны выкинуть пользователю сообщение об ошибке
+        admin_logger.info(
+            f'админ {callback_query.message.chat.full_name} удалил задачу {task_id} id')
         await callback_query.message.edit_text(f"Задача {task_id} удалена", reply_markup=back_to_tasks_list())
     elif action == "edit_task":
         await handle_edit_task(callback_query, task_id)

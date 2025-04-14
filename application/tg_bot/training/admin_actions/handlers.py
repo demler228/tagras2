@@ -19,6 +19,7 @@ from application.tg_bot.training.entities.theme import Theme
 from domain.training.education.db_bl import EducationBL
 from utils.data_state import DataSuccess
 from domain.quiz.db_dal import FileRepository, WebRepository, QuizRepository, QuizDAL
+from utils.logs import admin_logger
 
 router = Router()
 
@@ -132,6 +133,8 @@ async def handle_theme_delete_button(callback_query: types.CallbackQuery, state:
     data_state = EducationBL.theme_delete(theme)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {callback_query.message.chat.full_name} удалил тему {theme.name}')
         await get_theme_list_button(callback_query, state)
         await callback_query.message.answer(f'Тема удалена!')
     else:
@@ -148,6 +151,8 @@ async def theme_create(message: Message, state: FSMContext):
     data_state = EducationBL.theme_create(theme)
     if isinstance(data_state, DataSuccess):
         theme.id = data_state.data
+        admin_logger.info(
+            f'админ {message.chat.full_name} создал тему {theme.name}')
         await state.update_data({'theme': theme})
         await get_theme(state, message, get_theme_menu_keyboard())
     else:
@@ -161,10 +166,13 @@ async def theme_change_name(callback_query: types.CallbackQuery, state: FSMConte
 @router.message(F.text, AdminStates.change_theme_name)
 async def theme_changed_name(message: Message, state: FSMContext):
     theme = (await state.get_data())['theme']
+    old_theme_name = theme.name
     theme.name = message.text
     data_state = EducationBL.theme_update(theme)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {message.chat.full_name} обновил название темы с {old_theme_name} на {theme.name}')
         await (await state.get_data())['message'].delete()
         await get_theme(state, message, get_theme_menu_keyboard())
     else:
@@ -213,6 +221,8 @@ async def theme_created_material_url(message: Message, state: FSMContext):
     data_state = EducationBL.material_create(material)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {message.chat.full_name} создал материал {material.title}')
         await (await state.get_data())['message'].delete()
         await get_theme(
             state,
@@ -285,6 +295,8 @@ async def theme_created_material_file(message: Message, state: FSMContext, bot):
     data_state = EducationBL.material_create(material)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {message.chat.full_name} создал материал {material.title}')
         await (await state.get_data())['message'].delete()
         await get_theme(
             state,
@@ -322,10 +334,13 @@ async def change_material_name(callback_query: types.CallbackQuery, state: FSMCo
 @router.message(F.text, AdminStates.change_material_name)
 async def material_changed_name(message: Message, state: FSMContext):
     material = (await state.get_data())['material']
+    old_material_title = material.title
     material.title = message.text
     data_state = EducationBL.material_update(material)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {message.chat.full_name} обновил название материала с {old_material_title} на {material.title}')
         await (await state.get_data())['message'].delete()
         await get_theme(state, message, get_theme_material_menu_keyboard(),
                         ThemeChooseMaterialsCallback(material_id=material.id))
@@ -344,6 +359,8 @@ async def changed_material_url(message: Message, state: FSMContext):
     data_state = EducationBL.material_update(material)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {message.chat.full_name} обновил ссылку материала на {material.url}')
         await (await state.get_data())['message'].delete()
         await get_theme(state, message, get_theme_material_menu_keyboard(),
                         ThemeChooseMaterialsCallback(material_id=material.id))
@@ -356,6 +373,8 @@ async def change_material_url(callback_query: types.CallbackQuery, state: FSMCon
     data_state = EducationBL.material_delete(material)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'админ {callback_query.message.chat.full_name} удалил материал {material.title}')
         await get_theme(state, callback_query.message, get_theme_menu_keyboard())
         await callback_query.message.answer(f"Материал удален!")
     else:
