@@ -1,19 +1,21 @@
 from aiogram import Router, F, types
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
+from aiogram.filters.callback_data import CallbackData
 
 from application.tg_bot.menu.admin_actions.keyboards.menu_keyboard import get_admin_main_menu_keyboard
 from application.tg_bot.user.keyboards.get_confirm_edit_buttons import get_confirm_edit_keyboard, \
-    get_edit_options_keyboard, get_back_employee_button
+    get_edit_options_keyboard, get_back_employee_button, EmployeesCallbackFactory
 from application.tg_bot.user.keyboards.get_employee_menu_keyboard import get_employee_menu_keyboard
 from application.tg_bot.user.entities.user import User
 from domain.user.bl_models.db_bl import UserBL
 from application.tg_bot.user.keyboards.get_confirm_edit_buttons import get_employee_action_keyboard
 from application.tg_bot.user.keyboards.get_confirm_edit_buttons import EmployeeCallback
 from utils.data_state import DataSuccess, DataFailedMessage
-from application.tg_bot.user.keyboards.get_confirm_edit_buttons import get_employee_list_keyboard
+from application.tg_bot.user.keyboards.get_confirm_edit_buttons import get_employees_list_keyboard
 
 router = Router()
+
 
 class EmployeeStates(StatesGroup):
     add_employee_name = State()
@@ -212,8 +214,12 @@ async def back_employee_handler(callback_query: types.CallbackQuery, state: FSMC
             reply_markup=get_employee_menu_keyboard()
         )
 
+
 @router.callback_query(F.data == "get_employees_list_button")
-async def list_employees_handler(callback_query: types.CallbackQuery):
+@router.callback_query(EmployeesCallbackFactory.filter())
+async def list_employees_handler(callback_query: types.CallbackQuery, callback_data: EmployeesCallbackFactory = None):
+    offset = callback_data.offset if callback_data else 0
+
     data_state = UserBL.get_all_employees()
     if isinstance(data_state, DataFailedMessage):
         await callback_query.message.edit_text(
@@ -221,6 +227,7 @@ async def list_employees_handler(callback_query: types.CallbackQuery):
             reply_markup=get_back_employee_button()
         )
         return
+
     employees = data_state.data
     if not employees:
         await callback_query.message.edit_text(
@@ -228,9 +235,12 @@ async def list_employees_handler(callback_query: types.CallbackQuery):
             reply_markup=get_back_employee_button()
         )
         return
+
+    employees = sorted(employees, key=lambda x: x.username)
+
     await callback_query.message.edit_text(
-        "👥 Выберите сотрудника для редактирования:",
-        reply_markup=get_employee_list_keyboard(employees)
+        f"👥 Выберите сотрудника для редактирования (страница {offset + 1}):",
+        reply_markup=get_employees_list_keyboard(employees, offset=offset)
     )
 
 @router.callback_query(EmployeeCallback.filter(F.action == "view"))
@@ -285,7 +295,7 @@ async def delete_employee_handler(callback_query: types.CallbackQuery, callback_
     if isinstance(data_state, DataSuccess):
         await callback_query.message.edit_text(
             "✅ Сотрудник успешно удалён.",
-            reply_markup=get_employee_list_keyboard([])
+            reply_markup=get_employees_list_keyboard([])
         )
     else:
         await callback_query.message.edit_text(

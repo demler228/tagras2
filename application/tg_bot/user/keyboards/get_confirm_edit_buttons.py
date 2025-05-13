@@ -1,23 +1,57 @@
+from typing import List
+
 from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+
+from application.tg_bot.user.entities.user import User
+
 
 
 class EmployeeCallback(CallbackData, prefix="employee"):
     action: str
     employee_id: int
 
-def get_employee_list_keyboard(employees):
+
+class EmployeesCallbackFactory(CallbackData, prefix="employees"):
+    offset: int
+
+
+def get_employees_list_keyboard(employees: List[User], offset: int = 0, page_size: int = 10) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
-    for employee in employees:
-        builder.button(
-            text=f"{employee.username} ({employee.tg_username})",
-            callback_data=EmployeeCallback(action="view", employee_id=employee.id)
-        )
-    builder.adjust(1)
+    # Вычисляем начало и конец текущей страницы
+    start_idx = offset * page_size
+    end_idx = start_idx + page_size
+    total_employees = len(employees)
 
-    builder.row(InlineKeyboardButton(text="Назад", callback_data="get_admin_main_menu"))
+    # Показываем сотрудников для текущей страницы
+    for employee in employees[start_idx:end_idx]:
+        builder.button(
+            text=f"{employee.username}",
+            callback_data=EmployeeCallback(action="view", employee_id=employee.id).pack()
+        )
+
+    # Добавляем кнопки навигации
+    if offset > 0:
+        builder.button(
+            text="<--- ",
+            callback_data=EmployeesCallbackFactory(offset=offset - 1)
+        )
+
+    if end_idx < total_employees:
+        builder.button(
+            text=" --->",
+            callback_data=EmployeesCallbackFactory(offset=offset + 1)
+        )
+
+    builder.button(
+        text="🔙 В меню",
+        callback_data="employee_back_button"
+    )
+
+    # Организуем кнопки: сотрудники по одному в строке, навигация в одной строке, кнопка меню отдельно
+    builder.adjust(1, 2 if offset > 0 and end_idx < total_employees else 1, 1)
 
     return builder.as_markup()
 
@@ -63,4 +97,5 @@ def get_employee_action_keyboard(employee_id: int) -> InlineKeyboardMarkup:
     builder.row(InlineKeyboardButton(text="Назад", callback_data="get_employees_list_button"))
 
     return builder.as_markup()
+
 
