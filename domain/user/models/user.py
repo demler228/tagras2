@@ -6,7 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from domain.quiz.models.base import Base
 
-
 class UserBase(Base):
     __tablename__ = "users"
 

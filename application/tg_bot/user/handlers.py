@@ -160,7 +160,7 @@ async def save_employee_handler(callback_query: types.CallbackQuery, state: FSMC
     await state.clear()
 
 @router.callback_query(F.data == "get_admin_main_menu")
-async def get_main_menu_handler(callback_query: types.CallbackQuery, state: FSMContext):
+async def get_main_menu_handler(callback_query: types.CallbackQuery):
     await callback_query.message.edit_text(
         "Вы вернулись в главное меню.",
         reply_markup=get_admin_main_menu_keyboard()

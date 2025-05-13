@@ -4,7 +4,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
 
-def get_admin_main_menu_keyboard(is_super_admin: bool) -> InlineKeyboardMarkup:
+def get_admin_main_menu_keyboard(is_super_admin: bool=False) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     builder.button(text="FAQ", callback_data="faq_button_admin")
