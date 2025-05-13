@@ -77,9 +77,9 @@ class WebRepository:
 
 
 class QuizRepository:
-    client_id = "ce7d7680-4bf7-4ff3-b172-3be3794aa5b8"
-    secret = "338c3cfd-1038-4d2b-9e27-5af3a3d7f728"
-    auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
+    client_id = "ce72ada1-0b34-43e0-9b4f-b4a0aa853a1a"
+    secret = "9fc6e2a6-2203-4184-b5a1-08f52595b179"
+    auth = "Y2U3MmFkYTEtMGIzNC00M2UwLTliNGYtYjRhMGFhODUzYTFhOjlmYzZlMmE2LTIyMDMtNDE4NC1iNWExLTA4ZjUyNTk1YjE3OQ=="
 
     @staticmethod
     def get_token(scope="GIGACHAT_API_PERS"):
