@@ -1,0 +1,751 @@
+2025-05-13 17:34:43,301 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-13 17:34:43,340 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-13 17:34:44,022 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-13 17:34:45,331 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-13 17:34:45,698 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-13 17:34:46,047 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-13 17:34:46,815 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-13 17:34:46,830 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-13 17:34:46,842 - ERROR - Ошибка обработки DOCX D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-13 17:34:46,842 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-13 17:34:46,866 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-13 17:34:46,887 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-13 17:34:46,903 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-13 17:34:47,005 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-13 17:34:47,023 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-13 17:34:47,046 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-13 17:34:47,068 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-13 17:34:47,093 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-13 17:34:47,124 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-13 17:34:47,166 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-13 17:34:47,236 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-13 17:34:47,258 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-13 17:34:47,285 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-13 17:34:47,322 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-13 17:34:47,353 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-13 17:34:47,373 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-13 17:34:47,393 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-13 17:34:47,415 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-13 17:34:47,449 - WARNING - D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\handlers.py:158: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(
+
+2025-05-13 17:34:59,421 - WARNING - From C:\Users\User\AppData\Roaming\Python\Python311\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-13 17:34:59,790 - INFO - Use pytorch device_name: cpu
+2025-05-13 17:34:59,790 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-13 17:37:19,266 - INFO - Loading faiss with AVX2 support.
+2025-05-13 17:37:19,294 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-13 17:37:19,300 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-05-13 17:37:19,330 - INFO - Векторное хранилище успешно инициализировано
+2025-05-13 17:39:51,206 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-13 17:39:51,229 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-13 17:39:51,907 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-13 17:39:53,401 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-13 17:39:53,866 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-13 17:39:54,211 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-13 17:39:54,551 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-13 17:39:54,555 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-13 17:39:54,557 - ERROR - Ошибка обработки DOCX D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-13 17:39:54,557 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-13 17:39:54,581 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-13 17:39:54,597 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-13 17:39:54,606 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-13 17:39:54,714 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-13 17:39:54,721 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-13 17:39:54,732 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-13 17:39:54,745 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-13 17:39:54,762 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-13 17:39:54,782 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-13 17:39:54,813 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-13 17:39:54,872 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-13 17:39:54,881 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-13 17:39:54,896 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-13 17:39:54,923 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-13 17:39:54,943 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-13 17:39:54,951 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-13 17:39:54,959 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-13 17:39:54,970 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-13 17:39:55,003 - WARNING - D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\handlers.py:158: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(
+
+2025-05-13 17:40:05,369 - WARNING - From C:\Users\User\AppData\Roaming\Python\Python311\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-13 17:40:05,686 - INFO - Use pytorch device_name: cpu
+2025-05-13 17:40:05,686 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-13 17:42:27,815 - INFO - Loading faiss with AVX2 support.
+2025-05-13 17:42:27,839 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-13 17:42:27,845 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-05-13 17:42:27,872 - INFO - Векторное хранилище успешно инициализировано
+2025-05-13 17:42:28,820 - INFO - Start polling
+2025-05-13 17:42:28,890 - INFO - Run polling for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-13 17:42:44,676 - INFO - Update id=599836120 is handled. Duration 469 ms by bot id=7607849811
+2025-05-13 17:42:46,865 - INFO - Update id=599836121 is handled. Duration 453 ms by bot id=7607849811
+2025-05-13 17:42:49,240 - INFO - Update id=599836122 is handled. Duration 625 ms by bot id=7607849811
+2025-05-13 17:42:51,005 - INFO - Update id=599836123 is handled. Duration 219 ms by bot id=7607849811
+2025-05-13 17:43:08,909 - INFO - Update id=599836124 is handled. Duration 467 ms by bot id=7607849811
+2025-05-13 17:43:11,427 - INFO - Update id=599836125 is handled. Duration 141 ms by bot id=7607849811
+2025-05-13 17:43:13,103 - INFO - Update id=599836126 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 17:43:15,173 - INFO - Update id=599836127 is handled. Duration 312 ms by bot id=7607849811
+2025-05-13 17:43:16,077 - INFO - Update id=599836128 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:43:22,461 - INFO - Update id=599836129 is handled. Duration 234 ms by bot id=7607849811
+2025-05-13 17:43:59,642 - INFO - Update id=599836130 is handled. Duration 469 ms by bot id=7607849811
+2025-05-13 17:44:36,732 - INFO - Update id=599836131 is handled. Duration 296 ms by bot id=7607849811
+2025-05-13 17:44:39,842 - INFO - Update id=599836132 is handled. Duration 140 ms by bot id=7607849811
+2025-05-13 17:44:43,008 - INFO - Update id=599836133 is handled. Duration 297 ms by bot id=7607849811
+2025-05-13 17:44:45,906 - INFO - Update id=599836134 is handled. Duration 187 ms by bot id=7607849811
+2025-05-13 17:44:47,601 - INFO - Update id=599836135 is handled. Duration 233 ms by bot id=7607849811
+2025-05-13 17:44:49,269 - INFO - Update id=599836136 is handled. Duration 407 ms by bot id=7607849811
+2025-05-13 17:44:52,705 - INFO - Update id=599836137 is handled. Duration 265 ms by bot id=7607849811
+2025-05-13 17:44:55,551 - INFO - Update id=599836138 is handled. Duration 453 ms by bot id=7607849811
+2025-05-13 17:44:57,404 - INFO - Update id=599836139 is handled. Duration 264 ms by bot id=7607849811
+2025-05-13 17:45:00,218 - INFO - Update id=599836140 is handled. Duration 202 ms by bot id=7607849811
+2025-05-13 17:45:01,981 - INFO - Update id=599836141 is handled. Duration 328 ms by bot id=7607849811
+2025-05-13 17:45:06,559 - INFO - Update id=599836142 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:45:09,464 - INFO - Update id=599836143 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:45:10,765 - INFO - Update id=599836144 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:45:15,030 - INFO - Update id=599836145 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:45:18,238 - INFO - Update id=599836146 is handled. Duration 391 ms by bot id=7607849811
+2025-05-13 17:45:20,979 - INFO - Update id=599836147 is handled. Duration 328 ms by bot id=7607849811
+2025-05-13 17:45:30,768 - INFO - Update id=599836148 is handled. Duration 532 ms by bot id=7607849811
+2025-05-13 17:46:24,086 - INFO - Update id=599836149 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 17:46:26,035 - INFO - Update id=599836150 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 17:46:28,899 - INFO - Update id=599836151 is handled. Duration 467 ms by bot id=7607849811
+2025-05-13 17:46:30,460 - INFO - Update id=599836152 is handled. Duration 171 ms by bot id=7607849811
+2025-05-13 17:46:33,879 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-13 17:46:34,189 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-13 17:46:38,076 - INFO - Update id=599836154 is handled. Duration 453 ms by bot id=7607849811
+2025-05-13 17:46:46,745 - INFO - Update id=599836153 is handled. Duration 13187 ms by bot id=7607849811
+2025-05-13 17:47:06,631 - INFO - Update id=599836155 is handled. Duration 469 ms by bot id=7607849811
+2025-05-13 17:47:11,155 - INFO - Update id=599836156 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 17:47:13,778 - INFO - Update id=599836157 is handled. Duration 358 ms by bot id=7607849811
+2025-05-13 17:47:15,492 - INFO - Update id=599836158 is handled. Duration 500 ms by bot id=7607849811
+2025-05-13 17:47:23,593 - INFO - Update id=599836159 is handled. Duration 218 ms by bot id=7607849811
+2025-05-13 17:47:26,184 - INFO - Update id=599836160 is handled. Duration 484 ms by bot id=7607849811
+2025-05-13 17:47:26,458 - INFO - Update id=599836161 is handled. Duration 625 ms by bot id=7607849811
+2025-05-13 17:47:31,400 - INFO - Update id=599836162 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:47:31,919 - INFO - Update id=599836163 is handled. Duration 328 ms by bot id=7607849811
+2025-05-13 17:47:34,510 - INFO - Update id=599836164 is handled. Duration 437 ms by bot id=7607849811
+2025-05-13 17:47:36,737 - INFO - Update id=599836165 is handled. Duration 453 ms by bot id=7607849811
+2025-05-13 17:47:38,823 - INFO - Update id=599836166 is handled. Duration 172 ms by bot id=7607849811
+2025-05-13 17:47:42,440 - INFO - Update id=599836167 is handled. Duration 562 ms by bot id=7607849811
+2025-05-13 17:47:44,242 - INFO - Update id=599836168 is handled. Duration 171 ms by bot id=7607849811
+2025-05-13 17:47:48,714 - INFO - Update id=599836169 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 17:47:54,081 - INFO - Update id=599836170 is handled. Duration 172 ms by bot id=7607849811
+2025-05-13 17:48:24,846 - INFO - Update id=599836171 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:48:28,055 - INFO - Update id=599836172 is handled. Duration 359 ms by bot id=7607849811
+2025-05-13 17:48:30,752 - INFO - Update id=599836173 is handled. Duration 266 ms by bot id=7607849811
+2025-05-13 17:48:31,407 - INFO - Update id=599836174 is handled. Duration 139 ms by bot id=7607849811
+2025-05-13 17:48:33,157 - INFO - Update id=599836175 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:48:33,157 - ERROR - Cause exception while process update id=599836175 by bot id=7607849811
+TypeError: get_admin_main_menu_keyboard() missing 1 required positional argument: 'is_super_admin'
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\middleware.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\user\handlers.py", line 166, in get_main_menu_handler
+    reply_markup=get_admin_main_menu_keyboard()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_admin_main_menu_keyboard() missing 1 required positional argument: 'is_super_admin'
+2025-05-13 17:48:37,251 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ngw.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:48:37,565 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gigachat.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:48:48,355 - INFO - Update id=599836176 is handled. Duration 12421 ms by bot id=7607849811
+2025-05-13 17:48:49,225 - INFO - Update id=599836178 is handled. Duration 875 ms by bot id=7607849811
+2025-05-13 17:48:49,394 - INFO - Update id=599836177 is handled. Duration 1172 ms by bot id=7607849811
+2025-05-13 17:48:49,470 - INFO - Update id=599836180 is handled. Duration 1109 ms by bot id=7607849811
+2025-05-13 17:48:49,490 - INFO - Update id=599836182 is handled. Duration 1141 ms by bot id=7607849811
+2025-05-13 17:48:49,520 - INFO - Update id=599836183 is handled. Duration 1171 ms by bot id=7607849811
+2025-05-13 17:48:49,550 - INFO - Update id=599836179 is handled. Duration 1203 ms by bot id=7607849811
+2025-05-13 17:48:49,570 - INFO - Update id=599836181 is handled. Duration 1219 ms by bot id=7607849811
+2025-05-13 17:48:52,677 - INFO - Update id=599836184 is handled. Duration 312 ms by bot id=7607849811
+2025-05-13 17:48:55,082 - INFO - Update id=599836185 is not handled. Duration 77 ms by bot id=7607849811
+2025-05-13 17:48:58,611 - INFO - Update id=599836186 is handled. Duration 890 ms by bot id=7607849811
+2025-05-13 17:49:00,204 - INFO - Update id=599836187 is handled. Duration 265 ms by bot id=7607849811
+2025-05-13 17:49:03,162 - INFO - Update id=599836188 is handled. Duration 266 ms by bot id=7607849811
+2025-05-13 17:49:07,380 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ngw.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:49:07,621 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gigachat.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:49:17,813 - INFO - Update id=599836190 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:49:17,887 - INFO - Update id=599836189 is handled. Duration 11547 ms by bot id=7607849811
+2025-05-13 17:49:18,327 - INFO - Update id=599836196 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 17:49:18,368 - INFO - Update id=599836193 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 17:49:18,415 - INFO - Update id=599836194 is not handled. Duration 358 ms by bot id=7607849811
+2025-05-13 17:49:18,415 - ERROR - Cause exception while process update id=599836194 by bot id=7607849811
+TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\middleware.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\key_employee\admin_actions\handlers.py", line 36, in handle_admin_menu
+    await callback.message.edit_text(
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+2025-05-13 17:49:18,475 - INFO - Update id=599836192 is not handled. Duration 530 ms by bot id=7607849811
+2025-05-13 17:49:18,475 - ERROR - Cause exception while process update id=599836192 by bot id=7607849811
+TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\middleware.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\training\admin_actions\handlers.py", line 111, in handle_theme_list_button
+    await get_theme_list_button(callback_query, state)
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\training\admin_actions\handlers.py", line 93, in get_theme_list_button
+    await callback_query.message.delete()
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to delete not found
+2025-05-13 17:49:18,512 - INFO - Update id=599836195 is not handled. Duration 391 ms by bot id=7607849811
+2025-05-13 17:49:18,512 - ERROR - Cause exception while process update id=599836195 by bot id=7607849811
+TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\middleware.py", line 18, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\department_list\admin_actions\handlers.py", line 70, in handle_admin_department_list
+    await callback_query.message.edit_text(
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\bot.py", line 492, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\aiohttp.py", line 178, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Roaming\Python\Python311\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: message to edit not found
+2025-05-13 17:49:18,812 - INFO - Update id=599836191 is handled. Duration 921 ms by bot id=7607849811
+2025-05-13 17:49:20,113 - INFO - Update id=599836197 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 17:49:25,099 - INFO - Update id=599836198 is not handled. Duration 78 ms by bot id=7607849811
+2025-05-13 17:49:26,926 - INFO - Update id=599836199 is handled. Duration 546 ms by bot id=7607849811
+2025-05-13 17:49:28,214 - INFO - Update id=599836200 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 17:49:29,951 - INFO - Update id=599836201 is handled. Duration 297 ms by bot id=7607849811
+2025-05-13 17:49:31,544 - INFO - Update id=599836202 is handled. Duration 171 ms by bot id=7607849811
+2025-05-13 17:49:34,407 - INFO - Update id=599836203 is handled. Duration 250 ms by bot id=7607849811
+2025-05-13 17:49:56,836 - INFO - Update id=599836204 is handled. Duration 327 ms by bot id=7607849811
+2025-05-13 17:49:58,733 - INFO - Update id=599836205 is handled. Duration 280 ms by bot id=7607849811
+2025-05-13 17:50:07,091 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ngw.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:50:07,346 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gigachat.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 17:50:07,664 - INFO - Update id=599836206 is handled. Duration 1766 ms by bot id=7607849811
+2025-05-13 17:52:27,454 - INFO - Update id=599836207 is handled. Duration 890 ms by bot id=7607849811
+2025-05-13 17:52:29,340 - INFO - Update id=599836208 is handled. Duration 343 ms by bot id=7607849811
+2025-05-13 17:52:29,672 - INFO - Update id=599836209 is handled. Duration 530 ms by bot id=7607849811
+2025-05-13 17:52:31,207 - INFO - Update id=599836210 is handled. Duration 343 ms by bot id=7607849811
+2025-05-13 17:52:33,789 - INFO - Update id=599836211 is not handled. Duration 78 ms by bot id=7607849811
+2025-05-13 17:57:31,647 - INFO - Polling stopped
+2025-05-13 17:57:31,912 - INFO - Polling stopped for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-13 18:00:06,571 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-13 18:00:06,595 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-13 18:00:07,248 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-13 18:00:08,560 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-13 18:00:08,911 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-13 18:00:09,248 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-13 18:00:09,541 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-13 18:00:09,545 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-13 18:00:09,546 - ERROR - Ошибка обработки DOCX D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-13 18:00:09,546 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-13 18:00:09,560 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-13 18:00:09,569 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-13 18:00:09,575 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-13 18:00:09,661 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-13 18:00:09,669 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-13 18:00:09,679 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-13 18:00:09,692 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-13 18:00:09,708 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-13 18:00:09,730 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-13 18:00:09,762 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-13 18:00:09,819 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-13 18:00:09,829 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-13 18:00:09,846 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-13 18:00:09,874 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-13 18:00:09,894 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-13 18:00:09,904 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-13 18:00:09,913 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-13 18:00:09,924 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-13 18:00:09,959 - WARNING - D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\handlers.py:158: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(
+
+2025-05-13 18:00:21,430 - WARNING - From C:\Users\User\AppData\Roaming\Python\Python311\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-13 18:00:21,760 - INFO - Use pytorch device_name: cpu
+2025-05-13 18:00:21,760 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-13 18:02:42,915 - INFO - Loading faiss with AVX2 support.
+2025-05-13 18:02:42,943 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-13 18:02:42,949 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-05-13 18:02:42,974 - INFO - Векторное хранилище успешно инициализировано
+2025-05-13 18:02:43,934 - INFO - Start polling
+2025-05-13 18:02:44,063 - INFO - Run polling for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-13 18:03:54,484 - INFO - Update id=599836212 is handled. Duration 592 ms by bot id=7607849811
+2025-05-13 18:03:55,938 - INFO - Update id=599836213 is handled. Duration 282 ms by bot id=7607849811
+2025-05-13 18:04:05,421 - INFO - Update id=599836214 is handled. Duration 296 ms by bot id=7607849811
+2025-05-13 18:04:07,621 - INFO - Update id=599836215 is handled. Duration 328 ms by bot id=7607849811
+2025-05-13 18:04:08,827 - INFO - Update id=599836216 is handled. Duration 172 ms by bot id=7607849811
+2025-05-13 18:04:12,386 - INFO - Update id=599836217 is handled. Duration 266 ms by bot id=7607849811
+2025-05-13 18:04:15,996 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ngw.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 18:04:16,235 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gigachat.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 18:04:26,321 - INFO - Update id=599836218 is handled. Duration 11562 ms by bot id=7607849811
+2025-05-13 18:04:48,031 - INFO - Update id=599836219 is handled. Duration 905 ms by bot id=7607849811
+2025-05-13 18:04:55,163 - INFO - Update id=599836220 is handled. Duration 171 ms by bot id=7607849811
+2025-05-13 18:04:58,700 - INFO - Update id=599836221 is handled. Duration 172 ms by bot id=7607849811
+2025-05-13 18:05:02,146 - INFO - Update id=599836222 is handled. Duration 233 ms by bot id=7607849811
+2025-05-13 18:05:04,766 - INFO - Update id=599836223 is handled. Duration 187 ms by bot id=7607849811
+2025-05-13 18:05:28,816 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'ngw.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 18:05:29,082 - WARNING - C:\Users\User\AppData\Roaming\Python\Python311\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gigachat.devices.sberbank.ru'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+2025-05-13 18:05:37,715 - INFO - Update id=599836224 is handled. Duration 10077 ms by bot id=7607849811
+2025-05-13 18:06:18,473 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-13 18:06:18,901 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-13 18:06:38,376 - INFO - Update id=599836225 is handled. Duration 20203 ms by bot id=7607849811
+2025-05-13 18:07:00,913 - INFO - Update id=599836226 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 18:07:03,431 - INFO - Update id=599836227 is handled. Duration 453 ms by bot id=7607849811
+2025-05-13 18:07:08,558 - INFO - Update id=599836228 is not handled. Duration 62 ms by bot id=7607849811
+2025-05-13 18:09:03,527 - INFO - Polling stopped
+2025-05-13 18:09:03,792 - INFO - Polling stopped for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-13 19:00:19,043 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-13 19:00:19,066 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-13 19:00:19,784 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-13 19:00:21,071 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-13 19:00:21,435 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-13 19:00:21,787 - INFO - Обработка PDF: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-13 19:00:22,094 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-13 19:00:22,098 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-13 19:00:22,099 - ERROR - Ошибка обработки DOCX D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-13 19:00:22,099 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-13 19:00:22,114 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-13 19:00:22,124 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-13 19:00:22,130 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-13 19:00:22,219 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-13 19:00:22,227 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-13 19:00:22,238 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-13 19:00:22,251 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-13 19:00:22,268 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-13 19:00:22,291 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-13 19:00:22,325 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-13 19:00:22,386 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-13 19:00:22,395 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-13 19:00:22,413 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-13 19:00:22,442 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-13 19:00:22,463 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-13 19:00:22,473 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-13 19:00:22,482 - INFO - Обработка DOCX: D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-13 19:00:22,493 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-13 19:00:22,530 - WARNING - D:\zilant_projects\quiz\employee_adaptation_project\application\tg_bot\ai_assistant\handlers.py:158: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(
+
+2025-05-13 19:00:33,143 - WARNING - From C:\Users\User\AppData\Roaming\Python\Python311\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-13 19:00:33,496 - INFO - Use pytorch device_name: cpu
+2025-05-13 19:00:33,497 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-13 19:02:42,555 - INFO - Loading faiss with AVX2 support.
+2025-05-13 19:02:42,581 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-13 19:02:42,586 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-05-13 19:02:42,622 - INFO - Векторное хранилище успешно инициализировано
+2025-05-13 19:02:43,485 - INFO - Start polling
+2025-05-13 19:02:43,547 - INFO - Run polling for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-13 19:19:47,130 - INFO - Update id=599836330 is handled. Duration 391 ms by bot id=7607849811
+2025-05-13 19:19:50,027 - INFO - Update id=599836331 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 19:19:51,924 - INFO - Update id=599836332 is handled. Duration 266 ms by bot id=7607849811
+2025-05-13 19:19:56,961 - INFO - Update id=599836333 is handled. Duration 155 ms by bot id=7607849811
+2025-05-13 19:20:01,339 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-13 19:20:01,775 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-13 19:20:07,940 - INFO - Update id=599836335 is handled. Duration 375 ms by bot id=7607849811
+2025-05-13 19:20:09,666 - INFO - Update id=599836334 is handled. Duration 8780 ms by bot id=7607849811
+2025-05-13 19:20:14,803 - INFO - Update id=599836336 is handled. Duration 562 ms by bot id=7607849811
+2025-05-13 19:20:19,402 - INFO - Update id=599836337 is handled. Duration 296 ms by bot id=7607849811
+2025-05-13 19:20:20,727 - INFO - Update id=599836338 is handled. Duration 171 ms by bot id=7607849811
+2025-05-13 19:20:21,980 - INFO - Update id=599836339 is handled. Duration 296 ms by bot id=7607849811
+2025-05-13 19:20:24,625 - INFO - Update id=599836340 is handled. Duration 358 ms by bot id=7607849811
+2025-05-13 19:20:26,126 - INFO - Update id=599836341 is handled. Duration 250 ms by bot id=7607849811
+2025-05-13 19:20:27,163 - INFO - Update id=599836342 is handled. Duration 233 ms by bot id=7607849811
+2025-05-13 19:20:28,083 - INFO - Update id=599836343 is handled. Duration 234 ms by bot id=7607849811
+2025-05-13 19:20:28,995 - INFO - Update id=599836344 is handled. Duration 281 ms by bot id=7607849811
+2025-05-13 19:20:29,872 - INFO - Update id=599836345 is handled. Duration 266 ms by bot id=7607849811
+2025-05-13 19:20:32,210 - INFO - Update id=599836346 is handled. Duration 250 ms by bot id=7607849811
+2025-05-13 19:20:33,176 - INFO - Update id=599836347 is handled. Duration 234 ms by bot id=7607849811
+2025-05-13 19:20:34,322 - INFO - Update id=599836348 is handled. Duration 250 ms by bot id=7607849811
+2025-05-13 19:20:35,802 - INFO - Update id=599836349 is handled. Duration 546 ms by bot id=7607849811
+2025-05-13 19:20:37,188 - INFO - Update id=599836350 is handled. Duration 562 ms by bot id=7607849811
+2025-05-13 20:01:17,101 - INFO - Polling stopped
+2025-05-13 20:01:17,375 - INFO - Polling stopped for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'

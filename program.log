@@ -1,0 +1,20 @@
+2025-05-13T17:30:49.428118+0300 - INFO - test
+2025-05-13T17:32:10.303110+0300 - INFO - test
+2025-05-13T17:32:22.745282+0300 - INFO - test
+2025-05-13T17:33:14.580127+0300 - INFO - test
+2025-05-13T17:33:32.655339+0300 - INFO - test
+2025-05-13T17:34:12.425876+0300 - INFO - test
+2025-05-13T17:34:37.550478+0300 - INFO - test
+2025-05-13T17:39:45.940583+0300 - INFO - test
+2025-05-13T17:42:28.124585+0300 - INFO - bot started work
+2025-05-13T18:00:01.148724+0300 - INFO - test
+2025-05-13T18:02:43.267975+0300 - INFO - bot started work
+2025-05-13T18:09:35.389708+0300 - INFO - test
+2025-05-13T18:09:39.221075+0300 - INFO - bot started work
+2025-05-13T18:13:52.323975+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:29:07.121639+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:30:41.288372+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:59:34.803282+0300 - INFO - test
+2025-05-13T18:59:38.501746+0300 - INFO - bot started work
+2025-05-13T19:00:13.611565+0300 - INFO - test
+2025-05-13T19:02:42.867190+0300 - INFO - bot started work
