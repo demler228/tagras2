@@ -28,7 +28,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
+auth = "Y2U3MmFkYTEtMGIzNC00M2UwLTliNGYtYjRhMGFhODUzYTFhOjlmYzZlMmE2LTIyMDMtNDE4NC1iNWExLTA4ZjUyNTk1YjE3OQ=="
 giga = GigaChat(
     credentials=auth,
     model='GigaChat:latest',
