@@ -27,7 +27,9 @@ class UserBL:
 
     @staticmethod
     async def add_employee(user: User) -> DataState:
-        user.telegram_id = await get_user_id_by_username(user.tg_username)
+        if not user.telegram_id:
+            return DataFailedMessage("Ошибка получения telegram id пользователя, попробуйте позже")
+
         data_state = UserDbDal.add_employee(user)
 
         return data_state

@@ -19,10 +19,12 @@ class EmployeeStates(StatesGroup):
     add_employee_name = State()
     add_employee_phone = State()
     add_employee_tg_username = State()
+    add_employee_telegram_id = State()
 
     edit_employee_name = State()
     edit_employee_phone = State()
     edit_employee_tg_username = State()
+    edit_employee_telegram_id = State()
 
 @router.callback_query(F.data == "employees_button_admin")
 async def employee_handler(callback_query: types.CallbackQuery):
@@ -52,8 +54,15 @@ async def add_user_phone_handler(message: types.Message, state: FSMContext):
                          reply_markup=get_back_employee_button())
 
 @router.message(EmployeeStates.add_employee_tg_username)
-async def add_tg_username_handler(message: types.Message, state: FSMContext):
+async def add_user_tg_username_handler(message: types.Message, state: FSMContext):
     await state.update_data({"tg_username": message.text})
+    await state.set_state(EmployeeStates.add_employee_telegram_id)
+    await message.answer("✍️ Введите Telegram ID сотрудника \n(формат - числовой ID, например 123456789)",
+                         reply_markup=get_back_employee_button())
+
+@router.message(EmployeeStates.add_employee_telegram_id)
+async def add_telegram_id_handler(message: types.Message, state: FSMContext):
+    await state.update_data({"telegram_id": message.text})
     await show_confirm_screen(message, state)
 
 @router.callback_query(F.data == "employee_edit")
@@ -81,6 +90,12 @@ async def edit_tg_username(callback_query: types.CallbackQuery, state: FSMContex
     await callback_query.message.answer("✍️ Введите новый username сотрудника в Telegram \n(формат - @username)",
                                         reply_markup=get_back_employee_button())
 
+@router.callback_query(F.data == "edit_employee_telegram_id")
+async def edit_tg_username(callback_query: types.CallbackQuery, state: FSMContext):
+    await state.set_state(EmployeeStates.edit_employee_telegram_id)
+    await callback_query.message.answer("✍️ Введите новый Telegram ID сотрудника \n(формат - числовой ID, например 123456789)",
+                                        reply_markup=get_back_employee_button())
+
 @router.message(EmployeeStates.edit_employee_name)
 async def edited_name_handler(message: types.Message, state: FSMContext):
     await state.update_data({"username": message.text})
@@ -92,8 +107,13 @@ async def edited_phone_handler(message: types.Message, state: FSMContext):
     await show_confirm_screen(message, state)
 
 @router.message(EmployeeStates.edit_employee_tg_username)
-async def edited_tg_username_handler(message: types.Message, state: FSMContext):
+async def edited_telegram_id_handler(message: types.Message, state: FSMContext):
     await state.update_data({"tg_username": message.text})
+    await show_confirm_screen(message, state)
+
+@router.message(EmployeeStates.edit_employee_telegram_id)
+async def edited_telegram_id_handler(message: types.Message, state: FSMContext):
+    await state.update_data({"telegram_id": message.text})
     await show_confirm_screen(message, state)
 
 async def show_confirm_screen(message_or_query: types.Message | types.CallbackQuery, state: FSMContext):
@@ -102,14 +122,16 @@ async def show_confirm_screen(message_or_query: types.Message | types.CallbackQu
     user = User(
         username=data["username"],
         phone=data["phone"],
-        tg_username=data["tg_username"]
+        tg_username=data["tg_username"],
+        telegram_id = data["telegram_id"]
     )
 
     text = (
         f"🔎 Проверьте введённые данные:\n\n"
         f"👤 Полное имя: {user.username}\n"
         f"📞 Телефон: {user.phone}\n"
-        f"📱 Telegram username: {user.tg_username}"
+        f"📱 Telegram username: {user.tg_username}\n"
+        f"🔢 Telegram telegram id: {user.telegram_id}"
     )
     if isinstance(message_or_query, types.CallbackQuery):
         await message_or_query.message.edit_text(text, reply_markup=get_confirm_edit_keyboard())
@@ -126,6 +148,7 @@ async def save_employee_handler(callback_query: types.CallbackQuery, state: FSMC
             "username": data["username"],
             "phone": data["phone"],
             "tg_username": data["tg_username"],
+            "telegram_id": data["telegram_id"]
         }
         data_state = UserBL.update_employee(employee_id, updates)
         if isinstance(data_state, DataSuccess):
@@ -143,7 +166,8 @@ async def save_employee_handler(callback_query: types.CallbackQuery, state: FSMC
         user = User(
             username=data["username"],
             phone=data["phone"],
-            tg_username=data["tg_username"]
+            tg_username=data["tg_username"],
+            telegram_id=data["telegram_id"]
         )
         data_state = await UserBL.add_employee(user)
         if isinstance(data_state, DataSuccess):
@@ -241,12 +265,13 @@ async def edit_employee_handler(callback_query: types.CallbackQuery, callback_da
         )
         return
     employee = data_state.data
-    # Сохраняем данные сотрудника в состоянии для последующего редактирования.
+
     await state.update_data({
         "employee_id": employee.id,
         "username": employee.username,
         "phone": employee.phone,
         "tg_username": employee.tg_username,
+        "telegram_id": employee.telegram_id
     })
     await callback_query.message.edit_text(
         "Что вы хотите отредактировать?",
@@ -260,7 +285,7 @@ async def delete_employee_handler(callback_query: types.CallbackQuery, callback_
     if isinstance(data_state, DataSuccess):
         await callback_query.message.edit_text(
             "✅ Сотрудник успешно удалён.",
-            reply_markup=get_employee_list_keyboard([])  # можно обновить список или вернуть в основное меню
+            reply_markup=get_employee_list_keyboard([])
         )
     else:
         await callback_query.message.edit_text(

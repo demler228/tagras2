@@ -35,6 +35,7 @@ def get_edit_options_keyboard():
         [InlineKeyboardButton(text="📝 Имя", callback_data="edit_employee_name")],
         [InlineKeyboardButton(text="📞 Телефон", callback_data="edit_employee_phone")],
         [InlineKeyboardButton(text="📱 Username", callback_data="edit_employee_username")],
+        [InlineKeyboardButton(text="🔢 Telegram id", callback_data="edit_employee_telegram_id")],
         [InlineKeyboardButton(text="🔙 Назад", callback_data="confirm_data_employee_back")],
     ])
 
