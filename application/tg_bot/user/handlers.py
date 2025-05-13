@@ -239,7 +239,7 @@ async def list_employees_handler(callback_query: types.CallbackQuery, callback_d
     employees = sorted(employees, key=lambda x: x.username)
 
     await callback_query.message.edit_text(
-        f"👥 Выберите сотрудника для редактирования (страница {offset + 1}):",
+        f"👥 Выберите сотрудника (страница {offset + 1}):",
         reply_markup=get_employees_list_keyboard(employees, offset=offset)
     )
 
