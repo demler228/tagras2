@@ -6,7 +6,7 @@ from utils.config import settings
 api_id = settings.API_ID_TELETHON
 api_hash = settings.API_HASH_TELETHON
 
-client = TelegramClient("telethon_session", api_id, api_hash)
+#client = TelegramClient("telethon_session", api_id, api_hash)
 
 async def get_user_id_by_username(username: str) -> str | None:
     return '245243523'

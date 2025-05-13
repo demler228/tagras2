@@ -13,6 +13,7 @@ from domain.user.models.user import UserBase
 
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
+from utils.logs import program_logger
 
 
 class TasksDbDal:
@@ -32,7 +33,7 @@ class TasksDbDal:
                 return DataSuccess(tasks)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
     @staticmethod
@@ -48,7 +49,7 @@ class TasksDbDal:
                 task = session.scalar(statement)
                 return DataSuccess(task)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
     @staticmethod
@@ -65,7 +66,7 @@ class TasksDbDal:
                 return DataSuccess(tasks)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
     @staticmethod
@@ -80,7 +81,7 @@ class TasksDbDal:
                 return DataSuccess(users)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
     @staticmethod
@@ -102,7 +103,7 @@ class TasksDbDal:
                 return DataSuccess(new_task.id)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка при создании задачи!')
 
     @staticmethod
@@ -127,7 +128,7 @@ class TasksDbDal:
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка при обновлении задачи!')
 
     @staticmethod
@@ -145,7 +146,7 @@ class TasksDbDal:
                 session.commit()
                 return DataSuccess()
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 session.rollback()
                 return DataFailedMessage('Ошибка при удалении задачи!')
 
@@ -168,7 +169,7 @@ class TasksDbDal:
                 session.commit()
                 return DataSuccess()
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 session.rollback()
                 return DataFailedMessage('Ошибка при присвоении задачи!')
 
@@ -188,7 +189,7 @@ class TasksDbDal:
                 return DataSuccess(tasks)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
     @staticmethod
     def delete_assigned_users_by_task_id(task_id: int) -> DataState:
@@ -210,6 +211,6 @@ class TasksDbDal:
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 

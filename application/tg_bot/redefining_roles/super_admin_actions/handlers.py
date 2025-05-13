@@ -6,6 +6,7 @@ from application.tg_bot.redefining_roles.super_admin_actions.keyboards.super_adm
     get_role_management_keyboard, back_to_admin_actions
 from domain.redefining_users.db_bl import RedefinigDbBl
 from utils.data_state import DataSuccess
+from utils.logs import admin_logger
 from .keyboards.callback_factory import BackToAdminActions, BackToUsersList, MakeRemoveAdminAction
 
 router = Router()
@@ -102,6 +103,8 @@ async def make_admin_callback_handler(callback_query: types.CallbackQuery, callb
             result = RedefinigDbBl.change_user_role(user_id, "user")
 
         if isinstance(result, DataSuccess):
+            admin_logger.info(
+                f'Супер-админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} {'сделал админом пользователя'if action == "make_admin" else 'забрал роль админа у пользователя'} - {user_id} id')
             await callback_query.answer(text="Смена роли произошла успешно", show_alert=True)
             await callback_query.message.edit_text(text=selected_user_info_text(result.data), parse_mode="HTML",
                                                    reply_markup=get_role_management_keyboard(result.data.id,

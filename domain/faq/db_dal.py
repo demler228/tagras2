@@ -6,6 +6,7 @@ from application.tg_bot.faq.entities.faq import Faq
 from domain.faq.models.faq import FaqBase
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
+from utils.logs import program_logger
 
 
 class FaqDbDal(BaseModel):
@@ -24,7 +25,7 @@ class FaqDbDal(BaseModel):
 
             except Exception as e:
                 #session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 #session.commit() # - используйте, если что-то меняете
@@ -48,7 +49,7 @@ class FaqDbDal(BaseModel):
 
             except Exception as e:
                 session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit() # - используйте, если что-то меняете
@@ -67,7 +68,7 @@ class FaqDbDal(BaseModel):
 
             except Exception as e:
                 session.rollback() # - используйте, если что-то меняете
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit() # - используйте, если что-то меняете
@@ -87,7 +88,7 @@ class FaqDbDal(BaseModel):
 
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
             else:
                 session.commit()

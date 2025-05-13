@@ -13,6 +13,7 @@ from domain.user.models.user import UserBase
 
 from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
+from utils.logs import program_logger
 
 
 class RedefiningDbDal:
@@ -31,7 +32,7 @@ class RedefiningDbDal:
                 return DataSuccess(users)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
     @staticmethod
     def get_user_info_by_user_id(user_id: int) -> DataState :
@@ -46,7 +47,7 @@ class RedefiningDbDal:
                 return DataSuccess(users)
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка в работе базы данных!')
 
 
@@ -67,7 +68,7 @@ class RedefiningDbDal:
                 return DataSuccess(f"Роль пользователя {user.username} успешно изменена на {new_role}.")
             except Exception as e:
                 session.rollback()
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage('Ошибка при изменении роли пользователя!')
 
 

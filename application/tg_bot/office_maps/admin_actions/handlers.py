@@ -6,6 +6,7 @@ from aiogram.types import FSInputFile, Message
 from loguru import logger
 from domain.office_maps.db_bl import MapsDbBl
 from utils.config import settings
+from utils.logs import admin_logger
 from .keyboards import (
     get_buildings_keyboard,
     get_floors_keyboard,
@@ -179,6 +180,8 @@ async def building_create(message: Message, state: FSMContext):
         data_state = MapsDbBl.create_building(building)
         if isinstance(data_state, DataSuccess):
             building_id = data_state.data
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} добавил здание {building.name}')
             await floors_button(state,message=message, building_id=building_id)
         else:
             await message.answer(f'❌ {data_state.error_message}')
@@ -191,6 +194,8 @@ async def delete_building_button(callback_query: types.CallbackQuery, state: FSM
     building = (await state.get_data())['building']
     data_state = MapsDbBl.delete_building(building)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} удалил здание {building.name}')
         await handle_office_maps_button(callback_query, state)
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
@@ -216,6 +221,8 @@ async def floor_create(message: Message, state: FSMContext):
         data_state = MapsDbBl.create_floor(floor)
         if isinstance(data_state, DataSuccess):
             floor_id = data_state.data
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} добавил этаж {floor.name}')
             await floor_selection(state,message=message, building_id=building_id,floor_id=floor_id)
         else:
             await message.answer(f'❌ {data_state.error_message}')
@@ -229,6 +236,8 @@ async def delete_floor_button(callback_query: types.CallbackQuery, state: FSMCon
     data_state = MapsDbBl.delete_floor(floor)
     if isinstance(data_state, DataSuccess):
         building_id = (await state.get_data())['building'].id
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} удалил этаж {floor.name}')
         await floors_button(state, message=callback_query.message, building_id=building_id)
     else:
         await callback_query.message.answer(f'❌ {data_state.error_message}')
@@ -255,6 +264,8 @@ async def section_create(message: Message, state: FSMContext):
         data_state = MapsDbBl.create_section(section)
         if isinstance(data_state, DataSuccess):
             section_id = data_state.data
+            admin_logger.info(
+                f'Админ {message.chat.full_name} ({message.chat.id} добавил отдел {section.name}')
             await section_selection(state,message=message, building_id=building_id,floor_id=floor_id,section_id=section_id)
         else:
             await message.answer(f'❌ {data_state.error_message}')
@@ -267,6 +278,8 @@ async def delete_section_button(callback_query: types.CallbackQuery, state: FSMC
     section = (await state.get_data())['section']
     data_state = MapsDbBl.delete_section(section)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} удалил отдел {section.name}')
         floor_id = (await state.get_data())['floor'].id
         building_id = (await state.get_data())['building'].id
         await floor_selection(state, message=callback_query.message, floor_id=floor_id,building_id=building_id)
@@ -282,10 +295,13 @@ async def change_building_name(callback_query: types.CallbackQuery, state: FSMCo
 @router.message(F.text, AdminStates.change_building_name)
 async def changed_building_name(message: Message, state: FSMContext):
     building = (await state.get_data())['building']
+    old_building_name = building.name
     building.name = message.text
     data_state = MapsDbBl.update_building(building)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил название здания с {old_building_name} на {building.name}')
         await floors_button(state, message=message, building_id=building.id)
     else:
         await message.answer(f'❌ {data_state.error_message}')
@@ -306,6 +322,8 @@ async def changed_building_photo(message: Message, state: FSMContext):
     data_state = MapsDbBl.update_building(building)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил фото здания')
         if os.path.exists(old_image_path): # это должно быть в bl слое, но так-как на обновление картинки и названия один запрос, мне лень было модифицировать и сделал так, но вам лучше так не делать)
             os.remove(old_image_path)
 
@@ -322,10 +340,13 @@ async def change_floor_name(callback_query: types.CallbackQuery, state: FSMConte
 @router.message(F.text, AdminStates.change_floor_name)
 async def changed_floor_name(message: Message, state: FSMContext):
     floor = (await state.get_data())['floor']
+    old_floor_name = floor.name
     floor.name = message.text
     data_state = MapsDbBl.update_floor(floor)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил название этажа с {old_floor_name} на {floor.name}')
         await floor_selection(state, message=message, building_id=floor.building_id,floor_id=floor.id)
     else:
         await message.answer(f'❌ {data_state.error_message}')
@@ -346,6 +367,8 @@ async def changed_floor_photo(message: Message, state: FSMContext):
     data_state = MapsDbBl.update_floor(floor)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил фото этажа')
         if os.path.exists(old_image_path): # это должно быть в bl слое, но так-как на обновление картинки и названия один запрос, мне лень было модифицировать и сделал так, но вам лучше так не делать)
             os.remove(old_image_path)
 
@@ -362,10 +385,13 @@ async def change_section_name(callback_query: types.CallbackQuery, state: FSMCon
 @router.message(F.text, AdminStates.change_section_name)
 async def changed_section_name(message: Message, state: FSMContext):
     section = (await state.get_data())['section']
+    old_section_name = section.name
     section.name = message.text
     data_state = MapsDbBl.update_section(section)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил название отдела с {old_section_name} на {section.name}')
         building_id = (await state.get_data())['building'].id
         await section_selection(state, message=message, building_id=building_id,floor_id=section.floor_id,section_id=section.id)
     else:
@@ -389,7 +415,8 @@ async def changed_section_photo(message: Message, state: FSMContext):
     if isinstance(data_state, DataSuccess):
         if os.path.exists(old_image_path): # это должно быть в bl слое, но так-как на обновление картинки и названия один запрос, мне лень было модифицировать и сделал так, но вам лучше так не делать)
             os.remove(old_image_path)
-
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} обновил фото отдела')
         building_id = (await state.get_data())['building'].id
         await section_selection(state, message=message, building_id=building_id,floor_id=section.floor_id,section_id=section.id)
     else:

@@ -6,6 +6,7 @@ from numpy.f2py.cfuncs import callbacks
 from utils.data_state import DataSuccess, DataFailedMessage
 
 from domain.key_employee.db_bl import KeyEmployeeDbBl
+from utils.logs import admin_logger
 from .keyboards import (
     EmployeeCallback,
     PaginationCallback,
@@ -152,6 +153,8 @@ async def process_telegram_username(message: Message, state: FSMContext):
 
     data_state = KeyEmployeeDbBl.key_employee_create(key_employee)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} добавил сотрудника {key_employee.username})')
         await message.answer(
             text=f"Сотрудник {user_data['username']} успешно добавлен!",
             reply_markup=get_admin_main_keyboard()
@@ -203,6 +206,8 @@ async def handle_confirm_delete(callback: CallbackQuery, callback_data: Employee
     # Удаляем сотрудника из базы данных
     data_state = KeyEmployeeDbBl.key_employee_delete(callback_data.employee_id)
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {CallbackQuery.message.chat.full_name} ({CallbackQuery.message.chat.id} удалил сотрудника)')
         await callback.message.edit_text(
             text="Сотрудник успешно удалён!",
             reply_markup=get_admin_main_keyboard()  # Возвращаем меню с действиями

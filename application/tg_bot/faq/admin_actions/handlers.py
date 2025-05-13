@@ -8,6 +8,7 @@ from application.tg_bot.faq.admin_actions.keyboards.faq_menu_keyboard import get
 from application.tg_bot.faq.entities.faq import Faq
 from domain.faq.db_bl import FaqDbBl
 from utils.data_state import DataSuccess
+from utils.logs import admin_logger
 
 router = Router()
 class AdminStates(StatesGroup):
@@ -78,7 +79,8 @@ async def handle_faq_delete_button(callback_query: types.CallbackQuery, state: F
     data_state = FaqDbBl.faq_delete(faq)
 
     if isinstance(data_state, DataSuccess):
-        #await (await state.get_data())['message'].delete()
+        admin_logger.info(
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} удалил вопрос-ответ {faq.question})')
         await get_faq_list_button(callback_query ,state)
         await callback_query.message.answer(f'Вопрос-ответ удален!')
     else:
@@ -102,6 +104,8 @@ async def faq_create(message: Message, state: FSMContext):
     data_state = FaqDbBl.faq_create(faq)
     if isinstance(data_state, DataSuccess):
         faq.id = data_state.data
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} cоздал вопрос-ответ {faq.question})')
         await state.update_data({'faq': faq})
         await get_faq(state=state,message=message)
     else:
@@ -117,10 +121,13 @@ async def faq_change_question(callback_query: types.CallbackQuery, state: FSMCon
 @router.message(F.text, AdminStates.change_faq_question)
 async def faq_changed_question(message: Message, state: FSMContext):
     faq = (await state.get_data())['faq']
+    old_faq_question = faq.question
     faq.question = message.text
     data_state = FaqDbBl.faq_update(faq)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} изменил вопрос с {old_faq_question} на {faq.question})')
         await (await state.get_data())['message'].delete()
         await get_faq(state, message=message)
     else:
@@ -137,10 +144,13 @@ async def faq_change_answer(callback_query: types.CallbackQuery, state: FSMConte
 @router.message(F.text, AdminStates.change_faq_answer)
 async def faq_changed_answer(message: Message, state: FSMContext):
     faq = (await state.get_data())['faq']
+    old_faq_answer = faq.answer
     faq.answer = message.text
     data_state = FaqDbBl.faq_update(faq)
 
     if isinstance(data_state, DataSuccess):
+        admin_logger.info(
+            f'Админ {message.chat.full_name} ({message.chat.id} изменил вопрос с {old_faq_answer} на {faq.answer})')
         await (await state.get_data())['message'].delete()
         await get_faq(state, message=message)
     else:

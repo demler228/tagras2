@@ -24,7 +24,7 @@ def is_admin(user_id: int) -> bool:
     if isinstance(data_state, DataSuccess):
         return data_state.data.role.endswith('admin')
 
-    return True
+    return False
 
 
 def is_super_admin(user_id: int) -> bool:

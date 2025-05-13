@@ -5,6 +5,7 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram import Router, F, types
 from domain.tasks.db_bl import TasksDbBl
 from utils.data_state import DataSuccess
+from utils.logs import program_logger, admin_logger
 
 from .keyboards import (
 
@@ -34,21 +35,16 @@ def create_text_message(task):
 @router.callback_query(F.data == "edit_task")
 async def handle_edit_task(callback_query: types.CallbackQuery, task_id: int):
     try:
-        logger.info(f"Id of task: {task_id}")
-
         await callback_query.message.edit_reply_markup(reply_markup=update_task_actions(task_id))
-        print("Callback data:", callback_query.data)
     except Exception as e:
-        logger.error(f"Ошибка в handle_edit_task: {e}")
+        program_logger.error(f"Ошибка в handle_edit_task: {e}")
         await callback_query.message.answer("Произошла ошибка при обработке запроса.")
 
 
 @router.callback_query(UpdateActionCallbackFactory.filter(F.action == "update_name"))
 async def start_edit_name(callback_query: types.CallbackQuery, callback_data: UpdateActionCallbackFactory,
                           state: FSMContext):
-    logger.info("Edit_name handled")
     await state.set_state()
-    print(f"Callback data: action={callback_data.action}, task_id={callback_data.task_id}")
     task_id = callback_data.task_id
     await state.update_data(task_id=task_id)
     await callback_query.message.answer(
@@ -73,8 +69,9 @@ async def process_edit_name(message: types.Message,  state: FSMContext):
         tasks_data_state = TasksDbBl.get_all_tasks()
         tasks = tasks_data_state.data
         task = next((t for t in tasks if t.id == task_id), None)
-        logger.info(f"task detail: {task.name}")
         text = create_text_message(task)
+        admin_logger.info(
+            f'админ {message.chat.full_name} изменил название задачи({task_id}) на {new_name}')
         await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
     else:
         await message.answer(f"Ошибка: {result.error_message}")
@@ -110,6 +107,8 @@ async def process_edit_description(message: types.Message, state: FSMContext):
         task = next((t for t in tasks if t.id == task_id), None)
         logger.info(f"task detail: {task.name}")
         text = create_text_message(task)
+        admin_logger.info(
+            f'админ {message.chat.full_name} изменил описание задачи({task_id}) на {new_description}')
         await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
     else:
         await message.answer(f"Ошибка: {result.error_message}")
@@ -151,6 +150,8 @@ async def process_edit_deadline(message: types.Message, state: FSMContext):
             task = next((t for t in tasks if t.id == task_id), None)
             logger.info(f"task detail: {task.name}")
             text = create_text_message(task)
+            admin_logger.info(
+                f'админ {message.chat.full_name} изменил крайний срок задачи({task_id}) на {new_deadline}')
             await message.answer(text, parse_mode="HTML", reply_markup=update_task_actions(task_id))
         else:
             await message.answer(f"Ошибка: {result.error_message}")

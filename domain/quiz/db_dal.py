@@ -11,6 +11,7 @@ from aiogram.client.session.middlewares.request_logging import logger
 from sqlalchemy import select, exists
 
 from application.tg_bot.training.entities.questions import Question
+from utils.logs import program_logger
 from .models.quiz import QuestionBase, AnswerBase, QuizResult
 from domain.training.education.models.theme import ThemeBase
 from utils.connection_db import connection_db
@@ -71,7 +72,7 @@ class WebRepository:
             text = soup.get_text(separator="\n")
             return process_text(remove_empty_lines(text))[:6000]
         except requests.RequestException as e:
-            print(f"Ошибка при загрузке страницы: {e}")
+            program_logger.error(e)
             return None
 
 
@@ -95,7 +96,7 @@ class QuizRepository:
             response = requests.post(url, headers=headers, data=payload, verify=False)
             return response.json().get("access_token", None)
         except requests.RequestException as e:
-            print(f"Ошибка: {str(e)}")
+            program_logger.error(e)
             return None
 
     @staticmethod
@@ -155,7 +156,6 @@ class QuizRepository:
                     if choices:
                         message = choices[0].get('message', {})
                         content_str = message.get('content', '')
-                        print(message)
                         try:
                             quiz_data = json.loads(content_str)
                             return DataSuccess(quiz_data)
@@ -163,12 +163,12 @@ class QuizRepository:
                             return DataFailedMessage("Неверный формат ответа от GigaChat")
                     return DataFailedMessage("Пустой ответ от GigaChat")
                 except Exception as e:
-                    logger.error(f"Ошибка парсинга ответа: {str(e)}")
+                    program_logger.error(e)
                     return DataFailedMessage("Ошибка обработки ответа")
             else:
                 return DataFailedMessage(f"Ошибка API: {response.status_code}")
         except requests.RequestException as e:
-            logger.error(f"Произошла ошибка: {str(e)}")
+            program_logger.error(e)
             return DataFailedMessage("Ошибка соединения с GigaChat API")
 
 
@@ -215,7 +215,7 @@ class QuizDAL:
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                logger.error(f"Database error: {str(e)}")
+                program_logger.error(e)
                 return DataFailedMessage(f"Ошибка базы данных: {str(e)}")
             
     @staticmethod
@@ -250,14 +250,14 @@ class QuizDAL:
 
                 return DataSuccess(result)
             except Exception as e:
-                logger.error(e)
+                program_logger.error(e)
                 return DataFailedMessage("Ошибка в работе базы данных!")
     
     @staticmethod
     def save_quiz_result(user_id: int, theme_id: int, score: int) -> DataState:
         Session = connection_db()
         if Session is None:
-            logger.error("Ошибка подключения к базе данных")
+            program_logger.error("Ошибка подключения к базе данных")
             return DataFailedMessage("Ошибка подключения к базе данных")
         
         with Session() as session:
@@ -276,9 +276,9 @@ class QuizDAL:
                 )
                 session.add(result)
                 session.commit()
-                logger.info(f"Результат сохранен для user_id={user.id} (telegram_id={user_id})")
+
                 return DataSuccess()
             except Exception as e:
                 session.rollback()
-                logger.error(f"Ошибка сохранения: {str(e)}")
+                program_logger.error(e)
                 return DataFailedMessage(f"Ошибка сохранения результата: {str(e)}")
