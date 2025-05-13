@@ -4,7 +4,8 @@ from sqlalchemy import String, DATETIME, Integer, Enum
 from sqlalchemy.dialects.postgresql import TIMESTAMP
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from utils.base_model import Base
+from domain.quiz.models.base import Base
+
 
 
 class UserBase(Base):
