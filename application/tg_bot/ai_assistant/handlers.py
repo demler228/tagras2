@@ -6,7 +6,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from docx import Document as DocxDocument
 from pypdf import PdfReader
-from moviepy import VideoFileClip
+from moviepy.editor import VideoFileClip
 import whisper
 from aiogram import Router, types, F
 from aiogram.types import Message
@@ -28,7 +28,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
+auth = "Y2U3MmFkYTEtMGIzNC00M2UwLTliNGYtYjRhMGFhODUzYTFhOjlmYzZlMmE2LTIyMDMtNDE4NC1iNWExLTA4ZjUyNTk1YjE3OQ=="
 giga = GigaChat(
     credentials=auth,
     model='GigaChat:latest',
@@ -95,7 +95,7 @@ def process_video(video_path):
 def load_documents():
     docs = []
     
-    materials_path = Path("D:/zilant_projects/employee_adaptation_project/application/tg_bot/ai_assistant/materials")
+    materials_path = Path("D:/zilant_projects/quiz/employee_adaptation_project/application/tg_bot/ai_assistant/materials")
     if not materials_path.exists():
         logging.error(f"Папка {materials_path} не найдена!")
         return docs
