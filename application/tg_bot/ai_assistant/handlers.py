@@ -14,7 +14,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from gigachat import GigaChat
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 from application.tg_bot.ai_assistant.keyboards.get_exit_button import get_exit_button_ai
@@ -28,7 +29,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-auth = "Y2U3MmFkYTEtMGIzNC00M2UwLTliNGYtYjRhMGFhODUzYTFhOjlmYzZlMmE2LTIyMDMtNDE4NC1iNWExLTA4ZjUyNTk1YjE3OQ=="
+auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
 giga = GigaChat(
     credentials=auth,
     model='GigaChat:latest',
@@ -94,8 +95,14 @@ def process_video(video_path):
 
 def load_documents():
     docs = []
-    
-    materials_path = Path("D:/zilant_projects/employee_adaptation_project/application/tg_bot/ai_assistant/materials")
+
+    current_dir = Path(__file__).resolve().parent
+
+
+    # Строим относительный путь до директории materials
+    materials_path = current_dir / "materials"
+    print(materials_path)
+
     if not materials_path.exists():
         logging.error(f"Папка {materials_path} не найдена!")
         return docs
