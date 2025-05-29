@@ -25,7 +25,7 @@ class UserBL:
         return data_state
 
     @staticmethod
-    async def add_employee(user: User) -> DataState:
+    def add_employee(user: User) -> DataState:
         if not user.telegram_id:
             return DataFailedMessage("Ошибка получения telegram id пользователя, попробуйте позже")
 

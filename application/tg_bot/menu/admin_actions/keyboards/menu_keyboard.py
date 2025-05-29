@@ -2,8 +2,6 @@ from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
-
-
 def get_admin_main_menu_keyboard(is_super_admin: bool=False) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
@@ -15,10 +13,20 @@ def get_admin_main_menu_keyboard(is_super_admin: bool=False) -> InlineKeyboardMa
     builder.button(text="Сотрудники", callback_data="employees_button_admin")
     builder.button(text="Ключевые сотрудники", callback_data="contacts_button_admin")
     builder.button(text="Список отделов", callback_data="department_list_button_admin")
+    builder.button(text="Пригласительная ссылка", callback_data="generate_deep_link")
     if is_super_admin:
         builder.button(text="Определить роли", callback_data="redefining_roles_super_admin")
 
     builder.button(text="🔙 Выйти из админ-панели", callback_data="back_to_main_menu")
+
+    builder.adjust(1)
+
+    return builder.as_markup()
+
+def back_to_admin_menu_keyboard():
+    builder = InlineKeyboardBuilder()
+
+    builder.button(text="🔙 Назад в меню", callback_data="back_to_admin_main_menu")
 
     builder.adjust(1)
 

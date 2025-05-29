@@ -151,7 +151,17 @@ class UserDbDal:
                 )
                 session.add(new_user)
                 session.commit()
-                return DataSuccess()
+                session.refresh(new_user)
+
+                user = User(
+                    telegram_id=new_user.telegram_id,
+                    username=new_user.username,
+                    phone=new_user.phone,
+                    role=new_user.role,
+                    tg_username=new_user.tg_username
+                )
+
+                return DataSuccess(user)
 
             except Exception as e:
                 session.rollback()

@@ -1,5 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+
 
 
 
@@ -21,4 +23,14 @@ def get_main_menu_keyboard(is_admin: bool) -> InlineKeyboardMarkup:
     builder.adjust(1)
 
     return builder.as_markup()
+
+def get_phone_keyboard():
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text="Отправить номер", request_contact=True)]
+        ],
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    return keyboard
 
