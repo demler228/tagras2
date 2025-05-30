@@ -1,25 +1,20 @@
-2025-05-13T23:26:15.623604+0300 - INFO - test
-2025-05-13T23:26:22.393733+0300 - INFO - bot started work
-2025-05-14T00:32:20.958636+0300 - INFO - test
-2025-05-14T00:32:30.342449+0300 - INFO - bot started work
-2025-05-14T22:03:25.210706+0300 - INFO - test
-2025-05-14T22:03:46.212901+0300 - INFO - bot started work
-2025-05-14T22:07:02.993633+0300 - INFO - test
-2025-05-14T22:16:20.776383+0300 - INFO - test
-2025-05-21T23:17:54.811771+0300 - INFO - test
-2025-05-21T23:20:31.412859+0300 - INFO - test
-2025-05-21T23:22:13.448851+0300 - INFO - test
-2025-05-21T23:23:30.617464+0300 - INFO - test
-2025-05-21T23:26:52.207806+0300 - INFO - bot started work
-2025-05-21T23:27:21.053935+0300 - INFO - test
-2025-05-21T23:30:02.225060+0300 - INFO - test
-2025-05-21T23:33:12.471496+0300 - INFO - bot started work
-2025-05-29T12:33:59.712574+0300 - INFO - test
-2025-05-29T12:40:11.175321+0300 - INFO - test
-2025-05-29T12:42:57.271710+0300 - INFO - test
-2025-05-29T12:43:05.964064+0300 - INFO - test
-2025-05-29T12:46:27.485869+0300 - INFO - bot started work
-2025-05-30T09:48:34.003210+0300 - INFO - test
-2025-05-30T09:54:15.230823+0300 - INFO - bot started work
-2025-05-30T10:21:51.621805+0300 - INFO - test
-2025-05-30T10:30:32.769998+0300 - INFO - bot started work
+2025-05-13T17:30:49.428118+0300 - INFO - test
+2025-05-13T17:32:10.303110+0300 - INFO - test
+2025-05-13T17:32:22.745282+0300 - INFO - test
+2025-05-13T17:33:14.580127+0300 - INFO - test
+2025-05-13T17:33:32.655339+0300 - INFO - test
+2025-05-13T17:34:12.425876+0300 - INFO - test
+2025-05-13T17:34:37.550478+0300 - INFO - test
+2025-05-13T17:39:45.940583+0300 - INFO - test
+2025-05-13T17:42:28.124585+0300 - INFO - bot started work
+2025-05-13T18:00:01.148724+0300 - INFO - test
+2025-05-13T18:02:43.267975+0300 - INFO - bot started work
+2025-05-13T18:09:35.389708+0300 - INFO - test
+2025-05-13T18:09:39.221075+0300 - INFO - bot started work
+2025-05-13T18:13:52.323975+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:29:07.121639+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:30:41.288372+0300 - ERROR - Foreign key associated with column 'quiz_results.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-13T18:59:34.803282+0300 - INFO - test
+2025-05-13T18:59:38.501746+0300 - INFO - bot started work
+2025-05-13T19:00:13.611565+0300 - INFO - test
+2025-05-13T19:02:42.867190+0300 - INFO - bot started work
