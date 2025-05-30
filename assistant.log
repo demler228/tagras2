@@ -1,0 +1,765 @@
+2025-05-21 23:18:14,420 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:18:14,515 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:18:15,967 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:18:18,347 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:18:19,346 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:18:20,134 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:18:22,046 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:18:22,092 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:18:22,119 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:18:22,119 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:18:22,177 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:18:22,222 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:18:22,254 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:18:22,545 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:18:22,576 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:18:22,616 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:18:22,669 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:18:22,756 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:18:22,856 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:18:23,014 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:18:23,160 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:18:23,251 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:18:23,355 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:18:23,486 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:18:23,568 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:18:23,603 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:18:23,676 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:18:23,724 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:19:27,200 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:19:28,405 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:19:28,405 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:20:37,002 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:20:37,023 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:20:37,647 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:20:38,944 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:20:39,438 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:20:39,821 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:20:40,169 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:20:40,173 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:20:40,175 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:20:40,175 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:20:40,188 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:20:40,197 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:20:40,203 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:20:40,325 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:20:40,334 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:20:40,344 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:20:40,358 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:20:40,381 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:20:40,404 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:20:40,444 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:20:40,491 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:20:40,502 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:20:40,523 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:20:40,554 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:20:40,577 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:20:40,587 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:20:40,597 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:20:40,609 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:20:52,886 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:20:53,388 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:20:53,388 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:22:19,175 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:22:19,211 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:22:20,649 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:22:23,176 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:22:24,136 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:22:24,881 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:22:25,512 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:22:25,519 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:22:25,522 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:22:25,523 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:22:25,554 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:22:25,574 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:22:25,586 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:22:25,781 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:22:25,797 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:22:25,814 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:22:25,841 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:22:25,897 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:22:25,954 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:22:26,040 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:22:26,142 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:22:26,168 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:22:26,227 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:22:26,292 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:22:26,352 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:22:26,371 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:22:26,389 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:22:26,411 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:22:40,210 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:22:40,704 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:22:40,704 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:23:36,383 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:23:36,403 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:23:36,936 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:23:38,354 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:23:38,773 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:23:39,132 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:23:39,732 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:23:39,737 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:23:39,739 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:23:39,739 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:23:39,756 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:23:39,766 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:23:39,774 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:23:39,870 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:23:39,878 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:23:39,889 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:23:39,909 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:23:39,925 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:23:39,946 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:23:39,978 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:23:40,021 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:23:40,032 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:23:40,049 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:23:40,079 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:23:40,106 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:23:40,115 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:23:40,123 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:23:40,133 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:23:52,811 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:23:53,243 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:23:53,243 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:26:51,766 - ERROR - Ошибка при создании векторного хранилища: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-05-21 23:26:51,770 - ERROR - Не удалось создать векторное хранилище
+2025-05-21 23:26:52,733 - INFO - Start polling
+2025-05-21 23:26:52,801 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-21 23:27:15,904 - INFO - Polling stopped
+2025-05-21 23:27:16,161 - INFO - Polling stopped for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-21 23:27:26,540 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:27:26,563 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:27:27,239 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:27:28,962 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:27:29,461 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:27:29,861 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:27:30,420 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:27:30,425 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:27:30,427 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:27:30,427 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:27:30,440 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:27:30,448 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:27:30,453 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:27:30,582 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:27:30,589 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:27:30,598 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:27:30,611 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:27:30,626 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:27:30,648 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:27:30,696 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:27:30,761 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:27:30,779 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:27:30,799 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:27:30,825 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:27:30,844 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:27:30,855 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:27:30,864 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:27:30,873 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:27:43,989 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:27:44,394 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:27:44,394 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:30:08,024 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:30:08,044 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:30:08,564 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:30:09,908 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:30:10,280 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:30:10,626 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:30:11,148 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:30:11,154 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:30:11,157 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:30:11,157 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:30:11,180 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:30:11,190 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:30:11,196 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:30:11,354 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:30:11,362 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:30:11,372 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:30:11,390 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:30:11,409 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:30:11,438 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:30:11,490 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:30:11,540 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:30:11,551 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:30:11,571 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:30:11,599 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:30:11,622 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:30:11,632 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:30:11,641 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:30:11,653 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:30:23,677 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-21 23:30:24,045 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:30:24,045 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:33:12,002 - ERROR - Ошибка при создании векторного хранилища: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-05-21 23:33:12,010 - ERROR - Не удалось создать векторное хранилище
+2025-05-21 23:33:13,370 - INFO - Start polling
+2025-05-21 23:33:13,470 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-21 23:34:05,359 - INFO - Update id=264039926 is handled. Duration 1171 ms by bot id=7532849891
+2025-05-21 23:34:07,726 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-21 23:34:07,749 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-21 23:34:08,215 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-21 23:34:09,572 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-21 23:34:09,918 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-21 23:34:10,290 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-21 23:34:10,592 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-21 23:34:10,595 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-21 23:34:10,597 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-21 23:34:10,597 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-21 23:34:10,611 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-21 23:34:10,620 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-21 23:34:10,626 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-21 23:34:10,727 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-21 23:34:10,734 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-21 23:34:10,744 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-21 23:34:10,758 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-21 23:34:10,773 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-21 23:34:10,793 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-21 23:34:10,825 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-21 23:34:10,870 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-21 23:34:10,881 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-21 23:34:10,898 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-21 23:34:10,924 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-21 23:34:10,946 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-21 23:34:10,959 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-21 23:34:10,968 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-21 23:34:10,978 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-21 23:34:11,031 - INFO - Use pytorch device_name: cpu
+2025-05-21 23:34:11,031 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-21 23:37:21,095 - ERROR - Ошибка при создании векторного хранилища: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-05-21 23:37:21,103 - ERROR - Не удалось создать векторное хранилище
+2025-05-21 23:37:21,105 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-05-21 23:37:21,105 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-21 23:37:21,475 - INFO - Update id=264039927 is handled. Duration 193968 ms by bot id=7532849891
+2025-05-21 23:37:32,230 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-22 00:08:48,036 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-05-22 00:08:48,036 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-22 00:08:59,259 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-29 12:35:01,813 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-29 12:35:02,030 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-29 12:35:05,062 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-29 12:35:13,019 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-29 12:35:15,649 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-29 12:35:18,624 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-29 12:35:25,016 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-29 12:35:25,106 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-29 12:35:25,174 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-29 12:35:25,178 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-29 12:35:25,336 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-29 12:35:25,497 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-29 12:35:25,628 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-29 12:35:26,464 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-29 12:35:26,542 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-29 12:35:26,718 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-29 12:35:26,889 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-29 12:35:27,023 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-29 12:35:27,215 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-29 12:35:27,549 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-29 12:35:27,828 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-29 12:35:27,984 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-29 12:35:28,156 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-29 12:35:28,350 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-29 12:35:28,680 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-29 12:35:28,792 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-29 12:35:28,932 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-29 12:35:29,100 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-29 12:36:31,084 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-29 12:36:31,911 - INFO - Use pytorch device_name: cpu
+2025-05-29 12:36:31,911 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-29 12:41:15,978 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-29 12:41:16,025 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-29 12:41:16,492 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-29 12:41:17,778 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-29 12:41:18,200 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-29 12:41:18,580 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-29 12:41:20,417 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-29 12:41:20,445 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-29 12:41:20,469 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-29 12:41:20,469 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-29 12:41:20,525 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-29 12:41:20,583 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-29 12:41:20,616 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-29 12:41:20,833 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-29 12:41:20,865 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-29 12:41:20,902 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-29 12:41:20,969 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-29 12:41:21,009 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-29 12:41:21,071 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-29 12:41:21,136 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-29 12:41:21,213 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-29 12:41:21,262 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-29 12:41:21,290 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-29 12:41:21,363 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-29 12:41:21,415 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-29 12:41:21,451 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-29 12:41:21,490 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-29 12:41:21,533 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-29 12:41:59,029 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-29 12:41:59,558 - INFO - Use pytorch device_name: cpu
+2025-05-29 12:41:59,558 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-29 12:43:11,342 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-29 12:43:11,363 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-29 12:43:11,842 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-29 12:43:13,116 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-29 12:43:13,532 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-29 12:43:13,901 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-29 12:43:14,398 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-29 12:43:14,403 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-29 12:43:14,406 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-29 12:43:14,406 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-29 12:43:14,421 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-29 12:43:14,430 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-29 12:43:14,436 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-29 12:43:14,546 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-29 12:43:14,554 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-29 12:43:14,564 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-29 12:43:14,577 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-29 12:43:14,592 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-29 12:43:14,615 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-29 12:43:14,650 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-29 12:43:14,695 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-29 12:43:14,706 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-29 12:43:14,723 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-29 12:43:14,751 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-29 12:43:14,777 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-29 12:43:14,787 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-29 12:43:14,802 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-29 12:43:14,819 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-29 12:43:33,638 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-29 12:43:34,245 - INFO - Use pytorch device_name: cpu
+2025-05-29 12:43:34,245 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-29 12:46:27,128 - ERROR - Ошибка при создании векторного хранилища: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-05-29 12:46:27,132 - ERROR - Не удалось создать векторное хранилище
+2025-05-29 12:46:28,044 - INFO - Start polling
+2025-05-29 12:46:28,120 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-29 12:46:33,338 - INFO - Update id=264039934 is handled. Duration 1000 ms by bot id=7532849891
+2025-05-29 12:46:35,642 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-29 12:46:35,673 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-29 12:46:36,195 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-29 12:46:38,789 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-29 12:46:39,617 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-29 12:46:40,349 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-29 12:46:40,992 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-29 12:46:40,997 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-29 12:46:41,000 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-29 12:46:41,000 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-29 12:46:41,035 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-29 12:46:41,059 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-29 12:46:41,070 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-29 12:46:41,242 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-29 12:46:41,258 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-29 12:46:41,274 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-29 12:46:41,301 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-29 12:46:41,332 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-29 12:46:41,378 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-29 12:46:41,453 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-29 12:46:41,546 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-29 12:46:41,564 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-29 12:46:41,602 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-29 12:46:41,683 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-29 12:46:41,730 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-29 12:46:41,746 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-29 12:46:41,763 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-29 12:46:41,782 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-29 12:46:41,882 - INFO - Use pytorch device_name: cpu
+2025-05-29 12:46:41,882 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-29 12:52:35,492 - ERROR - Ошибка при создании векторного хранилища: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-05-29 12:52:35,500 - ERROR - Не удалось создать векторное хранилище
+2025-05-29 12:52:35,506 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-05-29 12:52:35,507 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-29 12:52:35,872 - INFO - Update id=264039935 is handled. Duration 360422 ms by bot id=7532849891
+2025-05-29 12:52:38,895 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-29 12:52:39,050 - INFO - Update id=264039937 is not handled. Duration 156 ms by bot id=7532849891
+2025-05-29 12:52:46,982 - INFO - Update id=264039938 is handled. Duration 875 ms by bot id=7532849891
+2025-05-29 12:52:49,214 - INFO - Update id=264039939 is handled. Duration 422 ms by bot id=7532849891
+2025-05-29 12:52:50,455 - INFO - Update id=264039940 is handled. Duration 188 ms by bot id=7532849891
+2025-05-29 12:54:32,578 - INFO - Update id=264039941 is handled. Duration 390 ms by bot id=7532849891
+2025-05-29 12:54:36,317 - INFO - Update id=264039942 is handled. Duration 327 ms by bot id=7532849891
+2025-05-29 12:54:47,577 - INFO - Update id=264039943 is handled. Duration 219 ms by bot id=7532849891
+2025-05-29 12:54:51,810 - INFO - Update id=264039944 is handled. Duration 593 ms by bot id=7532849891
+2025-05-29 12:54:55,443 - INFO - Update id=264039945 is handled. Duration 531 ms by bot id=7532849891
+2025-05-29 12:55:08,828 - INFO - Update id=264039946 is handled. Duration 438 ms by bot id=7532849891
+2025-05-29 12:58:24,825 - INFO - Update id=264039947 is handled. Duration 547 ms by bot id=7532849891
+2025-05-29 14:36:56,269 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-05-29 14:36:56,270 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-29 14:37:07,560 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-29 14:54:00,963 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-05-29 14:54:00,963 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-29 14:54:01,980 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Сетевая папка недоступна. За информацией о разрешении проблем в сети обратитесь к справочной системе Windows]
+2025-05-29 14:54:01,980 - WARNING - Sleep for 1.254191 seconds and try again... (tryings = 1, bot id = 7532849891)
+2025-05-29 14:54:03,245 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Сетевая папка недоступна. За информацией о разрешении проблем в сети обратитесь к справочной системе Windows]
+2025-05-29 14:54:03,245 - WARNING - Sleep for 1.543468 seconds and try again... (tryings = 2, bot id = 7532849891)
+2025-05-29 14:54:04,806 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Сетевая папка недоступна. За информацией о разрешении проблем в сети обратитесь к справочной системе Windows]
+2025-05-29 14:54:04,807 - WARNING - Sleep for 1.759951 seconds and try again... (tryings = 3, bot id = 7532849891)
+2025-05-29 15:10:06,514 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Multiple exceptions: [WinError 1232] Сетевая папка недоступна. За информацией о разрешении проблем в сети обратитесь к справочной системе Windows, [WinError 1231] Сетевая папка недоступна. За информацией о разрешении проблем в сети обратитесь к справочной системе Windows]
+2025-05-29 15:10:06,514 - WARNING - Sleep for 2.147378 seconds and try again... (tryings = 4, bot id = 7532849891)
+2025-05-29 15:10:18,882 - INFO - Connection established (tryings = 5, bot id = 7532849891)
+2025-05-30 09:49:37,867 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 09:49:37,948 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 09:49:38,724 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 09:49:40,927 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 09:49:41,550 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 09:49:42,253 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 09:49:45,069 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 09:49:45,115 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 09:49:45,147 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 09:49:45,147 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 09:49:45,216 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 09:49:45,269 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 09:49:45,303 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 09:49:45,610 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 09:49:45,651 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 09:49:45,681 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 09:49:45,751 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 09:49:45,802 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 09:49:45,870 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 09:49:45,962 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 09:49:46,090 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 09:49:46,143 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 09:49:46,200 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 09:49:46,272 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 09:49:46,334 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 09:49:46,366 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 09:49:46,414 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 09:49:46,452 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 09:50:56,473 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 09:50:58,218 - INFO - Use pytorch device_name: cpu
+2025-05-30 09:50:58,219 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 09:54:14,087 - INFO - Loading faiss with AVX2 support.
+2025-05-30 09:54:14,322 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 09:54:14,363 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 09:54:14,448 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 09:54:16,800 - INFO - Start polling
+2025-05-30 09:54:16,969 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 09:56:51,885 - INFO - Update id=264039948 is not handled. Duration 61015 ms by bot id=7532849891
+2025-05-30 09:56:51,886 - ERROR - Cause exception while process update id=264039948 by bot id=7532849891
+TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\.pyenv\pyenv-win\versions\3.12.7\Lib\asyncio\base_events.py", line 1148, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\.pyenv\pyenv-win\versions\3.12.7\Lib\asyncio\base_events.py", line 1181, in _create_connection_transport
+    await waiter
+ConnectionAbortedError: SSL handshake is taking longer than 60.0 seconds: aborting the connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    async with session.post(
+               ^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1414, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1383, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1135, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\menu\personal_actions\handlers.py", line 105, in start_handler
+    await message.answer(
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\bot.py", line 453, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 184, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2025-05-30 10:09:06,507 - INFO - Update id=264039949 is handled. Duration 796 ms by bot id=7532849891
+2025-05-30 10:09:09,581 - INFO - Update id=264039950 is handled. Duration 390 ms by bot id=7532849891
+2025-05-30 10:09:26,511 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-30 10:09:27,278 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 402 Payment Required"
+2025-05-30 10:09:27,279 - ERROR - Ошибка при обработке запроса: (URL('https://gigachat.devices.sberbank.ru/api/v1/chat/completions'), 402, b'{"status":402,"message":"Payment Required"}\n', Headers({'server': 'SynGX', 'date': 'Fri, 30 May 2025 07:09:17 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '44', 'connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS', 'access-control-allow-origin': 'https://beta.saluteai.sberdevices.ru', 'x-request-id': '4d7d17fe-e82a-4c97-891f-36804e40d742', 'x-session-id': 'c980a460-e2f6-41fa-89f8-0ee59ab8b124', 'allow': 'GET, POST', 'strict-transport-security': 'max-age=31536000; includeSubDomains'}))
+2025-05-30 10:09:27,496 - INFO - Update id=264039951 is handled. Duration 4202 ms by bot id=7532849891
+2025-05-30 10:10:59,737 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 402 Payment Required"
+2025-05-30 10:10:59,738 - ERROR - Ошибка при обработке запроса: (URL('https://gigachat.devices.sberbank.ru/api/v1/chat/completions'), 402, b'{"status":402,"message":"Payment Required"}\n', Headers({'server': 'SynGX', 'date': 'Fri, 30 May 2025 07:10:50 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '44', 'connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS', 'access-control-allow-origin': 'https://beta.saluteai.sberdevices.ru', 'x-request-id': '922ec531-3e7c-4d8b-af75-a792b0107266', 'x-session-id': '89ead658-f510-4032-b37d-3c985d275078', 'allow': 'GET, POST', 'strict-transport-security': 'max-age=31536000; includeSubDomains'}))
+2025-05-30 10:11:00,049 - INFO - Update id=264039952 is handled. Duration 1139 ms by bot id=7532849891
+2025-05-30 10:12:05,541 - INFO - Update id=264039954 is handled. Duration 875 ms by bot id=7532849891
+2025-05-30 10:12:07,246 - INFO - Update id=264039955 is handled. Duration 280 ms by bot id=7532849891
+2025-05-30 10:12:12,238 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 402 Payment Required"
+2025-05-30 10:12:12,239 - ERROR - Ошибка при обработке запроса: (URL('https://gigachat.devices.sberbank.ru/api/v1/chat/completions'), 402, b'{"status":402,"message":"Payment Required"}\n', Headers({'server': 'SynGX', 'date': 'Fri, 30 May 2025 07:12:02 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '44', 'connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS', 'access-control-allow-origin': 'https://beta.saluteai.sberdevices.ru', 'x-request-id': '2e5c577c-14d2-42ea-9566-c2b8abff7db9', 'x-session-id': '0bf7f293-acf2-4beb-a90a-7c5d1c02f782', 'allow': 'GET, POST', 'strict-transport-security': 'max-age=31536000; includeSubDomains'}))
+2025-05-30 10:12:12,449 - INFO - Update id=264039956 is handled. Duration 1109 ms by bot id=7532849891
+2025-05-30 10:12:16,138 - INFO - Update id=264039957 is handled. Duration 405 ms by bot id=7532849891
+2025-05-30 10:12:22,206 - INFO - Update id=264039958 is handled. Duration 657 ms by bot id=7532849891
+2025-05-30 10:12:23,919 - INFO - Update id=264039959 is handled. Duration 282 ms by bot id=7532849891
+2025-05-30 10:12:56,881 - INFO - Update id=264039953 is not handled. Duration 60405 ms by bot id=7532849891
+2025-05-30 10:12:56,882 - ERROR - Cause exception while process update id=264039953 by bot id=7532849891
+TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1123, in _wrap_create_connection
+    connection = await self._loop.create_connection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\.pyenv\pyenv-win\versions\3.12.7\Lib\asyncio\base_events.py", line 1148, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\.pyenv\pyenv-win\versions\3.12.7\Lib\asyncio\base_events.py", line 1181, in _create_connection_transport
+    await waiter
+ConnectionAbortedError: SSL handshake is taking longer than 60.0 seconds: aborting the connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    async with session.post(
+               ^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1414, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1383, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiohttp\connector.py", line 1135, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\handlers.py", line 208, in handle_text_message
+    await message.answer("Режим общения с ИИ деактивирован.\n\nДобро пожаловать в меню",
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\bot.py", line 453, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 184, in make_request
+    raise TelegramNetworkError(method=method, message=f"{type(e).__name__}: {e}")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2025-05-30 10:21:41,337 - INFO - Polling stopped
+2025-05-30 10:21:41,593 - INFO - Polling stopped for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 10:22:03,941 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 10:22:03,969 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 10:22:04,618 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 10:22:06,706 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 10:22:07,295 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 10:22:07,773 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 10:22:08,628 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 10:22:08,708 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 10:22:08,718 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 10:22:08,718 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 10:22:08,763 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 10:22:08,788 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 10:22:08,806 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 10:22:09,087 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 10:22:09,105 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 10:22:09,125 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 10:22:09,178 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 10:22:09,215 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 10:22:09,264 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 10:22:09,333 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 10:22:09,423 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 10:22:09,455 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 10:22:09,495 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 10:22:09,550 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 10:22:09,594 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 10:22:09,616 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 10:22:09,635 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 10:22:09,662 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 10:22:35,798 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 10:22:37,157 - INFO - Use pytorch device_name: cpu
+2025-05-30 10:22:37,157 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 10:30:31,788 - INFO - Loading faiss with AVX2 support.
+2025-05-30 10:30:31,861 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 10:30:31,882 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 10:30:31,949 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 10:31:34,583 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001215D5BE990>
