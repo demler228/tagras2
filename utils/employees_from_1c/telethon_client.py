@@ -1,6 +1,6 @@
-from telethon import TelegramClient
-from telethon.errors import UsernameNotOccupiedError, UsernameInvalidError
-from loguru import logger
+# from telethon import TelegramClient
+# from telethon.errors import UsernameNotOccupiedError, UsernameInvalidError
+# from loguru import logger
 #from utils.config import settings
 
 # = settings.API_ID_TELETHON

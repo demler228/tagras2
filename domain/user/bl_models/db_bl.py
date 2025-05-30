@@ -1,7 +1,7 @@
 from application.tg_bot.user.entities.user import User
 from domain.user.dal_models.db_dal import UserDbDal
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
-from utils.employees_from_1c.telethon_client import get_user_id_by_username
+# from utils.employees_from_1c.telethon_client import get_user_id_by_username
 
 
 class UserBL:

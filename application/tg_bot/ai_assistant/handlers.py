@@ -8,7 +8,7 @@ from pathlib import Path
 from datetime import datetime
 from docx import Document as DocxDocument
 from pypdf import PdfReader
-from moviepy.editor import VideoFileClip
+from moviepy.video import VideoClip
 import whisper
 from aiogram import Router, types, F
 from aiogram.types import Message
@@ -24,6 +24,7 @@ from application.tg_bot.ai_assistant.keyboards.get_exit_button import get_exit_b
 from application.tg_bot.filters.is_admin import is_admin
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
 from aiogram.types.input_file import FSInputFile
+from utils.config import settings
 
 logging.basicConfig(
     filename='assistant.log',
@@ -31,7 +32,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-auth = "Y2U3ZDc2ODAtNGJmNy00ZmYzLWIxNzItM2JlMzc5NGFhNWI4OjMzOGMzY2ZkLTEwMzgtNGQyYi05ZTI3LTVhZjNhM2Q3ZjcyOA=="
+auth = settings.SBER_AUTH
 giga = GigaChat(
     credentials=auth,
     model='GigaChat:latest',
@@ -89,7 +90,7 @@ def process_video(video_path):
     
     try:
         temp_audio = "temp_audio.wav"
-        video = VideoFileClip(video_path)
+        video = VideoClip(video_path)
         audio = video.audio
         audio.write_audiofile(temp_audio)
         result = whisper_model.transcribe(temp_audio)

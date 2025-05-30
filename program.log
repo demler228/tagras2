@@ -18,3 +18,19 @@
 2025-05-13T18:59:38.501746+0300 - INFO - bot started work
 2025-05-13T19:00:13.611565+0300 - INFO - test
 2025-05-13T19:02:42.867190+0300 - INFO - bot started work
+2025-05-30T10:47:22.431490+0300 - INFO - test
+2025-05-30T10:51:52.801399+0300 - INFO - test
+2025-05-30T20:10:54.551260+0300 - INFO - bot started work
+2025-05-30T20:18:58.597128+0300 - INFO - test
+2025-05-30T20:21:28.482822+0300 - INFO - bot started work
+2025-05-30T22:51:03.733967+0300 - INFO - test
+2025-05-30T22:51:50.037434+0300 - INFO - test
+2025-05-30T22:52:23.145453+0300 - INFO - bot started work
+2025-05-30T22:54:21.225428+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T22:54:21.323646+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T22:54:21.424553+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T22:54:21.553551+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T22:54:21.654663+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T22:54:21.739858+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-05-30T23:00:09.691010+0300 - INFO - test
+2025-05-30T23:01:04.537720+0300 - INFO - bot started work

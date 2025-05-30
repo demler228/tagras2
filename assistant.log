@@ -749,3 +749,361 @@ aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: messa
 2025-05-13 19:20:37,188 - INFO - Update id=599836350 is handled. Duration 562 ms by bot id=7607849811
 2025-05-13 20:01:17,101 - INFO - Polling stopped
 2025-05-13 20:01:17,375 - INFO - Polling stopped for bot @teas_ai_qwiz_bot id=7607849811 - 'test_tagras'
+2025-05-30 10:52:03,663 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 10:52:03,696 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 10:52:04,480 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 10:52:06,591 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 10:52:07,269 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 10:52:07,923 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 10:52:08,458 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 10:52:08,466 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 10:52:08,472 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 10:52:08,473 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 10:52:08,516 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 10:52:08,547 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 10:52:08,566 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 10:52:08,824 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 10:52:08,842 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 10:52:08,866 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 10:52:08,920 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 10:52:08,949 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 10:52:08,987 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 10:52:09,055 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 10:52:09,140 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 10:52:09,174 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 10:52:09,212 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 10:52:09,270 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 10:52:09,322 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 10:52:09,345 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 10:52:09,368 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 10:52:09,392 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 10:52:09,392 - INFO - Загружено документов: 25
+2025-05-30 10:52:35,345 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 10:52:36,801 - INFO - Use pytorch device_name: cpu
+2025-05-30 10:52:36,801 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 20:10:53,919 - INFO - Loading faiss with AVX2 support.
+2025-05-30 20:10:54,217 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 20:10:54,227 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 20:10:54,249 - INFO - Векторное хранилище создано и сохранено
+2025-05-30 20:10:54,249 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 20:10:55,020 - INFO - Start polling
+2025-05-30 20:10:55,222 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 20:16:32,377 - INFO - Update id=264039968 is handled. Duration 781 ms by bot id=7532849891
+2025-05-30 20:16:34,721 - INFO - Update id=264039969 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 20:16:51,520 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-30 20:16:51,798 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 402 Payment Required"
+2025-05-30 20:16:51,798 - ERROR - Ошибка при обработке запроса: (URL('https://gigachat.devices.sberbank.ru/api/v1/chat/completions'), 402, b'{"status":402,"message":"Payment Required"}\n', Headers({'server': 'SynGX', 'date': 'Fri, 30 May 2025 17:16:41 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '44', 'connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS', 'access-control-allow-origin': 'https://beta.saluteai.sberdevices.ru', 'x-request-id': '6c0838b0-1b34-4339-8b00-3e8fe0340bcd', 'x-session-id': '56e8f810-6f7e-4f35-8e74-bc3746af9eed', 'allow': 'GET, POST', 'strict-transport-security': 'max-age=31536000; includeSubDomains'}))
+2025-05-30 20:16:51,910 - INFO - Update id=264039970 is handled. Duration 1171 ms by bot id=7532849891
+2025-05-30 20:18:51,811 - INFO - Polling stopped
+2025-05-30 20:18:52,070 - INFO - Polling stopped for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 20:19:49,603 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 20:19:49,734 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 20:19:51,036 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 20:19:54,025 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 20:19:55,053 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 20:19:55,937 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 20:19:58,191 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 20:19:58,234 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 20:19:58,263 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 20:19:58,264 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 20:19:58,340 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 20:19:58,399 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 20:19:58,443 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 20:19:58,800 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 20:19:58,842 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 20:19:58,895 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 20:19:58,977 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 20:19:59,033 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 20:19:59,122 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 20:19:59,233 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 20:19:59,399 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 20:19:59,457 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 20:19:59,538 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 20:19:59,648 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 20:19:59,739 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 20:19:59,789 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 20:19:59,840 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 20:19:59,885 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 20:19:59,885 - INFO - Загружено документов: 25
+2025-05-30 20:21:23,292 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 20:21:24,239 - INFO - Use pytorch device_name: cpu
+2025-05-30 20:21:24,239 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 20:21:28,154 - INFO - Загрузка сохранённого векторного хранилища
+2025-05-30 20:21:28,162 - INFO - Loading faiss with AVX2 support.
+2025-05-30 20:21:28,194 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 20:21:28,208 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 20:21:28,221 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 20:21:29,010 - INFO - Start polling
+2025-05-30 20:21:29,079 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 20:21:42,982 - INFO - Update id=264039971 is handled. Duration 561 ms by bot id=7532849891
+2025-05-30 20:21:44,756 - INFO - Update id=264039972 is handled. Duration 218 ms by bot id=7532849891
+2025-05-30 20:21:52,778 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-30 20:21:53,309 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-30 20:21:54,281 - INFO - Update id=264039973 is handled. Duration 2203 ms by bot id=7532849891
+2025-05-30 20:21:58,952 - INFO - Update id=264039974 is handled. Duration 312 ms by bot id=7532849891
+2025-05-30 20:22:01,947 - INFO - Update id=264039975 is not handled. Duration 125 ms by bot id=7532849891
+2025-05-30 20:22:11,445 - INFO - Update id=264039976 is not handled. Duration 140 ms by bot id=7532849891
+2025-05-30 20:22:13,678 - INFO - Update id=264039977 is not handled. Duration 139 ms by bot id=7532849891
+2025-05-30 20:22:17,965 - INFO - Update id=264039978 is handled. Duration 266 ms by bot id=7532849891
+2025-05-30 20:22:20,049 - INFO - Update id=264039979 is handled. Duration 250 ms by bot id=7532849891
+2025-05-30 20:22:22,881 - INFO - Update id=264039980 is handled. Duration 406 ms by bot id=7532849891
+2025-05-30 20:22:25,695 - INFO - Update id=264039981 is not handled. Duration 155 ms by bot id=7532849891
+2025-05-30 20:46:26,942 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:46:26,942 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:46:38,145 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:46:38,147 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:46:38,147 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:46:49,374 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:54:02,702 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:54:02,703 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:54:13,918 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:54:13,920 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:54:13,920 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:54:25,129 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:54:55,338 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:54:55,339 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:55:07,321 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:55:57,682 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:55:57,682 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:56:08,913 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:56:08,916 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:56:08,916 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:56:20,149 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:57:10,524 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:57:10,524 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:57:21,743 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 20:58:33,262 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 20:58:33,262 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 20:58:44,481 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:00:25,286 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:00:25,286 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:00:36,509 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:02:07,213 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:02:07,213 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:02:18,411 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:03:39,695 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:03:39,695 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:03:50,904 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:04:31,188 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:04:31,188 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:04:42,419 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:04:42,421 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:04:42,422 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:04:53,640 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:05:33,899 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:05:33,900 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:05:45,110 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:06:15,332 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:06:15,332 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:06:26,551 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:06:26,552 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:06:26,553 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:06:41,119 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:07:01,259 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:07:01,259 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:07:12,464 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:07:12,467 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:07:12,467 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:07:23,677 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:08:14,010 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:08:14,010 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:08:25,223 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:08:45,364 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:08:45,364 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:08:56,581 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:09:37,403 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:09:37,403 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:09:48,620 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 21:10:08,761 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-05-30 21:10:08,762 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 21:10:19,966 - INFO - Connection established (tryings = 1, bot id = 7532849891)
+2025-05-30 22:50:56,291 - INFO - Polling stopped
+2025-05-30 22:50:56,567 - INFO - Polling stopped for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 22:51:17,860 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 22:51:17,916 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 22:51:18,594 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 22:51:19,968 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 22:51:20,450 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 22:51:20,902 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 22:51:22,645 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 22:51:22,674 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 22:51:22,692 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 22:51:22,693 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 22:51:22,736 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 22:51:22,773 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 22:51:22,815 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 22:51:23,014 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 22:51:23,044 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 22:51:23,093 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 22:51:23,165 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 22:51:23,220 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 22:51:23,274 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 22:51:23,332 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 22:51:23,429 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 22:51:23,468 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 22:51:23,512 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 22:51:23,562 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 22:51:23,601 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 22:51:23,632 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 22:51:23,675 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 22:51:23,713 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 22:51:23,713 - INFO - Загружено документов: 25
+2025-05-30 22:51:55,632 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 22:51:55,653 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 22:51:56,161 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 22:51:57,622 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 22:51:58,074 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 22:51:58,458 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 22:51:58,909 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 22:51:58,914 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 22:51:58,915 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 22:51:58,915 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 22:51:58,931 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 22:51:58,943 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 22:51:58,952 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 22:51:59,075 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 22:51:59,083 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 22:51:59,093 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 22:51:59,107 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 22:51:59,124 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 22:51:59,157 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 22:51:59,192 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 22:51:59,238 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 22:51:59,249 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 22:51:59,266 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 22:51:59,302 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 22:51:59,335 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 22:51:59,344 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 22:51:59,356 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 22:51:59,369 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 22:51:59,369 - INFO - Загружено документов: 25
+2025-05-30 22:52:18,418 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 22:52:19,042 - INFO - Use pytorch device_name: cpu
+2025-05-30 22:52:19,042 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 22:52:22,020 - INFO - Загрузка сохранённого векторного хранилища
+2025-05-30 22:52:22,032 - INFO - Loading faiss with AVX2 support.
+2025-05-30 22:52:22,546 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 22:52:22,826 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 22:52:22,860 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 22:52:23,674 - INFO - Start polling
+2025-05-30 22:52:23,750 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 22:52:34,846 - INFO - Update id=264039982 is handled. Duration 686 ms by bot id=7532849891
+2025-05-30 22:52:36,827 - INFO - Update id=264039983 is handled. Duration 483 ms by bot id=7532849891
+2025-05-30 22:52:38,921 - INFO - Update id=264039984 is handled. Duration 188 ms by bot id=7532849891
+2025-05-30 22:52:40,536 - INFO - Update id=264039985 is handled. Duration 250 ms by bot id=7532849891
+2025-05-30 22:52:57,490 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-30 22:52:58,217 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-30 22:52:59,258 - INFO - Update id=264039986 is handled. Duration 3014 ms by bot id=7532849891
+2025-05-30 22:53:04,137 - INFO - Update id=264039987 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 22:53:08,483 - INFO - Update id=264039988 is handled. Duration 1328 ms by bot id=7532849891
+2025-05-30 22:53:11,269 - INFO - Update id=264039989 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 22:53:14,271 - INFO - Update id=264039990 is handled. Duration 311 ms by bot id=7532849891
+2025-05-30 22:53:24,996 - INFO - Update id=264039991 is handled. Duration 250 ms by bot id=7532849891
+2025-05-30 22:53:40,974 - INFO - Update id=264039992 is handled. Duration 233 ms by bot id=7532849891
+2025-05-30 22:54:01,338 - INFO - Update id=264039993 is handled. Duration 328 ms by bot id=7532849891
+2025-05-30 22:54:04,191 - INFO - Update id=264039994 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 22:54:06,301 - INFO - Update id=264039995 is handled. Duration 359 ms by bot id=7532849891
+2025-05-30 22:54:08,145 - INFO - Update id=264039996 is handled. Duration 515 ms by bot id=7532849891
+2025-05-30 22:54:11,274 - INFO - Update id=264039997 is handled. Duration 515 ms by bot id=7532849891
+2025-05-30 22:54:13,264 - INFO - Update id=264039998 is handled. Duration 514 ms by bot id=7532849891
+2025-05-30 22:54:15,552 - INFO - Update id=264039999 is handled. Duration 359 ms by bot id=7532849891
+2025-05-30 22:54:17,187 - INFO - Update id=264040000 is handled. Duration 359 ms by bot id=7532849891
+2025-05-30 22:54:18,379 - INFO - Update id=264040001 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 22:54:19,299 - INFO - Update id=264040002 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 22:54:21,925 - INFO - Update id=264040003 is handled. Duration 1078 ms by bot id=7532849891
+2025-05-30 22:54:24,738 - INFO - Update id=264040004 is handled. Duration 344 ms by bot id=7532849891
+2025-05-30 22:54:33,422 - INFO - Update id=264040005 is handled. Duration 514 ms by bot id=7532849891
+2025-05-30 22:54:35,273 - INFO - Update id=264040006 is handled. Duration 280 ms by bot id=7532849891
+2025-05-30 22:54:36,937 - INFO - Update id=264040007 is handled. Duration 421 ms by bot id=7532849891
+2025-05-30 22:54:38,583 - INFO - Update id=264040008 is handled. Duration 281 ms by bot id=7532849891
+2025-05-30 22:54:41,337 - INFO - Update id=264040009 is handled. Duration 313 ms by bot id=7532849891
+2025-05-30 22:54:46,284 - INFO - Update id=264040010 is handled. Duration 391 ms by bot id=7532849891
+2025-05-30 22:54:49,690 - INFO - Update id=264040011 is handled. Duration 358 ms by bot id=7532849891
+2025-05-30 22:54:51,164 - INFO - Update id=264040012 is handled. Duration 203 ms by bot id=7532849891
+2025-05-30 22:54:52,853 - INFO - Update id=264040013 is handled. Duration 406 ms by bot id=7532849891
+2025-05-30 22:55:04,392 - INFO - Update id=264040014 is not handled. Duration 140 ms by bot id=7532849891
+2025-05-30 22:55:06,574 - INFO - Update id=264040015 is handled. Duration 562 ms by bot id=7532849891
+2025-05-30 22:55:08,759 - INFO - Update id=264040016 is handled. Duration 609 ms by bot id=7532849891
+2025-05-30 22:55:11,428 - INFO - Update id=264040017 is not handled. Duration 125 ms by bot id=7532849891
+2025-05-30 22:57:10,499 - INFO - Update id=264040018 is handled. Duration 688 ms by bot id=7532849891
+2025-05-30 22:57:15,424 - INFO - Update id=264040019 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 22:57:18,087 - INFO - Update id=264040020 is handled. Duration 235 ms by bot id=7532849891
+2025-05-30 22:57:19,520 - INFO - Update id=264040021 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 22:57:25,182 - INFO - Update id=264040022 is handled. Duration 311 ms by bot id=7532849891
+2025-05-30 22:57:29,560 - INFO - Update id=264040023 is handled. Duration 328 ms by bot id=7532849891
+2025-05-30 22:57:31,187 - INFO - Update id=264040024 is handled. Duration 186 ms by bot id=7532849891
+2025-05-30 22:57:33,298 - INFO - Update id=264040025 is handled. Duration 343 ms by bot id=7532849891
+2025-05-30 22:57:34,570 - INFO - Update id=264040026 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 22:57:36,470 - INFO - Update id=264040027 is handled. Duration 311 ms by bot id=7532849891
+2025-05-30 22:57:42,981 - INFO - Update id=264040028 is handled. Duration 203 ms by bot id=7532849891
+2025-05-30 22:57:45,441 - INFO - Update id=264040029 is handled. Duration 327 ms by bot id=7532849891
+2025-05-30 22:57:49,458 - INFO - Update id=264040030 is handled. Duration 188 ms by bot id=7532849891
+2025-05-30 22:57:50,825 - INFO - Update id=264040031 is handled. Duration 218 ms by bot id=7532849891
+2025-05-30 22:57:53,533 - INFO - Update id=264040032 is handled. Duration 219 ms by bot id=7532849891
+2025-05-30 22:57:54,960 - INFO - Update id=264040033 is handled. Duration 296 ms by bot id=7532849891
+2025-05-30 22:57:57,906 - INFO - Update id=264040034 is handled. Duration 530 ms by bot id=7532849891
+2025-05-30 22:59:38,132 - INFO - Polling stopped
+2025-05-30 22:59:38,236 - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2696)
+2025-05-30 22:59:38,236 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7532849891)
+2025-05-30 22:59:38,381 - INFO - Polling stopped for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 23:00:18,232 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Кодекс_корпоративной_культуры_и_деловой_этики.pdf
+2025-05-30 23:00:18,272 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Концепция_развития_дивизиона_ТаграС_БизнесСервис.pdf
+2025-05-30 23:00:19,572 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Отчет Холдинга 2024.pdf
+2025-05-30 23:00:22,735 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о работе Фабрики идей.pdf
+2025-05-30 23:00:23,888 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Стандарт по реализации жилья.pdf
+2025-05-30 23:00:24,926 - INFO - Обработка PDF: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Цветков_ОВ_об_итогах_2023_и_планах_2024_для_Собр_ТК_2024_v3.pdf
+2025-05-30 23:00:26,041 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция по включению видимости в коллегах.docx
+2025-05-30 23:00:26,051 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx
+2025-05-30 23:00:26,057 - ERROR - Ошибка обработки DOCX C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция пользователя по новой версии приложения Коннект.docx: Bad CRC-32 for file 'word/media/image6.png'
+2025-05-30 23:00:26,058 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_Календарем_в_RuPost.docx
+2025-05-30 23:00:26,094 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Пользования_фильтрами_в_RuPost.docx
+2025-05-30 23:00:26,123 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Инструкция_Создание_локального_архива_в_RuPost.docx
+2025-05-30 23:00:26,143 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Настройка_почтового_клиента_RuPost_v2.docx
+2025-05-30 23:00:26,388 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\О результатах работы дивизиона в 2024 году.docx
+2025-05-30 23:00:26,405 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Обучение по работе с почтовым клиентом Rupost_20250329_1856.docx
+2025-05-30 23:00:26,422 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Подпись RuPost Расширенная инструкция.docx
+2025-05-30 23:00:26,451 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о наставничестве.docx
+2025-05-30 23:00:26,485 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о санаториях БС по ДМС.docx
+2025-05-30 23:00:26,533 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение о финансовой помощи ТаграС-БС.docx
+2025-05-30 23:00:26,608 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Положение по кадровому резерву Про-Ресурс.docx
+2025-05-30 23:00:26,703 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Приказ об утверждении положения по Приведи друга с 01.07.24 Про-Ресурс.docx
+2025-05-30 23:00:26,731 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A1 Обработка запросов со стороны сотрудников дивизиона.docx
+2025-05-30 23:00:26,771 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A10 Оформление работы в выходные дни и сверхурочные работы.docx
+2025-05-30 23:00:26,834 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Регламент процесса BPMN A7 3.docx
+2025-05-30 23:00:26,884 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\Таграс_Изменения_в_порядке_оказания_услуг_по_поддержке_программы_1С_Форт-Консалтинг v1.1_20250329_1858.docx
+2025-05-30 23:00:26,902 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_пользоваться_программой_20250329_1858.docx
+2025-05-30 23:00:26,923 - INFO - Обработка DOCX: C:\Users\bulat\PycharmProject\employee_adaptation_project\application\tg_bot\ai_assistant\materials\ТаграС_Коннект_Как_установить_программу_20250329_1858.docx
+2025-05-30 23:00:26,946 - INFO - Загружено 25 файлов (документы и видео)
+2025-05-30 23:00:26,946 - INFO - Загружено документов: 25
+2025-05-30 23:00:58,465 - WARNING - From C:\Users\bulat\PycharmProject\employee_adaptation_project\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-05-30 23:00:59,800 - INFO - Use pytorch device_name: cpu
+2025-05-30 23:00:59,801 - INFO - Load pretrained SentenceTransformer: cointegrated/LaBSE-en-ru
+2025-05-30 23:01:03,880 - INFO - Загрузка сохранённого векторного хранилища
+2025-05-30 23:01:03,887 - INFO - Loading faiss with AVX2 support.
+2025-05-30 23:01:03,927 - INFO - Successfully loaded faiss with AVX2 support.
+2025-05-30 23:01:03,939 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-05-30 23:01:03,947 - INFO - Векторное хранилище успешно инициализировано
+2025-05-30 23:01:05,632 - INFO - Start polling
+2025-05-30 23:01:05,706 - INFO - Run polling for bot @tagras_b_v2_bot id=7532849891 - 'test_testovich'
+2025-05-30 23:04:06,086 - INFO - Update id=264040035 is handled. Duration 610 ms by bot id=7532849891
+2025-05-30 23:04:09,603 - INFO - Update id=264040036 is handled. Duration 203 ms by bot id=7532849891
+2025-05-30 23:04:32,562 - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-05-30 23:04:33,066 - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-30 23:04:33,978 - INFO - Update id=264040037 is handled. Duration 1921 ms by bot id=7532849891
+2025-05-30 23:04:40,633 - INFO - Update id=264040038 is handled. Duration 281 ms by bot id=7532849891
+2025-05-30 23:04:49,167 - INFO - Update id=264040039 is handled. Duration 563 ms by bot id=7532849891
+2025-05-30 23:04:51,788 - INFO - Update id=264040040 is handled. Duration 469 ms by bot id=7532849891
+2025-05-30 23:04:54,177 - INFO - Update id=264040041 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 23:04:57,811 - INFO - Update id=264040042 is handled. Duration 281 ms by bot id=7532849891
+2025-05-30 23:05:01,443 - INFO - Update id=264040043 is handled. Duration 375 ms by bot id=7532849891
+2025-05-30 23:05:04,825 - INFO - Update id=264040044 is handled. Duration 390 ms by bot id=7532849891
+2025-05-30 23:05:08,268 - INFO - Update id=264040045 is handled. Duration 1718 ms by bot id=7532849891
+2025-05-30 23:05:14,860 - INFO - Update id=264040046 is handled. Duration 406 ms by bot id=7532849891
+2025-05-30 23:05:18,088 - INFO - Update id=264040047 is handled. Duration 438 ms by bot id=7532849891
+2025-05-30 23:05:21,851 - INFO - Update id=264040048 is handled. Duration 250 ms by bot id=7532849891
+2025-05-30 23:05:25,264 - INFO - Update id=264040049 is handled. Duration 328 ms by bot id=7532849891
+2025-05-30 23:05:28,014 - INFO - Update id=264040050 is handled. Duration 562 ms by bot id=7532849891
