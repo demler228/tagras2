@@ -28,8 +28,9 @@ def is_admin(user_id: int) -> bool:
 
 
 def is_super_admin(user_id: int) -> bool:
+    print(f'tdrthdfghedrtfghg_id - {user_id}')
     data_state = UserBL.get_user_by_telegram_id(user_id)
     if isinstance(data_state, DataSuccess):
         return data_state.data.role == 'super_admin'
 
-    return True
+    return False

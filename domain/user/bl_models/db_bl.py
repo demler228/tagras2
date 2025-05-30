@@ -1,7 +1,7 @@
 from application.tg_bot.user.entities.user import User
 from domain.user.dal_models.db_dal import UserDbDal
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
-# from utils.employees_from_1c.telethon_client import get_user_id_by_username
+from utils.employees_from_1c.telethon_client import get_user_id_by_username
 
 
 class UserBL:
@@ -26,8 +26,10 @@ class UserBL:
         return data_state
 
     @staticmethod
-    async def add_employee(user: User) -> DataState:
-        user.telegram_id = await get_user_id_by_username(user.tg_username)
+    def add_employee(user: User) -> DataState:
+        if not user.telegram_id:
+            return DataFailedMessage("Ошибка получения telegram id пользователя, попробуйте позже")
+
         data_state = UserDbDal.add_employee(user)
 
         return data_state

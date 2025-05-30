@@ -1,15 +1,15 @@
 from telethon import TelegramClient
 from telethon.errors import UsernameNotOccupiedError, UsernameInvalidError
 from loguru import logger
-from utils.config import settings
+#from utils.config import settings
 
-api_id = settings.API_ID_TELETHON
-api_hash = settings.API_HASH_TELETHON
+# = settings.API_ID_TELETHON
+#api_hash = settings.API_HASH_TELETHON
 
 #client = TelegramClient("telethon_session", api_id, api_hash)
 
-async def get_user_id_by_username(username: str) -> str | None:
-    return '245243523'
+#async def get_user_id_by_username(username: str) -> str | None:
+    #return '245243523'
 
     # try:
     #     await client.start()

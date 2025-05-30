@@ -1,12 +1,18 @@
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from application.tg_bot.faq.personal_actions.keyboards import BackToMenuCallbackFactory
+
 
 def get_training_menu_keyboard() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
 
     builder.button(text="Обучение", callback_data="education_button")
     builder.button(text="Викторина", callback_data="quiz_button")
+    builder.button(
+        text="🔙 Назад в меню",
+        callback_data=BackToMenuCallbackFactory()
+    )
 
     builder.adjust(1)
 

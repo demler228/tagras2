@@ -12,7 +12,7 @@ router = Router()
 async def handle_education_button(callback_query: types.CallbackQuery):
     data_state = EducationBL.get_themes()
     await callback_query.message.edit_text(
-        "Выбери тему:",
+        "Выберите тему:",
         reply_markup=get_themes_keyboard(data_state.data)
     )
 
@@ -34,7 +34,7 @@ async def show_materials(callback_query: types.CallbackQuery, callback_data: The
 async def back_to_themes(callback_query: types.CallbackQuery):
     data_state = EducationBL.get_themes()
     await callback_query.message.edit_text(
-        "Выбери тему:",
+        "Выберите тему:",
         reply_markup=get_themes_keyboard(data_state.data)
     )
 
