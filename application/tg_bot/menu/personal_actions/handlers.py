@@ -4,6 +4,7 @@ from aiogram import Router, types, F
 from aiogram.filters import CommandStart, CommandObject
 from aiogram.fsm.context import FSMContext
 from aiogram.types import ReplyKeyboardRemove
+from sympy import print_glsl
 
 from application.tg_bot.filters.is_admin import is_admin
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard, get_phone_keyboard
@@ -13,11 +14,11 @@ from domain.user.bl_models.db_bl import UserBL
 from utils.data_state import DataSuccess, DataFailedMessage
 from utils.deep_link import decode_date_token
 
+
 router = Router()
 
-
 @router.message(CommandStart(deep_link=True))
-async def start_handler_with_params(message: types.Message, command: CommandObject, state: FSMContext):
+async def start_handler_with_token(message: types.Message, command: CommandObject, state: FSMContext):
     telegram_id = message.from_user.id
     data_state = UserBL.get_user_by_telegram_id(telegram_id)
 
@@ -29,13 +30,8 @@ async def start_handler_with_params(message: types.Message, command: CommandObje
         return
 
     expire_date = decode_date_token(command.args)
-    print(f'expire_date - {expire_date}')
-    if not expire_date:
-        await message.answer("Ссылка недействительна или повреждена.")
-        return
-
-    if (datetime.now() - expire_date) > timedelta(days=3):
-        await message.answer("Срок действия ссылки истёк. Попросите руководителя выдать новую.")
+    if not expire_date or expire_date < datetime.now():
+        await message.answer("Ссылка недействительна или срок действия истёк.")
         return
 
     await state.update_data(

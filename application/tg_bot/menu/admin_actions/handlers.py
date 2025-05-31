@@ -37,22 +37,21 @@ async def back_admin_handler(callback_query: types.CallbackQuery, state: FSMCont
 @router.callback_query(F.data == "generate_deep_link")
 async def generate_deep_link(callback_query: types.CallbackQuery):
     try:
-        expire_date = datetime.now().replace(hour=23, minute=59, second=59) + timedelta(days=2)
+        expire_date = datetime.now().replace(hour=23, minute=59, second=59) + timedelta(days=3)
         token = encode_date_token(expire_date)
 
         bot_username = settings.BOT_USERNAME
         if not bot_username:
             raise ValueError("settings.BOT_USERNAME не задан")
 
+        link = create_telegram_link(bot_username, start=f"{token}")
+
         await callback_query.message.edit_text(
-            f"🔗 Ваша пригласительная ссылка (действует до {expire_date.date()}):"
-            f"\n\n{create_telegram_link(bot_username, start=f"{token}")}",
+            f"🔗 Ваша пригласительная ссылка (действует до {expire_date.date()}):\n\n{link}",
             reply_markup=back_to_admin_menu_keyboard()
         )
         await callback_query.answer()
 
-    except Exception as e:
+    except Exception:
         logger.exception("Ошибка при генерации ссылки")
         await callback_query.message.answer("⚠️ Ошибка при генерации ссылки. Обратитесь к администратору.")
-
-
