@@ -9,8 +9,11 @@ class Settings(BaseSettings):
     PASSWORD: str
     PORT_NAME: str
     HOST_NAME: str
-    BOT_USERNAME: str
     SECRET_KEY: str
+    SBER_AUTH: str
+    BOT_USERNAME: str
+    # API_HASH_TELETHON: str
+    # API_ID_TELETHON: str
 
     class Config:
         env_file = ".env"
