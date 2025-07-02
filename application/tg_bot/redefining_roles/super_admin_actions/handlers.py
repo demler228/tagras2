@@ -97,21 +97,27 @@ async def make_admin_callback_handler(callback_query: types.CallbackQuery, callb
     try:
         action = callback_data.action
         user_id = callback_data.user_id
+        
         if action == "make_admin":
             result = RedefinigDbBl.change_user_role(user_id, "admin")
         else:
             result = RedefinigDbBl.change_user_role(user_id, "user")
 
         if isinstance(result, DataSuccess):
+            role_change_description = (
+                "сделал админом пользователя" if action == "make_admin" else "забрал роль админа у пользователя"
+            )
             admin_logger.info(
-                f'Супер-админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} {'сделал админом пользователя'if action == "make_admin" else 'забрал роль админа у пользователя'} - {user_id} id')
+                f"Супер-админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id}) {role_change_description} - {user_id}"
+            )
             await callback_query.answer(text="Смена роли произошла успешно", show_alert=True)
-            await callback_query.message.edit_text(text=selected_user_info_text(result.data), parse_mode="HTML",
-                                                   reply_markup=get_role_management_keyboard(result.data.id,
-                                                                                             result.data.role))
+            await callback_query.message.edit_text(
+                text=selected_user_info_text(result.data),
+                parse_mode="HTML",
+                reply_markup=get_role_management_keyboard(result.data.id, result.data.role)
+            )
         else:
             await callback_query.answer(f"Ошибка: {result.message}", show_alert=True)
     except Exception as e:
         logger.error(e)
         await callback_query.answer("Произошла ошибка при назначении администратора.", show_alert=True)
-

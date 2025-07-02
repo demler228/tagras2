@@ -98,7 +98,7 @@ async def process_deadline(message: types.Message, state: FSMContext):
             if isinstance(data_state, DataSuccess):
                 task_id = data_state.data
                 admin_logger.info(
-                    f'админ {message.chat.full_name} создал задачу {data['name']}')
+                   f'админ {message.chat.full_name} создал задачу {data["name"]}')
                 await state.update_data(task_id=task_id)  # Сохраняем ID задачи в состоянии
                 await message.answer(
                     f"Задача успешно создана! ID: {task_id}",

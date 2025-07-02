@@ -1,6 +1,6 @@
 from loguru import logger
 import datetime
-
+from domain.user.models.user import UserBase
 from sqlalchemy import select
 
 from application.tg_bot.events.entites.event import Event
@@ -167,7 +167,6 @@ class EventDbDal:
     @staticmethod
     def add_member(user_id: int, event_id: int) -> DataState:
         Session = connection_db()
-
         if Session is None:
             return DataFailedMessage('Ошибка в работе базы данных!')
         with Session() as session:

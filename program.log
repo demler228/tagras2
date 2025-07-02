@@ -155,3 +155,711 @@
 2025-05-31T12:31:31.148672+0300 - INFO - bot started work
 2025-05-31T12:34:01.292965+0300 - INFO - test
 2025-05-31T12:35:23.161593+0300 - INFO - bot started work
+2025-06-16T06:52:54.649037+0300 - INFO - test
+2025-06-16T06:53:04.361475+0300 - INFO - test
+2025-06-16T06:53:13.940662+0300 - INFO - test
+2025-06-16T06:53:24.931443+0300 - INFO - test
+2025-06-16T06:53:36.271987+0300 - INFO - test
+2025-06-16T06:53:47.385591+0300 - INFO - test
+2025-06-16T06:53:59.090004+0300 - INFO - test
+2025-06-16T06:54:09.309279+0300 - INFO - test
+2025-06-16T06:54:20.240669+0300 - INFO - test
+2025-06-16T06:54:31.458973+0300 - INFO - test
+2025-06-16T06:54:42.770601+0300 - INFO - test
+2025-06-16T06:54:52.808790+0300 - INFO - test
+2025-06-16T06:55:02.657083+0300 - INFO - test
+2025-06-16T06:55:12.149207+0300 - INFO - test
+2025-06-16T06:55:23.454667+0300 - INFO - test
+2025-06-16T06:55:34.655021+0300 - INFO - test
+2025-06-16T06:55:44.138369+0300 - INFO - test
+2025-06-16T06:55:53.538422+0300 - INFO - test
+2025-06-16T06:56:03.228728+0300 - INFO - test
+2025-06-16T06:56:14.111951+0300 - INFO - test
+2025-06-16T06:56:24.413829+0300 - INFO - test
+2025-06-16T06:56:33.791417+0300 - INFO - test
+2025-06-16T06:56:44.590185+0300 - INFO - test
+2025-06-16T06:56:54.215880+0300 - INFO - test
+2025-06-16T06:57:05.656409+0300 - INFO - test
+2025-06-16T06:57:15.872164+0300 - INFO - test
+2025-06-16T06:57:26.118184+0300 - INFO - test
+2025-06-16T06:57:37.343618+0300 - INFO - test
+2025-06-16T06:57:47.041812+0300 - INFO - test
+2025-06-16T06:57:58.346772+0300 - INFO - test
+2025-06-16T06:58:09.923312+0300 - INFO - test
+2025-06-16T06:58:20.115844+0300 - INFO - test
+2025-06-16T06:58:31.221961+0300 - INFO - test
+2025-06-16T06:58:42.449918+0300 - INFO - test
+2025-06-16T06:58:54.107311+0300 - INFO - test
+2025-06-16T06:59:04.982918+0300 - INFO - test
+2025-06-16T06:59:15.734821+0300 - INFO - test
+2025-06-16T06:59:25.800815+0300 - INFO - test
+2025-06-16T06:59:35.073423+0300 - INFO - test
+2025-06-16T06:59:45.979670+0300 - INFO - test
+2025-06-16T06:59:57.742184+0300 - INFO - test
+2025-06-16T07:00:10.120332+0300 - INFO - test
+2025-06-16T07:00:21.205149+0300 - INFO - test
+2025-06-16T07:00:32.115905+0300 - INFO - test
+2025-06-16T07:00:43.072628+0300 - INFO - test
+2025-06-16T07:00:52.594747+0300 - INFO - test
+2025-06-16T07:01:03.397044+0300 - INFO - test
+2025-06-16T07:01:13.487687+0300 - INFO - test
+2025-06-16T07:01:24.117572+0300 - INFO - test
+2025-06-16T07:01:35.250290+0300 - INFO - test
+2025-06-16T07:01:45.548523+0300 - INFO - test
+2025-06-16T07:01:54.895390+0300 - INFO - test
+2025-06-16T07:02:04.999890+0300 - INFO - test
+2025-06-16T07:02:14.329804+0300 - INFO - test
+2025-06-16T07:02:23.758502+0300 - INFO - test
+2025-06-16T07:02:33.730322+0300 - INFO - test
+2025-06-16T07:02:44.593094+0300 - INFO - test
+2025-06-16T07:02:55.563717+0300 - INFO - test
+2025-06-16T07:03:06.970624+0300 - INFO - test
+2025-06-16T07:03:16.644998+0300 - INFO - test
+2025-06-16T07:03:26.335198+0300 - INFO - test
+2025-06-16T07:03:35.971972+0300 - INFO - test
+2025-06-16T07:03:45.286894+0300 - INFO - test
+2025-06-16T07:03:54.676684+0300 - INFO - test
+2025-06-16T07:04:04.350901+0300 - INFO - test
+2025-06-16T07:04:15.584520+0300 - INFO - test
+2025-06-16T07:04:26.473381+0300 - INFO - test
+2025-06-16T07:04:37.265046+0300 - INFO - test
+2025-06-16T07:04:48.108496+0300 - INFO - test
+2025-06-16T07:04:57.567699+0300 - INFO - test
+2025-06-16T07:05:07.627817+0300 - INFO - test
+2025-06-16T07:05:18.720152+0300 - INFO - test
+2025-06-16T07:05:28.901089+0300 - INFO - test
+2025-06-16T07:05:38.229476+0300 - INFO - test
+2025-06-16T07:05:48.962967+0300 - INFO - test
+2025-06-16T07:05:59.989292+0300 - INFO - test
+2025-06-16T07:06:10.208935+0300 - INFO - test
+2025-06-16T07:06:20.765642+0300 - INFO - test
+2025-06-16T07:06:30.322372+0300 - INFO - test
+2025-06-16T07:06:41.673145+0300 - INFO - test
+2025-06-16T07:06:52.166332+0300 - INFO - test
+2025-06-16T07:07:03.698639+0300 - INFO - test
+2025-06-16T07:07:13.360260+0300 - INFO - test
+2025-06-16T07:07:22.795805+0300 - INFO - test
+2025-06-16T07:07:32.300230+0300 - INFO - test
+2025-06-16T07:07:43.050462+0300 - INFO - test
+2025-06-16T07:07:54.088601+0300 - INFO - test
+2025-06-16T07:08:03.779972+0300 - INFO - test
+2025-06-16T07:08:13.159197+0300 - INFO - test
+2025-06-16T07:08:24.184033+0300 - INFO - test
+2025-06-16T07:08:34.699423+0300 - INFO - test
+2025-06-16T07:08:45.626559+0300 - INFO - test
+2025-06-16T07:08:55.745356+0300 - INFO - test
+2025-06-16T07:09:06.417043+0300 - INFO - test
+2025-06-16T07:09:16.632713+0300 - INFO - test
+2025-06-16T07:09:27.830867+0300 - INFO - test
+2025-06-16T07:09:37.866474+0300 - INFO - test
+2025-06-16T07:09:47.667653+0300 - INFO - test
+2025-06-16T07:09:58.620420+0300 - INFO - test
+2025-06-16T07:10:09.524072+0300 - INFO - test
+2025-06-16T07:10:20.664573+0300 - INFO - test
+2025-06-16T07:10:32.139592+0300 - INFO - test
+2025-06-16T07:10:43.421278+0300 - INFO - test
+2025-06-16T07:10:54.820865+0300 - INFO - test
+2025-06-16T07:11:04.805921+0300 - INFO - test
+2025-06-16T07:11:14.802873+0300 - INFO - test
+2025-06-16T07:11:24.080250+0300 - INFO - test
+2025-06-16T07:11:35.227014+0300 - INFO - test
+2025-06-16T07:11:46.359939+0300 - INFO - test
+2025-06-16T07:11:57.115037+0300 - INFO - test
+2025-06-16T07:12:08.184338+0300 - INFO - test
+2025-06-16T07:12:17.753920+0300 - INFO - test
+2025-06-16T07:12:28.309625+0300 - INFO - test
+2025-06-16T07:12:37.815952+0300 - INFO - test
+2025-06-16T07:12:48.646751+0300 - INFO - test
+2025-06-16T07:12:59.476689+0300 - INFO - test
+2025-06-16T07:13:10.884447+0300 - INFO - test
+2025-06-16T07:13:21.961832+0300 - INFO - test
+2025-06-16T07:13:32.990007+0300 - INFO - test
+2025-06-16T07:13:44.483878+0300 - INFO - test
+2025-06-16T07:13:55.532752+0300 - INFO - test
+2025-06-16T07:14:07.244295+0300 - INFO - test
+2025-06-16T07:14:18.392436+0300 - INFO - test
+2025-06-16T07:14:29.238389+0300 - INFO - test
+2025-06-16T07:14:40.115195+0300 - INFO - test
+2025-06-16T07:14:49.816952+0300 - INFO - test
+2025-06-16T07:15:00.684678+0300 - INFO - test
+2025-06-16T07:15:11.064977+0300 - INFO - test
+2025-06-16T07:15:21.963971+0300 - INFO - test
+2025-06-16T07:15:31.783784+0300 - INFO - test
+2025-06-16T07:15:42.701454+0300 - INFO - test
+2025-06-16T07:15:54.100642+0300 - INFO - test
+2025-06-16T07:16:05.584836+0300 - INFO - test
+2025-06-16T07:16:16.732215+0300 - INFO - test
+2025-06-16T07:16:28.007502+0300 - INFO - test
+2025-06-16T07:16:37.476473+0300 - INFO - test
+2025-06-16T07:16:48.282173+0300 - INFO - test
+2025-06-16T07:16:59.419556+0300 - INFO - test
+2025-06-16T07:17:10.598573+0300 - INFO - test
+2025-06-16T07:17:21.727287+0300 - INFO - test
+2025-06-16T07:17:32.928301+0300 - INFO - test
+2025-06-16T07:17:44.271131+0300 - INFO - test
+2025-06-16T07:17:53.772051+0300 - INFO - test
+2025-06-16T07:18:04.933615+0300 - INFO - test
+2025-06-16T07:18:14.529641+0300 - INFO - test
+2025-06-16T07:18:23.734965+0300 - INFO - test
+2025-06-16T07:18:33.144416+0300 - INFO - test
+2025-06-16T07:18:44.098997+0300 - INFO - test
+2025-06-16T07:18:53.480162+0300 - INFO - test
+2025-06-16T07:19:04.999437+0300 - INFO - test
+2025-06-16T07:19:14.544088+0300 - INFO - test
+2025-06-16T07:19:24.270819+0300 - INFO - test
+2025-06-16T07:19:35.107269+0300 - INFO - test
+2025-06-16T07:19:46.528224+0300 - INFO - test
+2025-06-16T07:19:56.122996+0300 - INFO - test
+2025-06-16T07:20:06.220593+0300 - INFO - test
+2025-06-16T07:20:17.153172+0300 - INFO - test
+2025-06-16T07:20:28.369956+0300 - INFO - test
+2025-06-16T07:20:39.224535+0300 - INFO - test
+2025-06-16T07:20:50.453493+0300 - INFO - test
+2025-06-16T07:21:01.102296+0300 - INFO - test
+2025-06-16T07:21:10.750921+0300 - INFO - test
+2025-06-16T07:21:21.776736+0300 - INFO - test
+2025-06-16T07:21:31.448639+0300 - INFO - test
+2025-06-16T07:21:41.832513+0300 - INFO - test
+2025-06-16T07:21:52.224379+0300 - INFO - test
+2025-06-16T07:22:03.560773+0300 - INFO - test
+2025-06-16T07:22:14.733498+0300 - INFO - test
+2025-06-16T07:22:25.977252+0300 - INFO - test
+2025-06-16T07:22:35.571488+0300 - INFO - test
+2025-06-16T07:22:46.183707+0300 - INFO - test
+2025-06-16T07:22:57.049674+0300 - INFO - test
+2025-06-16T07:23:08.388149+0300 - INFO - test
+2025-06-16T07:23:18.448342+0300 - INFO - test
+2025-06-16T07:23:28.796290+0300 - INFO - test
+2025-06-16T07:23:39.683364+0300 - INFO - test
+2025-06-16T07:23:50.923712+0300 - INFO - test
+2025-06-16T07:28:57.979021+0300 - INFO - test
+2025-06-16T07:29:09.865069+0300 - INFO - test
+2025-06-16T07:29:21.563885+0300 - INFO - test
+2025-06-16T07:29:32.131529+0300 - INFO - test
+2025-06-16T07:29:41.486099+0300 - INFO - test
+2025-06-16T07:29:52.012607+0300 - INFO - test
+2025-06-16T07:30:02.587416+0300 - INFO - test
+2025-06-16T07:30:12.502982+0300 - INFO - test
+2025-06-16T07:30:22.100601+0300 - INFO - test
+2025-06-16T07:30:31.875617+0300 - INFO - test
+2025-06-16T07:30:42.910052+0300 - INFO - test
+2025-06-16T07:30:53.055459+0300 - INFO - test
+2025-06-16T07:31:04.574002+0300 - INFO - test
+2025-06-16T07:31:14.679147+0300 - INFO - test
+2025-06-16T07:31:24.539387+0300 - INFO - test
+2025-06-16T07:31:35.959665+0300 - INFO - test
+2025-06-16T07:31:47.235453+0300 - INFO - test
+2025-06-16T07:31:57.680467+0300 - INFO - test
+2025-06-16T07:32:08.429015+0300 - INFO - test
+2025-06-16T07:32:18.611649+0300 - INFO - test
+2025-06-16T07:32:29.565065+0300 - INFO - test
+2025-06-16T07:32:40.788239+0300 - INFO - test
+2025-06-16T07:32:52.273801+0300 - INFO - test
+2025-06-16T07:33:01.904755+0300 - INFO - test
+2025-06-16T07:33:12.803714+0300 - INFO - test
+2025-06-16T07:33:22.562836+0300 - INFO - test
+2025-06-16T07:33:33.860808+0300 - INFO - test
+2025-06-16T07:33:45.172972+0300 - INFO - test
+2025-06-16T07:33:54.804657+0300 - INFO - test
+2025-06-16T07:34:06.361972+0300 - INFO - test
+2025-06-16T07:34:16.492682+0300 - INFO - test
+2025-06-16T07:34:26.065601+0300 - INFO - test
+2025-06-16T07:34:35.580591+0300 - INFO - test
+2025-06-16T07:34:45.065362+0300 - INFO - test
+2025-06-16T07:34:54.519648+0300 - INFO - test
+2025-06-16T07:35:04.782193+0300 - INFO - test
+2025-06-23T08:02:56.636524+0300 - INFO - test
+2025-06-23T08:03:06.862174+0300 - INFO - test
+2025-06-23T08:03:16.808756+0300 - INFO - test
+2025-06-23T08:03:26.866349+0300 - INFO - test
+2025-06-23T08:03:37.743062+0300 - INFO - test
+2025-06-23T08:03:48.274468+0300 - INFO - test
+2025-06-23T08:03:58.260228+0300 - INFO - test
+2025-06-23T08:04:08.096666+0300 - INFO - test
+2025-06-23T08:04:18.230591+0300 - INFO - test
+2025-06-23T08:04:28.046412+0300 - INFO - test
+2025-06-23T08:04:38.248483+0300 - INFO - test
+2025-06-23T08:04:48.248559+0300 - INFO - test
+2025-06-23T08:04:58.257563+0300 - INFO - test
+2025-06-23T08:05:09.201562+0300 - INFO - test
+2025-06-23T08:05:18.925355+0300 - INFO - test
+2025-06-23T08:05:28.298689+0300 - INFO - test
+2025-06-23T08:05:38.503292+0300 - INFO - test
+2025-06-23T08:05:48.584318+0300 - INFO - test
+2025-06-23T08:05:58.755443+0300 - INFO - test
+2025-06-23T08:06:08.987927+0300 - INFO - test
+2025-06-23T08:06:18.844814+0300 - INFO - test
+2025-06-23T08:06:28.866767+0300 - INFO - test
+2025-06-23T08:06:39.302063+0300 - INFO - test
+2025-06-23T08:06:49.137096+0300 - INFO - test
+2025-06-23T08:06:59.103859+0300 - INFO - test
+2025-06-23T08:07:09.594295+0300 - INFO - test
+2025-06-23T08:07:19.864471+0300 - INFO - test
+2025-06-23T08:07:30.047353+0300 - INFO - test
+2025-06-23T08:07:40.169282+0300 - INFO - test
+2025-06-23T08:07:50.498563+0300 - INFO - test
+2025-06-23T08:08:00.752729+0300 - INFO - test
+2025-06-23T08:08:11.657821+0300 - INFO - test
+2025-06-23T08:08:22.326340+0300 - INFO - test
+2025-06-23T08:08:32.427323+0300 - INFO - test
+2025-06-23T08:08:42.318457+0300 - INFO - test
+2025-06-23T08:08:52.508156+0300 - INFO - test
+2025-06-23T08:09:02.791039+0300 - INFO - test
+2025-06-23T08:09:13.005518+0300 - INFO - test
+2025-06-23T08:09:23.495649+0300 - INFO - test
+2025-06-23T08:09:33.727635+0300 - INFO - test
+2025-06-23T08:09:43.782935+0300 - INFO - test
+2025-06-23T08:09:53.854023+0300 - INFO - test
+2025-06-23T08:10:05.124745+0300 - INFO - test
+2025-06-23T08:10:15.639991+0300 - INFO - test
+2025-06-23T08:10:25.576159+0300 - INFO - test
+2025-06-23T08:10:35.541075+0300 - INFO - test
+2025-06-23T08:10:45.732121+0300 - INFO - test
+2025-06-23T08:10:55.767599+0300 - INFO - test
+2025-06-23T08:11:06.557753+0300 - INFO - test
+2025-06-23T08:11:16.905168+0300 - INFO - test
+2025-06-23T08:11:30.790035+0300 - INFO - test
+2025-06-23T08:11:45.833537+0300 - INFO - test
+2025-06-23T08:11:56.664937+0300 - INFO - test
+2025-06-23T08:12:07.531401+0300 - INFO - test
+2025-06-23T08:12:18.218615+0300 - INFO - test
+2025-06-23T08:12:28.778854+0300 - INFO - test
+2025-06-23T08:12:42.055994+0300 - INFO - test
+2025-06-23T08:12:55.184295+0300 - INFO - test
+2025-06-23T08:13:07.935950+0300 - INFO - test
+2025-06-23T08:13:20.367027+0300 - INFO - test
+2025-06-23T08:13:33.505651+0300 - INFO - test
+2025-06-23T08:13:45.747629+0300 - INFO - test
+2025-06-23T08:13:58.292542+0300 - INFO - test
+2025-06-23T08:14:11.356089+0300 - INFO - test
+2025-06-23T08:14:23.808281+0300 - INFO - test
+2025-06-23T08:14:35.731470+0300 - INFO - test
+2025-06-23T08:14:47.648550+0300 - INFO - test
+2025-06-23T08:15:00.385603+0300 - INFO - test
+2025-06-23T08:15:12.985389+0300 - INFO - test
+2025-06-23T08:15:26.475638+0300 - INFO - test
+2025-06-23T08:15:38.750597+0300 - INFO - test
+2025-06-23T08:15:51.392785+0300 - INFO - test
+2025-06-23T08:16:06.098130+0300 - INFO - test
+2025-06-23T08:16:18.917423+0300 - INFO - test
+2025-06-23T08:16:31.518004+0300 - INFO - test
+2025-06-23T08:16:45.350866+0300 - INFO - test
+2025-06-23T08:16:58.171127+0300 - INFO - test
+2025-06-23T08:17:11.081433+0300 - INFO - test
+2025-06-23T08:17:24.874894+0300 - INFO - test
+2025-06-23T08:17:38.663196+0300 - INFO - test
+2025-06-23T08:17:50.793016+0300 - INFO - test
+2025-06-23T08:18:04.139369+0300 - INFO - test
+2025-06-23T08:18:17.175810+0300 - INFO - test
+2025-06-23T08:18:30.959016+0300 - INFO - test
+2025-06-23T08:18:43.435064+0300 - INFO - test
+2025-06-23T08:18:56.137142+0300 - INFO - test
+2025-06-23T08:19:10.283165+0300 - INFO - test
+2025-06-23T08:19:31.841248+0300 - INFO - test
+2025-06-23T08:19:46.176275+0300 - INFO - test
+2025-06-23T08:19:59.115659+0300 - INFO - test
+2025-06-23T08:20:11.638194+0300 - INFO - test
+2025-06-23T08:20:24.015536+0300 - INFO - test
+2025-06-23T08:20:36.640085+0300 - INFO - test
+2025-06-23T08:20:49.368482+0300 - INFO - test
+2025-06-23T08:21:01.685475+0300 - INFO - test
+2025-06-23T08:21:15.305798+0300 - INFO - test
+2025-06-23T08:21:28.116350+0300 - INFO - test
+2025-06-23T08:21:41.098539+0300 - INFO - test
+2025-06-23T08:21:53.375346+0300 - INFO - test
+2025-06-23T08:22:06.903952+0300 - INFO - test
+2025-06-23T08:22:19.815853+0300 - INFO - test
+2025-06-23T08:22:32.356867+0300 - INFO - test
+2025-06-23T08:22:45.315351+0300 - INFO - test
+2025-06-23T08:22:58.615847+0300 - INFO - test
+2025-06-23T08:23:12.086316+0300 - INFO - test
+2025-06-23T08:23:24.951622+0300 - INFO - test
+2025-06-23T08:23:37.287878+0300 - INFO - test
+2025-06-23T08:23:49.679223+0300 - INFO - test
+2025-06-23T08:24:02.734581+0300 - INFO - test
+2025-06-23T08:24:15.338525+0300 - INFO - test
+2025-06-23T08:24:27.462044+0300 - INFO - test
+2025-06-23T08:24:42.322110+0300 - INFO - test
+2025-06-23T08:24:56.912180+0300 - INFO - test
+2025-06-23T08:25:10.032934+0300 - INFO - test
+2025-06-23T08:25:22.143263+0300 - INFO - test
+2025-06-23T08:25:34.210279+0300 - INFO - test
+2025-06-23T08:25:46.749220+0300 - INFO - test
+2025-06-23T08:25:59.332089+0300 - INFO - test
+2025-06-23T08:26:12.896090+0300 - INFO - test
+2025-06-23T08:26:26.837555+0300 - INFO - test
+2025-06-23T08:26:39.534033+0300 - INFO - test
+2025-06-23T08:26:52.066355+0300 - INFO - test
+2025-06-23T08:27:06.997718+0300 - INFO - test
+2025-06-23T08:27:19.510095+0300 - INFO - test
+2025-06-23T08:27:32.891656+0300 - INFO - test
+2025-06-23T08:27:47.752601+0300 - INFO - test
+2025-06-23T08:28:00.296180+0300 - INFO - test
+2025-06-23T08:28:13.167060+0300 - INFO - test
+2025-06-23T08:28:27.140422+0300 - INFO - test
+2025-06-23T08:28:40.062608+0300 - INFO - test
+2025-06-23T08:28:52.140344+0300 - INFO - test
+2025-06-23T08:29:04.569273+0300 - INFO - test
+2025-06-23T08:29:16.893143+0300 - INFO - test
+2025-06-23T08:29:29.931951+0300 - INFO - test
+2025-06-23T08:29:43.160732+0300 - INFO - test
+2025-06-23T08:29:56.275613+0300 - INFO - test
+2025-06-23T08:30:14.858343+0300 - INFO - test
+2025-06-23T08:30:28.793386+0300 - INFO - test
+2025-06-23T08:30:40.991608+0300 - INFO - test
+2025-06-23T08:30:53.571162+0300 - INFO - test
+2025-06-23T08:31:07.477255+0300 - INFO - test
+2025-06-23T08:31:31.075747+0300 - INFO - test
+2025-06-23T08:31:47.069344+0300 - INFO - test
+2025-06-23T08:32:00.823213+0300 - INFO - test
+2025-06-23T08:32:13.386664+0300 - INFO - test
+2025-06-23T08:32:26.229145+0300 - INFO - test
+2025-06-23T08:32:39.138023+0300 - INFO - test
+2025-06-23T08:32:52.444898+0300 - INFO - test
+2025-06-23T08:33:05.787199+0300 - INFO - test
+2025-06-23T08:33:18.618013+0300 - INFO - test
+2025-06-23T08:33:31.963454+0300 - INFO - test
+2025-06-23T08:33:44.624604+0300 - INFO - test
+2025-06-23T08:33:57.617055+0300 - INFO - test
+2025-06-23T08:34:09.964886+0300 - INFO - test
+2025-06-23T08:34:23.074981+0300 - INFO - test
+2025-06-23T08:34:35.810751+0300 - INFO - test
+2025-06-23T08:34:48.742424+0300 - INFO - test
+2025-06-23T08:35:02.838557+0300 - INFO - test
+2025-06-23T08:35:16.298026+0300 - INFO - test
+2025-06-23T08:35:29.105625+0300 - INFO - test
+2025-06-23T08:35:41.182282+0300 - INFO - test
+2025-06-23T08:35:56.560515+0300 - INFO - test
+2025-06-23T08:36:12.792469+0300 - INFO - test
+2025-06-23T08:36:32.538882+0300 - INFO - test
+2025-06-23T08:36:51.050107+0300 - INFO - test
+2025-06-23T08:37:11.000621+0300 - INFO - test
+2025-06-23T08:37:29.448679+0300 - INFO - test
+2025-06-23T08:37:47.498243+0300 - INFO - test
+2025-06-23T08:38:05.872852+0300 - INFO - test
+2025-06-23T08:38:23.702136+0300 - INFO - test
+2025-06-23T08:38:40.050275+0300 - INFO - test
+2025-06-23T08:38:57.856967+0300 - INFO - test
+2025-06-23T08:39:17.434093+0300 - INFO - test
+2025-06-23T08:39:35.071999+0300 - INFO - test
+2025-06-23T08:39:47.048199+0300 - INFO - test
+2025-06-23T08:40:07.392835+0300 - INFO - test
+2025-06-23T08:40:22.348755+0300 - INFO - test
+2025-06-23T08:40:37.061286+0300 - INFO - test
+2025-06-23T08:40:53.905562+0300 - INFO - test
+2025-06-23T08:41:10.335421+0300 - INFO - test
+2025-06-23T08:41:25.895153+0300 - INFO - test
+2025-06-23T08:41:42.483062+0300 - INFO - test
+2025-06-23T08:42:06.028206+0300 - INFO - test
+2025-06-23T08:42:21.537642+0300 - INFO - test
+2025-06-23T08:42:37.802730+0300 - INFO - test
+2025-06-23T08:42:52.532776+0300 - INFO - test
+2025-06-23T08:43:10.035378+0300 - INFO - test
+2025-06-23T08:44:17.497820+0300 - INFO - test
+2025-06-23T08:44:46.590374+0300 - INFO - test
+2025-06-23T08:45:14.686592+0300 - INFO - test
+2025-06-23T08:45:42.088529+0300 - INFO - test
+2025-06-23T08:46:07.581373+0300 - INFO - test
+2025-06-23T08:46:34.976239+0300 - INFO - test
+2025-06-23T08:47:01.320935+0300 - INFO - test
+2025-06-23T08:47:27.996265+0300 - INFO - test
+2025-06-23T08:47:54.886030+0300 - INFO - test
+2025-06-23T08:48:20.936027+0300 - INFO - test
+2025-06-23T08:48:48.138412+0300 - INFO - test
+2025-06-23T08:49:15.023511+0300 - INFO - test
+2025-06-23T08:49:22.085336+0300 - INFO - test
+2025-06-23T08:49:49.392012+0300 - INFO - test
+2025-06-23T08:50:16.049220+0300 - INFO - test
+2025-06-23T08:50:47.606959+0300 - INFO - test
+2025-06-23T08:51:15.586124+0300 - INFO - test
+2025-06-23T08:51:41.889596+0300 - INFO - test
+2025-06-23T08:51:55.712401+0300 - INFO - test
+2025-06-23T08:52:21.859697+0300 - INFO - test
+2025-06-23T08:52:49.508216+0300 - INFO - test
+2025-06-23T08:53:25.104989+0300 - INFO - test
+2025-06-23T08:54:06.886374+0300 - INFO - test
+2025-06-23T08:54:34.598772+0300 - INFO - test
+2025-06-23T08:55:03.410496+0300 - INFO - test
+2025-06-23T08:55:30.700136+0300 - INFO - test
+2025-06-23T08:55:56.003362+0300 - INFO - test
+2025-06-23T08:56:22.734460+0300 - INFO - test
+2025-06-23T08:56:48.597440+0300 - INFO - test
+2025-06-23T08:57:14.842971+0300 - INFO - test
+2025-06-23T08:57:40.746956+0300 - INFO - test
+2025-06-23T08:58:07.008983+0300 - INFO - test
+2025-06-23T08:58:32.380272+0300 - INFO - test
+2025-06-23T08:58:58.626097+0300 - INFO - test
+2025-06-23T08:59:25.202897+0300 - INFO - test
+2025-06-23T08:59:51.792207+0300 - INFO - test
+2025-06-23T09:00:20.367297+0300 - INFO - test
+2025-06-23T09:00:46.501369+0300 - INFO - test
+2025-06-23T09:01:12.898306+0300 - INFO - test
+2025-06-23T09:01:39.310307+0300 - INFO - test
+2025-06-23T09:02:06.745052+0300 - INFO - test
+2025-06-23T09:02:33.865670+0300 - INFO - test
+2025-06-23T09:03:00.438867+0300 - INFO - test
+2025-06-23T09:03:26.665277+0300 - INFO - test
+2025-06-23T09:03:53.192953+0300 - INFO - test
+2025-06-23T09:04:10.107968+0300 - INFO - bot started work
+2025-06-23T13:35:32.495950+0300 - INFO - test
+2025-06-23T13:35:49.695829+0300 - INFO - bot started work
+2025-06-23T13:59:56.118405+0300 - INFO - test
+2025-06-23T14:00:13.146575+0300 - INFO - bot started work
+2025-06-23T14:19:57.644690+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-23T18:29:19.361755+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-23T18:29:19.402275+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T14:53:34.024891+0300 - INFO - test
+2025-06-24T14:53:44.205455+0300 - INFO - test
+2025-06-24T14:53:54.732408+0300 - INFO - test
+2025-06-24T14:54:05.483358+0300 - INFO - test
+2025-06-24T14:54:15.872380+0300 - INFO - test
+2025-06-24T14:54:26.086715+0300 - INFO - test
+2025-06-24T14:54:36.290982+0300 - INFO - test
+2025-06-24T14:54:46.688674+0300 - INFO - test
+2025-06-24T14:54:56.628600+0300 - INFO - test
+2025-06-24T14:55:07.420452+0300 - INFO - test
+2025-06-24T14:55:17.581199+0300 - INFO - test
+2025-06-24T14:55:27.634464+0300 - INFO - test
+2025-06-24T14:55:41.672429+0300 - INFO - test
+2025-06-24T14:56:14.398240+0300 - INFO - bot started work
+2025-06-24T14:59:44.861839+0300 - INFO - test
+2025-06-24T15:00:26.101017+0300 - INFO - bot started work
+2025-06-24T15:01:42.201456+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:01:42.204437+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:01:42.205968+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:01:42.207029+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:01:42.208339+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:01:42.209324+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:01:42.210748+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:01:42.211984+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:01:49.310381+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:02:02.258599+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:02:03.196486+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:10:03.848186+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:10:03.850736+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:10:03.851889+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:10:03.852940+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:10:03.854217+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:10:03.855106+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:10:03.856358+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:10:03.857085+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:10:05.414428+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:37:16.045789+0300 - INFO - test
+2025-06-24T15:37:44.139107+0300 - INFO - bot started work
+2025-06-24T15:39:41.700751+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:39:41.702668+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:39:41.703575+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:39:41.704438+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:39:41.705367+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:39:41.706119+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:39:41.706944+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:39:41.707729+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:44:55.611827+0300 - INFO - test
+2025-06-24T15:45:30.864878+0300 - INFO - bot started work
+2025-06-24T15:46:10.380698+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:46:10.383411+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:46:10.384628+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:46:10.385319+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:46:10.386941+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:46:10.387944+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:46:10.388847+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:46:10.389665+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:48:06.702733+0300 - ERROR - text= В user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:48:06.704944+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:53:43.590046+0300 - INFO - test
+2025-06-24T15:54:10.766234+0300 - INFO - bot started work
+2025-06-24T15:55:08.196211+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:55:08.199616+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:55:08.201118+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:55:08.202364+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:55:08.203729+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:55:08.204697+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:55:08.206114+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:55:08.207090+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:55:10.599788+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:56:49.443059+0300 - INFO - test
+2025-06-24T15:57:16.906197+0300 - INFO - bot started work
+2025-06-24T15:57:53.724945+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:57:53.728011+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T15:57:53.729575+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:57:53.730520+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T15:57:53.732085+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:57:53.733358+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T15:57:53.734725+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:57:53.735349+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T15:57:55.251239+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:57:58.690763+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T15:58:05.966299+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:03:46.878212+0300 - INFO - test
+2025-06-24T16:04:13.135769+0300 - INFO - bot started work
+2025-06-24T16:04:51.919086+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:04:51.921270+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:04:51.922267+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:04:51.923179+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:04:51.924317+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:04:51.924907+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:04:51.926155+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:04:51.926817+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:04:53.484491+0300 - INFO - user_id = 29 event_id = 2
+2025-06-24T16:04:53.678813+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:04:55.092473+0300 - INFO - user_id = 30 event_id = 2
+2025-06-24T16:04:55.282877+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:04:56.438350+0300 - INFO - user_id = 31 event_id = 2
+2025-06-24T16:04:56.547848+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:12:11.456504+0300 - INFO - test
+2025-06-24T16:12:21.595199+0300 - INFO - test
+2025-06-24T16:12:31.984999+0300 - INFO - test
+2025-06-24T16:12:42.149930+0300 - INFO - test
+2025-06-24T16:12:52.309645+0300 - INFO - test
+2025-06-24T16:13:02.580297+0300 - INFO - test
+2025-06-24T16:13:13.046814+0300 - INFO - test
+2025-06-24T16:13:23.706135+0300 - INFO - test
+2025-06-24T16:13:33.767125+0300 - INFO - test
+2025-06-24T16:13:43.920487+0300 - INFO - test
+2025-06-24T16:13:53.913430+0300 - INFO - test
+2025-06-24T16:14:04.734939+0300 - INFO - test
+2025-06-24T16:14:14.951362+0300 - INFO - test
+2025-06-24T16:14:25.026356+0300 - INFO - test
+2025-06-24T16:14:35.126179+0300 - INFO - test
+2025-06-24T16:14:45.409459+0300 - INFO - test
+2025-06-24T16:14:55.816452+0300 - INFO - test
+2025-06-24T16:15:06.529709+0300 - INFO - test
+2025-06-24T16:15:17.877705+0300 - INFO - test
+2025-06-24T16:15:28.252684+0300 - INFO - test
+2025-06-24T16:15:38.858353+0300 - INFO - test
+2025-06-24T16:15:49.442450+0300 - INFO - test
+2025-06-24T16:15:59.658529+0300 - INFO - test
+2025-06-24T16:16:10.392173+0300 - INFO - test
+2025-06-24T16:16:20.589228+0300 - INFO - test
+2025-06-24T16:16:31.193978+0300 - INFO - test
+2025-06-24T16:16:41.435545+0300 - INFO - test
+2025-06-24T16:16:51.574860+0300 - INFO - test
+2025-06-24T16:17:01.626630+0300 - INFO - test
+2025-06-24T16:17:12.094709+0300 - INFO - test
+2025-06-24T16:17:22.174104+0300 - INFO - test
+2025-06-24T16:17:32.270374+0300 - INFO - test
+2025-06-24T16:17:42.576013+0300 - INFO - test
+2025-06-24T16:17:53.156543+0300 - INFO - test
+2025-06-24T16:18:03.239183+0300 - INFO - test
+2025-06-24T16:18:14.028080+0300 - INFO - test
+2025-06-24T16:18:25.532981+0300 - INFO - test
+2025-06-24T16:18:36.244651+0300 - INFO - test
+2025-06-24T16:18:46.961424+0300 - INFO - test
+2025-06-24T16:19:13.688143+0300 - INFO - bot started work
+2025-06-24T16:33:56.246839+0300 - INFO - test
+2025-06-24T16:34:25.539171+0300 - INFO - bot started work
+2025-06-24T16:34:58.362872+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:34:58.366083+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:34:58.367791+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:34:58.369414+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:34:58.370749+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:34:58.372428+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:34:58.373364+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:34:58.374576+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:34:59.948534+0300 - INFO - user_id = 29 event_id = 2
+2025-06-24T16:35:00.089630+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:35:02.710892+0300 - INFO - user_id = 30 event_id = 2
+2025-06-24T16:35:02.854015+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:52:41.814282+0300 - INFO - test
+2025-06-24T16:53:09.477969+0300 - INFO - bot started work
+2025-06-24T16:53:47.347724+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:53:47.349702+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:53:47.350663+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:53:47.351439+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:53:47.352353+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:53:47.353285+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:53:47.354257+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:53:47.354906+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:53:48.726071+0300 - INFO - users
+2025-06-24T16:53:48.810402+0300 - INFO - та самая ошибка - cannot access local variable 'session' where it is not associated with a value
+2025-06-24T16:53:51.489397+0300 - INFO - users
+2025-06-24T16:53:51.564600+0300 - INFO - та самая ошибка - cannot access local variable 'session' where it is not associated with a value
+2025-06-24T16:56:42.265486+0300 - INFO - test
+2025-06-24T16:57:10.708003+0300 - INFO - bot started work
+2025-06-24T16:57:45.022658+0300 - ERROR - text= А user_id= id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:57:45.024908+0300 - ERROR - id=28 telegram_id=784259987 tg_username='demler' username='Данис' phone='+7892342443' role='super_admin' is_member=False
+2025-06-24T16:57:45.026106+0300 - ERROR - text= А user_id= id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:57:45.026876+0300 - ERROR - id=29 telegram_id=6049846765 tg_username='Insaff1' username='инсаф' phone='+79196237200' role='user' is_member=False
+2025-06-24T16:57:45.027686+0300 - ERROR - text= А user_id= id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:57:45.028174+0300 - ERROR - id=30 telegram_id=1035648673 tg_username='NNdre21sentury' username='Айнур' phone='79600870547' role='admin' is_member=False
+2025-06-24T16:57:45.028916+0300 - ERROR - text= А user_id= id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:57:45.029531+0300 - ERROR - id=31 telegram_id=6452557613 tg_username='ZilantTG' username='Иван' phone='+79934142811' role='user' is_member=False
+2025-06-24T16:57:46.800051+0300 - INFO - users
+2025-06-24T16:57:46.849553+0300 - INFO - user_id = 29 event_id = 2
+2025-06-24T16:57:46.929151+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-24T16:57:48.683135+0300 - INFO - users
+2025-06-24T16:57:48.720695+0300 - INFO - user_id = 30 event_id = 2
+2025-06-24T16:57:48.822662+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-25T10:43:53.706755+0300 - ERROR - text= L user_id= id=9 telegram_id=222333444 tg_username='amy_clark_678' username='amy_clark' phone='+2223334440' role='admin' is_member=False
+2025-06-25T10:43:53.708803+0300 - ERROR - id=9 telegram_id=222333444 tg_username='amy_clark_678' username='amy_clark' phone='+2223334440' role='admin' is_member=False
+2025-06-25T10:43:53.709685+0300 - ERROR - text= L user_id= id=12 telegram_id=666777888 tg_username='claire_white_890' username='claire_white' phone='+6667778880' role='admin' is_member=False
+2025-06-25T10:43:53.710331+0300 - ERROR - id=12 telegram_id=666777888 tg_username='claire_white_890' username='claire_white' phone='+6667778880' role='admin' is_member=False
+2025-06-25T10:43:53.711069+0300 - ERROR - text= L user_id= id=14 telegram_id=444333222 tg_username='james_lewis_789' username='james_lewis' phone='+4443332220' role='user' is_member=False
+2025-06-25T10:43:53.711626+0300 - ERROR - id=14 telegram_id=444333222 tg_username='james_lewis_789' username='james_lewis' phone='+4443332220' role='user' is_member=False
+2025-06-25T10:43:53.712414+0300 - ERROR - text= L user_id= id=19 telegram_id=999444222 tg_username='daniel_moore_567' username='daniel_moore' phone='+9994442220' role='user' is_member=False
+2025-06-25T10:43:53.713050+0300 - ERROR - id=19 telegram_id=999444222 tg_username='daniel_moore_567' username='daniel_moore' phone='+9994442220' role='user' is_member=False
+2025-06-25T10:43:53.713930+0300 - ERROR - text= L user_id= id=21 telegram_id=888333777 tg_username='amelia_carter_456' username='amelia_carter' phone='+8883337770' role='admin' is_member=False
+2025-06-25T10:43:53.714521+0300 - ERROR - id=21 telegram_id=888333777 tg_username='amelia_carter_456' username='amelia_carter' phone='+8883337770' role='admin' is_member=False
+2025-06-25T10:43:53.715368+0300 - ERROR - text= L user_id= id=24 telegram_id=999555111 tg_username='sophia_hill_678' username='sophia_hill' phone='+9995551110' role='admin' is_member=False
+2025-06-25T10:43:53.715925+0300 - ERROR - id=24 telegram_id=999555111 tg_username='sophia_hill_678' username='sophia_hill' phone='+9995551110' role='admin' is_member=False
+2025-06-25T10:43:53.716760+0300 - ERROR - text= L user_id= id=5 telegram_id=112233445 tg_username='michael_brown' username='michael_brown' phone='+1122334455' role='user' is_member=False
+2025-06-25T10:43:53.717342+0300 - ERROR - id=5 telegram_id=112233445 tg_username='michael_brown' username='michael_brown' phone='+1122334455' role='user' is_member=False
+2025-06-25T10:43:53.718589+0300 - ERROR - text= L user_id= id=6 telegram_id=865251371 tg_username='ramzil46' username='abdullin ramzil' phone='+79374884101' role='user' is_member=False
+2025-06-25T10:43:53.719232+0300 - ERROR - id=6 telegram_id=865251371 tg_username='ramzil46' username='abdullin ramzil' phone='+79374884101' role='user' is_member=False
+2025-06-25T10:43:53.720136+0300 - ERROR - text= L user_id= id=16 telegram_id=888666444 tg_username='charles_king_345' username='charles_king' phone='+8886664440' role='admin' is_member=False
+2025-06-25T10:43:53.720733+0300 - ERROR - id=16 telegram_id=888666444 tg_username='charles_king_345' username='charles_king' phone='+8886664440' role='admin' is_member=False
+2025-06-25T10:43:53.721728+0300 - ERROR - text= L user_id= id=18 telegram_id=666111333 tg_username='victoria_allen_234' username='victoria_allen' phone='+6661113330' role='admin' is_member=False
+2025-06-25T10:43:53.722342+0300 - ERROR - id=18 telegram_id=666111333 tg_username='victoria_allen_234' username='victoria_allen' phone='+6661113330' role='admin' is_member=False
+2025-06-25T10:43:53.723268+0300 - ERROR - text= L user_id= id=23 telegram_id=777000333 tg_username='logan_nelson_345' username='logan_nelson' phone='+7770003330' role='admin' is_member=False
+2025-06-25T10:43:53.723838+0300 - ERROR - id=23 telegram_id=777000333 tg_username='logan_nelson_345' username='logan_nelson' phone='+7770003330' role='admin' is_member=False
+2025-06-25T10:43:53.725032+0300 - ERROR - text= L user_id= id=1 telegram_id=825963774 tg_username='gapenysh' username='Jelatin' phone='89083317431' role='super_admin' is_member=False
+2025-06-25T10:43:53.725994+0300 - ERROR - id=1 telegram_id=825963774 tg_username='gapenysh' username='Jelatin' phone='89083317431' role='super_admin' is_member=False
+2025-06-25T10:43:53.727336+0300 - ERROR - text= L user_id= id=15 telegram_id=777555333 tg_username='olivia_harris_012' username='olivia_harris' phone='+7775553330' role='user' is_member=False
+2025-06-25T10:43:53.727986+0300 - ERROR - id=15 telegram_id=777555333 tg_username='olivia_harris_012' username='olivia_harris' phone='+7775553330' role='user' is_member=False
+2025-06-25T10:44:02.736781+0300 - INFO - users
+2025-06-25T10:44:02.778385+0300 - INFO - user_id = 1 event_id = 2
+2025-06-25T10:44:02.846557+0300 - INFO - та самая ошибка - Foreign key associated with column 'user_events.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+2025-06-25T10:45:29.266729+0300 - INFO - test
+2025-06-25T10:45:40.457913+0300 - INFO - test
+2025-06-25T10:45:50.627268+0300 - INFO - test
+2025-06-25T10:46:01.005424+0300 - INFO - test
+2025-06-25T10:46:11.557709+0300 - INFO - test
+2025-06-25T10:46:22.317897+0300 - INFO - test
+2025-06-25T10:46:33.327379+0300 - INFO - test
+2025-06-25T10:46:43.393177+0300 - INFO - test
+2025-06-25T10:46:54.262935+0300 - INFO - test
+2025-06-25T10:47:05.579327+0300 - INFO - test
+2025-06-25T10:47:15.648953+0300 - INFO - test
+2025-06-25T10:47:25.634388+0300 - INFO - test
+2025-06-25T10:47:36.246560+0300 - INFO - test
+2025-06-25T10:47:47.588129+0300 - INFO - test
+2025-06-25T10:47:57.812382+0300 - INFO - test
+2025-06-25T10:48:08.066740+0300 - INFO - test
+2025-06-25T10:48:14.527780+0300 - INFO - test
+2025-06-25T10:48:41.384923+0300 - INFO - bot started work
+2025-06-25T10:52:04.303737+0300 - INFO - test
+2025-06-25T10:52:30.765443+0300 - INFO - bot started work
+2025-06-25T11:01:50.316007+0300 - INFO - test
+2025-06-25T11:02:00.686927+0300 - INFO - test
+2025-06-25T11:02:10.799386+0300 - INFO - test
+2025-06-25T11:02:20.952075+0300 - INFO - test
+2025-06-25T11:02:32.021420+0300 - INFO - test
+2025-06-25T11:02:42.343534+0300 - INFO - test
+2025-06-25T11:02:53.030472+0300 - INFO - test
+2025-06-25T11:03:03.942020+0300 - INFO - test
+2025-06-25T11:03:15.125776+0300 - INFO - test
+2025-06-25T11:03:25.883871+0300 - INFO - test
+2025-06-25T11:03:36.386125+0300 - INFO - test
+2025-06-25T11:03:47.505560+0300 - INFO - test
+2025-06-25T11:03:57.652075+0300 - INFO - test
+2025-06-25T11:04:07.979361+0300 - INFO - test
+2025-06-25T11:04:18.546267+0300 - INFO - test
+2025-06-25T11:04:28.764554+0300 - INFO - test
+2025-06-25T11:04:38.938156+0300 - INFO - test
+2025-06-25T11:04:48.892196+0300 - INFO - test
+2025-06-25T11:05:16.101236+0300 - INFO - bot started work
+2025-06-25T11:08:08.382945+0300 - INFO - test
+2025-06-25T11:08:39.766312+0300 - INFO - bot started work
+2025-06-25T11:10:28.435162+0300 - INFO - test
+2025-06-25T11:11:00.103814+0300 - INFO - bot started work
+2025-06-25T16:40:59.361784+0300 - ERROR - Foreign key associated with column 'user_tasks.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'

@@ -21,6 +21,7 @@ from domain.events.db_bl import EventDbBl
 from utils.constants import months
 from utils.data_state import DataSuccess
 from utils.logs import admin_logger
+from utils.logs import program_logger
 
 router = Router()
 
@@ -68,19 +69,22 @@ async def handle_create_event_description(message: Message, state: FSMContext):
     await state.set_state(AdminStates.create_event_date)
     await message.answer('✍️ Введите дату мероприятия в формате dd mm yyyy HH MM(20 03 2025 16 56):')
 
-@router.message(F.text,AdminStates.create_event_date)
+@router.message(F.text, AdminStates.create_event_date)
 async def handle_create_event_date(message: Message, state: FSMContext):
     date = get_date(message.text)
     if date:
-        data_state = EventDbBl.create_event(Event(name=(await state.get_data())['event_name'],description=(await state.get_data())['event_description'],date=date))
+        data_state = EventDbBl.create_event(Event(name=(await state.get_data())['event_name'],
+                                                 description=(await state.get_data())['event_description'],
+                                                 date=date))
         if isinstance(data_state, DataSuccess):
             admin_logger.info(
-                f'Админ {message.chat.full_name} ({message.chat.id} создал новое мероприятие {(await state.get_data())['event_name']})')
+                f'Админ {message.chat.full_name} ({message.chat.id}) создал новое мероприятие "{(await state.get_data())["event_name"]}"'
+            )
             await event_menu_button(state, message, data_state.data)
         else:
             await message.answer(f'❌ {data_state.error_message}')
     else:
-        await message.answer('❌ Неверно ввели дату!\nВведите дату мероприятия в формате dd mm yyyy HH MM(20 03 2025 16 56):')
+        await message.answer('❌ Неверно ввели дату!\nВведите дату мероприятия в формате dd mm yyyy HH MM (20 03 2025 16 56):')
 
 @router.callback_query(EventMenuFromCalendarCallback.filter())
 @router.callback_query(BackToEventMenuCallback.filter())
@@ -110,19 +114,27 @@ async def event_menu_button(state: FSMContext, message: Message, event_id: int):
             callback = 'events_button_admin'
             if 'calendar' in (await state.get_data()):
                 callback = (await state.get_data())['calendar']
+            
+            participants_text = ('Участников нету' if len(data_state.data) == 0 else
+                                '\n'.join([f'<a href="https://t.me/{user.tg_username.lstrip("@")}">{user.username}</a>' for user in data_state.data]))
 
-            message = await message.answer(f'📅 <b>{event.name}</b>\nОписание: {event.description}\n'
-                                                   f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
-                                            f'Участники:\n{'Участников нету' if len(data_state.data) == 0 else
-                                            '\n'.join([f'<a href="{user.tg_username}">{user.username}</a>'
-                                                       for user in data_state.data])}\n\n❕ Чтобы добавить участника, напишите его имя.',
-                                           parse_mode='HTML',
-                                           reply_markup=get_event_menu_keyboard(event_id,callback))
-            await state.update_data({'event': event,'message':message})
+            msg = (
+                f'📅 <b>{event.name}</b>\n'
+                f'Описание: {event.description}\n'
+                f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
+                f'Участники:\n{participants_text}\n\n'
+                '❕ Чтобы добавить участника, напишите его имя.'
+            )
+        
+            message = await message.answer(msg,
+                                          parse_mode='HTML',
+                                          reply_markup=get_event_menu_keyboard(event_id, callback))
+            await state.update_data({'event': event, 'message': message})
         else:
             await message.answer(f'❌ {data_state.error_message}')
     else:
         await message.answer(f'❌ {data_state.error_message}')
+
 
 @router.callback_query(F.data == 'change_event_name')
 async def change_event_name(callback_query: types.CallbackQuery, state: FSMContext):
@@ -207,16 +219,26 @@ async def delete_event_button(callback_query: types.CallbackQuery, state: FSMCon
 @router.message(F.text, AdminStates.event_menu)
 async def choose_users_event(message: Message, state: FSMContext):
     if await state.get_state() == AdminStates.users_choose:
-        await (await state.get_data())['choose_message'].delete()
+        await (await state.get_data()).get('choose_message').delete()
+    
     event = (await state.get_data())['event']
     await state.set_state(AdminStates.users_choose)
+    
     data_state = EventDbBl.get_users_by_name(message.text, event.id)
     if isinstance(data_state, DataSuccess):
-        choose_message = await  message.answer(f'{f'Найдено {len(data_state.data)} {'пользователей'if len(data_state.data) > 4 else
-        'пользователя' if len(data_state.data) > 1 else 'пользователь'}:'if len(data_state.data) > 0
-        else '❌ Пользователей с таким именем не найдено!'}', reply_markup=get_users_event_keyboard(message.text,data_state.data, event.id))
-
-        await state.update_data({'choose_message':choose_message})
+        users_count = len(data_state.data)
+        count_word = ("пользователи" if users_count >= 5 else
+                     "пользователь" if users_count == 1 else
+                     "пользователя")
+        
+        result_message = f"{'' if users_count > 0 else '❌ '}"
+        result_message += f"Найдено {users_count} {count_word}:"
+        
+        if users_count == 0:
+            result_message += "\nПользователей с таким именем не найдено!"
+        event = (await state.get_data())['event']
+        choose_message = await message.answer(result_message, reply_markup=get_users_event_keyboard(message.text, data_state.data, event.id))
+        await state.update_data({'choose_message': choose_message})
     else:
         await message.answer(f'❌ {data_state.error_message}')
 
@@ -224,23 +246,31 @@ async def choose_users_event(message: Message, state: FSMContext):
 async def update_choose_members_event(callback_query: types.CallbackQuery, state: FSMContext, callback_data: ChangeUserStateCallback):
     event = (await state.get_data())['event']
     message = (await state.get_data())['message']
-    data_state  = EventDbBl.change_member_state(callback_data.user_id,callback_data.is_member,event) # добавляем или удаляем юзера из мероприятия
+    data_state = EventDbBl.change_member_state(callback_data.user_id, callback_data.is_member, event)
     if isinstance(data_state, DataSuccess):
         admin_logger.info(
-            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id} изменил список участников мероприятия {event.name})')
-        data_state = EventDbBl.get_users_by_name(callback_data.text, event.id) # получем обновленный список пользователей с их принадлежностью к мероприятию
+            f'Админ {callback_query.message.chat.full_name} ({callback_query.message.chat.id}) изменил список участников мероприятия {event.name}'
+        )
+        data_state = EventDbBl.get_users_by_name(callback_data.text, event.id)
         if isinstance(data_state, DataSuccess):
-            await callback_query.message.edit_reply_markup(reply_markup=get_users_event_keyboard(callback_data.text, data_state.data,event.id))
-            data_state = EventDbBl.get_event(event.id) # получаем актуальные данные о мероприятии
+            await callback_query.message.edit_reply_markup(reply_markup=get_users_event_keyboard(callback_data.text, data_state.data, event.id))
+            data_state = EventDbBl.get_event(event.id)
             if isinstance(data_state, DataSuccess):
                 event = data_state.data
-                data_state = EventDbBl.get_event_members(event.id) # обновляем наше сообщение о мероприятии
+                data_state = EventDbBl.get_event_members(event.id)
                 if isinstance(data_state, DataSuccess):
-                    await message.edit_text(f'📅 <b>{event.name}</b>\nОписание: {event.description}\n'
-                                                   f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
-                                            f'Участники:\n {'Участников нету' if len(data_state.data) == 0 else
-                                            '\n'.join([f'<a href="{user.tg_username}">{user.username}</a>'
-                                                       for user in data_state.data])}',parse_mode='HTML')
+                    members_list = ''
+                    if len(data_state.data) > 0:
+                        members_list = '\n'.join([f'<a href="https://t.me/{user.tg_username.lstrip("@")}">{user.username}</a>' for user in data_state.data])
+                    else:
+                        members_list = 'Участников нету'
+                   
+                    await message.edit_text(
+                        f'📅 <b>{event.name}</b>\n'
+                        f'Описание: {event.description}\n'
+                        f'Дата: {event.date.strftime("%d.%m.%Y %H:%M")}\n'
+                        f'Участники:\n{members_list}',
+                        parse_mode='HTML')
                     return
 
         await callback_query.message.answer(f'❌ {data_state.error_message}')
