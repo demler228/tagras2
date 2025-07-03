@@ -273,7 +273,9 @@ async def theme_created_material_file(message: Message, state: FSMContext, bot):
 
     # Скачиваем файл
     file_info = await bot.get_file(file_id)
+    print(f"admin training file info - {file_info}")
     file_path = TEMP_DIR / file_name
+    print(f"admin training file path - {file_path}")
     await bot.download_file(file_info.file_path, file_path)
 
     # Создаем объект Material с путем к файлу
@@ -308,9 +310,6 @@ async def theme_created_material_file(message: Message, state: FSMContext, bot):
                 await message.answer('❌ Не удалось получить токен для генерации викторины')
         else:
             await message.answer('ℹ️ Не удалось извлечь текст из файла для викторины')
-
-        # Удаляем временный файл после обработки
-        os.remove(file_path)
     else:
         await message.answer(f'❌ {data_state.error_message}')
 

@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
-from .callback_factories import FaqCallbackFactory, BackToMenuCallbackFactory
+from .callback_factories import FaqCallbackFactory
 
 def get_faq_keyboard(page: int, total_questions: int, questions: list, questions_per_page: int = 5):
     """

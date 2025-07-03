@@ -17,7 +17,7 @@ def get_themes_keyboard(themes) -> InlineKeyboardMarkup:
             callback_data=ThemeCallback(action="select", theme_id=theme.id).pack()
         )
 
-    builder.button(text="🔙 В меню", callback_data="back_to_menu")
+    builder.button(text="🔙 В меню", callback_data="training_button")
     builder.adjust(1)
     return builder.as_markup()
 
@@ -28,6 +28,6 @@ def get_materials_keyboard(theme_id: int) -> InlineKeyboardMarkup:
         text="🔙 Назад к темам",
         callback_data=ThemeCallback(action="back").pack()
     )
-    builder.button(text="🔙 В меню", callback_data="back_to_menu")
+    builder.button(text="🔙 В меню", callback_data="back_to_main_menu")
     builder.adjust(1)
     return builder.as_markup()
