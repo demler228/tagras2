@@ -6,7 +6,7 @@ from docx import Document
 import moviepy as mp
 import whisper
 import json
-import uuid
+from gigachat import GigaChat
 from aiogram.client.session.middlewares.request_logging import logger
 from sqlalchemy import select, exists
 
@@ -18,14 +18,20 @@ from utils.connection_db import connection_db
 from utils.data_state import DataState, DataSuccess, DataFailedMessage
 from .modules.utils import remove_empty_lines
 from domain.user.models.user import UserBase
+from utils.config import settings
 
+auth = settings.SBER_AUTH
+giga = GigaChat(
+    credentials=auth,
+    model='GigaChat:latest',
+    verify_ssl_certs=False
+)
 
 def process_text(input_text):
     lines = [line.strip() for line in input_text.split('\n') if line.strip()]
     single_line = ' '.join(lines)
     processed_text = ' '.join(single_line.split())
     return processed_text
-
 
 class FileRepository:
     @staticmethod
@@ -59,7 +65,6 @@ class FileRepository:
             return FileRepository.process_docx(file_path)
         return None
 
-
 class WebRepository:
     @staticmethod
     def process_url(url):
@@ -75,104 +80,50 @@ class WebRepository:
             program_logger.error(e)
             return None
 
-
 class QuizRepository:
-    client_id = "ce72ada1-0b34-43e0-9b4f-b4a0aa853a1a"
-    secret = "9fc6e2a6-2203-4184-b5a1-08f52595b179"
-    auth = "Y2U3MmFkYTEtMGIzNC00M2UwLTliNGYtYjRhMGFhODUzYTFhOjlmYzZlMmE2LTIyMDMtNDE4NC1iNWExLTA4ZjUyNTk1YjE3OQ=="
-
     @staticmethod
-    def get_token(scope="GIGACHAT_API_PERS"):
-        rq_uid = str(uuid.uuid4())
-        url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "application/json",
-            "RqUID": rq_uid,
-            "Authorization": f"Basic {QuizRepository.auth}",
-        }
-        payload = {"scope": scope}
-        try:
-            response = requests.post(url, headers=headers, data=payload, verify=False)
-            return response.json().get("access_token", None)
-        except requests.RequestException as e:
-            program_logger.error(e)
-            return None
+    def get_quiz_questions(text):
+        payload = f"""
+        Сгенерируй 20 вопросов по тексту. Каждый вопрос должен быть в следующем формате:
+        - Вопрос
+        - 4 варианта ответа (пронумерованные от 1 до 4)
+        - Правильный ответ (указанный в формате "Правильный ответ: X)")
 
-    @staticmethod
-    def get_quiz_questions(auth_token, text):
-        url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
-        payload = json.dumps(
-            {
-                "model": "GigaChat",
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": f"""
-    Сгенерируй 20 вопросов по тексту. Каждый вопрос должен быть в следующем формате:
-    - Вопрос
-    - 4 варианта ответа (пронумерованные от 1 до 4)
-    - Правильный ответ (указанный в формате "Правильный ответ: X)")
+        Верни ответ в формате JSON, как в примере ниже:
 
-    Верни ответ в формате JSON, как в примере ниже:
-
-    [
-        {{
-            "question": "Почему Бу не смог провести успешные переговоры с американцами?",
-            "answers": [
-                "Он не знал английский язык.",
-                "Он не подготовился к переговорам.",
-                "Он не смог договориться с американцами.",
-                "Он не был уверен в себе."
-            ],
-            "correct_answer": "Он не подготовился к переговорам."
-        }},
-
-    Вот текст: {text}
-
-    Убедись, что ответ строго соответствует этому формату JSON. Не добавляй лишних символов или комментариев.""",
-                    }
+        [
+            {{
+                "question": "Почему Бу не смог провести успешные переговоры с американцами?",
+                "answers": [
+                    "Он не знал английский язык.",
+                    "Он не подготовился к переговорам.",
+                    "Он не смог договориться с американцами.",
+                    "Он не был уверен в себе."
                 ],
-                "temperature": 1,
-                "top_p": 0.1,
-                "n": 1,
-                "stream": False,
-                "max_tokens": 2048,
-                "repetition_penalty": 1,
-                "update_interval": 0,
-            }
-        )
-        headers = {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": f"Bearer {auth_token}",
-        }
+                "correct_answer": "Он не подготовился к переговорам."
+            }}
+        ]
+
+        Вот текст: {text}
+
+        Убедись, что ответ строго соответствует этому формату JSON. Не добавляй лишних символов или комментариев.
+        """
         try:
-            response = requests.post(url, headers=headers, data=payload, verify=False)
-            if response.status_code == 200:
-                try:
-                    content = response.json()
-                    choices = content.get('choices', [])
-                    if choices:
-                        message = choices[0].get('message', {})
-                        content_str = message.get('content', '')
-                        try:
-                            quiz_data = json.loads(content_str)
-                            return DataSuccess(quiz_data)
-                        except json.JSONDecodeError:
-                            return DataFailedMessage("Неверный формат ответа от GigaChat")
-                    return DataFailedMessage("Пустой ответ от GigaChat")
-                except Exception as e:
-                    program_logger.error(e)
-                    return DataFailedMessage("Ошибка обработки ответа")
-            else:
-                return DataFailedMessage(f"Ошибка API: {response.status_code}")
-        except requests.RequestException as e:
-            program_logger.error(e)
+            response = giga.chat(payload)
+            content = response.choices[0].message.content
+            try:
+                quiz_data = json.loads(content)
+                return DataSuccess(quiz_data)
+            except json.JSONDecodeError as e:
+                program_logger.error(f"Неверный формат ответа от GigaChat: {e}")
+                return DataFailedMessage("Неверный формат ответа от GigaChat")
+            except Exception as e:
+                program_logger.error(f"Ошибка обработки ответа от GigaChat: {e}")
+                return DataFailedMessage("Ошибка обработки ответа от GigaChat")
+        except Exception as e:
+            program_logger.error(f"Ошибка соединения с GigaChat API: {e}")
             return DataFailedMessage("Ошибка соединения с GigaChat API")
 
-
-class QuizDAL:
     @staticmethod
     def save_quiz(quiz_data: list, theme_name: str) -> DataState:
         Session = connection_db()
@@ -262,13 +213,11 @@ class QuizDAL:
         
         with Session() as session:
             try:
-                # Поиск пользователя по telegram_id
                 user = session.query(UserBase).filter(UserBase.telegram_id == user_id).first()
                 if not user:
                     logger.warning(f"Пользователь с telegram_id={user_id} не найден")
                     return DataFailedMessage("Пользователь не найден в базе данных")
                 
-                # Используем id пользователя из таблицы users
                 result = QuizResult(
                     user_id=user.id,
                     theme_id=theme_id,
