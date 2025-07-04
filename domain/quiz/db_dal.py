@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from pdfminer.high_level import extract_text
 from docx import Document
-import moviepy as mp
+from moviepy.video import VideoClip
 import whisper
 import json
 from gigachat import GigaChat
@@ -49,7 +49,7 @@ class FileRepository:
 
     @staticmethod
     def process_video(video_path, audio_path="audio_temp.mp3"):
-        clip = mp.VideoFileClip(video_path)
+        clip = mp.VideoClip(video_path)
         clip.audio.write_audiofile(audio_path, codec="mp3")
         model = whisper.load_model("base")
         result = model.transcribe(audio_path, fp16=False)
