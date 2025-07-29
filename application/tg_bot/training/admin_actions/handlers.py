@@ -18,7 +18,9 @@ from application.tg_bot.training.entities.materials import Material
 from application.tg_bot.training.entities.theme import Theme
 from domain.training.education.db_bl import EducationBL
 from utils.data_state import DataSuccess
-from domain.quiz.db_dal import FileRepository, WebRepository, QuizRepository, QuizDAL
+from domain.quiz.db_dal import FileRepository, WebRepository, QuizRepository
+from utils.config import settings
+from utils.logs import program_logger
 
 router = Router()
 
@@ -201,7 +203,8 @@ async def faq_create_answer(message: Message, state: FSMContext):
     await state.set_state(AdminStates.create_material_url)
     await message.answer(f"✍️ Введите URL или загрузите файл (PDF, Word, видео)")
 
-# Обработка текстового ввода (URL)
+
+# Обновление theme_created_material_url
 @router.message(F.text, AdminStates.create_material_url)
 async def theme_created_material_url(message: Message, state: FSMContext):
     theme = (await state.get_data())['theme']
@@ -229,20 +232,20 @@ async def theme_created_material_url(message: Message, state: FSMContext):
         try:
             # Обработка URL и получение текста
             text = WebRepository.process_url(material.url)
-            print(text)
+            program_logger.debug(f"Извлечённый текст из URL {material.url}: {text}")
             if not text:
                 await message.answer("ℹ️ Не удалось извлечь текст из ссылки для создания викторины.")
                 return
 
-            # Получение токена и генерация викторины
-            token = QuizRepository.get_token()
+            # Проверка токена
+            token = settings.SBER_AUTH
             if not token:
                 await message.answer("❌ Не удалось получить токен для генерации викторины.")
                 return
 
-            quiz_data = QuizRepository.get_quiz_questions(token, text)
+            quiz_data = QuizRepository.get_quiz_questions(text)
             if isinstance(quiz_data, DataSuccess):
-                save_result = QuizDAL.save_quiz(quiz_data.data, theme.name)
+                save_result = QuizRepository.save_quiz(quiz_data.data, theme.name)
                 if isinstance(save_result, DataSuccess):
                     await message.answer("✅ Викторина успешно создана и сохранена!")
                 else:
@@ -250,11 +253,12 @@ async def theme_created_material_url(message: Message, state: FSMContext):
             else:
                 await message.answer(f"❌ Ошибка при генерации викторины: {quiz_data.error_message}")
         except Exception as e:
+            program_logger.error(f"Ошибка при обработке URL {material.url}: {str(e)}")
             await message.answer(f"❌ Произошла ошибка при обработке ссылки: {str(e)}")
     else:
         await message.answer(f"❌ Ошибка при создании материала: {data_state.error_message}")
 
-# Обработка загруженных файлов (PDF, Word, видео)
+# Обновление theme_created_material_file
 @router.message(F.content_type.in_({ContentType.DOCUMENT, ContentType.VIDEO}), AdminStates.create_material_url)
 async def theme_created_material_file(message: Message, state: FSMContext, bot):
     theme = (await state.get_data())['theme']
@@ -273,9 +277,9 @@ async def theme_created_material_file(message: Message, state: FSMContext, bot):
 
     # Скачиваем файл
     file_info = await bot.get_file(file_id)
-    print(f"admin training file info - {file_info}")
+    program_logger.debug(f"Информация о файле: {file_info}")
     file_path = TEMP_DIR / file_name
-    print(f"admin training file path - {file_path}")
+    program_logger.debug(f"Путь к файлу: {file_path}")
     await bot.download_file(file_info.file_path, file_path)
 
     # Создаем объект Material с путем к файлу
@@ -297,15 +301,19 @@ async def theme_created_material_file(message: Message, state: FSMContext, bot):
 
         # Обработка содержимого файла с помощью FileRepository
         text = FileRepository.process_file(str(file_path))
-        print(text)
+        program_logger.debug(f"Извлечённый текст из файла {file_path}: {text}")
         if text:
-            token = QuizRepository.get_token()
+            token = settings.SBER_AUTH
             if token:
-                quiz_data = QuizRepository.get_quiz_questions(token, text)
+                quiz_data = QuizRepository.get_quiz_questions(text)
                 if isinstance(quiz_data, DataSuccess):
-                    save_result = QuizDAL.save_quiz(quiz_data.data, theme.name)
+                    save_result = QuizRepository.save_quiz(quiz_data.data, theme.name)
                     if not isinstance(save_result, DataSuccess):
                         await message.answer(f'❌ Ошибка при сохранении викторины: {save_result.error_message}')
+                    else:
+                        await message.answer("✅ Викторина успешно создана и сохранена!")
+                else:
+                    await message.answer(f'❌ Ошибка при генерации викторины: {quiz_data.error_message}')
             else:
                 await message.answer('❌ Не удалось получить токен для генерации викторины')
         else:

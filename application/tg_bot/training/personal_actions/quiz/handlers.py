@@ -8,7 +8,7 @@ from .keyboards import get_answers_keyboard, get_themes_keyboard
 from .callback_factories import QuizCallbackFactory
 from utils.data_state import DataSuccess
 from application.tg_bot.menu.personal_actions.keyboards.menu_keyboard import get_main_menu_keyboard
-from domain.quiz.db_dal import QuizDAL
+from domain.quiz.db_dal import QuizRepository
 
 router = Router()
 
@@ -92,7 +92,7 @@ async def handle_answer_selection(callback_query: CallbackQuery, callback_data: 
         score = user_state["score"]
         theme_id = questions[0].theme_id
 
-        save_result = QuizDAL.save_quiz_result(
+        save_result = QuizRepository.save_quiz_result(
             user_id=user_id,
             theme_id=theme_id,
             score=score
