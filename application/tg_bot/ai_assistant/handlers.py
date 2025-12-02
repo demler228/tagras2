@@ -9,7 +9,7 @@ from datetime import datetime
 import asyncio
 from docx import Document as DocxDocument
 from pypdf import PdfReader
-from moviepy.video import VideoClip
+from moviepy.editor import VideoFileClip
 import whisper
 from aiogram import Router, types, F
 from aiogram.types import Message
@@ -113,7 +113,7 @@ async def process_video(video_path):
             logging.warning(f"Видео {video_path} слишком большое, пропускаем")
             return ""
         temp_audio = "temp_audio.wav"
-        video = VideoClip(video_path)
+        video = VideoFileClip(video_path)
         audio = video.audio
         audio.write_audiofile(temp_audio)
         result = await asyncio.to_thread(whisper_model.transcribe, temp_audio)
